@@ -1,0 +1,13 @@
+{"event":"FaceDetected","face_bbox":[342,118,214,214],"embedding_id":"emb_7f3a9c21","confidence":0.982}
+{"event":"ConsentBound","consent_hash":"0x8c1d4e9a2b7f0c63a5e18d4b9f27c0a6e3d5b8f1a4c7e0d29b6f3a8c1e4d7b0f2"}
+{"event":"ImageHosted","crop_url":"https://cdn.eyeofthewitch.dev/crops/emb_7f3a9c21.png"}
+{"event":"ImageSearchCompleted","engine":"serpapi","hit_count":14}
+{"event":"CandidateScored","url":"https://gallery.example.com/2024/spring-benefit/img-0042","face_sim":0.41,"source_trust":0.7,"decision":"reject"}
+{"event":"CandidateScored","url":"https://press.example.org/arrivals/night-two","face_sim":0.91,"source_trust":0.82,"decision":"accept"}
+{"event":"PostAccepted","url":"https://press.example.org/arrivals/night-two","thumbnail":"https://cdn.eyeofthewitch.dev/thumbs/press-night-two.jpg","face_sim":0.91}
+{"event":"CandidateScored","url":"https://news.example.net/culture/gala-recap","face_sim":0.88,"source_trust":0.9,"decision":"accept"}
+{"event":"PostAccepted","url":"https://news.example.net/culture/gala-recap","thumbnail":"https://cdn.eyeofthewitch.dev/thumbs/news-gala-recap.jpg","face_sim":0.88}
+{"event":"MerkleBuilt","merkle_root":"0x4a7f0c3b6e9d2a5f8c1b4e7a0d3f6c9b2e5a8d1f4c7b0e3a6d9f2c5b8e1a4d7f0","leaf_count":2}
+{"event":"Attesting"}
+{"event":"Attested","tx_hash":"0x9f2c4a7b8e1d3f6a0c5b2e9d8a4f7c1b6e3d0a9f2c8b5e1d4a7f0c3b6e9d2a5f8","attestation_uid":"0x7b4e9c2a8f1d6b3e0a5c9f2d8b4e7a1c6f3d0b9e2a5c8f1d4b7e0a3c6f9d2b5e8","easscan_url":"https://sepolia.easscan.org/attestation/view/0x7b4e9c2a8f1d6b3e0a5c9f2d8b4e7a1c6f3d0b9e2a5c8f1d4b7e0a3c6f9d2b5e8"}
+{"event":"VerifyPassed","matched":true}

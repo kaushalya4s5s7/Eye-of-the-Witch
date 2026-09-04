@@ -1,0 +1,120 @@
+:root {
+  --bg: #04060a;
+  --left-bg: #0a0712;
+  --right-bg: #0a0d13;
+  --seam: #1b2233;
+  --text: #c4d0e0;
+  --text-dim: #6b7688;
+  --ritual-accent: #7b6cb0;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- shell ---- */
+.split-shell {
+  display: grid;
+  grid-template-columns: 1fr 2px 1fr;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.pane {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.pane-left {
+  background: var(--left-bg);
+}
+
+.pane-right {
+  background: var(--right-bg);
+  display: flex;
+}
+
+.pane-seam {
+  background: linear-gradient(180deg, transparent, var(--seam) 12%, var(--seam) 88%, transparent);
+}
+
+/* ---- left placeholder (build step 2 replaces this) ---- */
+.ritual-placeholder {
+  height: 100%;
+  margin: 16px;
+  border: 1px dashed #2c2247;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: radial-gradient(120% 80% at 50% 30%, rgba(123, 108, 176, 0.08), transparent 70%);
+}
+
+.ritual-placeholder__label {
+  color: var(--ritual-accent);
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.ritual-placeholder__note {
+  color: var(--text-dim);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+/* ---- right terminal ---- */
+.terminal-frame {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-frame__bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  font-size: 12px;
+  color: var(--text-dim);
+  font-family: 'SFMono-Regular', Menlo, Consolas, monospace;
+  border-bottom: 1px solid var(--seam);
+}
+
+.terminal-frame__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3ea06b;
+  box-shadow: 0 0 6px rgba(62, 160, 107, 0.7);
+}
+
+.terminal-host {
+  flex: 1;
+  min-height: 0;
+  padding: 10px 6px 10px 12px;
+}
+
+.terminal-host .xterm {
+  height: 100%;
+}

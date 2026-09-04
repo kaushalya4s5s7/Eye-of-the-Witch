@@ -1,0 +1,8 @@
+{"event":"FaceDetected","face_bbox":[298,142,188,188],"embedding_id":"emb_2b9e14d7","confidence":0.947}
+{"event":"ConsentBound","consent_hash":"0x1f6c3b8e5a2d9f0c7b4e1a8d5f2c9b6e3a0d7f4c1b8e5a2d9f6c3b0e7a4d1f8c"}
+{"event":"ImageHosted","crop_url":"https://cdn.eyeofthewitch.dev/crops/emb_2b9e14d7.png"}
+{"event":"ImageSearchCompleted","engine":"serpapi","hit_count":6}
+{"event":"CandidateScored","url":"https://stock.example.com/portrait/id-55210","face_sim":0.38,"source_trust":0.4,"decision":"reject"}
+{"event":"CandidateScored","url":"https://forum.example.org/threads/lookalikes-2023","face_sim":0.52,"source_trust":0.2,"decision":"reject"}
+{"event":"CandidateScored","url":"https://gallery.example.net/street/2022-summer","face_sim":0.6,"source_trust":0.35,"decision":"reject"}
+{"event":"NoMatchFound","candidates_checked":6,"reason":"no candidate cleared face_sim>=0.85 with source_trust>=0.6"}
