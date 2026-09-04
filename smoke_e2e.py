@@ -319,55 +319,195 @@ def step_lens(image_url: str, api_key: str, out_dir: Path) -> list[dict[str, Any
     return hits
 
 
-def step_accept(hits: list[dict[str, Any]], out_dir: Path) -> list[dict[str, Any]]:
-    print("\n[S3] Pick matching post(s)…")
-    candidates: list[dict[str, Any]] = []
-    for h in hits:
+def cosine(a: np.ndarray, b: np.ndarray) -> float:
+    a = a.astype(np.float32).flatten()
+    b = b.astype(np.float32).flatten()
+    na = np.linalg.norm(a) + 1e-9
+    nb = np.linalg.norm(b) + 1e-9
+    return float(np.dot(a / na, b / nb))
+
+
+def _load_insightface():
+    from insightface.app import FaceAnalysis
+
+    app = FaceAnalysis(name="buffalo_s", providers=["CPUExecutionProvider"])
+    app.prepare(ctx_id=-1, det_size=(640, 640))
+    return app
+
+
+def _embed_image_bgr(app, img_bgr: np.ndarray) -> tuple[np.ndarray | None, float]:
+    faces = app.get(img_bgr)
+    if not faces:
+        return None, 0.0
+    face = max(faces, key=lambda f: (f.bbox[2] - f.bbox[0]) * (f.bbox[3] - f.bbox[1]))
+    return face.normed_embedding.astype(np.float32), float(face.det_score)
+
+
+def _bytes_to_bgr(content: bytes) -> np.ndarray | None:
+    arr = np.frombuffer(content, dtype=np.uint8)
+    img = cv2.imdecode(arr, cv2.IMREAD_COLOR)
+    return img
+
+
+def step_accept(
+    hits: list[dict[str, Any]],
+    out_dir: Path,
+    seed_embedding: np.ndarray,
+    *,
+    top_k: int = 5,
+    min_face_sim: float = 0.35,
+    dedupe_sim: float = 0.92,
+) -> list[dict[str, Any]]:
+    """Rank all Lens hits by face similarity to seed; collapse near-duplicate images."""
+    print("\n[S3] Intelligent accept (dedupe + face-rank all hits)…")
+    print(f"  scoring {len(hits)} Lens hits against seed face…")
+
+    app = _load_insightface()
+    scored: list[dict[str, Any]] = []
+
+    for i, h in enumerate(hits):
         link = h.get("link") or h.get("source") or ""
-        if not link.startswith("http"):
+        if not isinstance(link, str) or not link.startswith("http"):
             continue
-        candidates.append(
+        thumb = h.get("thumbnail") or h.get("image") or ""
+        title = h.get("title") or ""
+        row: dict[str, Any] = {
+            "url": link,
+            "title": title,
+            "source": h.get("source") or urlparse(link).netloc,
+            "social": is_social(link),
+            "thumbnail": thumb,
+            "engine": "google_lens",
+            "lens_position": h.get("position") or i + 1,
+            "face_similarity": None,
+            "det_score": None,
+            "content_hash": None,
+            "duplicate_of": None,
+            "skip_reason": None,
+        }
+
+        blob = (link + "|" + title).encode()
+        img_bgr = None
+        if thumb:
+            try:
+                tr = requests.get(thumb, timeout=20)
+                if tr.ok and len(tr.content) > 200:
+                    blob = tr.content
+                    img_bgr = _bytes_to_bgr(tr.content)
+            except Exception:
+                pass
+        row["content_hash"] = sha256_hex(blob)
+        row["thumb_hash"] = sha256_hex(blob) if img_bgr is not None else None
+
+        if img_bgr is None:
+            row["skip_reason"] = "no_image_bytes"
+            scored.append(row)
+            continue
+
+        emb, det = _embed_image_bgr(app, img_bgr)
+        if emb is None:
+            row["skip_reason"] = "no_face_in_thumb"
+            scored.append(row)
+            continue
+
+        sim = cosine(seed_embedding, emb)
+        row["face_similarity"] = round(sim, 4)
+        row["det_score"] = round(det, 4)
+        scored.append(row)
+        print(f"  [{i+1}/{len(hits)}] sim={sim:.3f} social={row['social']} {link[:70]}")
+
+    # Exact dedupe by content_hash (same image bytes / same thumb)
+    by_hash: dict[str, dict[str, Any]] = {}
+    for row in scored:
+        ch = row.get("content_hash") or ""
+        if not ch or row.get("face_similarity") is None:
+            continue
+        prev = by_hash.get(ch)
+        if prev is None:
+            by_hash[ch] = row
+        else:
+            # keep higher face score; mark other as duplicate
+            if (row["face_similarity"] or 0) > (prev["face_similarity"] or 0):
+                prev["duplicate_of"] = row["url"]
+                prev["skip_reason"] = "duplicate_exact_hash"
+                by_hash[ch] = row
+            else:
+                row["duplicate_of"] = prev["url"]
+                row["skip_reason"] = "duplicate_exact_hash"
+
+    unique = [r for r in scored if r.get("skip_reason") not in {"duplicate_exact_hash"}]
+
+    # Near-duplicate collapse: same face crop reappearing (high mutual sim to an already kept better hit)
+    unique_sorted = sorted(
+        [r for r in unique if r.get("face_similarity") is not None],
+        key=lambda r: (r["face_similarity"], r["social"]),
+        reverse=True,
+    )
+    kept: list[dict[str, Any]] = []
+
+    # For near-dup: if two candidates both very similar to seed AND same content cluster,
+    # prefer keeping one URL (prefer social). We approximate near-dup by: same rounded sim band
+    # + exact hash already handled. Secondary: if thumb_hash prefixes match closely we already
+    # used exact hash. Extra: if face_similarity within 0.02 and titles share host — keep best.
+    for row in unique_sorted:
+        is_near_dup = False
+        for k in kept:
+            # near-duplicate if both high and nearly equal similarity (same person crop mirrors)
+            if abs((row["face_similarity"] or 0) - (k["face_similarity"] or 0)) <= (1.0 - dedupe_sim) and (
+                urlparse(row["url"]).netloc == urlparse(k["url"]).netloc
+                or (row.get("thumb_hash") and row.get("thumb_hash") == k.get("thumb_hash"))
+            ):
+                is_near_dup = True
+                row["duplicate_of"] = k["url"]
+                row["skip_reason"] = "duplicate_near_same_face_mirror"
+                break
+        if not is_near_dup:
+            kept.append(row)
+
+    # Final pick: face sim >= threshold, social first among those, else best overall
+    eligible = [r for r in kept if (r.get("face_similarity") or 0) >= min_face_sim]
+    if not eligible:
+        # fail soft: take best scored even if below threshold (still better than blind top-3)
+        eligible = kept[: max(top_k, 1)]
+        print(f"  warn: no hit >= {min_face_sim}; falling back to best face-ranked")
+
+    social_first = sorted(
+        eligible,
+        key=lambda r: (r["social"], r.get("face_similarity") or 0),
+        reverse=True,
+    )
+    chosen = social_first[:top_k]
+    if not chosen:
+        raise RuntimeError("No usable URLs after face-rank/dedupe")
+
+    observed = utc_now()
+    accepted = []
+    for c in chosen:
+        accepted.append(
             {
-                "url": link,
-                "title": h.get("title") or "",
-                "source": h.get("source") or urlparse(link).netloc,
-                "social": is_social(link),
-                "thumbnail": h.get("thumbnail") or h.get("image") or "",
+                **c,
+                "observed_at": observed,
             }
         )
 
-    social = [c for c in candidates if c["social"]]
-    chosen = social[:3] if social else candidates[:3]
-    if not chosen:
-        raise RuntimeError("No usable URLs in Lens hits")
-
-    # content hash: hash of URL + title (bytes of remote image if thumbnail fetch works)
-    accepted = []
-    for c in chosen:
-        blob = (c["url"] + "|" + c["title"]).encode()
-        thumb_hash = None
-        if c["thumbnail"]:
-            try:
-                tr = requests.get(c["thumbnail"], timeout=20)
-                if tr.ok:
-                    thumb_hash = sha256_hex(tr.content)
-                    blob = tr.content
-            except Exception:
-                pass
-        leaf_payload = {
-            **c,
-            "content_hash": sha256_hex(blob),
-            "thumb_hash": thumb_hash,
-            "engine": "google_lens",
-            "observed_at": utc_now(),
-        }
-        accepted.append(leaf_payload)
-
+    report = {
+        "seed_compare": "insightface_cosine",
+        "min_face_sim": min_face_sim,
+        "top_k": top_k,
+        "hits_in": len(hits),
+        "scored": len(scored),
+        "unique_after_dedupe": len(kept),
+        "accepted": len(accepted),
+        "all_scored": scored,
+    }
+    (out_dir / "candidates_ranked.json").write_text(json.dumps(report, indent=2))
     (out_dir / "accepted.json").write_text(json.dumps(accepted, indent=2))
-    label = "social" if social else "web (no social host in top hits)"
-    print(f"  OK accepted {len(accepted)} ({label})")
+
+    print(f"  OK accepted {len(accepted)} / {len(hits)} (deduped→{len(kept)}, face-ranked)")
     for a in accepted:
-        print(f"    - {a['url'][:90]}")
+        print(
+            f"    - sim={a.get('face_similarity')} social={a['social']} {a['url'][:90]}"
+        )
     return accepted
 
 
@@ -560,6 +700,7 @@ def main() -> int:
     try:
         face = step_face(sample, out_dir, require_insightface=require_insightface)
         results.append(SmokeResult("S0_face", True, f"{face['backend']}:{face['embedding_sha256'][:16]}"))
+        seed_emb = np.load(face["embedding_path"])
 
         hosted = step_host(Path(face["crop_path"]), env["IMGBB_API_KEY"], out_dir)
         results.append(SmokeResult("S1_host", True, hosted))
@@ -567,7 +708,7 @@ def main() -> int:
         hits = step_lens(hosted, env["SERPAPI_API_KEY"], out_dir)
         results.append(SmokeResult("S2_lens", True, f"{len(hits)} hits"))
 
-        accepted = step_accept(hits, out_dir)
+        accepted = step_accept(hits, out_dir, seed_emb, top_k=5, min_face_sim=0.35)
         results.append(SmokeResult("S3_accept", True, accepted[0]["url"][:80]))
 
         root = step_merkle(accepted, out_dir)
