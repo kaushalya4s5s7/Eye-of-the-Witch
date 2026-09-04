@@ -1,0 +1,10 @@
+opencv-python-headless>=4.8,<5
+python-dotenv>=1.0.0
+requests>=2.31.0
+numpy>=1.26.0
+web3>=6.15.0
+eth-account>=0.11.0
+Pillow>=10.0.0
+onnxruntime>=1.17.0
+insightface>=0.7.3
+networkx>=3.2
