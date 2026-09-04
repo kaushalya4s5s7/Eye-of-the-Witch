@@ -445,3 +445,24 @@ body {
 .upload-gate__input {
   display: none;
 }
+
+/* ---- cast again (live mode only) ---- */
+.cast-again {
+  pointer-events: auto;
+  position: absolute;
+  right: 3%;
+  bottom: calc(3% + 78px);
+  padding: 6px 14px;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: #e8c98a;
+  background: rgba(10, 7, 16, 0.75);
+  border: 1px solid #6b4b1f;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 150ms ease;
+}
+.cast-again:hover {
+  border-color: #d9b45b;
+}
