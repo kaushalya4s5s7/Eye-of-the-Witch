@@ -55,31 +55,309 @@ body {
   background: linear-gradient(180deg, transparent, var(--seam) 12%, var(--seam) 88%, transparent);
 }
 
-/* ---- left placeholder (build step 2 replaces this) ---- */
-.ritual-placeholder {
+/* ================= left panel — the ritual stage ================= */
+.ritual-stage {
+  position: relative;
   height: 100%;
-  margin: 16px;
-  border: 1px dashed #2c2247;
-  border-radius: 10px;
+  width: 100%;
+  overflow: hidden;
+  background: #04060a;
+  font-family: 'EB Garamond', 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --tint: 123, 108, 176; /* phase accent, rgb triplet */
+  border: 6px solid #3a2416;
+  border-image: linear-gradient(135deg, #5a3a20, #2b1a0d 40%, #6b4526 60%, #241408) 1;
+  box-shadow: inset 0 0 0 3px #d9b45b, inset 0 0 40px rgba(0, 0, 0, 0.75);
+}
+.ritual-stage.phase-idle { --tint: 90, 100, 130; }
+.ritual-stage.phase-scrying { --tint: 108, 132, 176; }
+.ritual-stage.phase-weighing { --tint: 130, 120, 150; }
+.ritual-stage.phase-weaving { --tint: 150, 128, 120; }
+.ritual-stage.phase-naming { --tint: 190, 150, 96; }
+.ritual-stage.phase-fixed { --tint: 217, 180, 91; }
+.ritual-stage.phase-empty { --tint: 122, 132, 146; }
+.ritual-stage.phase-broken { --tint: 150, 60, 60; }
+
+.layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* ---- video (full-bleed at every phase — see VideoLayer.tsx) ---- */
+.layer-video {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+.layer-video.is-playing {
+  opacity: 1;
+}
+.video-clip {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* scrim: keeps the chrome readable without hiding the footage */
+.layer-video.is-playing::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.12) 55%,
+    rgba(0, 0, 0, 0.68) 100%
+  );
+}
+.outcome-failure .video-clip,
+.outcome-rupture .video-clip { filter: saturate(0.85) brightness(0.92); }
+
+/* ---- the beat: a clip's uninterrupted first playthrough ---- */
+.ritual-beat-caption {
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  bottom: 16%;
+  margin: 0;
+  text-align: center;
+  font-size: clamp(18px, 3vw, 26px);
+  font-style: italic;
+  letter-spacing: 0.02em;
+  color: #f3d98a;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  animation: beat-caption-in 900ms ease 500ms forwards;
+}
+@keyframes beat-caption-in { to { opacity: 1; } }
+
+/* ---- chrome: everything that floats above the video ---- */
+.ritual-chrome {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 900ms ease 150ms;
+}
+.ritual-stage.is-beat .ritual-chrome {
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+/* ---- phase readout ---- */
+.ritual-phase-readout {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(var(--tint), 0.9);
+  text-shadow: 0 0 8px rgba(var(--tint), 0.5);
+}
+
+/* ---- the witch's mark (rune scroll) ---- */
+.rune-scroll {
+  pointer-events: auto;
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(78%, 420px);
+  padding: 18px 24px 14px;
+  text-align: center;
+  color: #2b1c10;
+  background: linear-gradient(180deg, #e8d9b0, #c9b385);
+  border: 2px solid #8a6a3a;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4), 0 10px 26px rgba(0, 0, 0, 0.55),
+    inset 0 0 22px rgba(120, 80, 30, 0.25);
+  opacity: 0;
+  transform-origin: top center;
+  animation: unfurl 900ms cubic-bezier(0.2, 0.8, 0.2, 1) 200ms forwards;
+}
+@keyframes unfurl {
+  from { opacity: 0; transform: translateX(-50%) translateY(10px) scaleY(0.86); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0) scaleY(1); }
+}
+.rune-scroll__title {
+  margin: 2px 0 8px;
+  font-size: 20px;
+  letter-spacing: 0.05em;
+  color: #6a3410;
+}
+.rune-scroll__flavor {
+  margin: 0 0 12px;
+  font-size: 13px;
+  line-height: 1.55;
+  font-style: italic;
+  color: #4a3212;
+}
+.rune-row {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 8px 0 12px;
+}
+.rune {
+  width: 22px;
+  height: 22px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  background: radial-gradient(120% 80% at 50% 30%, rgba(123, 108, 176, 0.08), transparent 70%);
+  font-size: 10px;
+  font-family: 'JetBrains Mono', Menlo, monospace;
+  color: #f3d98a;
+  background: #3a2410;
+  border: 1px solid #8a6a3a;
+  border-radius: 3px;
+  box-shadow: inset 0 0 4px rgba(217, 180, 91, 0.5);
 }
-
-.ritual-placeholder__label {
-  color: var(--ritual-accent);
-  letter-spacing: 0.42em;
-  text-transform: uppercase;
+.rune-scroll__follow {
+  display: inline-block;
+  margin-top: 2px;
   font-size: 13px;
+  color: #6a3410;
+  text-decoration: none;
+  border-bottom: 1px dashed #6a3410;
+}
+.rune-scroll__follow:hover { color: #4a2408; }
+.rune-scroll__verify {
+  margin: 10px 0 0;
+  font-size: 11.5px;
+  letter-spacing: 0.02em;
+  color: #7a6a4a;
+}
+.rune-scroll__verify.is-verified { color: #2f6b2f; }
+
+/* ---- loot gallery (posts found) ---- */
+.loot-gallery {
+  pointer-events: auto;
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  bottom: 84px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  opacity: 0;
+  animation: loot-in 700ms ease 500ms forwards;
+}
+@keyframes loot-in { to { opacity: 1; } }
+.loot-card {
+  width: 84px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  background: linear-gradient(180deg, #2a1c10, #150d06);
+  border: 1.5px solid #d9b45b;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), inset 0 0 6px rgba(217, 180, 91, 0.15);
+  overflow: hidden;
+  transition: transform 200ms ease;
+}
+.loot-card:hover { transform: translateY(-2px); }
+.loot-card__art {
+  height: 52px;
+  background-color: #22283f;
+  background-size: cover;
+  background-position: center;
+}
+.loot-card__title {
+  padding: 5px 6px 2px;
+  font-size: 9.5px;
+  line-height: 1.25;
+  color: #f3d98a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.loot-card__stars {
+  padding: 0 6px 5px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #f3d98a;
 }
 
-.ritual-placeholder__note {
-  color: var(--text-dim);
-  font-size: 11px;
-  letter-spacing: 0.04em;
+/* ---- end card (failure outcomes: empty / broken) ---- */
+.end-card {
+  pointer-events: auto;
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  transform: translate(-50%, -50%);
+  width: min(80%, 400px);
+  padding: 20px 24px;
+  text-align: center;
+  background: rgba(6, 4, 4, 0.55);
+  border: 1px solid rgba(200, 150, 80, 0.35);
+  border-radius: 6px;
+  opacity: 0;
+  animation: end-card-in 800ms ease 300ms forwards;
+}
+@keyframes end-card-in { to { opacity: 1; } }
+.end-card__title {
+  margin: 0 0 10px;
+  font-size: 20px;
+  letter-spacing: 0.03em;
+  color: #e8c98a;
+}
+.end-card__body {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  font-style: italic;
+  color: #cfc3ac;
+}
+
+/* ---- the witch's voice (JRPG textbox) ---- */
+.jrpg-textbox {
+  pointer-events: none;
+  position: absolute;
+  left: 3%;
+  right: 3%;
+  bottom: 3%;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 10px 18px;
+  background: linear-gradient(180deg, #160f1c, #0a0710);
+  border: 2px solid #d9b45b;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 1px #6b4b1f, inset 0 0 18px rgba(0, 0, 0, 0.7);
+}
+.jrpg-textbox::before {
+  content: '❧';
+  color: #d9b45b;
+  font-size: 18px;
+  margin-right: 12px;
+  opacity: 0.85;
+}
+.jrpg-textbox__line {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #eee1c6;
+  opacity: 0;
+  animation: line-in 500ms ease forwards;
+}
+.jrpg-textbox__line.tone-omen {
+  color: #e0a58a;
+  font-style: italic;
+}
+@keyframes line-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+/* ---- grain + vignette ---- */
+.layer-grain {
+  background: radial-gradient(120% 90% at 50% 45%, transparent 55%, rgba(0, 0, 0, 0.55) 100%);
+  mix-blend-mode: multiply;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ritual-stage * { animation-duration: 1ms !important; animation-iteration-count: 1 !important; }
 }
 
 /* ---- right terminal ---- */
@@ -117,4 +395,53 @@ body {
 
 .terminal-host .xterm {
   height: 100%;
+}
+
+/* ---- upload gate (idle, before any run) ---- */
+.upload-gate {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #04060a;
+  font-family: 'EB Garamond', 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+}
+.upload-gate__drop {
+  cursor: pointer;
+  width: min(80%, 380px);
+  padding: 40px 28px;
+  text-align: center;
+  background: linear-gradient(180deg, #160f1c, #0a0710);
+  border: 2px dashed #6b4b1f;
+  border-radius: 8px;
+  transition: border-color 200ms ease, background 200ms ease;
+}
+.upload-gate__drop.is-drag-over {
+  border-color: #d9b45b;
+  background: linear-gradient(180deg, #1c1424, #0e0a16);
+}
+.upload-gate__drop.is-busy {
+  cursor: wait;
+  opacity: 0.75;
+}
+.upload-gate__title {
+  margin: 0 0 10px;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  color: #e8c98a;
+}
+.upload-gate__hint {
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+  color: #a89a7a;
+}
+.upload-gate__error {
+  margin: 14px 0 0;
+  font-size: 12.5px;
+  color: #e0a58a;
+}
+.upload-gate__input {
+  display: none;
 }
