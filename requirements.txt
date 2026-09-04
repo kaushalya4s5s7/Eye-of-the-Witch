@@ -7,3 +7,4 @@ eth-account>=0.11.0
 Pillow>=10.0.0
 onnxruntime>=1.17.0
 insightface>=0.7.3
+networkx>=3.2
