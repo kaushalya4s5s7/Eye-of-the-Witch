@@ -1,0 +1,34 @@
+[
+  {
+    "url": "https://www.facebook.com/ramabhau/",
+    "title": "Ramabhau Patil (@ramabhau) \u2022 Facebook",
+    "source": "Facebook",
+    "social": true,
+    "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT9llyn1qdDbhATa8x8huJh78LVHfvMWtGuFjFSuLBe1cKHO_01",
+    "engine": "google_lens",
+    "lens_position": 1,
+    "face_similarity": 0.9619,
+    "det_score": 0.8001,
+    "content_hash": "44a7504fb3347857d1aabb437ac9e037f249e19ca23f8f1bb607bb5a25b88d96",
+    "duplicate_of": null,
+    "skip_reason": null,
+    "thumb_hash": "44a7504fb3347857d1aabb437ac9e037f249e19ca23f8f1bb607bb5a25b88d96",
+    "observed_at": "2026-09-04T11:22:11.304634+00:00"
+  },
+  {
+    "url": "https://www.facebook.com/AnandmurtiGurumaa/posts/\ud835\udc38\ud835\udc5a\ud835\udc4f\ud835\udc5c\ud835\udc51\ud835\udc66\ud835\udc56\ud835\udc5b\ud835\udc54-\ud835\udc56\ud835\udc5b\ud835\udc53\ud835\udc56\ud835\udc5b\ud835\udc56\ud835\udc61\ud835\udc62\ud835\udc5a-\ud835\udc59\ud835\udc5c\ud835\udc63\ud835\udc52\ud835\udc35\ud835\udc5c\ud835\udc62\ud835\udc5b\ud835\udc51\ud835\udc59\ud835\udc52\ud835\udc60\ud835\udc60-\ud835\udc50\ud835\udc5c\ud835\udc5a\ud835\udc5d\ud835\udc4e\ud835\udc60\ud835\udc60\ud835\udc56\ud835\udc5c\ud835\udc5b\ud835\udc48\ud835\udc5b\ud835\udc5d\ud835\udc4e\ud835\udc5f\ud835\udc4e\ud835\udc59\ud835\udc59\ud835\udc52\ud835\udc59\ud835\udc52\ud835\udc51-\ud835\udc64\ud835\udc56\ud835\udc60\ud835\udc51\ud835\udc5c\ud835\udc5a\ud835\udc34\ud835\udc5b\ud835\udc51-\ud835\udc59\ud835\udc4e\ud835\udc60\ud835\udc61\ud835\udc56\ud835\udc5b\ud835\udc54-\ud835\udc54\ud835\udc5f\ud835\udc4e\ud835\udc50\ud835\udc52/1223998429083073/",
+    "title": "\ud835\udc38\ud835\udc5a\ud835\udc4f\ud835\udc5c\ud835\udc51\ud835\udc66\ud835\udc56\ud835\udc5b\ud835\udc54 \ud835\udc56\ud835\udc5b\ud835\udc53\ud835\udc56\ud835\udc5b\ud835\udc56\ud835\udc61\ud835\udc62\ud835\udc5a \ud835\udc59\ud835\udc5c\ud835\udc63\ud835\udc52 ...",
+    "source": "Facebook",
+    "social": true,
+    "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQqwxaSKvQcDWCG499fWedF0A2cEtxXDPGK9X2pnER3AY5qqINi",
+    "engine": "google_lens",
+    "lens_position": 3,
+    "face_similarity": 0.3501,
+    "det_score": 0.6238,
+    "content_hash": "213db28aa7338ebc9cfcfd83d8da28d24dc0bd652e084c45d3abc0358bc7adb9",
+    "duplicate_of": null,
+    "skip_reason": null,
+    "thumb_hash": "213db28aa7338ebc9cfcfd83d8da28d24dc0bd652e084c45d3abc0358bc7adb9",
+    "observed_at": "2026-09-04T11:22:11.304634+00:00"
+  }
+]

@@ -1,0 +1,1670 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "kind": "FaceSeed",
+      "embedding_sha256": "651e7918c40c0db32692f66a0726f53520dc029e381899590eef6c1675f24fe0",
+      "backend": "insightface_buffalo_s",
+      "id": "face:seed"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.facebook.com/ramabhau/",
+      "title": "Ramabhau Patil (@ramabhau) \u2022 Facebook",
+      "social": true,
+      "engine": "google_lens",
+      "id": "hit:3c2cd6aa8a970ede"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.youtube.com/watch?v=jw5C2c6HlRc",
+      "title": "GLOBE IN SUSPICIOUS MODE FR 18AUG26 - YouTube",
+      "social": true,
+      "engine": "google_lens+yandex_images",
+      "id": "hit:686eb67cf0325d3a"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.facebook.com/AnandmurtiGurumaa/posts/\ud835\udc38\ud835\udc5a\ud835\udc4f\ud835\udc5c\ud835\udc51\ud835\udc66\ud835\udc56\ud835\udc5b\ud835\udc54-\ud835\udc56\ud835\udc5b\ud835\udc53\ud835\udc56\ud835\udc5b\ud835\udc56\ud835\udc61\ud835\udc62\ud835\udc5a-\ud835\udc59\ud835\udc5c\ud835\udc63\ud835\udc52\ud835\udc35\ud835\udc5c\ud835\udc62\ud835\udc5b\ud835\udc51\ud835\udc59\ud835\udc52\ud835\udc60\ud835\udc60-\ud835\udc50\ud835\udc5c\ud835\udc5a\ud835\udc5d\ud835\udc4e\ud835\udc60\ud835\udc60\ud835\udc56\ud835\udc5c\ud835\udc5b\ud835\udc48\ud835\udc5b\ud835\udc5d\ud835\udc4e\ud835\udc5f\ud835\udc4e\ud835\udc59\ud835\udc59\ud835\udc52\ud835\udc59\ud835\udc52\ud835\udc51-\ud835\udc64\ud835\udc56\ud835\udc60\ud835\udc51\ud835\udc5c\ud835\udc5a\ud835\udc34\ud835\udc5b\ud835\udc51-\ud835\udc59\ud835\udc4e\ud835\udc60\ud835\udc61\ud835\udc56\ud835\udc5b\ud835\udc54-\ud835\udc54\ud835\udc5f\ud835\udc4e\ud835\udc50\ud835\udc52/1223998429083073/",
+      "title": "\ud835\udc38\ud835\udc5a\ud835\udc4f\ud835\udc5c\ud835\udc51\ud835\udc66\ud835\udc56\ud835\udc5b\ud835\udc54 \ud835\udc56\ud835\udc5b\ud835\udc53\ud835\udc56\ud835\udc5b\ud835\udc56\ud835\udc61\ud835\udc62\ud835\udc5a \ud835\udc59\ud835\udc5c\ud835\udc63\ud835\udc52 ...",
+      "social": true,
+      "engine": "google_lens",
+      "id": "hit:518ad7aa1557fe92"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.linkedin.com/posts/green-gas-limited_leadership-energysector-gail-activity-7433880559057301504-77xy",
+      "title": "leadership #energysector #gail #greengaslimited ...",
+      "social": true,
+      "engine": "google_lens",
+      "id": "hit:5362d0986ca07dba"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://x.com/ramgandhi52/status/2082735516529930484",
+      "title": "Ram Gandhi on X: \"With floods, heat waves and various ...",
+      "social": true,
+      "engine": "google_lens",
+      "id": "hit:b57674fcf11d7fcd"
+    },
+    {
+      "kind": "Handle",
+      "handle": "x:ramgandhi52",
+      "id": "handle:x:ramgandhi52"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://gulfnews.com/going-out/society/sharjah-doctor-dies-after-battling-cancer-1.2080407",
+      "title": "Sharjah doctor dies after battling cancer",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:5346bbe2a0f240a2"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://timesofindia.indiatimes.com/blogs/author/p-d-t-achary/",
+      "title": "PDT Achary Voices - Times of India Voices",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:fe91c07a31597a41"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.news18.com/india/who-is-asish-banerjee-mamatas-confidant-intellectual-trinamool-veteran-found-hanging-in-birbhum-ws-l-10275834.html",
+      "title": "Who Is Asish Banerjee? Mamata's Confidant, Intellectual ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:999fd10e8f1ddc60"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.themoviedb.org/person/1238273-nadodigal-gopal",
+      "title": "Nadodigal Gopal \u2014 The Movie Database (TMDB)",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:2dbd1117a165c92c"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.mbifl.com/speaker/p-d-t-achari-MyciMNlbifZ",
+      "title": "P D T ACHARI | MBIFL 2026 Speaker | Literature Festival ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:cb396581ae1b9107"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://x.com/mrajeshagrawal",
+      "title": "Rajesh Agrawal (@mrajeshagrawal) / X",
+      "social": true,
+      "engine": "google_lens",
+      "id": "hit:3eba613414388007"
+    },
+    {
+      "kind": "Handle",
+      "handle": "x:mrajeshagrawal",
+      "id": "handle:x:mrajeshagrawal"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.newindianexpress.com/entertainment/tamil/2021/Dec/26/playback-singer-actor-manikka-vinayagam-passes-away-2399972.html",
+      "title": "Playback singer & actor Manikka Vinayagam passes away",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:9b3f62e82c8fefa6"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://commons.wikimedia.org/wiki/File:Oommen_Chandy,_Chief_Minister_of_Kerala.jpg",
+      "title": "File:Oommen Chandy, Chief Minister of Kerala.jpg - Wikimedia ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:31e1d41894a350c5"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://timesofindia.indiatimes.com/city/bengaluru/karnataka-smart-meter-case-court-orders-registration-of-complaint-against-minister-george-officials/articleshow/122888994.cms",
+      "title": "Karnataka smart meter case: Court orders registration of ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:1e511e7d623a79f2"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.researchgate.net/profile/Yogesh-Mathur",
+      "title": "Yogesh MATHUR | Professor (Full) | PhD | Civil Engineering ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:589a2e4ac883d64b"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://in.bookmyshow.com/person/ranganath/1830/filmography",
+      "title": "Ranganath - Movies, Biography, News, Age & Photos | BookMyShow",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:c862b634cbc49459"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://en.wikipedia.org/wiki/Kattoor_Narayana_Pillai",
+      "title": "Kattoor Narayana Pillai - Wikipedia",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:1922fe64b1e261f1"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.indiatoday.in/movies/regional-cinema/story/popular-singer-manicka-vinayagam-dies-at-78-in-chennai-1892590-2021-12-27",
+      "title": "Popular singer Manicka Vinayagam dies at 78 in Chennai ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:a6e351787c862d81"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.drmuralismedicalcentre.com/doctors/dr-n-n-murali",
+      "title": "Dr Murali's Medical Centre",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:a110c9d37386b0e8"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.daijiworld.com/chan/obituaryDisplay.aspx?obituaryID=6441",
+      "title": "Joachim Saldanha (80), Borivali, Mumbai./ Urwa, Mangalore ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:c34105a226d67849"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.newindianexpress.com/states/karnataka/2026/Apr/23/father-dies-in-mishap-while-travelling-to-attend-sons-convocation-ceremony-in-karnataka",
+      "title": "Father dies in mishap while travelling to attend son's ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:dfbdc49d52638227"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.instagram.com/ghanshyam_nimbark__shilp_guru/",
+      "title": "Ghanshyam Nimbark (@ghanshyam_nimbark__shilp_guru ...",
+      "social": true,
+      "engine": "google_lens",
+      "id": "hit:c0a22e96502db3a3"
+    },
+    {
+      "kind": "Handle",
+      "handle": "instagram:ghanshyam_nimbark__shilp_guru",
+      "id": "handle:instagram:ghanshyam_nimbark__shilp_guru"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.lmtonline.com/obituaries/article/JOSE-C-GAMEZ-SR-15228613.php",
+      "title": "JOSE C. GAMEZ, SR.",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:a608d2044a4a5527"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.deccanherald.com/india/karnataka/g-h-nayak-an-outspoken-critic-with-a-vision-of-social-realities-1222222.html",
+      "title": "G H Nayak: An outspoken critic with a vision of social realities",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:4fb6f13451b4e7ce"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.gladfelterfhinc.com/obits/ashok-v.-shrotriya",
+      "title": "Ashok V. Shrotriya",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:ef488f8663f8dede"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.oneindia.com/india/tamil-singer-and-actor-manikka-vinayagam-passes-away-3352334.html",
+      "title": "Tamil singer and actor Manikka Vinayagam passes away ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:78624ad063e263be"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.ndtv.com/india-news/farmers-leader-sharad-joshi-dies-at-81-1254108",
+      "title": "Farmers' Leader Sharad Joshi Dies At 81",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:a87f29f2ba74891f"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.thequint.com/news/india/mps-suspension-pdt-achary-former-lok-sabha-secretary-general-interview",
+      "title": "Suspension of MPs Must Be the Last Resort': Former LS ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:35f8e479c0de7e23"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://fpra.in/wps-members/dr-ananga-mohan-dwibedy/",
+      "title": "Dr. Ananga Mohan Dwibedy \u2013 Forum for Prevention of Road ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:dcc3b97c048c3727"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://gaana.com/playlist/gaana-dj-best-of-manikka-vinayagam",
+      "title": "Best of Manikka Vinayagam Music Playlist: Best Best of ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:dcb30fd9262921d8"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://sassbharath.org/event/shraddhanjali_manmadhan/",
+      "title": "Shraddhanjali Sabha for Shri VP Manmadhan Nair, Trustee ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:56c6daba4be6bef0"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://en.wikipedia.org/wiki/File:Chawdhary_Zaheeruddin_Khan.png",
+      "title": "File:Chawdhary Zaheeruddin Khan.png - Wikipedia",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:49b9aed8be2d13cd"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.facebook.com/TimesofIndia/posts/senior-congress-leader-digvijay-singhs-remark-on-the-surgical-strike-has-created/10161011287672139/",
+      "title": "Senior Congress leader Digvijay Singh's remark on the ...",
+      "social": true,
+      "engine": "google_lens",
+      "id": "hit:300351e968bd36ad"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.rottentomatoes.com/celebrity/p_sreekumar",
+      "title": "P. Sreekumar Movies List | Rotten Tomatoes | Rotten Tomatoes",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:5f5a4562a75bf313"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.imdb.com/title/tt0358108/",
+      "title": "Sau Din Saas Ke (1980) - IMDb",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:4c05624c29f83491"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://tribune.com.pk/story/422209/anyone-disturbing-hindus-will-be-dealt-with-maula-bux-chandio",
+      "title": "Anyone disturbing Hindus will be dealt with: Maula Bux Chandio",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:4b1ae6910c0eda3b"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://in.linkedin.com/in/prem-kapoor-93708969",
+      "title": "prem kapoor - Masters degree from AGRA University, AGRA ...",
+      "social": true,
+      "engine": "google_lens",
+      "id": "hit:b6e47cd39a9e6c80"
+    },
+    {
+      "kind": "Handle",
+      "handle": "linkedin:prem-kapoor-93708969",
+      "id": "handle:linkedin:prem-kapoor-93708969"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://sadvidya.co.in/about/",
+      "title": "About \u2013 Sadvidya",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:280f46683202378c"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.myrepublica.nagariknetwork.com/news/actor-ghanshyam-gautam-passes-away-40-45.html",
+      "title": "Actor Ghanshyam Gautam passes away - myRepublica - The New ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:ba04d2e9d3d875f5"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.thehindu.com/news/national/karnataka/andolana-editor-rajashekar-koti-dead/article20746224.ece",
+      "title": "'Andolana' Editor Rajashekar Koti dead - The Hindu",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:ca1e7220d65536fa"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.jagran.com/uttar-pradesh/bareilly-city-rajesh-aggarwal-said-in-national-executive-meeting-in-hyderabad-recession-in-the-world-and-india-is-developing-rapidly-22858458.html",
+      "title": "\u0939\u0948\u0926\u0930\u093e\u092c\u093e\u0926 \u092e\u0947\u0902 \u0930\u093e\u0937\u094d\u091f\u094d\u0930\u0940\u092f ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:55b2467e0d0799d8"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.sakshi.com/news/andhra-pradesh/dutta-ramachandra-rao-demands-bharat-ratna-ys-rajasekhara-reddy-1089900",
+      "title": "\u0c35\u0c48\u0c0e\u0c38\u0c4d\u0c38\u0c3e\u0c30\u0c4d\u200c\u0c15\u0c41 '\u0c2d\u0c3e\u0c30\u0c24\u0c30\u0c24\u0c4d\u0c28' \u0c2a\u0c4d\u0c30\u0c15\u0c1f\u0c3f\u0c02\u0c1a\u0c3e\u0c32\u0c3f | Dutta Ramachandra Rao ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:cc47b7b3e8aa63da"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.instagram.com/p/DUa48HFEaJP/",
+      "title": "Veteran journalist K.V. Srinivasan passes away K.V. ...",
+      "social": true,
+      "engine": "google_lens",
+      "id": "hit:9dfde794c5e60900"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.justdial.com/Patna/Acharya-Arun-Dhari-Behind-Harihar-Chamber-Kidwaipuri/0612PX612-X612-230328182232-E1F3_BZDET",
+      "title": "Acharya Arun Dhari in Kidwaipuri,Patna - Best Astrologers ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:8dec123f143c60a1"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.maalaimalar.com/news/district/tamil-news-lorry-accident-sub-inspector-dead-in-kovilpatti-579991",
+      "title": "\u0b95\u0bcb\u0bb5\u0bbf\u0bb2\u0bcd\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bbf\u0bb2\u0bcd \u0bb5\u0bbf\u0baa\u0ba4\u0bcd\u0ba4\u0bc1: \u0bb2\u0bbe\u0bb0\u0bbf ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:0729fa802dc5d129"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://mubi.com/en/cast/o-madhavan",
+      "title": "O. Madhavan \u2013 Movies, Bio and Lists on MUBI",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:9ccd7083d3a71ada"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://nettv4u.com/celebrity/hindi/actor/atul-vishnoi",
+      "title": "Hindi Actor Atul Vishnoi Biography, News, Photos, Videos ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:6834618bf00d8eeb"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.themoviedb.org/person/1542146-k-p-kumaran",
+      "title": "K. P. Kumaran \u2014 The Movie Database (TMDB)",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:23f57d2cfc62ebee"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "http://www.sbipaahm.com/office-bearer",
+      "title": "SBIPA-Gandhinagar-Circle",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:5b32f52410af7b3c"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://conference.darshan.ac.in/",
+      "title": "DConference | Darshan University, Rajkot",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:35c9e39e772aa010"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.livelaw.in/interviews/nabam-rebia-decision-should-be-reviewed-as-it-has-great-mischief-potential-pdt-achary-202852",
+      "title": "Nabam Rebia Decision Should Be Reviewed As It Has Great ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:537ee514f561d172"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.ratopati.com/author/1187",
+      "title": "\u092e\u0927\u0941 \u0906\u091a\u093e\u0930\u094d\u092f | Nepal's first 24-hour updated news ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:2cb4659324e8e740"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.mysuruliteraturefestival.com/lit-fest-2023-3/speakers/chandrashekhar-kambar/kambar/",
+      "title": "Kambar | Mysuru Literature Festival",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:02ee4faca7802f7e"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.bhaskar.com/local/uttar-pradesh/bhadohi/gyanpur/news/international-carpet-fair-was-organized-twice-in-bhadohi-133215225.html",
+      "title": "International carpet fair was organized twice in Bhadohi",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:f77a50f94a402b4b"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.oneindia.com/india/chandy-refutes-ldf-opposition-charge-1299186.html",
+      "title": "Kerala CM Oommen Chandy refutes LDF opposition charge ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:6277c9f60d49a03d"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.iageonline.com/past-presidents.php",
+      "title": "Welcome to iageonline.com",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:6daa1bf8ce0b2f3c"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.toonsmag.com/members/ravindrasinghpatil/badges/",
+      "title": "Badges \u2013 Ravindrasingh Patil \u2013 Toons Mag",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:9062d6d8a8e9ef25"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://en.msidb.org/m.php?6928",
+      "title": "Pranayam - Malayalam Movie Songs Database",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:603e2330b53d45df"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.ebay.com/itm/126119240821",
+      "title": "Ray Ban RB 6285 2502 Half Rim Gunmetal Eyeglasses ...",
+      "social": false,
+      "engine": "google_reverse_image",
+      "id": "hit:9d0f855152aea31b"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://designerframesoutlet.com/haggar-eyeglasses-h304/?c\\u003d432492\\u0026srsltid\\u003dAfmBOopmisxXtZT0Dvy0G3sdMFXDWw9Wmosu4oLyiGl9SYbnj6v7duyz",
+      "title": "Haggar Eyeglasses H304",
+      "social": false,
+      "engine": "google_reverse_image",
+      "id": "hit:968d09a0df73a753"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.abbeglasses.com/eyeglasses/semi-rim-glasses-3403.html?srsltid\\u003dAfmBOoq9yEnTPnS8WdBwCyL14gr4_CJl0BaoY0UPdCZjjOIyrfVl1Gek",
+      "title": "Semi-Rim Glasses | Half-Rim Eyeglass Frames",
+      "social": false,
+      "engine": "google_reverse_image",
+      "id": "hit:29c3c83074441198"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.oakley.com/en-ca",
+      "title": "Oakley\u00ae Canada: Sunglasses, Goggles & Apparel | Oakley\u00ae CA",
+      "social": false,
+      "engine": "google_reverse_image",
+      "id": "hit:c05d5c5f87fa4e5f"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.amazon.in/OKU-Womens-Half-Rim-Rectangular-Spectacle/dp/B0GR9PN118",
+      "title": "OKU 1 Men's and Women's Half-Rim Rectangular Metal ...",
+      "social": false,
+      "engine": "google_reverse_image",
+      "id": "hit:09a47118df714b5d"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.facebook.com/61586174738900/posts/okay-which-one-would-you-pick-illa-crazy-bold-colors-look-into-my-eyes-okay-thes/122136830859205824/",
+      "title": "Northern Maine Eyewear's new glasses styles and ...",
+      "social": true,
+      "engine": "google_reverse_image",
+      "id": "hit:617dbb706f65a2cd"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.etsy.com/listing/741900996/jean-louis-scherrer-titanium-half-rim",
+      "title": "Jean Louis Scherrer Titanium Half Rim Glasses ... - Etsy",
+      "social": false,
+      "engine": "google_reverse_image",
+      "id": "hit:2ec338518c81c0ec"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.tomfordfashion.com/?srsltid\\u003dAfmBOorDzp9sDk1vTwMm_zV4Jnh45WhwTAm42zTqDJU8K7--uN7XJ5Fh",
+      "title": "TOM FORD Fashion Online Store",
+      "social": false,
+      "engine": "google_reverse_image",
+      "id": "hit:49846eab7aae1a10"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.overnightglasses.com/eyeglasses/half-rim-glasses/?srsltid\\u003dAfmBOorCoaPx6EfEO6ztfdRhvvE_ze0wCla4X1E4Gf3Fkhvz5UTCiLSo",
+      "title": "Half-Rimmed Prescription Glasses",
+      "social": false,
+      "engine": "google_reverse_image",
+      "id": "hit:8b9f10c3a6350156"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.mid-day.com/amp/mumbai/mumbai-news/article/maharashtra-fir-against-uddhav-loyalist-chandrakant-khaire-for-objectionable-language-against-cm-shinde-23249586",
+      "title": "Maharashtra: FIR against Uddhav loyalist Chandrakant Khaire for `objectionable`",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:c008017b89374a19"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://enewstime.in/national/ludhiana-bypoll-litmus-test-for-aap-in-punjab-says-bjp-leader-tarun-chugh-68389.html",
+      "title": "Ludhiana bypoll litmus test for AAP in Punjab, says BJP leader Tarun Chugh - ENe",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:fb764749480eb0e5"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://thehillstimes.in/northeast/celebrate-spirit-of-humanity-on-world-red-cross-day-nagaland-gov",
+      "title": "Celebrate Spirit Of Humanity On World Red Cross Day: Nagaland Gov - The Hills Ti",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:7c50b5fac3a8fffd"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://zamantika.com/profile/aditiprag",
+      "title": "Aditi Prasad (@AditiPrag) - Twitter Profili Zamantika Mersobahis Locabet",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:99d2be6e446a3094"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.hindustantimes.com/education/significant-rise-in-number-of-universities-in-bengal-during-tmc-tenure-partha-chatterjee/story-hoSsOyNMaSsDu3YUDjijUK.html",
+      "title": "Significant rise in number of universities in Bengal during TMC tenure: Partha C",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:e93d1d0bce57c08a"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.google.com/maps/place/data=!4m2!3m1!1s0x3bd4c7357532a05b:0xea2937ce8e4490d?hl=tr&gl=tr",
+      "title": "Shri Balaji Devasthan, Mothe Ayachit Mandir - Google Haritalar",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:18913626e6803554"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://thenews21.com/chandrakant-patil-dubs-ncp-chief-sharad-pawars-ed-visit-as-political-drama",
+      "title": "Chandrakant Patil dubs NCP chief Sharad Pawar\u2019s ED 'visit' as political drama -",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:c4b1246de94a9c60"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://mayapuri.com/hi/bollywood/k-viswanath-no-more-legendary-director-k-viswanath-passed-away-at-the-age-of-92",
+      "title": "K Viswanath No More: \u092e\u0939\u093e\u0928 \u0928\u093f\u0930\u094d\u0926\u0947\u0936\u0915 K Viswanath \u0915\u093e 92 \u0935\u0930\u094d\u0937 \u0915\u0940 \u0906\u092f\u0941 \u092e\u0947\u0902 \u0928\u093f\u0927\u0928 \u0939\u094b \u0917\u092f\u093e",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:08a7f4552a8d2a7d"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.ikashmir.net/uambardar/index.html",
+      "title": "Upender Ambardar's Writings",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:dacb54bae3fd29b2"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.freelancer.com/projects/excel/some-data-entry-13174068?w=f&ngsw-bypass=",
+      "title": "Do some data entry -- 2 Excel Freelancer",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:c511553150ef0c57"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://mubi.com/tr/cast/perumbavoor-g-raveendranath",
+      "title": "Perumbavoor G. Raveendranath - MUBI'de Filmler, Listeler ve Bio",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:42477fde6bc8c457"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://indianexpress.com/elections/chhattisgarh-election-results-2023-9052220/lite/",
+      "title": "Chhattisgarh Election Results 2023: In Chhattisgarh, BJP ahead of Congress in ea",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:f579ef9620056f64"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.indiatoday.in/amp/india/story/gujarat-bjp-vp-resigns-after-rape-accusation-claims-innocence-1284958-2018-07-13",
+      "title": "Gujarat BJP vice-president Jayanti Bhanushali resigns after rape accusation",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:087c322df6ea7364"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://commons.wikimedia.org/wiki/File:Kanhangad_sankaran_namboodiri.jpg",
+      "title": "File:Kanhangad sankaran namboodiri.jpg - Wikimedia Commons",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:5cd29e7b1cae6af6"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://rezka.ag/ua/person/361687-baladzhi-shaktivel/",
+      "title": "\u0411\u0430\u043b\u0430\u0434\u0436\u0438 \u0428\u0430\u043a\u0442\u0438\u0432\u044d\u043b\u044c - \u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0444\u0438\u043b\u044c\u043c\u044b \u0438 \u0441\u0435\u0440\u0438\u0430\u043b\u044b \u043e\u043d\u043b\u0430\u0439\u043d",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:357f2fe90163b5ff"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://en.wikipedia.org/wiki/Rajiv_Ranjan_Singh",
+      "title": "Lalan Singh - Wikipedia",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:ff434bf0038a5f24"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://edition.cnn.com/world/live-news/coronavirus-pandemic-vaccine-updates-05-04-21/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+rss%2Fcnn_topstories+%28RSS%3A+CNN+-+Top+Stories%29",
+      "title": "May 4, 2021 coronavirus news CNN",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:0fb14fd2efbac120"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.google.com/maps/place/data=!4m2!3m1!1s0x3bc25d2730897595:0x43233a80554a9ddb?hl=tr&gl=tr",
+      "title": "Nirmal Hotel & snacks corner :A perfect family restaurant - Google Haritalar",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:4b9a5d3fc4bfa0ad"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://livebihar.com/how-to-beat-corona-again/",
+      "title": "\u0915\u094b\u0930\u094b\u0928\u093e \u0915\u094b \u092b\u093f\u0930 \u0915\u0948\u0938\u0947 \u0926\u0947\u0902 \u092e\u093e\u0924 Live Bihar",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:6efa8ac7ca901fd9"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.sotwe.com/himeshsahu15?lang=tr",
+      "title": "Dr. Himesh Sahu @himeshsahu15 - Twitter Kullan\u0131c\u0131s\u0131 Sotwe",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:7d87b59d95d5f42f"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.youtube.com/channel/UCldMdTTWbEaZsBLs_cdZyKA?app=desktop",
+      "title": "Jai Kishan Kharat - YouTube",
+      "social": true,
+      "engine": "yandex_images",
+      "id": "hit:66db173e866f1f43"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://vk.ru/wall221878711_46357",
+      "title": "\u0412 \u0448\u0438\u0432\u0430\u0438\u0437\u043c\u0435 \u0435\u0441\u0442\u044c \u0432\u0441\u0451. \u0414\u043e\u0431\u0440\u044b\u0439 \u0432\u0435\u0447\u0435\u0440 \u0432\u0441\u0435\u043c! \u0412\u0430\u043d\u0430\u043a\u043a\u0430\u043c. \u0410\u043d\u0431\u0435 \u0428\u0438\u0432\u0430\u043c\u0430\u0439\u044f\u043c \u0421\u0430\u0442\u044c\u044f\u043c\u0435 \u041f\u0430\u0440\u0430\u0448\u0438\u0432",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:080d0b3703a7713c"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.pinterest.co.uk/pin/655484920746018582/",
+      "title": "\u0d36 \u0d2c \u0d30 \u0d2e \u0d32 \u0d38 \u0d2e \u0d30 \u0d24 \u0d24 \u0d2a \u0d28 \u0d24 \u0d23 \u0d15 \u0d15 \u0d24 \u0d30 \u0d28 \u0d28 \u0d24 \u0d15 \u0d30 \u0d2e \u0d2a \u0d7b \u0d1a \u0d23",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:7f45e6efa99dc32a"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.naidunia.com/chhattisgarh/raipur-chhattisgarh-politics-bjp-spokesperson-said-something-like-that-political-earthquake-has-come-know-what-is-the-statement-of-bjp-leader-upasana-4712909",
+      "title": "Chhattisgarh Politics: \u092d\u093e\u091c\u092a\u093e \u092a\u094d\u0930\u0935\u0915\u094d\u0924\u093e \u0938\u091a\u094d\u091a\u093f\u0926\u093e\u0928\u0902\u0926 \u0909\u092a\u093e\u0938\u0928\u0947 \u0928\u0947 \u0910\u0938\u093e \u0915\u0941\u091b \u0915\u0939 \u0926\u093f\u092f\u093e \u0915\u093f \u0906",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:8127a73e70fe279b"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.sotwe.com/shivkumar_vibha",
+      "title": "\u0921\u093e. \u0936\u093f\u0935\u0915\u0941\u092e\u093e\u0930 \u0936\u0930\u094d\u092e\u093e @shivkumar_vibha - Twitter Profile Sotwe",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:18ca1122cbc4b896"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.nowrunning.com/celebrity/6988/srinivasa-murthy/movies.htm?p=2",
+      "title": "Srinivasa Murthy Movies - actor Srinivasa Murthy Movies nowrunning",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:39a632b0c3a3279d"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.youtube.com/channel/UCc18sbaKawg0Jbxv_474Hbw",
+      "title": "MOHAN GOVINDARAJAN - YouTube",
+      "social": true,
+      "engine": "yandex_images",
+      "id": "hit:483f499954c68ba3"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.msn.com/en-in/news/India/walking-in-futian-district-shenzhen-china-4k/vi-AA1Pc3eb",
+      "title": "Walking in Futian District - Shenzhen China 4K",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:9eccaec5b00ab5f8"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.ndtv.com/india-news/lalan-singh-anant-singh-mokama-bihar-election-will-win-by-huge-margin-jdu-leaders-shoutout-to-bahubali-anant-singh-9566831",
+      "title": "Lalan Singh, Anant Singh, Mokama, Bihar Election: Will Win By Huge Margin: JDU L",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:1d0aba320347f8ad"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://in.pinterest.com/pin/487373990933073336/",
+      "title": "\u0917\u0941\u0932\u095b\u093e\u0930 - \u0936\u0947\u0930 Sufi mystic, Couplet",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:ea09425b37e12b80"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://alchetron.com/R.-Gopalakrishnan-%28politician%29",
+      "title": "R. Gopalakrishnan (politician) - Alchetron, the free social encyclopedia",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:f7aa1fd1ee68ae79"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://aguea.net/SanjayNathSing2",
+      "title": "Sanjay Nath Singh@All India Farmers Association (@SanjayNathSing2) Aguea",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:3af4730367948f08"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.freepressjournal.in/india/bihar-elections-2025-rjd-chief-lalu-nda-leaders-stage-roadshows-in-favour-of-their-jailed-candidates-video",
+      "title": "Bihar Elections 2025: RJD Chief Lalu, NDA Leaders Stage Roadshows In Favour Of T",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:6e1138f77a081efa"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.sotwe.com/oldmanlover18?__cf_chl_tk=6OOV9y6lyT.oBScNN6X1As6spJnkwREoQ2kaZyCphFA-1736177295-1.0.1.1-n8qhVWD0pZSvkV8uilL3kqaYYNK47m_HCU2_Y3bsixw",
+      "title": "Old Man Lover @oldmanlover18 - Twitter Profile Sotwe",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:4dbcb84fe5034079"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.businesstoday.in/latest/corporate/story/wishlist-2013-corporate-india-still-hopeful-policy-reforms-39237-2013-01-09",
+      "title": "India Inc's wishlist for 2013 - BusinessToday",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:d7aa15b3ecb9d25c"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.thenewsminute.com/article/madhusudhanan-aiadmk-s-rk-nagar-bye-poll-candidate-eps-ops-finally-reach-consensus-72416?amp",
+      "title": "Madhusudhanan is AIADMK\u2019s RK Nagar bye poll candidate, EPS-OPS finally reach con",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:4e6a976f582d846f"
+    },
+    {
+      "kind": "Post",
+      "url": "https://www.facebook.com/ramabhau/",
+      "face_similarity": 0.9619,
+      "social": true,
+      "content_hash": "44a7504fb3347857d1aabb437ac9e037f249e19ca23f8f1bb607bb5a25b88d96",
+      "id": "post:3c2cd6aa8a970ede"
+    },
+    {
+      "kind": "Post",
+      "url": "https://www.facebook.com/AnandmurtiGurumaa/posts/\ud835\udc38\ud835\udc5a\ud835\udc4f\ud835\udc5c\ud835\udc51\ud835\udc66\ud835\udc56\ud835\udc5b\ud835\udc54-\ud835\udc56\ud835\udc5b\ud835\udc53\ud835\udc56\ud835\udc5b\ud835\udc56\ud835\udc61\ud835\udc62\ud835\udc5a-\ud835\udc59\ud835\udc5c\ud835\udc63\ud835\udc52\ud835\udc35\ud835\udc5c\ud835\udc62\ud835\udc5b\ud835\udc51\ud835\udc59\ud835\udc52\ud835\udc60\ud835\udc60-\ud835\udc50\ud835\udc5c\ud835\udc5a\ud835\udc5d\ud835\udc4e\ud835\udc60\ud835\udc60\ud835\udc56\ud835\udc5c\ud835\udc5b\ud835\udc48\ud835\udc5b\ud835\udc5d\ud835\udc4e\ud835\udc5f\ud835\udc4e\ud835\udc59\ud835\udc59\ud835\udc52\ud835\udc59\ud835\udc52\ud835\udc51-\ud835\udc64\ud835\udc56\ud835\udc60\ud835\udc51\ud835\udc5c\ud835\udc5a\ud835\udc34\ud835\udc5b\ud835\udc51-\ud835\udc59\ud835\udc4e\ud835\udc60\ud835\udc61\ud835\udc56\ud835\udc5b\ud835\udc54-\ud835\udc54\ud835\udc5f\ud835\udc4e\ud835\udc50\ud835\udc52/1223998429083073/",
+      "face_similarity": 0.3501,
+      "social": true,
+      "content_hash": "213db28aa7338ebc9cfcfd83d8da28d24dc0bd652e084c45d3abc0358bc7adb9",
+      "id": "post:518ad7aa1557fe92"
+    },
+    {
+      "kind": "Post",
+      "url": "https://x.com/mrajeshagrawal",
+      "face_similarity": 0.2578,
+      "social": true,
+      "content_hash": "ce4ac56a42a5d1eb3d7c6353bb6fa9db55c1c6793a0f292ec40812b12da0ae7d",
+      "id": "post:3eba613414388007"
+    },
+    {
+      "kind": "Post",
+      "url": "https://www.indiatoday.in/amp/india/story/gujarat-bjp-vp-resigns-after-rape-accusation-claims-innocence-1284958-2018-07-13",
+      "face_similarity": 0.3454,
+      "social": false,
+      "content_hash": "1eb6e33377880d2ee2e635b6ba8445d1cdda76a8a4e9fd24c3f18d366075d147",
+      "id": "post:087c322df6ea7364"
+    },
+    {
+      "kind": "Post",
+      "url": "https://www.mid-day.com/amp/mumbai/mumbai-news/article/maharashtra-fir-against-uddhav-loyalist-chandrakant-khaire-for-objectionable-language-against-cm-shinde-23249586",
+      "face_similarity": 0.3314,
+      "social": false,
+      "content_hash": "d9ba6f0a6483cdced04a2a46894f350fd3143a3ddb14d4c209f892cdf2314a77",
+      "id": "post:c008017b89374a19"
+    },
+    {
+      "kind": "Post",
+      "url": "https://in.linkedin.com/in/ramabhau-patil-a287b448",
+      "face_similarity": null,
+      "social": true,
+      "content_hash": "60a433224cfde87cca3ff2597877a471995af9344688503d6498946a0617d54a",
+      "id": "post:60a433224cfde87c"
+    },
+    {
+      "kind": "Handle",
+      "handle": "linkedin:ramabhau-patil-a287b448",
+      "id": "handle:linkedin:ramabhau-patil-a287b448"
+    },
+    {
+      "kind": "Post",
+      "url": "https://www.linkedin.com/posts/ramabhau-patil-a287b448_remarkable-vision-and-execution-by-siddhant-activity-7492811244580745216-T1Nj",
+      "face_similarity": null,
+      "social": true,
+      "content_hash": "d9dfd8809c5bda1337de2d1603cfe03d1966b1e7aa4a59b692daf84b39519ff7",
+      "id": "post:d9dfd8809c5bda13"
+    },
+    {
+      "kind": "ExpandHit",
+      "url": "https://in.linkedin.com/in/ramabhau-patil-a287b448",
+      "title": "Ramabhau Patil - Former Director, ICAR-Central Institute ...",
+      "source": "in.linkedin.com",
+      "social": true,
+      "engine": "google_expand",
+      "from_handle": null,
+      "expand_query": "Ramabhau Patil (site:linkedin.com OR site:instagram.com OR site:x.com OR site:twitter.com)",
+      "face_similarity": null,
+      "content_hash": "60a433224cfde87cca3ff2597877a471995af9344688503d6498946a0617d54a",
+      "observed_at": "2026-09-04T11:25:29.863850+00:00",
+      "position": 1,
+      "id": "expand:60a433224cfde87c"
+    },
+    {
+      "kind": "ExpandHit",
+      "url": "https://www.linkedin.com/posts/ramabhau-patil-a287b448_remarkable-vision-and-execution-by-siddhant-activity-7492811244580745216-T1Nj",
+      "title": "Siddhant's Vision Transforms India's Food Ecosystem",
+      "source": "www.linkedin.com",
+      "social": true,
+      "engine": "google_expand",
+      "from_handle": null,
+      "expand_query": "Ramabhau Patil (site:linkedin.com OR site:instagram.com OR site:x.com OR site:twitter.com)",
+      "face_similarity": null,
+      "content_hash": "d9dfd8809c5bda1337de2d1603cfe03d1966b1e7aa4a59b692daf84b39519ff7",
+      "observed_at": "2026-09-04T11:25:29.863905+00:00",
+      "position": 2,
+      "id": "expand:d9dfd8809c5bda13"
+    },
+    {
+      "kind": "ExpandHit",
+      "url": "https://www.linkedin.com/posts/ramabhau-patil-a287b448_activity-7488171071502778369-MnAO",
+      "title": "Ramabhau Patil's Post",
+      "source": "www.linkedin.com",
+      "social": true,
+      "engine": "google_expand",
+      "from_handle": null,
+      "expand_query": "Ramabhau Patil (site:linkedin.com OR site:instagram.com OR site:x.com OR site:twitter.com)",
+      "face_similarity": null,
+      "content_hash": "a1d490184a971ccc4a6ced551045c644bbcde3adaa24735bf821761a1e0833d6",
+      "observed_at": "2026-09-04T11:25:29.863931+00:00",
+      "position": 3,
+      "id": "expand:a1d490184a971ccc"
+    }
+  ],
+  "links": [
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:3c2cd6aa8a970ede"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens+yandex_images",
+      "source": "face:seed",
+      "target": "hit:686eb67cf0325d3a"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:518ad7aa1557fe92"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:5362d0986ca07dba"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:b57674fcf11d7fcd"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:5346bbe2a0f240a2"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:fe91c07a31597a41"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:999fd10e8f1ddc60"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:2dbd1117a165c92c"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:cb396581ae1b9107"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:3eba613414388007"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:9b3f62e82c8fefa6"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:31e1d41894a350c5"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:1e511e7d623a79f2"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:589a2e4ac883d64b"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:c862b634cbc49459"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:1922fe64b1e261f1"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:a6e351787c862d81"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:a110c9d37386b0e8"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:c34105a226d67849"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:dfbdc49d52638227"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:c0a22e96502db3a3"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:a608d2044a4a5527"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:4fb6f13451b4e7ce"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:ef488f8663f8dede"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:78624ad063e263be"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:a87f29f2ba74891f"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:35f8e479c0de7e23"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:dcc3b97c048c3727"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:dcb30fd9262921d8"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:56c6daba4be6bef0"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:49b9aed8be2d13cd"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:300351e968bd36ad"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:5f5a4562a75bf313"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:4c05624c29f83491"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:4b1ae6910c0eda3b"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:b6e47cd39a9e6c80"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:280f46683202378c"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:ba04d2e9d3d875f5"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:ca1e7220d65536fa"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:55b2467e0d0799d8"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:cc47b7b3e8aa63da"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:9dfde794c5e60900"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:8dec123f143c60a1"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:0729fa802dc5d129"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:9ccd7083d3a71ada"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:6834618bf00d8eeb"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:23f57d2cfc62ebee"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:5b32f52410af7b3c"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:35c9e39e772aa010"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:537ee514f561d172"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:2cb4659324e8e740"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:02ee4faca7802f7e"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:f77a50f94a402b4b"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:6277c9f60d49a03d"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:6daa1bf8ce0b2f3c"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:9062d6d8a8e9ef25"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:603e2330b53d45df"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_reverse_image",
+      "source": "face:seed",
+      "target": "hit:9d0f855152aea31b"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_reverse_image",
+      "source": "face:seed",
+      "target": "hit:968d09a0df73a753"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_reverse_image",
+      "source": "face:seed",
+      "target": "hit:29c3c83074441198"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_reverse_image",
+      "source": "face:seed",
+      "target": "hit:c05d5c5f87fa4e5f"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_reverse_image",
+      "source": "face:seed",
+      "target": "hit:09a47118df714b5d"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_reverse_image",
+      "source": "face:seed",
+      "target": "hit:617dbb706f65a2cd"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_reverse_image",
+      "source": "face:seed",
+      "target": "hit:2ec338518c81c0ec"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_reverse_image",
+      "source": "face:seed",
+      "target": "hit:49846eab7aae1a10"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_reverse_image",
+      "source": "face:seed",
+      "target": "hit:8b9f10c3a6350156"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:c008017b89374a19"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:fb764749480eb0e5"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:7c50b5fac3a8fffd"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:99d2be6e446a3094"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:e93d1d0bce57c08a"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:18913626e6803554"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:c4b1246de94a9c60"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:08a7f4552a8d2a7d"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:dacb54bae3fd29b2"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:c511553150ef0c57"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:42477fde6bc8c457"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:f579ef9620056f64"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:087c322df6ea7364"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:5cd29e7b1cae6af6"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:357f2fe90163b5ff"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:ff434bf0038a5f24"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:0fb14fd2efbac120"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:4b9a5d3fc4bfa0ad"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:6efa8ac7ca901fd9"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:7d87b59d95d5f42f"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:66db173e866f1f43"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:080d0b3703a7713c"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:7f45e6efa99dc32a"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:8127a73e70fe279b"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:18ca1122cbc4b896"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:39a632b0c3a3279d"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:483f499954c68ba3"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:9eccaec5b00ab5f8"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:1d0aba320347f8ad"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:ea09425b37e12b80"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:f7aa1fd1ee68ae79"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:3af4730367948f08"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:6e1138f77a081efa"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:4dbcb84fe5034079"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:d7aa15b3ecb9d25c"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:4e6a976f582d846f"
+    },
+    {
+      "kind": "ACCEPTED_IN",
+      "face_similarity": 0.9619,
+      "source": "face:seed",
+      "target": "post:3c2cd6aa8a970ede"
+    },
+    {
+      "kind": "ACCEPTED_IN",
+      "face_similarity": 0.3501,
+      "source": "face:seed",
+      "target": "post:518ad7aa1557fe92"
+    },
+    {
+      "kind": "ACCEPTED_IN",
+      "face_similarity": 0.2578,
+      "source": "face:seed",
+      "target": "post:3eba613414388007"
+    },
+    {
+      "kind": "ACCEPTED_IN",
+      "face_similarity": 0.3454,
+      "source": "face:seed",
+      "target": "post:087c322df6ea7364"
+    },
+    {
+      "kind": "ACCEPTED_IN",
+      "face_similarity": 0.3314,
+      "source": "face:seed",
+      "target": "post:c008017b89374a19"
+    },
+    {
+      "kind": "ACCEPTED_IN",
+      "face_similarity": null,
+      "source": "face:seed",
+      "target": "post:60a433224cfde87c"
+    },
+    {
+      "kind": "ACCEPTED_IN",
+      "face_similarity": null,
+      "source": "face:seed",
+      "target": "post:d9dfd8809c5bda13"
+    },
+    {
+      "kind": "EXPAND_FOUND",
+      "source": "face:seed",
+      "target": "expand:60a433224cfde87c"
+    },
+    {
+      "kind": "EXPAND_FOUND",
+      "source": "face:seed",
+      "target": "expand:d9dfd8809c5bda13"
+    },
+    {
+      "kind": "EXPAND_FOUND",
+      "source": "face:seed",
+      "target": "expand:a1d490184a971ccc"
+    },
+    {
+      "kind": "HAS_HANDLE",
+      "source": "hit:b57674fcf11d7fcd",
+      "target": "handle:x:ramgandhi52"
+    },
+    {
+      "kind": "HAS_HANDLE",
+      "source": "hit:3eba613414388007",
+      "target": "handle:x:mrajeshagrawal"
+    },
+    {
+      "kind": "AUTHORED_OR_APPEARS",
+      "source": "handle:x:mrajeshagrawal",
+      "target": "post:3eba613414388007"
+    },
+    {
+      "kind": "HAS_HANDLE",
+      "source": "hit:c0a22e96502db3a3",
+      "target": "handle:instagram:ghanshyam_nimbark__shilp_guru"
+    },
+    {
+      "kind": "HAS_HANDLE",
+      "source": "hit:b6e47cd39a9e6c80",
+      "target": "handle:linkedin:prem-kapoor-93708969"
+    },
+    {
+      "kind": "AUTHORED_OR_APPEARS",
+      "source": "handle:linkedin:ramabhau-patil-a287b448",
+      "target": "post:60a433224cfde87c"
+    }
+  ]
+}

@@ -221,6 +221,14 @@ def step_face(image_path: Path, out_dir: Path, *, require_insightface: bool = Fa
         app.prepare(ctx_id=-1, det_size=(640, 640))
         faces = app.get(img)
         if not faces:
+            # tight crops sometimes fail detection — pad and retry
+            pad = max(img.shape[0], img.shape[1]) // 4
+            padded = cv2.copyMakeBorder(img, pad, pad, pad, pad, cv2.BORDER_CONSTANT, value=(255, 255, 255))
+            faces = app.get(padded)
+            if faces:
+                img = padded
+                print("  note: detected face after padding tight crop")
+        if not faces:
             raise RuntimeError("InsightFace found no face")
         face = max(faces, key=lambda f: (f.bbox[2] - f.bbox[0]) * (f.bbox[3] - f.bbox[1]))
         x1, y1, x2, y2 = [int(v) for v in face.bbox]
@@ -377,7 +385,7 @@ def step_accept(
             "source": h.get("source") or urlparse(link).netloc,
             "social": is_social(link),
             "thumbnail": thumb,
-            "engine": "google_lens",
+            "engine": h.get("engine") or "google_lens",
             "lens_position": h.get("position") or i + 1,
             "face_similarity": None,
             "det_score": None,

@@ -1,0 +1,46 @@
+{
+  "ok": true,
+  "run_id": "20260904T112413Z-0f9c6d60",
+  "image": "/Users/kaushalchaudhari/Desktop/web3/hhgoa-tasks/samples/531714888_10235987016969385_7416969514884457963_n.jpg",
+  "steps": [
+    [
+      "S0_face",
+      "insightface_buffalo_s"
+    ],
+    [
+      "S1_host",
+      "https://i.ibb.co/nMjRDT1C/face-crop.jpg"
+    ],
+    [
+      "S2_multi",
+      "103 unique"
+    ],
+    [
+      "S3_face_rank",
+      "https://www.facebook.com/ramabhau/"
+    ],
+    [
+      "S4_merkle",
+      "4607dae3880fa2c205e3263b"
+    ],
+    [
+      "S5_attest",
+      "c430017a173d0b6aad"
+    ],
+    [
+      "S6_verify",
+      "pass"
+    ]
+  ],
+  "events": 15,
+  "attest": {
+    "tx_hash": "c430017a173d0b6aadd533ede6754980b93718afcd3b5df8470337a884d04ef9",
+    "uid": "0x46e2e7a313204f3a7af2f67e1fad2f79c4afa53d1fa995ede7576944f6c5c92f",
+    "merkle_root": "4607dae3880fa2c205e3263bc2458ae74aeb6018b303483cb5716bad9198a37f",
+    "primary_post_url": "https://www.facebook.com/ramabhau/",
+    "attester": "0xFe33CCB40ACD6BcA57a0b811b4245a410ee521c3",
+    "easscan": "https://sepolia.easscan.org/attestation/view/0x46e2e7a313204f3a7af2f67e1fad2f79c4afa53d1fa995ede7576944f6c5c92f",
+    "tx_url": "https://sepolia.etherscan.io/tx/c430017a173d0b6aadd533ede6754980b93718afcd3b5df8470337a884d04ef9",
+    "schema": "0xdf4c41ea0f6263c72aa385580124f41f2898d3613e86c50519fc3cfd7ff13ad4"
+  }
+}

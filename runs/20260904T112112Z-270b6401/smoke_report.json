@@ -1,0 +1,37 @@
+[
+  {
+    "step": "S0_face",
+    "ok": true,
+    "detail": "insightface_buffalo_s:651e7918c40c0db3"
+  },
+  {
+    "step": "S1_host",
+    "ok": true,
+    "detail": "https://i.ibb.co/nMjRDT1C/face-crop.jpg"
+  },
+  {
+    "step": "S2_lens",
+    "ok": true,
+    "detail": "60 hits"
+  },
+  {
+    "step": "S3_accept",
+    "ok": true,
+    "detail": "https://www.facebook.com/ramabhau/"
+  },
+  {
+    "step": "S4_merkle",
+    "ok": true,
+    "detail": "8bcec43e3fc2aa39272b567a"
+  },
+  {
+    "step": "S5_attest",
+    "ok": true,
+    "detail": "cc05cc14a0370f2114"
+  },
+  {
+    "step": "S6_verify",
+    "ok": true,
+    "detail": "pass"
+  }
+]

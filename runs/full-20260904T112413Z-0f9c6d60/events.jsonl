@@ -1,0 +1,15 @@
+{"ts": "2026-09-04T11:24:14.884666+00:00", "event": "FaceDetected", "backend": "insightface_buffalo_s", "det_score": 0.8020144701004028, "embedding_sha256": "651e7918c40c0db32692f66a0726f53520dc029e381899590eef6c1675f24fe0"}
+{"ts": "2026-09-04T11:24:17.798137+00:00", "event": "ImageHosted", "url": "https://i.ibb.co/nMjRDT1C/face-crop.jpg"}
+{"ts": "2026-09-04T11:24:17.798844+00:00", "event": "ImageSearchRequested", "engines": ["google_lens", "google_reverse_image", "yandex_images"], "image_url": "https://i.ibb.co/nMjRDT1C/face-crop.jpg"}
+{"ts": "2026-09-04T11:24:18.081127+00:00", "event": "ImageSearchCompleted", "engine": "google_lens", "hits": 60}
+{"ts": "2026-09-04T11:24:20.954614+00:00", "event": "ImageSearchCompleted", "engine": "google_reverse_image", "hits": 9}
+{"ts": "2026-09-04T11:24:21.707711+00:00", "event": "ImageSearchCompleted", "engine": "yandex_images", "hits": 40}
+{"ts": "2026-09-04T11:24:21.711765+00:00", "event": "SearchMerged", "unique": 103, "by_engine": {"google_lens": 60, "google_reverse_image": 9, "yandex_images": 40}}
+{"ts": "2026-09-04T11:25:25.497792+00:00", "event": "PostAccepted", "count": 5, "top_sim": 0.9619}
+{"ts": "2026-09-04T11:25:25.498537+00:00", "event": "ExpandRequested", "query": "Ramabhau Patil (site:linkedin.com OR site:instagram.com OR site:x.com OR site:twitter.com)", "from_url": "https://www.facebook.com/ramabhau/", "handle": null}
+{"ts": "2026-09-04T11:25:29.864568+00:00", "event": "ExpandCompleted", "found": 3, "query": "Ramabhau Patil (site:linkedin.com OR site:instagram.com OR site:x.com OR site:twitter.com)"}
+{"ts": "2026-09-04T11:25:29.872564+00:00", "event": "GraphUpserted", "nodes": 119, "edges": 119}
+{"ts": "2026-09-04T11:25:29.874391+00:00", "event": "MerkleBuilt", "root": "4607dae3880fa2c205e3263bc2458ae74aeb6018b303483cb5716bad9198a37f"}
+{"ts": "2026-09-04T11:25:29.874685+00:00", "event": "Attesting", "root": "4607dae3880fa2c205e3263bc2458ae74aeb6018b303483cb5716bad9198a37f"}
+{"ts": "2026-09-04T11:25:36.622396+00:00", "event": "Attested", "tx_hash": "c430017a173d0b6aadd533ede6754980b93718afcd3b5df8470337a884d04ef9", "uid": "0x46e2e7a313204f3a7af2f67e1fad2f79c4afa53d1fa995ede7576944f6c5c92f", "easscan": "https://sepolia.easscan.org/attestation/view/0x46e2e7a313204f3a7af2f67e1fad2f79c4afa53d1fa995ede7576944f6c5c92f"}
+{"ts": "2026-09-04T11:25:37.872392+00:00", "event": "VerifyPassed", "root": "4607dae3880fa2c205e3263bc2458ae74aeb6018b303483cb5716bad9198a37f", "uid": "0x46e2e7a313204f3a7af2f67e1fad2f79c4afa53d1fa995ede7576944f6c5c92f"}
