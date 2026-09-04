@@ -1,0 +1,37 @@
+[
+  {
+    "step": "S0_face",
+    "ok": true,
+    "detail": "insightface_buffalo_s:377295fd179f252f"
+  },
+  {
+    "step": "S1_host",
+    "ok": true,
+    "detail": "https://i.ibb.co/N62TPXNr/face-crop.jpg"
+  },
+  {
+    "step": "S2_lens",
+    "ok": true,
+    "detail": "60 hits"
+  },
+  {
+    "step": "S3_accept",
+    "ok": true,
+    "detail": "https://in.linkedin.com/in/rudransh-sharma-288a35277"
+  },
+  {
+    "step": "S4_merkle",
+    "ok": true,
+    "detail": "09e23d66bd6ef0d48584c559"
+  },
+  {
+    "step": "S5_attest",
+    "ok": true,
+    "detail": "2d10535f42a846c871"
+  },
+  {
+    "step": "S6_verify",
+    "ok": true,
+    "detail": "pass"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "step": "S0_face",
+    "ok": true,
+    "detail": "1e235b5604b6a3f1"
+  },
+  {
+    "step": "S1_host",
+    "ok": true,
+    "detail": "https://i.ibb.co/VWNCGJp9/face-crop.jpg"
+  },
+  {
+    "step": "S2_lens",
+    "ok": true,
+    "detail": "60 hits"
+  },
+  {
+    "step": "S3_accept",
+    "ok": true,
+    "detail": "https://www.instagram.com/p/CFx3Dc_DnFe/"
+  },
+  {
+    "step": "S4_merkle",
+    "ok": true,
+    "detail": "e17c0e00677ca7e64a2a0dd5"
+  },
+  {
+    "step": "S5_attest",
+    "ok": true,
+    "detail": "ba47444536b6f984c8"
+  },
+  {
+    "step": "S6_verify",
+    "ok": true,
+    "detail": "pass"
+  }
+]

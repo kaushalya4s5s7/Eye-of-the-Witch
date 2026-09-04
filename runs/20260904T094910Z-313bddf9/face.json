@@ -1,0 +1,13 @@
+{
+  "backend": "opencv_haar",
+  "bbox": [
+    116,
+    178,
+    482,
+    544
+  ],
+  "det_score": 1.0,
+  "embedding_sha256": "1e235b5604b6a3f190460ee6b55c439e2227d77b3abb626808b3d32f45143a91",
+  "crop_path": "/Users/kaushalchaudhari/Desktop/web3/hhgoa-tasks/runs/20260904T094910Z-313bddf9/face_crop.jpg",
+  "embedding_path": "/Users/kaushalchaudhari/Desktop/web3/hhgoa-tasks/runs/20260904T094910Z-313bddf9/embedding.npy"
+}

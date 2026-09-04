@@ -1,0 +1,7 @@
+[
+  {
+    "step": "FAILED",
+    "ok": false,
+    "detail": "module 'cv2' has no attribute 'CascadeClassifier'"
+  }
+]
