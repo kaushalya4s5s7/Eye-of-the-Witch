@@ -2,11 +2,11 @@ import { useEffect, useRef } from 'react'
 import { Terminal } from '@xterm/xterm'
 import { FitAddon } from '@xterm/addon-fit'
 import '@xterm/xterm/css/xterm.css'
-import { ANSI } from '../lib/terminalFormat'
+import { pipelineBootLines } from '../lib/terminalFormat'
 import type { TerminalLine } from '../hooks/useEventStream'
 
 /**
- * Right pane. A dumb xterm.js sink: it renders whatever lines the shared
+ * Right pane. A dumb xterm.js sink: it writes whatever lines the shared
  * `useEventStream` hook hands it, in order, exactly once each. The hook owns
  * the EventSource, the parsing, and the schema check — so this panel and the
  * ritual stage can never disagree about what the backend said.
@@ -26,13 +26,14 @@ export function EventTerminal({ lines }: { lines: TerminalLine[] }) {
     const term = new Terminal({
       convertEol: true,
       fontFamily: '"JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace',
-      fontSize: 13,
-      lineHeight: 1.25,
+      fontSize: 12.5,
+      lineHeight: 1.3,
       cursorBlink: false,
       cursorStyle: 'bar',
+      scrollback: 4000,
       theme: {
         background: '#0a0d13',
-        foreground: '#c4d0e0',
+        foreground: '#c8d0e0',
         selectionBackground: '#2a3550',
       },
     })
@@ -52,8 +53,7 @@ export function EventTerminal({ lines }: { lines: TerminalLine[] }) {
     const resizeObserver = new ResizeObserver(doFit)
     resizeObserver.observe(host)
 
-    term.writeln(`${ANSI.dim}eye-of-the-witch // backend event tail${ANSI.reset}`)
-    term.writeln('')
+    for (const line of pipelineBootLines()) term.writeln(line)
 
     return () => {
       cancelAnimationFrame(raf)
@@ -64,7 +64,6 @@ export function EventTerminal({ lines }: { lines: TerminalLine[] }) {
     }
   }, [])
 
-  // Flush any lines we haven't printed yet.
   useEffect(() => {
     const term = termRef.current
     if (!term) return

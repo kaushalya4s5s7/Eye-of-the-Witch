@@ -4,18 +4,21 @@
  *
  * Responsibilities (client/CLAUDE.md "Stack"):
  *  - open a single SSE connection to the dev feed
- *  - every line -> a terminal string (formatted if known, verbatim+flagged if not)
+ *  - every line -> staged pipeline terminal strings
  *  - every KNOWN event -> dispatched into the pure scene reducer
- *  - on PostAccepted -> fetch accepted.json, then dispatch @StarsResolved
- *  - idle > 5s in scrying/weighing -> dispatch @Idle (the long candidate-scoring gap)
- *  - stream ends with no terminal event -> dispatch @StreamEnded (synthetic Failed)
+ *  - on PostAccepted -> fetch accepted.json, print posts + @StarsResolved
+ *  - on GraphUpserted -> fetch graph.json, print evidence-graph summary
+ *  - idle > 5s in scrying/weighing -> dispatch @Idle
+ *  - stream ends with no terminal event -> dispatch @StreamEnded
  */
 
 import { useEffect, useReducer, useRef, useState } from 'react'
 import { eventStreamUrl, runFileUrl, type EventFeed } from '../lib/events'
 import { classifyEvent, validateEvent } from '../lib/schema'
 import {
-  formatEventLine,
+  PipelinePresenter,
+  formatAcceptedPosts,
+  formatGraphSummary,
   noteLine,
   offSchemaLine,
   unparseableLine,
@@ -36,6 +39,22 @@ export interface EventStream {
 
 const IDLE_MS = 5000
 const STAR_STAGGER_MS = 600
+const DIM = '\x1b[38;5;244m'
+const RESET = '\x1b[0m'
+
+/** Per-stream bookkeeping survives React StrictMode remount / SSE reconnect
+ *  so the same events.jsonl lines are not printed twice. */
+type StreamBook = { seen: Set<string>; presenter: PipelinePresenter }
+const streamBooks = new Map<string, StreamBook>()
+
+function bookFor(url: string): StreamBook {
+  let book = streamBooks.get(url)
+  if (!book) {
+    book = { seen: new Set(), presenter: new PipelinePresenter() }
+    streamBooks.set(url, book)
+  }
+  return book
+}
 
 /** accepted.json entry -> Star. Tolerant: the sidecar shape is provisional. */
 function mapAccepted(raw: unknown): Star[] {
@@ -59,7 +78,6 @@ export function useEventStream(source: EventFeed): EventStream {
 
   const sourceUrl = eventStreamUrl(source)
 
-  // Latest scene, readable from inside long-lived callbacks without re-subscribing.
   const sceneRef = useRef(scene)
   sceneRef.current = scene
 
@@ -67,7 +85,17 @@ export function useEventStream(source: EventFeed): EventStream {
     let lineId = 0
     const push = (text: string) =>
       setLines((prev) => [...prev, { id: lineId++, text }])
+    const pushMany = (texts: string[]) => {
+      if (texts.length === 0) return
+      setLines((prev) => {
+        const next = [...prev]
+        for (const text of texts) next.push({ id: lineId++, text })
+        return next
+      })
+    }
 
+    const book = bookFor(sourceUrl)
+    const { seen, presenter } = book
     let idleTimer: ReturnType<typeof setTimeout> | undefined
     let starTimer: ReturnType<typeof setTimeout> | undefined
     let ended = false
@@ -77,7 +105,7 @@ export function useEventStream(source: EventFeed): EventStream {
       idleTimer = setTimeout(() => {
         const phase = sceneRef.current.phase
         if (phase === 'scrying' || phase === 'weighing') {
-          push(noteLine('scoring candidates…'))
+          push(noteLine('scoring candidates against the seed face…'))
           dispatch({ event: '@Idle' })
         }
       }, IDLE_MS)
@@ -87,12 +115,14 @@ export function useEventStream(source: EventFeed): EventStream {
       if (ended) return
       ended = true
       if (idleTimer) clearTimeout(idleTimer)
-      eventStream.close() // stop the dev feed's 3s auto-reconnect + replay loop
+      eventStream.close()
+      streamBooks.delete(sourceUrl)
       if (!sceneRef.current.terminalReached) {
         push(noteLine('stream ended with no result — the thread was cut'))
         dispatch({ event: '@StreamEnded' })
       } else {
-        push(noteLine('stream end'))
+        push('')
+        push(noteLine('pipeline complete'))
       }
     }
 
@@ -100,6 +130,11 @@ export function useEventStream(source: EventFeed): EventStream {
 
     eventStream.onmessage = (message) => {
       armIdle()
+
+      // SSE reconnect / StrictMode remount re-tails events.jsonl from the start —
+      // skip exact payloads we already rendered for this sourceUrl.
+      if (seen.has(message.data)) return
+      seen.add(message.data)
 
       let parsed: unknown
       try {
@@ -117,10 +152,9 @@ export function useEventStream(source: EventFeed): EventStream {
       if (tier === 'unknown' || problems.length > 0) {
         push(offSchemaLine(message.data, problems))
       } else {
-        push(formatEventLine(obj))
+        pushMany(presenter.format(obj))
       }
 
-      // Unknown / malformed -> terminal only, never touches the scene reducer.
       if (tier === 'unknown') return
 
       dispatch(parsed as Parameters<typeof reduceScene>[1])
@@ -130,6 +164,13 @@ export function useEventStream(source: EventFeed): EventStream {
           .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
           .then((json) => {
             const stars = mapAccepted(json)
+            // Dedupe sidecar print too (reconnect can re-fire PostAccepted once
+            // before seen catches it — key on run posts block).
+            const postsKey = `posts:${message.data}`
+            if (!seen.has(postsKey)) {
+              seen.add(postsKey)
+              pushMany(formatAcceptedPosts(stars))
+            }
             if (stars.length === 0) return
             starTimer = setTimeout(
               () => dispatch({ event: '@StarsResolved', stars }),
@@ -137,15 +178,31 @@ export function useEventStream(source: EventFeed): EventStream {
             )
           })
           .catch(() => {
-            push(noteLine('no gallery sidecar for this run'))
+            push(noteLine('no accepted.json sidecar for this run'))
           })
+      }
+
+      if (name === 'GraphUpserted') {
+        void fetch(runFileUrl(source, 'graph'))
+          .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
+          .then((json) => {
+            const graphKey = `graph:${message.data}`
+            if (seen.has(graphKey)) return
+            seen.add(graphKey)
+            pushMany(formatGraphSummary(json))
+          })
+          .catch(() => {
+            /* counts already on the event line */
+          })
+      }
+
+      if (name === 'Attested' && typeof obj.easscan === 'string' && obj.easscan) {
+        push(`${DIM}   explorer: ${obj.easscan}${RESET}`)
       }
     }
 
     eventStream.addEventListener('end', endStream)
     eventStream.onerror = () => {
-      // The dev feed closes the socket after the last line; that surfaces here
-      // as an error with readyState CLOSED. Treat only that as end-of-stream.
       if (eventStream.readyState === EventSource.CLOSED) endStream()
     }
 
@@ -156,14 +213,6 @@ export function useEventStream(source: EventFeed): EventStream {
       if (starTimer) clearTimeout(starTimer)
       eventStream.close()
     }
-    // INVARIANT (M12): this effect closes over the full `source` object (via
-    // `eventStreamUrl`/`runFileUrl` calls inside), but the dep array below is
-    // just `[sourceUrl]`. That's safe only because `sourceUrl` is derived
-    // from every field `EventFeed` has that this effect reads — if
-    // `EventFeed`'s shape ever grows a field the effect needs without also
-    // folding it into `sourceUrl`, this array must be revisited (there is no
-    // ESLint react-hooks/exhaustive-deps config in client/ to catch that
-    // drift automatically).
   }, [sourceUrl])
 
   return { scene, lines, sourceUrl }

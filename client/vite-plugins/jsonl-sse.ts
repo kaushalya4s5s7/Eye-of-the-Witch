@@ -289,7 +289,7 @@ export function jsonlSse(): Plugin {
           'Cache-Control': 'no-cache, no-transform',
           Connection: 'keep-alive',
         })
-        res.write('retry: 3000\n\n')
+        res.write('retry: 3600000\n\n')
 
         let closed = false
         req.on('close', () => {
@@ -300,8 +300,11 @@ export function jsonlSse(): Plugin {
           `[jsonl-sse] streaming ${rel} (${lines.length} lines, ${interval}ms/line)`,
         )
 
+        let id = 0
         for (const line of lines) {
           if (closed) return
+          id += 1
+          res.write(`id: ${id}\n`)
           res.write(`data: ${line}\n\n`)
           await delay(interval)
         }
@@ -427,7 +430,9 @@ export async function streamRun(
   const sock = (res as StreamRunResponse & { socket?: { setNoDelay?: (v: boolean) => void } }).socket
   sock?.setNoDelay?.(true)
   res.write(': connected\n\n')
-  res.write('retry: 3000\n\n')
+  // Long retry: a 3s retry was re-opening mid-run and re-sending the whole
+  // events.jsonl (duplicate FACE SCAN banners). Client also dedupes.
+  res.write('retry: 3600000\n\n')
 
   const start = Date.now()
   let sentCount = 0
@@ -450,6 +455,7 @@ export async function streamRun(
     sentCount = result.sentCount
     for (const line of result.lines) {
       if (closed) break
+      res.write(`id: ${sentCount}\n`)
       res.write(`data: ${line}\n\n`)
     }
 
