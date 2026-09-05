@@ -97,10 +97,19 @@ def fetch_engine(engine: str, image_url: str, api_key: str) -> tuple[str, dict, 
     return engine, payload, hits
 
 
-def step_multi_search(image_url: str, api_key: str, out_dir: Path, events: list) -> list[dict]:
-    print("\n[S2] Multi-engine reverse search (parallel)…")
+def step_multi_search(
+    image_url: str,
+    api_key: str,
+    out_dir: Path,
+    events: list,
+    *,
+    probe_tag: str = "p0",
+    emit_request: bool = True,
+) -> tuple[list[dict], dict[str, int]]:
+    print(f"\n[S2] Multi-engine reverse search ({probe_tag})…")
     engines = ["google_lens", "google_reverse_image", "yandex_images"]
-    emit(events, out_dir, "ImageSearchRequested", engines=engines, image_url=image_url)
+    if emit_request:
+        emit(events, out_dir, "ImageSearchRequested", engines=engines, image_url=image_url, probe=probe_tag)
 
     merged: list[dict] = []
     by_engine: dict[str, int] = {}
@@ -109,44 +118,100 @@ def step_multi_search(image_url: str, api_key: str, out_dir: Path, events: list)
         futs = {pool.submit(fetch_engine, e, image_url, api_key): e for e in engines}
         for fut in as_completed(futs):
             engine, payload, hits = fut.result()
-            (out_dir / f"serpapi_{engine}.json").write_text(json.dumps(payload, indent=2))
+            (out_dir / f"serpapi_{probe_tag}_{engine}.json").write_text(json.dumps(payload, indent=2))
             if payload.get("error"):
-                print(f"  ! {engine}: {payload['error']}")
-                emit(events, out_dir, "ImageSearchFailed", engine=engine, error=payload["error"])
+                print(f"  ! {probe_tag}/{engine}: {payload['error']}")
+                emit(
+                    events,
+                    out_dir,
+                    "ImageSearchFailed",
+                    engine=engine,
+                    error=payload["error"],
+                    probe=probe_tag,
+                )
                 by_engine[engine] = 0
                 continue
             by_engine[engine] = len(hits)
+            for h in hits:
+                h["probe"] = probe_tag
             merged.extend(hits)
-            emit(events, out_dir, "ImageSearchCompleted", engine=engine, hits=len(hits))
-            print(f"  OK {engine}: {len(hits)} hits")
+            emit(
+                events,
+                out_dir,
+                "ImageSearchCompleted",
+                engine=engine,
+                hits=len(hits),
+                probe=probe_tag,
+            )
+            print(f"  OK {probe_tag}/{engine}: {len(hits)} hits")
 
-    # URL-level merge (keep first, tag engines)
+    return merged, by_engine
+
+
+def merge_hit_lists(all_hits: list[dict], by_engine_total: dict[str, int], out_dir: Path, events: list) -> list[dict]:
     by_url: dict[str, dict] = {}
-    for h in merged:
+    for h in all_hits:
         u = h["link"].split("?")[0].rstrip("/")
         if u not in by_url:
-            by_url[u] = {**h, "engines": [h["engine"]]}
+            by_url[u] = {**h, "engines": [h["engine"]], "probes": [h.get("probe") or "p0"]}
         else:
             if h["engine"] not in by_url[u]["engines"]:
                 by_url[u]["engines"].append(h["engine"])
-            # prefer non-empty thumb
+            pr = h.get("probe") or "p0"
+            if pr not in by_url[u]["probes"]:
+                by_url[u]["probes"].append(pr)
             if not by_url[u].get("thumbnail") and h.get("thumbnail"):
                 by_url[u]["thumbnail"] = h["thumbnail"]
                 by_url[u]["image"] = h.get("image") or h["thumbnail"]
 
     hits = list(by_url.values())
-    # step_accept expects engine as string
     for h in hits:
         h["engine"] = "+".join(h.get("engines") or [h.get("engine") or "unknown"])
+        h["probe"] = "+".join(h.get("probes") or ["p0"])
 
     (out_dir / "search_merged.json").write_text(
-        json.dumps({"by_engine": by_engine, "merged_unique": len(hits), "hits": hits}, indent=2)
+        json.dumps(
+            {
+                "by_engine": by_engine_total,
+                "merged_unique": len(hits),
+                "hits": hits,
+            },
+            indent=2,
+        )
     )
     if not hits:
         raise RuntimeError("All engines returned 0 usable hits")
-    print(f"  OK merged unique URLs: {len(hits)} (from {by_engine})")
-    emit(events, out_dir, "SearchMerged", unique=len(hits), by_engine=by_engine)
+    print(f"  OK merged unique URLs: {len(hits)} (from {by_engine_total})")
+    emit(events, out_dir, "SearchMerged", unique=len(hits), by_engine=by_engine_total)
     return hits
+
+
+def step_multi_probe_search(
+    probe_urls: list[tuple[str, str]],
+    api_key: str,
+    out_dir: Path,
+    events: list,
+) -> list[dict]:
+    """Reverse-search each coreset probe URL and merge (deep-opt discovery)."""
+    print(f"\n[S2] Deep-opt multi-probe search ({len(probe_urls)} probes)…")
+    emit(
+        events,
+        out_dir,
+        "ImageSearchRequested",
+        engines=["google_lens", "google_reverse_image", "yandex_images"],
+        probes=[t for t, _ in probe_urls],
+        multi_probe=True,
+    )
+    all_hits: list[dict] = []
+    by_engine_total: dict[str, int] = {}
+    for tag, url in probe_urls:
+        merged, by_engine = step_multi_search(
+            url, api_key, out_dir, events, probe_tag=tag, emit_request=False
+        )
+        all_hits.extend(merged)
+        for k, v in by_engine.items():
+            by_engine_total[k] = by_engine_total.get(k, 0) + v
+    return merge_hit_lists(all_hits, by_engine_total, out_dir, events)
 
 
 def extract_handle(url: str) -> str | None:
@@ -426,29 +491,67 @@ def main() -> int:
     print(f"FULL RUN {run_id}")
     print(f"OUT {out_dir}")
 
-    args = [a for a in sys.argv[1:] if not a.startswith("--")]
-    if args:
-        sample = Path(args[0]).expanduser().resolve()
+    args_paths = base.parse_image_args()
+    if args_paths:
+        for p in args_paths:
+            if not p.exists():
+                raise SystemExit(f"Image not found: {p}")
+        paths = args_paths
     else:
         matches = list((ROOT / "samples").glob("Screenshot*.png"))
-        sample = matches[0] if matches else ROOT / "samples" / "elon_musk.jpg"
-    if not sample.exists():
-        raise SystemExit(f"Image not found: {sample}")
-    print(f"IMAGE {sample}")
+        paths = [matches[0]] if matches else [ROOT / "samples" / "elon_musk.jpg"]
+    print(f"IMAGES ({len(paths)}): " + ", ".join(p.name for p in paths))
 
     results = []
     try:
-        face = base.step_face(sample, out_dir, require_insightface=True)
-        results.append(("S0_face", face["backend"]))
-        emit(events, out_dir, "FaceDetected", **{k: face[k] for k in ("backend", "det_score", "embedding_sha256")})
+        gallery = base.step_seed_gallery(paths, out_dir, require_insightface=True)
+        face = gallery["primary"]
+        results.append(("S0_face", f"{face['backend']}:gallery={gallery['size']}"))
+        emit(
+            events,
+            out_dir,
+            "FaceDetected",
+            **{k: face[k] for k in ("backend", "det_score", "embedding_sha256")},
+            gallery_size=gallery["size"],
+        )
+        emit(
+            events,
+            out_dir,
+            "GalleryBuilt",
+            size=gallery["size"],
+            inputs=gallery["inputs"],
+            kept=gallery["kept"],
+            rejected=gallery["rejected"],
+            score_mode=gallery["score_mode"],
+            coreset=len(gallery.get("coreset") or []),
+            deep_opt=True,
+        )
         seed_emb = np.load(face["embedding_path"])
+        gal_emb = np.load(gallery["gallery_path"])
+        gal_q = np.load(gallery["qualities_path"]) if gallery.get("qualities_path") else None
+        crop_paths = [Path(m["crop_path"]) for m in gallery["members"]]
 
-        hosted = base.step_host(Path(face["crop_path"]), env["IMGBB_API_KEY"], out_dir)
-        results.append(("S1_host", hosted))
-        emit(events, out_dir, "ImageHosted", url=hosted)
+        # Deep-opt: host + reverse-search coreset probes (not only primary)
+        coreset = gallery.get("coreset") or [
+            {"crop_path": face["crop_path"], "index": 0, "quality": face.get("det_score")}
+        ]
+        probe_urls: list[tuple[str, str]] = []
+        for i, c in enumerate(coreset):
+            tag = f"p{i}"
+            url = base.step_host(
+                Path(c["crop_path"]),
+                env["IMGBB_API_KEY"],
+                out_dir,
+                tag=tag if i > 0 else "primary",
+            )
+            probe_urls.append((tag, url))
+            emit(events, out_dir, "ImageHosted", url=url, probe=tag, quality=c.get("quality"))
+        results.append(("S1_host", f"{len(probe_urls)} probes"))
 
-        hits = step_multi_search(hosted, env["SERPAPI_API_KEY"], out_dir, events)
-        results.append(("S2_multi", f"{len(hits)} unique"))
+        hits = step_multi_probe_search(
+            probe_urls, env["SERPAPI_API_KEY"], out_dir, events
+        )
+        results.append(("S2_multi", f"{len(hits)} unique / {len(probe_urls)} probes"))
 
         accepted = base.step_accept(
             hits,
@@ -456,8 +559,11 @@ def main() -> int:
             seed_emb,
             top_k=5,
             min_face_sim=0.25,
-            seed_crop_path=Path(face["crop_path"]),
+            seed_crop_paths=crop_paths,
+            gallery_embeddings=gal_emb,
+            gallery_qualities=gal_q,
             require_threshold=True,
+            deep_opt=True,
         )
         if not accepted:
             emit(
@@ -466,6 +572,7 @@ def main() -> int:
                 "NoMatchFound",
                 reason="no_hit_above_face_threshold",
                 min_face_sim=0.25,
+                gallery_size=gallery["size"],
             )
             results.append(("S3_face_rank", "no_match"))
             (out_dir / "smoke_report.json").write_text(
@@ -474,7 +581,8 @@ def main() -> int:
                         "ok": False,
                         "no_match": True,
                         "run_id": run_id,
-                        "image": str(sample),
+                        "images": [str(p) for p in paths],
+                        "gallery_size": gallery["size"],
                         "steps": results,
                         "events": len(events),
                     },
@@ -491,6 +599,7 @@ def main() -> int:
             "PostAccepted",
             count=len(accepted),
             top_sim=accepted[0].get("face_similarity"),
+            gallery_size=gallery["size"],
         )
         for a in accepted:
             emit(
@@ -503,6 +612,7 @@ def main() -> int:
                 face_similarity=a.get("face_similarity"),
                 social=a.get("social"),
                 near_exact=a.get("near_exact"),
+                best_gallery_index=a.get("best_gallery_index"),
             )
 
         anchor = lock_anchor(out_dir, events, accepted)
@@ -521,7 +631,6 @@ def main() -> int:
 
         build_graph(face, hits, final, out_dir, events, expand, anchor=anchor)
 
-        # merkle over face-ranked accepts primarily (expand may lack content image hash quality)
         merkle_set = [a for a in final if a.get("face_similarity") is not None] or final[:3]
         (out_dir / "accepted.json").write_text(json.dumps(merkle_set, indent=2))
 
@@ -553,7 +662,10 @@ def main() -> int:
     report = {
         "ok": True,
         "run_id": run_id,
-        "image": str(sample),
+        "images": [str(p) for p in paths],
+        "gallery_size": gallery["size"],
+        "deep_opt": True,
+        "coreset": gallery.get("coreset"),
         "steps": results,
         "events": len(events),
         "attest": json.loads((out_dir / "attest.json").read_text()),

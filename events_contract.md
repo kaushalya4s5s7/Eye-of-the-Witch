@@ -13,7 +13,8 @@ Ground truth = what `smoke_full.py` actually emits today in `runs/full-*/events.
 
 | event | Notes |
 |---|---|
-| `FaceDetected` | always |
+| `FaceDetected` | always (primary seed); may include `gallery_size` |
+| `GalleryBuilt` | after multi/single seed gallery (`size`, `kept`, `rejected`) |
 | `ImageHosted` | always |
 | `ImageSearchRequested` | always (lists engines) |
 | `ImageSearchCompleted` | **once per engine that returns** |
@@ -45,6 +46,7 @@ Ground truth = what `smoke_full.py` actually emits today in `runs/full-*/events.
 
 ```text
 FaceDetected
+GalleryBuilt             # seed gallery from 1..N user photos
 ImageHosted
 ImageSearchRequested
 ImageSearchCompleted
@@ -109,7 +111,9 @@ Do **not** require a `data` wrapper unless we migrate both sides together.
 | `ImageHosted` | optional: show crop URL / “bound” | yes |
 | `ImageSearchRequested` / `Completed` / `Failed` / `SearchMerged` | stay on **concoction** | yes |
 | `CandidateScored` | **no** per-candidate UI (too noisy) | optional log |
+| `GalleryBuilt` | optional: “N seed photos locked” | yes |
 | `PostAccepted` | **yes** — gallery update (see §7) | yes |
+| `AnchorLocked` | subtle “identity locked” / stay concoction | yes |
 | `Expand*` / `GraphUpserted` | stay concoction / subtle | yes |
 | `MerkleBuilt` | subtle “seal forming” optional | yes |
 | `Attesting` | **chant / text-reveal** | yes |

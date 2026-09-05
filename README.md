@@ -51,25 +51,50 @@ SEPOLIA_RPC_URL=https://ethereum-sepolia-rpc.publicnode.com
 PRIVATE_KEY=0x...   # Sepolia-funded wallet; rotate if ever exposed
 ```
 
-**Full pipeline** (multi-engine + graph + anchor gate + EAS):
+---
+
+## How to run
+
+**Full pipeline** (multi-engine + seed gallery + graph + anchor gate + EAS):
 
 ```bash
+# One photo (minimum)
 .venv/bin/python smoke_full.py samples/elon_musk.jpg
-# or your own public-figure / own public photo:
-.venv/bin/python smoke_full.py path/to/face.jpg
+
+# Better match: 2–5 photos of the same person (first = primary for reverse search)
+.venv/bin/python smoke_full.py samples/photo1.jpg samples/photo2.jpg samples/photo3.jpg
 ```
 
-**Leaner E2E** (Lens-only path):
+**Leaner E2E** (Lens-only path; also accepts multiple images):
 
 ```bash
-.venv/bin/python smoke_e2e.py --insightface samples/elon_musk.jpg
+.venv/bin/python smoke_e2e.py --insightface samples/elon_musk.jpg samples/other_angle.jpg
+```
+
+## Deep optimization (research-backed)
+
+Enabled by default in `smoke_full.py`:
+
+1. **Quality coreset** — pick best 1–2 seed crops (det_score + sharpness) for reverse search  
+2. **Multi-probe discovery** — reverse-search each coreset crop, merge URLs  
+3. **Quality-weighted gallery score** — not naive max alone  
+4. **Owner vector blend** — average strong hit faces, re-score (cross-profile matching)  
+5. **Neighbor consistency** — boost hits that agree with other strong matches  
+
+```bash
+.venv/bin/python smoke_full.py samples/D1.png samples/D2.png samples/D3.png samples/D4.png
 ```
 
 Artifacts land in `backend/runs/<run_id>/`:
 
 | File | Purpose |
 |---|---|
+<<<<<<< Updated upstream
 | `events.jsonl` | Live run events (drives the client's terminal + ritual panel) |
+=======
+| `events.jsonl` | Live run events (for UI / demo terminal) |
+| `gallery.json` | Seed gallery (kept/rejected multi-photo inputs) |
+>>>>>>> Stashed changes
 | `accepted.json` | Matching posts used for Merkle |
 | `anchor.json` | Dual-confirm anchor (if any) |
 | `merkle.json` | Root + leaves |
@@ -114,11 +139,11 @@ Explorer links are written to `attest.json` (`easscan`, `tx_url`).
 
 | Signal | Role |
 |---|---|
-| InsightFace cosine vs **seed** | Same person (pose/light variations OK) |
-| Average hash near-exact | Same *photo* nominee only |
+| InsightFace cosine vs **seed gallery** | Same person — `max` sim over 1..N user photos (pose/light variations OK) |
+| Average hash near-exact | Same *photo* nominee vs any seed crop |
 | **Dual confirm** | Near-exact **and** face_sim ≥ τ → `AnchorLocked`; expand only then |
-| Seed always wins | Exact DP without face match to seed → rejected (no poison gallery) |
-
+| Seed gallery always wins | Exact DP without face match to gallery → rejected (no poison cascade) |
+| Multi-photo tip | More public photos of the same person → sharper web ranking |
 This is **similarity evidence**, not legal identity proof.
 
 ---
@@ -135,7 +160,7 @@ This is **similarity evidence**, not legal identity proof.
 
 - Relies on third-party APIs (SerpAPI, imgbb) and free RPC rate limits.
 - Social hotlink / scrape limits: we score **thumbnails** from search results, not full private profiles.
-- Gallery-from-profile enrichment (plan Slice II) is **not** implemented — brief is satisfied without it.
+- Gallery-from-profile enrichment (plan Slice II scrape) is **not** implemented — **user multi-photo seed gallery** is the supported path instead.
 - Face thresholds are tuned for smoke demos; lookalikes can still score in the mid band.
 - `runs/`, `backend/runs/`, and `.env` are gitignored; share demo artifacts separately if needed.
 - If a private key was ever pasted in chat, **rotate** it.

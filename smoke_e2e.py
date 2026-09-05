@@ -6,6 +6,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import shutil
 import sys
 import time
 import uuid
@@ -275,8 +276,8 @@ def step_face(image_path: Path, out_dir: Path, *, require_insightface: bool = Fa
     return meta
 
 
-def step_host(crop_path: Path, api_key: str, out_dir: Path) -> str:
-    print("\n[S1] Host crop on imgbb…")
+def step_host(crop_path: Path, api_key: str, out_dir: Path, *, tag: str = "primary") -> str:
+    print(f"\n[S1] Host crop on imgbb ({tag})…")
     with open(crop_path, "rb") as f:
         r = requests.post(
             "https://api.imgbb.com/1/upload",
@@ -289,7 +290,9 @@ def step_host(crop_path: Path, api_key: str, out_dir: Path) -> str:
     if not data.get("success"):
         raise RuntimeError(f"imgbb failed: {data}")
     url = data["data"]["url"]
-    (out_dir / "hosted.json").write_text(json.dumps(data["data"], indent=2))
+    (out_dir / f"hosted_{tag}.json").write_text(json.dumps(data["data"], indent=2))
+    if tag == "primary":
+        (out_dir / "hosted.json").write_text(json.dumps(data["data"], indent=2))
     # quick reachability
     head = requests.get(url, timeout=30)
     if head.status_code >= 400:
@@ -355,6 +358,298 @@ def hamming64(a: int, b: int) -> int:
 NEAR_EXACT_HAMMING = 10
 # Dual-confirm floor: seed face must still match before we trust an "exact" DP
 TAU_ANCHOR_FACE = 0.40
+# Extra seed photos must match the primary face at least this well
+TAU_GALLERY_SAME_PERSON = 0.35
+MAX_SEED_IMAGES = 5
+# Deep-opt: how many seed crops to reverse-search (GhostVLAD/CAFace-style coreset)
+DEFAULT_PROBE_CORESET = 2
+# Hits used to build lite "owner" vector (cross-profile matching papers)
+OWNER_SEED_SIM = 0.35
+OWNER_BLEND = 0.35  # final = (1-α)*gallery + α*owner
+
+
+def gallery_max_sim(gallery: np.ndarray, emb: np.ndarray) -> tuple[float, int]:
+    """Best cosine of hit embedding against any seed-gallery member."""
+    if gallery.ndim == 1:
+        gallery = gallery.reshape(1, -1)
+    best_i = 0
+    best = -1.0
+    for i in range(gallery.shape[0]):
+        s = cosine(gallery[i], emb)
+        if s > best:
+            best = s
+            best_i = i
+    return best, best_i
+
+
+def crop_sharpness(img_bgr: np.ndarray) -> float:
+    """Laplacian variance — higher = sharper (quality proxy for coreset)."""
+    gray = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2GRAY)
+    return float(cv2.Laplacian(gray, cv2.CV_64F).var())
+
+
+def member_quality(det_score: float | None, crop_path: str | Path) -> float:
+    """Combine detection confidence + sharpness into [0,1]-ish quality."""
+    det = float(det_score or 0.0)
+    sharp = 0.0
+    img = cv2.imread(str(crop_path))
+    if img is not None:
+        # normalize sharpness roughly into 0..1 (cap at 500)
+        sharp = min(1.0, crop_sharpness(img) / 500.0)
+    return round(0.65 * det + 0.35 * sharp, 4)
+
+
+def select_coreset(members: list[dict[str, Any]], k: int = DEFAULT_PROBE_CORESET) -> list[dict[str, Any]]:
+    """Pick diverse high-quality probes (FaceCoresetNet-inspired, greedy).
+
+    Prefer high quality; skip near-duplicates of already chosen (sim_to_primary band
+    is weak diversity — use embedding cosine when available via member index).
+    """
+    if not members:
+        return []
+    ranked = sorted(members, key=lambda m: float(m.get("quality") or 0), reverse=True)
+    if k <= 1 or len(ranked) == 1:
+        return [ranked[0]]
+
+    chosen: list[dict[str, Any]] = [ranked[0]]
+    # Load embeddings from paths if present on members via side channel — gallery stack order = member order
+    for cand in ranked[1:]:
+        if len(chosen) >= k:
+            break
+        # diversity: avoid picking second crop with almost-identical quality+index adjacency only;
+        # require different source path
+        if any(c["path"] == cand["path"] for c in chosen):
+            continue
+        chosen.append(cand)
+    return chosen[:k]
+
+
+def gallery_quality_sim(
+    gallery: np.ndarray,
+    qualities: np.ndarray,
+    emb: np.ndarray,
+) -> tuple[float, int, float]:
+    """Quality-weighted soft match + hard max (GhostVLAD-style downweight junk).
+
+    Returns (score, best_index, raw_max).
+    score = 0.7 * max_sim + 0.3 * quality-weighted average of positive sims.
+    """
+    if gallery.ndim == 1:
+        gallery = gallery.reshape(1, -1)
+    n = gallery.shape[0]
+    sims = np.array([cosine(gallery[i], emb) for i in range(n)], dtype=np.float32)
+    best_i = int(np.argmax(sims))
+    raw_max = float(sims[best_i])
+    q = qualities.astype(np.float32)
+    if q.shape[0] != n:
+        q = np.ones(n, dtype=np.float32)
+    # only weight members that somewhat match
+    pos = np.clip(sims, 0.0, 1.0)
+    w = q * pos
+    wsum = float(w.sum()) + 1e-9
+    weighted = float((w * sims).sum() / wsum)
+    score = 0.7 * raw_max + 0.3 * weighted
+    return score, best_i, raw_max
+
+
+def build_owner_vector(
+    hit_embs: list[np.ndarray],
+    hit_sims: list[float],
+    *,
+    min_sim: float = OWNER_SEED_SIM,
+    top_n: int = 8,
+) -> np.ndarray | None:
+    """Lite owner DV from high-sim web hits (1905.06081-style defining vector)."""
+    paired = [(e, s) for e, s in zip(hit_embs, hit_sims) if s >= min_sim]
+    if len(paired) < 2:
+        return None
+    paired.sort(key=lambda x: x[1], reverse=True)
+    stacked = np.stack([e for e, _ in paired[:top_n]], axis=0)
+    vec = stacked.mean(axis=0)
+    vec = vec / (np.linalg.norm(vec) + 1e-9)
+    return vec.astype(np.float32)
+
+
+def neighbor_consistency_boost(
+    embs: list[np.ndarray | None],
+    sims: list[float],
+    *,
+    pair_tau: float = 0.55,
+    floor: float = 0.28,
+) -> list[float]:
+    """SGGNN-lite: boost hits that agree with other strong gallery matches."""
+    n = len(sims)
+    boosted = list(sims)
+    for i in range(n):
+        if embs[i] is None or sims[i] < floor:
+            continue
+        allies = 0
+        for j in range(n):
+            if i == j or embs[j] is None or sims[j] < floor:
+                continue
+            if cosine(embs[i], embs[j]) >= pair_tau:
+                allies += 1
+        if allies > 0:
+            # small additive boost, capped
+            boosted[i] = min(1.0, sims[i] + 0.02 * min(allies, 5))
+    return boosted
+
+
+def parse_image_args(argv: list[str] | None = None) -> list[Path]:
+    """Collect 1..MAX_SEED_IMAGES paths from CLI (all non-flag args)."""
+    raw = argv if argv is not None else sys.argv[1:]
+    paths = [Path(a).expanduser().resolve() for a in raw if not a.startswith("--")]
+    if len(paths) > MAX_SEED_IMAGES:
+        print(f"  warn: capping seed images at {MAX_SEED_IMAGES} (got {len(paths)})")
+        paths = paths[:MAX_SEED_IMAGES]
+    return paths
+
+
+def step_seed_gallery(
+    image_paths: list[Path],
+    out_dir: Path,
+    *,
+    require_insightface: bool = True,
+    tau_same: float = TAU_GALLERY_SAME_PERSON,
+) -> dict[str, Any]:
+    """Build a seed face gallery from 1..N user photos.
+
+    Photo[0] is primary (hosted for reverse search). Extra photos must match
+    primary embedding ≥ tau_same or they are rejected (not mixed into gallery).
+    """
+    if not image_paths:
+        raise RuntimeError("No seed images provided")
+    for p in image_paths:
+        if not p.exists():
+            raise RuntimeError(f"Image not found: {p}")
+
+    print(f"\n[S0] Seed gallery ({len(image_paths)} photo(s))…")
+    members: list[dict[str, Any]] = []
+    rejected: list[dict[str, Any]] = []
+    embeddings: list[np.ndarray] = []
+
+    primary = step_face(image_paths[0], out_dir, require_insightface=require_insightface)
+    primary_emb = np.load(primary["embedding_path"]).astype(np.float32)
+    embeddings.append(primary_emb)
+    members.append(
+        {
+            "index": 0,
+            "path": str(image_paths[0]),
+            "role": "primary",
+            "det_score": primary.get("det_score"),
+            "embedding_sha256": primary.get("embedding_sha256"),
+            "crop_path": primary["crop_path"],
+            "sim_to_primary": 1.0,
+            "kept": True,
+            "quality": member_quality(primary.get("det_score"), primary["crop_path"]),
+        }
+    )
+
+    for i, path in enumerate(image_paths[1:], start=1):
+        sub = out_dir / f"seed_{i}"
+        sub.mkdir(parents=True, exist_ok=True)
+        try:
+            meta = step_face(path, sub, require_insightface=require_insightface)
+            emb = np.load(meta["embedding_path"]).astype(np.float32)
+            sim = cosine(primary_emb, emb)
+            row = {
+                "index": i,
+                "path": str(path),
+                "role": "extra",
+                "det_score": meta.get("det_score"),
+                "embedding_sha256": meta.get("embedding_sha256"),
+                "crop_path": meta["crop_path"],
+                "sim_to_primary": round(sim, 4),
+                "kept": False,
+            }
+            if sim < tau_same:
+                row["skip_reason"] = "different_person_or_weak_match"
+                rejected.append(row)
+                print(f"  reject seed[{i}] sim_to_primary={sim:.3f} < {tau_same} ({path.name})")
+                continue
+            row["kept"] = True
+            members.append(row)
+            embeddings.append(emb)
+            dest = out_dir / f"face_crop_seed_{i}.jpg"
+            shutil.copy2(meta["crop_path"], dest)
+            row["crop_path"] = str(dest)
+            row["quality"] = member_quality(meta.get("det_score"), dest)
+            print(
+                f"  keep seed[{i}] sim_to_primary={sim:.3f} "
+                f"q={row['quality']:.3f} ({path.name})"
+            )
+        except Exception as e:
+            rejected.append(
+                {
+                    "index": i,
+                    "path": str(path),
+                    "role": "extra",
+                    "kept": False,
+                    "skip_reason": str(e),
+                }
+            )
+            print(f"  reject seed[{i}] error={e}")
+
+    gallery = np.stack(embeddings, axis=0)
+    gal_path = out_dir / "gallery_embeddings.npy"
+    np.save(gal_path, gallery)
+
+    qualities = np.array([float(m.get("quality") or 0.5) for m in members], dtype=np.float32)
+    np.save(out_dir / "gallery_qualities.npy", qualities)
+
+    # Centroid (L2-normalized) for optional scoring / logging
+    centroid = gallery.mean(axis=0)
+    centroid = centroid / (np.linalg.norm(centroid) + 1e-9)
+    np.save(out_dir / "gallery_centroid.npy", centroid.astype(np.float32))
+
+    # Quality-weighted centroid (GhostVLAD-lite)
+    w = qualities / (qualities.sum() + 1e-9)
+    wcent = (gallery * w[:, None]).sum(axis=0)
+    wcent = wcent / (np.linalg.norm(wcent) + 1e-9)
+    np.save(out_dir / "gallery_weighted_centroid.npy", wcent.astype(np.float32))
+
+    coreset = select_coreset(members, k=DEFAULT_PROBE_CORESET)
+    for c in coreset:
+        print(f"  coreset probe: idx={c['index']} q={c.get('quality')} {Path(c['path']).name}")
+
+    payload = {
+        "size": int(gallery.shape[0]),
+        "inputs": len(image_paths),
+        "kept": len(members),
+        "rejected": len(rejected),
+        "tau_same_person": tau_same,
+        "primary": primary,
+        "members": members,
+        "rejected_members": rejected,
+        "coreset": [
+            {
+                "index": c["index"],
+                "path": c["path"],
+                "crop_path": c["crop_path"],
+                "quality": c.get("quality"),
+                "det_score": c.get("det_score"),
+                "role": c.get("role"),
+            }
+            for c in coreset
+        ],
+        "gallery_path": str(gal_path),
+        "qualities_path": str(out_dir / "gallery_qualities.npy"),
+        "embedding_path": primary["embedding_path"],
+        "crop_path": primary["crop_path"],
+        "backend": primary["backend"],
+        "det_score": primary.get("det_score"),
+        "embedding_sha256": primary.get("embedding_sha256"),
+        "score_mode": "quality_weighted_max+owner_blend+neighbor",
+        "deep_opt": True,
+        "probe_coreset_k": len(coreset),
+    }
+    (out_dir / "gallery.json").write_text(json.dumps(payload, indent=2))
+    print(
+        f"  OK gallery size={payload['size']} "
+        f"(kept {payload['kept']}/{payload['inputs']}, rejected {payload['rejected']}, "
+        f"coreset={len(coreset)})"
+    )
+    return payload
 
 
 def _load_insightface():
@@ -388,25 +683,56 @@ def step_accept(
     min_face_sim: float = 0.35,
     dedupe_sim: float = 0.92,
     seed_crop_path: Path | None = None,
+    seed_crop_paths: list[Path] | None = None,
+    gallery_embeddings: np.ndarray | None = None,
+    gallery_qualities: np.ndarray | None = None,
     require_threshold: bool = False,
+    deep_opt: bool = True,
 ) -> list[dict[str, Any]]:
-    """Rank hits by face similarity to seed; near-exact image boost; collapse near-dups.
+    """Rank hits by face similarity to seed gallery; near-exact boost; collapse near-dups.
 
-    Ground truth is always the seed face embedding. Near-exact (pHash) only nominates;
-    dual-confirm with face_sim is applied later for Anchor lock / expand.
+    Deep-opt (papers): quality-weighted gallery score + owner-vector blend +
+    neighbor consistency boost. Ground truth remains user seed gallery.
     """
-    print("\n[S3] Intelligent accept (dedupe + face-rank + near-exact)…")
-    print(f"  scoring {len(hits)} hits against seed face…")
+    if gallery_embeddings is None:
+        gallery = seed_embedding.reshape(1, -1).astype(np.float32)
+    else:
+        gallery = np.asarray(gallery_embeddings, dtype=np.float32)
+        if gallery.ndim == 1:
+            gallery = gallery.reshape(1, -1)
 
-    seed_phash: int | None = None
-    if seed_crop_path and Path(seed_crop_path).exists():
-        seed_bgr = cv2.imread(str(seed_crop_path))
+    if gallery_qualities is None:
+        qualities = np.ones(gallery.shape[0], dtype=np.float32)
+    else:
+        qualities = np.asarray(gallery_qualities, dtype=np.float32).reshape(-1)
+        if qualities.shape[0] != gallery.shape[0]:
+            qualities = np.ones(gallery.shape[0], dtype=np.float32)
+
+    crop_paths: list[Path] = []
+    if seed_crop_paths:
+        crop_paths = [Path(p) for p in seed_crop_paths if Path(p).exists()]
+    elif seed_crop_path and Path(seed_crop_path).exists():
+        crop_paths = [Path(seed_crop_path)]
+
+    mode = "deep_opt" if deep_opt else "max_sim"
+    print("\n[S3] Intelligent accept (dedupe + face-rank + near-exact)…")
+    print(f"  scoring {len(hits)} hits against gallery size={gallery.shape[0]} mode={mode}…")
+
+    seed_phashes: list[int] = []
+    for cp in crop_paths:
+        seed_bgr = cv2.imread(str(cp))
         if seed_bgr is not None:
-            seed_phash = average_hash64(seed_bgr)
-            print(f"  seed aHash ready (near-exact Hamming≤{NEAR_EXACT_HAMMING})")
+            seed_phashes.append(average_hash64(seed_bgr))
+    if seed_phashes:
+        print(
+            f"  seed aHash ready ×{len(seed_phashes)} "
+            f"(near-exact Hamming≤{NEAR_EXACT_HAMMING})"
+        )
 
     app = _load_insightface()
     scored: list[dict[str, Any]] = []
+    # parallel arrays for deep-opt (not serialized)
+    work_embs: list[np.ndarray | None] = []
 
     for i, h in enumerate(hits):
         link = h.get("link") or h.get("source") or ""
@@ -423,6 +749,11 @@ def step_accept(
             "engine": h.get("engine") or "google_lens",
             "lens_position": h.get("position") or i + 1,
             "face_similarity": None,
+            "face_similarity_primary": None,
+            "face_similarity_raw_max": None,
+            "owner_similarity": None,
+            "neighbor_boosted": False,
+            "best_gallery_index": None,
             "det_score": None,
             "content_hash": None,
             "phash": None,
@@ -448,12 +779,13 @@ def step_accept(
         if img_bgr is None:
             row["skip_reason"] = "no_image_bytes"
             scored.append(row)
+            work_embs.append(None)
             continue
 
-        if seed_phash is not None:
+        if seed_phashes:
             try:
                 ph = average_hash64(img_bgr)
-                dist = hamming64(seed_phash, ph)
+                dist = min(hamming64(sp, ph) for sp in seed_phashes)
                 row["phash"] = format(ph, "016x")
                 row["phash_distance"] = dist
                 row["near_exact"] = dist <= NEAR_EXACT_HAMMING
@@ -463,19 +795,68 @@ def step_accept(
         emb, det = _embed_image_bgr(app, img_bgr)
         if emb is None:
             row["skip_reason"] = "no_face_in_thumb"
-            # near-exact without a face in thumb is NOT identity — keep for logs, never accept
             scored.append(row)
+            work_embs.append(None)
             continue
 
-        sim = cosine(seed_embedding, emb)
+        if deep_opt:
+            sim, best_i, raw_max = gallery_quality_sim(gallery, qualities, emb)
+            row["face_similarity_raw_max"] = round(raw_max, 4)
+        else:
+            sim, best_i = gallery_max_sim(gallery, emb)
+            raw_max = sim
+            row["face_similarity_raw_max"] = round(raw_max, 4)
+
+        sim_primary = cosine(gallery[0], emb)
         row["face_similarity"] = round(sim, 4)
+        row["face_similarity_primary"] = round(sim_primary, 4)
+        row["best_gallery_index"] = int(best_i)
         row["det_score"] = round(det, 4)
         scored.append(row)
+        work_embs.append(emb)
         nx_flag = " EXACT" if row["near_exact"] else ""
         print(
-            f"  [{i+1}/{len(hits)}] sim={sim:.3f} social={row['social']}"
+            f"  [{i+1}/{len(hits)}] sim={sim:.3f} (g{best_i}) social={row['social']}"
             f" phash_d={row.get('phash_distance')}{nx_flag} {link[:60]}"
         )
+
+    # --- Deep-opt pass: owner vector + neighbor boost ---
+    if deep_opt:
+        hit_embs = [e for e in work_embs if e is not None]
+        hit_sims = [
+            float(r["face_similarity"])
+            for r, e in zip(scored, work_embs)
+            if e is not None and r.get("face_similarity") is not None
+        ]
+        owner = build_owner_vector(hit_embs, hit_sims)
+        if owner is not None:
+            np.save(out_dir / "owner_vector.npy", owner)
+            print(f"  owner vector built from {len([s for s in hit_sims if s >= OWNER_SEED_SIM])} strong hits")
+            for r, e in zip(scored, work_embs):
+                if e is None or r.get("face_similarity") is None:
+                    continue
+                o_sim = cosine(owner, e)
+                r["owner_similarity"] = round(float(o_sim), 4)
+                gal = float(r["face_similarity"])
+                blended = (1.0 - OWNER_BLEND) * gal + OWNER_BLEND * max(0.0, float(o_sim))
+                r["face_similarity"] = round(blended, 4)
+        else:
+            print("  owner vector skipped (need ≥2 hits above floor)")
+
+        # neighbor boost on current scores
+        sims_now = [
+            float(r["face_similarity"]) if r.get("face_similarity") is not None else -1.0
+            for r in scored
+        ]
+        boosted = neighbor_consistency_boost(work_embs, sims_now)
+        for r, b, s0 in zip(scored, boosted, sims_now):
+            if r.get("face_similarity") is None:
+                continue
+            if b > s0 + 1e-6:
+                r["face_similarity"] = round(b, 4)
+                r["neighbor_boosted"] = True
+        n_boost = sum(1 for r in scored if r.get("neighbor_boosted"))
+        print(f"  neighbor consistency boosted {n_boost} hits")
 
     # Exact dedupe by content_hash (same image bytes / same thumb)
     by_hash: dict[str, dict[str, Any]] = {}
@@ -522,16 +903,19 @@ def step_accept(
         if not is_near_dup:
             kept.append(row)
 
-    # Eligible = face matches seed above threshold (variations OK; junk rejected)
     eligible = [r for r in kept if (r.get("face_similarity") or 0) >= min_face_sim]
     used_fail_soft = False
     if not eligible:
         if require_threshold:
             report = {
-                "seed_compare": "insightface_cosine",
+                "seed_compare": "deep_opt_quality_owner_neighbor"
+                if deep_opt
+                else "insightface_max_gallery_cosine",
+                "gallery_size": int(gallery.shape[0]),
                 "min_face_sim": min_face_sim,
                 "near_exact_hamming": NEAR_EXACT_HAMMING,
                 "tau_anchor_face": TAU_ANCHOR_FACE,
+                "deep_opt": deep_opt,
                 "top_k": top_k,
                 "hits_in": len(hits),
                 "scored": len(scored),
@@ -549,7 +933,6 @@ def step_accept(
         used_fail_soft = True
         print(f"  warn: no hit >= {min_face_sim}; falling back to best face-ranked")
 
-    # Prefer near-exact social, then social, then face sim
     ranked = sorted(
         eligible,
         key=lambda r: (
@@ -564,15 +947,18 @@ def step_accept(
         raise RuntimeError("No usable URLs after face-rank/dedupe")
 
     observed = utc_now()
-    accepted = []
-    for c in chosen:
-        accepted.append({**c, "observed_at": observed})
+    accepted = [{**c, "observed_at": observed} for c in chosen]
 
     report = {
-        "seed_compare": "insightface_cosine",
+        "seed_compare": "deep_opt_quality_owner_neighbor"
+        if deep_opt
+        else "insightface_max_gallery_cosine",
+        "gallery_size": int(gallery.shape[0]),
         "min_face_sim": min_face_sim,
         "near_exact_hamming": NEAR_EXACT_HAMMING,
         "tau_anchor_face": TAU_ANCHOR_FACE,
+        "deep_opt": deep_opt,
+        "owner_blend": OWNER_BLEND if deep_opt else None,
         "top_k": top_k,
         "hits_in": len(hits),
         "scored": len(scored),
@@ -585,11 +971,15 @@ def step_accept(
     (out_dir / "candidates_ranked.json").write_text(json.dumps(report, indent=2))
     (out_dir / "accepted.json").write_text(json.dumps(accepted, indent=2))
 
-    print(f"  OK accepted {len(accepted)} / {len(hits)} (deduped→{len(kept)}, face-ranked)")
+    print(
+        f"  OK accepted {len(accepted)} / {len(hits)} "
+        f"(deduped→{len(kept)}, gallery={gallery.shape[0]}, deep_opt={deep_opt})"
+    )
     for a in accepted:
         print(
             f"    - sim={a.get('face_similarity')} social={a['social']} "
-            f"near_exact={a.get('near_exact')} {a['url'][:80]}"
+            f"near_exact={a.get('near_exact')} owner={a.get('owner_similarity')} "
+            f"{a['url'][:70]}"
         )
     return accepted
 
@@ -797,19 +1187,29 @@ def main() -> int:
 
     results: list[SmokeResult] = []
     require_insightface = "--insightface" in sys.argv or "--require-insightface" in sys.argv
-    args = [a for a in sys.argv[1:] if not a.startswith("--")]
-    if args:
-        sample = Path(args[0]).expanduser().resolve()
-        if not sample.exists():
-            raise SystemExit(f"Image not found: {sample}")
+    paths = parse_image_args()
+    if paths:
+        for p in paths:
+            if not p.exists():
+                raise SystemExit(f"Image not found: {p}")
     else:
-        sample = download_sample(ROOT / "samples" / "elon_musk.jpg")
-    print(f"IMAGE {sample}")
+        paths = [download_sample(ROOT / "samples" / "elon_musk.jpg")]
+    print(f"IMAGES ({len(paths)}): " + ", ".join(str(p.name) for p in paths))
 
     try:
-        face = step_face(sample, out_dir, require_insightface=require_insightface)
-        results.append(SmokeResult("S0_face", True, f"{face['backend']}:{face['embedding_sha256'][:16]}"))
+        gallery = step_seed_gallery(paths, out_dir, require_insightface=require_insightface)
+        face = gallery["primary"]
+        results.append(
+            SmokeResult(
+                "S0_face",
+                True,
+                f"{face['backend']}:gallery={gallery['size']}:{face['embedding_sha256'][:16]}",
+            )
+        )
         seed_emb = np.load(face["embedding_path"])
+        gal_emb = np.load(gallery["gallery_path"])
+        gal_q = np.load(gallery["qualities_path"]) if gallery.get("qualities_path") else None
+        crop_paths = [Path(m["crop_path"]) for m in gallery["members"]]
 
         hosted = step_host(Path(face["crop_path"]), env["IMGBB_API_KEY"], out_dir)
         results.append(SmokeResult("S1_host", True, hosted))
@@ -823,7 +1223,10 @@ def main() -> int:
             seed_emb,
             top_k=5,
             min_face_sim=0.35,
-            seed_crop_path=Path(face["crop_path"]),
+            seed_crop_paths=crop_paths,
+            gallery_embeddings=gal_emb,
+            gallery_qualities=gal_q,
+            deep_opt=True,
         )
         results.append(SmokeResult("S3_accept", True, accepted[0]["url"][:80]))
 

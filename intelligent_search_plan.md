@@ -247,8 +247,9 @@ We are **not** diverting if optional slices stay optional. Diverting = building 
 | Risk | Mitigation |
 |---|---|
 | Social scrape blocked | Lite gallery from SAME_IMAGE cluster + Anchor page og:image only |
-| Exact match rare | Fall back to Case 3 (current face-rank) |
-| Lookalike gallery pollution | Require sim to seed + optional mutual consistency |
+| Exact match rare | Fall back to Case 3 (current face-rank); **or** ask user for more seed photos |
+| Lookalike gallery pollution | User multi-photo: reject extras below `TAU_GALLERY_SAME_PERSON` vs primary |
+| User multi-photo seed gallery | **Implemented** — CLI accepts 1..5 images; score = max sim to gallery |
 | SerpAPI credits | P1 once; P4 only if Anchor earned |
 | Ethics / private posts | Public only; README limitation |
 
