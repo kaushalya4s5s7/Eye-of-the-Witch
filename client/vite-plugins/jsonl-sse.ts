@@ -38,7 +38,10 @@ const FIXTURES: Record<string, string> = {
 
 const DEFAULT_INTERVAL_MS = 800
 const POLL_MS = 300
-const FILE_WAIT_MS = 2000
+// Cold InsightFace model download can take 45s+ before first event writes.
+// This only governs the initial "does run's event file exist yet" check;
+// per-event polling (POLL_MS) and stream ceiling (HARD_CEILING_MS) unaffected.
+const FILE_WAIT_MS = 90000
 const HARD_CEILING_MS = 5 * 60 * 1000
 
 const RUN_ID_RE = /^[a-zA-Z0-9_-]+$/
