@@ -1,203 +1,282 @@
-# Eye of the Witch — HH Goa 2026
+# Eye of the Witch
 
-**Face scan → live web/social search → matching post(s) → on-chain fingerprint → re-verify**,
-wrapped in a split-screen ritual UI.
+**HH Goa 2026 — Task 3**
 
-- **`backend/`** — the pipeline: `InsightFace` detection → live reverse-image
-  search (SerpAPI: Google Lens, Yandex Images, Google Reverse Image) → Merkle
-  root over accepted posts → attestation on EAS (Sepolia) → re-verify.
-- **`client/`** — the UI. Left: fantasy/video ritual panel. Right: a real
-  terminal (xterm.js) tailing a JSONL event stream from the backend. Its
-  ground-truth spec — event schema, hard rules, UI state machine, build
-  order — is [`client/CLAUDE.md`](client/CLAUDE.md). Read that first if
-  you're working on the UI.
+> Face scan → live web / social search → on-chain fingerprint → re-verify
 
-> The root-level `smoke_e2e.py` / `smoke_full.py` / `samples/` / `requirements.txt`
-> are the pipeline's original, pre-UI form (kept for history). `backend/`
-> holds the copy the client's dev bridge actually drives; that's the one to
-> run against day to day.
+A face shows up. The public web has many lookalikes and recycled photos.  
+Search engines *propose* pages. They do not *decide* who the person is.  
+This project is a pipeline that **checks**, **decides**, and **seals** that whole check so anyone can re-read it later.
 
 ---
 
-## What it does
+## The problem we are solving
 
-1. **Face identification** — Detect and encode a face from an input image (`InsightFace` buffalo_s).
-2. **Web / social search** — Host the face crop (imgbb), run **live** reverse-image search via SerpAPI (Google Lens, Yandex Images, Google Reverse Image). Rank hits by face similarity to the **seed** face. Prefer social domains. Not hardcoded.
-3. **Blockchain verification** — Adjudicate candidates (`accept` / `abstain` / `reject` with τ bands), build a Merkle root over the **evidence bundle** (probe + verdicts + accepts), attest `bytes32 contentHash` on **EAS (Ethereum Attestation Service) Sepolia**, then rebuild from `evidence.json` and check it against the on-chain attestation.
+If you only reverse-image-search a face, three things go wrong:
 
-Optional intelligence (still the same pipeline shape):
+| What goes wrong | Why it hurts |
+|---|---|
+| Search returns junk or lookalikes | A “similar image” is not the same person |
+| Exact photo matches can poison you | Same pixels, different face → wrong identity cascade |
+| A list of URLs is not proof | Anyone can edit a demo; nothing is committed |
 
-- **Near-exact image** detection (average hash) + **dual confirm** with seed face before locking an Anchor.
-- Expand / gated hop only if `AnchorLocked` (prevents junk and poison-DP cascades).
-- Evidence graph snapshot (`graph.json`) for the run.
+So we ask a different question:
+
+> **Can we take a face, search the live public web, let the face model vote on every candidate, and put a fingerprint of that whole check on chain — then prove it still matches?**
+
+That is the pipeline. Everything else (UI ritual, optional expand hop, evidence map) sits around that spine.
 
 ---
 
-## Running the pipeline (backend)
+## How we thought about it (from every side)
+
+We designed the pipeline as four honest jobs, not as a pile of features.
+
+```mermaid
+flowchart LR
+  subgraph Input
+    A[Your photo s]
+  end
+  subgraph Propose
+    B[Live reverse search]
+  end
+  subgraph Decide
+    C[Face encoder votes]
+  end
+  subgraph Seal
+    D[Evidence fingerprint]
+    E[On-chain attest]
+    F[Re-verify]
+  end
+  A --> B --> C --> D --> E --> F
+```
+
+| Side | What we care about |
+|---|---|
+| **Face** | Detect + encode. Multi-photo gallery if you give angles. The seed is ground truth for ranking. |
+| **Search** | Real engines (Lens / Yandex / Google reverse) — live, not hardcoded URLs. Search only *proposes*. |
+| **Decision** | Cosine similarity bands: accept / abstain / reject. Near-exact image without a strong face match → reject. |
+| **Chain** | Merkle over the **whole check** (probe + every verdict + accepts), attest on EAS Sepolia, rebuild and match. |
+
+**Search proposes → encoder decides → seal the whole check.**  
+That one sentence is the product.
+
+---
+
+## The pipeline
+
+```mermaid
+flowchart TD
+  P1[1 · Face scan] --> P2[2 · Host crop]
+  P2 --> P3[3 · Live reverse search]
+  P3 --> P4[4 · Merge candidates]
+  P4 --> P5[5 · Adjudicate]
+  P5 -->|at least one accept| P6[6 · Build evidence bundle]
+  P5 -->|no accepts| NM[NoMatchFound · stop · no chain write]
+  P6 --> P7[7 · Merkle root]
+  P7 --> P8[8 · Attest on EAS Sepolia]
+  P8 --> P9[9 · Re-verify]
+
+  P1 -.- E1["FaceDetected · GalleryBuilt"]
+  P2 -.- E2["ImageHosted"]
+  P3 -.- E3["ImageSearchRequested / Completed / Failed"]
+  P4 -.- E4["SearchMerged"]
+  P5 -.- E5["AdjudicationCompleted · PostAccepted"]
+  P7 -.- E7["MerkleBuilt"]
+  P8 -.- E8["Attesting · Attested"]
+  P9 -.- E9["VerifyPassed"]
+```
+
+### 1 · Face scan
+
+Detect the face, encode it (InsightFace).  
+One photo works. Several angles make ranking steadier — we keep a small **seed gallery** and pick the best crop(s) for search.
+
+### 2 · Host the crop
+
+Search engines need a public URL. We upload the crop temporarily (imgbb), then forget hosting — it is glue, not the point.
+
+### 3–4 · Live search + merge
+
+Ask Google Lens, Yandex Images, and Google Reverse Image.  
+Merge and dedupe by URL. Prefer social domains when scores are close — but the **seed face always wins** over “the engine liked this page.”
+
+### 5 · Adjudicate (this is where math changes the outcome)
+
+For each candidate thumbnail we compare faces to the seed:
+
+| Similarity | Decision | Meaning |
+|---|---|---|
+| ≥ 0.25 | **accept** | Strong enough to keep |
+| 0.20 – 0.25 | **abstain** | Gray band — not sealed as a match |
+| &lt; 0.20 | **reject** | Too weak |
+| Near-exact photo, weak face vs seed | **reject** | Anti-poison |
+
+Then we emit `AdjudicationCompleted` (counts + thresholds) and `PostAccepted` for the accepts.
+
+### 6–9 · Seal + chain + re-verify
+
+We do **not** put the face on chain.  
+We fingerprint the **evidence bundle**:
+
+1. **Probe** — what we searched with  
+2. **Verdicts** — how we voted each candidate  
+3. **Accepts** — what we kept  
+
+Merkle root → attest on **EAS (Sepolia)** → rebuild locally from `evidence.json` → confirm it matches the on-chain hash.
+
+---
+
+## Architecture (what talks to what)
+
+```mermaid
+flowchart TB
+  UI[client · ritual UI + terminal]
+  API[backend · smoke_full / smoke_e2e]
+  IF[InsightFace]
+  HOST[imgbb]
+  SERP[SerpAPI · Lens / Yandex / Google]
+  RUN[(runs / run_id /)]
+  EAS[EAS · Sepolia]
+
+  UI -->|upload + SSE events| API
+  API --> IF
+  API --> HOST
+  API --> SERP
+  API --> RUN
+  API -->|Merkle root| EAS
+  RUN -->|events.jsonl · evidence · attest| UI
+```
+
+| Piece | Role |
+|---|---|
+| `backend/` | Canonical pipeline — run this day to day |
+| `client/` | Left: ritual. Right: live terminal of events |
+| `runs/<run_id>/` | One folder = one investigation |
+| `events.jsonl` | Append-only story the UI tails |
+| `events_contract.md` | Shared vocabulary of those events |
+
+Root-level `smoke_*.py` is the older CLI copy; **`backend/`** is what the UI drives.
+
+---
+
+## A run is a folder
+
+Every execution writes `backend/runs/<run_id>/` (also visible as `runs/` when symlinked).
+
+```text
+runs/full-20260904T112413Z-0f9c6d60/
+├── events.jsonl      ← live story (UI terminal)
+├── gallery.json      ← seed photos kept / rejected
+├── accepted.json     ← posts with decision=accept
+├── evidence.json     ← sealed adjudication bundle
+├── merkle.json       ← root + leaf digests
+├── attest.json       ← tx, uid, EASScan link
+├── verify.json       ← rebuild vs chain
+├── graph.json        ← optional map of the hunt
+└── smoke_report.json ← pass / no-match / fail
+```
+
+**Exit codes:** `0` pass · `2` no match (no chain write) · `1` hard failure.
+
+### Events = the story of the run
+
+Success path (simplified):
+
+```text
+FaceDetected → GalleryBuilt → ImageHosted
+  → ImageSearchRequested → ImageSearchCompleted… → SearchMerged
+  → AdjudicationCompleted → PostAccepted
+  → GraphUpserted → MerkleBuilt → Attesting → Attested → VerifyPassed
+```
+
+Off-ramps:
+
+- `NoMatchFound` — candidates existed, none accepted → **no** chain write  
+- `Failed` — hard error (bad image, API, RPC, …)
+
+Full field notes: [`events_contract.md`](events_contract.md).  
+Longer walkthrough: [`docs/pipeline-friendly-guide.md`](docs/pipeline-friendly-guide.md).
+
+---
+
+## Run it
+
+### Backend
 
 ```bash
 cd backend
-python3 -m venv .venv
-source .venv/bin/activate
+python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Create `.env` in `backend/` (never commit it):
+Create `backend/.env` (never commit):
 
 ```bash
 SERPAPI_API_KEY=...
 IMGBB_API_KEY=...
 SEPOLIA_RPC_URL=https://ethereum-sepolia-rpc.publicnode.com
-PRIVATE_KEY=0x...   # Sepolia-funded wallet; rotate if ever exposed
+PRIVATE_KEY=0x...   # Sepolia-funded; rotate if exposed
 ```
+
+```bash
+# Full pipeline (multi-engine + gallery scoring + evidence seal + EAS)
+.venv/bin/python smoke_full.py samples/photo1.jpg
+
+# Stronger ranking: 2–5 public photos of the same person
+.venv/bin/python smoke_full.py samples/a.jpg samples/b.jpg samples/c.jpg
+
+# Leaner path (Lens-focused)
+.venv/bin/python smoke_e2e.py --insightface samples/photo1.jpg
+```
+
+### UI
+
+```bash
+cd client && npm install && npm run dev
+```
+
+Default: plays a fixture from `client/fixtures/`.  
+Live: point at a `backend/` run so the terminal tails `events.jsonl` — see [`client/CLAUDE.md`](client/CLAUDE.md).
 
 ---
 
-## How to run
+## On-chain (honest, short)
 
-**Full pipeline** (multi-engine + seed gallery + graph + anchor gate + EAS):
-
-```bash
-# One photo (minimum)
-.venv/bin/python smoke_full.py samples/elon_musk.jpg
-
-# Better match: 2–5 photos of the same person (first = primary for reverse search)
-.venv/bin/python smoke_full.py samples/photo1.jpg samples/photo2.jpg samples/photo3.jpg
-```
-
-**Leaner E2E** (Lens-only path; also accepts multiple images):
-
-```bash
-.venv/bin/python smoke_e2e.py --insightface samples/elon_musk.jpg samples/other_angle.jpg
-```
-
-## Deep optimization (research-backed)
-
-Enabled by default in `smoke_full.py`:
-
-1. **Quality coreset** — pick best 1–2 seed crops (det_score + sharpness) for reverse search  
-2. **Multi-probe discovery** — reverse-search each coreset crop, merge URLs  
-3. **Quality-weighted gallery score** — not naive max alone  
-4. **Owner vector blend** — average strong hit faces, re-score (cross-profile matching)  
-5. **Neighbor consistency** — boost hits that agree with other strong matches  
-
-```bash
-.venv/bin/python smoke_full.py samples/D1.png samples/D2.png samples/D3.png samples/D4.png
-```
-
-Artifacts land in `backend/runs/<run_id>/`:
-
-| File | Purpose |
+| | |
 |---|---|
-<<<<<<< Updated upstream
-| `events.jsonl` | Live run events (drives the client's terminal + ritual panel) |
-=======
-| `events.jsonl` | Live run events (for UI / demo terminal) |
-| `gallery.json` | Seed gallery (kept/rejected multi-photo inputs) |
->>>>>>> Stashed changes
-| `accepted.json` | Matching posts (`decision=accept`) shown in UI |
-| `evidence.json` | Adjudication bundle sealed by Merkle (probe + verdicts + accepts) |
-| `anchor.json` | Dual-confirm anchor (if any) |
-| `merkle.json` | Root + leaves |
-| `attest.json` | tx hash, attestation UID, EASScan link |
-| `verify.json` | Local rebuild + on-chain match + tamper check |
-| `graph.json` | Evidence graph snapshot |
-| `smoke_report.json` | Pass / no-match / fail summary |
+| Network | Ethereum **Sepolia** |
+| Service | **EAS** — attestation of `bytes32 contentHash` |
+| Content | Merkle root of the **adjudication evidence bundle** |
+| Check | Rebuild from `evidence.json` ↔ on-chain `contentHash` |
 
-Exit codes: `0` pass · `2` no match (no chain write) · `1` hard failure.
+Explorer links land in `attest.json` (`easscan`, `tx_url`).
+
+This is **similarity evidence**, not legal identity proof. Use publicly indexed images (public figure or your own public photo).
 
 ---
 
-## Running the UI (client)
-
-```bash
-cd client
-npm install
-npm run dev
-```
-
-By default it plays back a committed fixture (`client/fixtures/*.jsonl`) — no
-backend run needed. See [`client/CLAUDE.md`](client/CLAUDE.md) for the event
-contract, fixture list, and how to point it at a live `backend/` run instead.
-
----
-
-## Blockchain used
-
-| Item | Value |
-|---|---|
-| Network | **Ethereum Sepolia** (public testnet) |
-| System | **EAS** — `0xC2679fBD37d54388Ce493F1DB75320D236e1815e` |
-| Schema | `bytes32 contentHash` — UID `0xdf4c41ea0f6263c72aa385580124f41f2898d3613e86c50519fc3cfd7ff13ad4` |
-| What is attested | Merkle root over **adjudication bundle** (probe + verdict leaves + accept leaves) |
-| Re-verify | Rebuild Merkle from `evidence.json` (fallback: `accepted.json`); compare to attestation `contentHash` via `getAttestation` |
-
-Explorer links are written to `attest.json` (`easscan`, `tx_url`).
-
----
-
-## Matching rules (honest)
-
-| Signal | Role |
-|---|---|
-| InsightFace cosine vs **seed gallery** | Same person — `max` sim over 1..N user photos (pose/light variations OK) |
-| **Decision bands** | `sim ≥ 0.25` accept · `0.20–0.25` abstain · `< 0.20` reject |
-| Average hash near-exact | Same *photo* nominee vs any seed crop |
-| **Dual confirm** | Near-exact **and** face_sim ≥ τ → `AnchorLocked`; expand only then |
-| Seed gallery always wins | Exact DP without face match to gallery → **reject** (no poison cascade) |
-| Multi-photo tip | More public photos of the same person → sharper web ranking |
-
-This is **similarity evidence**, not legal identity proof.
-
----
-
-## Privacy / demo ethics
-
-- Use **publicly indexed** images (public figure or your own public photo).
-- Do not target private accounts or non-consensual personal searches for demos.
-- Search engines and CDNs may block or expire thumbnails; hashes saved at accept time remain for verify.
-
----
-
-## Known limitations
-
-- Relies on third-party APIs (SerpAPI, imgbb) and free RPC rate limits.
-- Social hotlink / scrape limits: we score **thumbnails** from search results, not full private profiles.
-- Gallery-from-profile enrichment (plan Slice II scrape) is **not** implemented — **user multi-photo seed gallery** is the supported path instead.
-- Face thresholds are tuned for smoke demos; lookalikes can still land in the **abstain** band.
-- `runs/`, `backend/runs/`, and `.env` are gitignored; share demo artifacts separately if needed.
-- If a private key was ever pasted in chat, **rotate** it.
-
----
-
-## Repo layout
+## Repo map
 
 ```text
-backend/                   canonical pipeline (run this day to day)
-  smoke_e2e.py
-  smoke_full.py
-  requirements.txt
-  samples/
-client/                    the ritual UI
-  CLAUDE.md                ground-truth doc (read every session)
-  fixtures/                hand-authored JSONL event runs for dev
-  media/                   AI-generated video clips
-  src/                     the UI
-docs/                      design specs and implementation plans
-smoke_e2e.py, smoke_full.py, requirements.txt, samples/   original
-  pre-UI pipeline copy, kept for history — see the backend/ note above
-architecture.md            pipeline architecture notes
-events_contract.md         UI event schema
-intelligent_search_plan.md
-idea.md
-ryuk_handoff.md
+backend/          pipeline you run day to day
+client/           ritual UI + event terminal
+docs/             design notes + friendly pipeline guide
+events_contract.md
+architecture.md
 ```
+
+---
 
 ## Task checklist
 
-- [x] Face detect + encode
-- [x] Genuine live web/social search → ≥1 matching post
-- [x] Hash / fingerprint on chain + re-verify
-- [x] No website required (pipeline runs standalone via `backend/`)
-- [x] Split-screen ritual UI wired to live pipeline events
-- [x] GitHub-ready source + this README
+- [x] Face detect + encode  
+- [x] Genuine live web / social search → ≥1 matching post when the web has one  
+- [x] Evidence fingerprint on chain + re-verify  
+- [x] Pipeline runs standalone (no website required)  
+- [x] Split-screen UI wired to live events  
+- [x] Source + this README  
+
+---
+
+**One line:** scan the face → let the web propose → let the encoder decide → seal the whole check on Sepolia → prove it still matches.
