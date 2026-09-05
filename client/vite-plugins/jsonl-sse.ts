@@ -1,11 +1,10 @@
 import { randomUUID } from 'node:crypto'
 import { realpathSync } from 'node:fs'
-import { access, mkdir, readFile, writeFile } from 'node:fs/promises'
+import { access, mkdir, readFile, unlink, writeFile } from 'node:fs/promises'
 import { spawn } from 'node:child_process'
-import type { IncomingMessage, ServerResponse } from 'node:http'
 import { resolve } from 'node:path'
 import type { Plugin, ViteDevServer } from 'vite'
-import { completeLines, newLinesSince } from '../src/lib/tailFile'
+import { newLinesSince } from '../src/lib/tailFile'
 
 /**
  * Dev-only event feed and pipeline bridge.
@@ -44,6 +43,9 @@ const POLL_MS = 300
 // per-event polling (POLL_MS) and stream ceiling (HARD_CEILING_MS) unaffected.
 const FILE_WAIT_MS = 90000
 const HARD_CEILING_MS = 5 * 60 * 1000
+// Same ceiling UploadGate.tsx already enforces client-side (MAX_BYTES there) —
+// kept here too since the client check is bypassable (M3).
+const MAX_UPLOAD_BYTES = 15 * 1024 * 1024
 
 const RUN_ID_RE = /^[a-zA-Z0-9_-]+$/
 const NAME_RE = /^[a-z0-9_-]+$/i
@@ -60,9 +62,16 @@ export function jsonlSse(): Plugin {
 
       warnIfRunsLinkMissing(server, backendRunsLink, runsDir)
 
-      // Shared across /dev/run and /dev/events: at most one pipeline
-      // process alive at a time (spec §3).
-      let runInFlight = false
+      // Shared across /dev/run and /dev/events: at most one pipeline process
+      // alive at a time (spec §3), *and* which run_id it is (M2) — so tailing
+      // a different (e.g. older, already-completed) run_id never mistakes
+      // "some run is alive" for "this run is alive" and hangs until
+      // HARD_CEILING_MS. `PENDING` is a placeholder held only between
+      // claiming the slot and learning the child's real run_id from its
+      // stdout; it can never collide with a real run_id (those all start
+      // with "full-" and are validated against RUN_ID_RE).
+      const PENDING = '__pending__'
+      let inFlightRunId: string | null = null
 
       server.middlewares.use('/dev/run', async (req, res) => {
         if (req.method !== 'POST') {
@@ -70,7 +79,7 @@ export function jsonlSse(): Plugin {
           res.end('POST only')
           return
         }
-        if (runInFlight) {
+        if (inFlightRunId !== null) {
           res.statusCode = 409
           res.setHeader('Content-Type', 'application/json')
           res.end(JSON.stringify({ error: 'run_in_progress' }))
@@ -79,16 +88,30 @@ export function jsonlSse(): Plugin {
         // Claim the slot immediately, before any await, so two concurrent
         // POSTs can't both pass the check above (TOCTOU). Cleared on every
         // early-return/error path below, not just the happy path.
-        runInFlight = true
+        inFlightRunId = PENDING
 
         try {
           const chunks: Buffer[] = []
+          let uploadedBytes = 0
+          let tooLarge = false
           for await (const chunk of req) {
+            uploadedBytes += (chunk as Buffer).length
+            if (uploadedBytes > MAX_UPLOAD_BYTES) {
+              tooLarge = true
+              break
+            }
             chunks.push(chunk as Buffer)
+          }
+          if (tooLarge) {
+            inFlightRunId = null
+            req.destroy()
+            res.statusCode = 413
+            res.end(`upload too large — max ${MAX_UPLOAD_BYTES} bytes`)
+            return
           }
           const bytes = Buffer.concat(chunks)
           if (bytes.length === 0) {
-            runInFlight = false
+            inFlightRunId = null
             res.statusCode = 400
             res.end('empty upload')
             return
@@ -107,6 +130,16 @@ export function jsonlSse(): Plugin {
           let responded = false
           let stdoutBuf = ''
 
+          const cleanupUpload = async () => {
+            try {
+              await unlink(uploadPath)
+            } catch (err) {
+              server.config.logger.warn(
+                `[live-run] could not remove uploaded file ${uploadPath}: ${(err as Error).message}`,
+              )
+            }
+          }
+
           child.stdout.on('data', (data: Buffer) => {
             const text = data.toString('utf8')
             stdoutBuf += text
@@ -115,8 +148,9 @@ export function jsonlSse(): Plugin {
               const match = stdoutBuf.match(/FULL RUN (\S+)/)
               if (match) {
                 responded = true
+                inFlightRunId = `full-${match[1]}`
                 res.writeHead(200, { 'Content-Type': 'application/json' })
-                res.end(JSON.stringify({ run_id: `full-${match[1]}` }))
+                res.end(JSON.stringify({ run_id: inFlightRunId }))
               }
             }
           })
@@ -124,7 +158,8 @@ export function jsonlSse(): Plugin {
             server.config.logger.warn(`[live-run] ${data.toString('utf8').trimEnd()}`)
           })
           child.on('error', (err) => {
-            runInFlight = false
+            inFlightRunId = null
+            void cleanupUpload()
             if (!responded) {
               responded = true
               res.statusCode = 500
@@ -132,8 +167,9 @@ export function jsonlSse(): Plugin {
             }
           })
           child.on('exit', (code) => {
-            runInFlight = false
+            inFlightRunId = null
             server.config.logger.info(`[live-run] pipeline exited (${code})`)
+            void cleanupUpload()
             if (!responded) {
               responded = true
               res.statusCode = 500
@@ -141,7 +177,7 @@ export function jsonlSse(): Plugin {
             }
           })
         } catch (err) {
-          runInFlight = false
+          inFlightRunId = null
           if (!res.headersSent) {
             res.statusCode = 500
             res.end(`could not start pipeline: ${(err as Error).message}`)
@@ -154,7 +190,7 @@ export function jsonlSse(): Plugin {
         const runId = params.get('run_id')
 
         if (runId) {
-          await streamRun(req, res, runId, runsDir, () => runInFlight)
+          await streamRun(req, res, runId, runsDir, () => inFlightRunId === runId)
           return
         }
 
@@ -243,18 +279,41 @@ export function jsonlSse(): Plugin {
           res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' })
           res.end(raw)
         } catch {
-          // A run legitimately may not have a given sidecar.
+          // A run legitimately may not have a given sidecar. Name the request,
+          // not the resolved absolute server-side path (M14).
           res.statusCode = 404
-          res.end(`no sidecar for ${filePath}`)
+          res.end(`no sidecar "${name}" for ${runId ? `run_id="${runId}"` : `fixture="${params.get('fixture') ?? 'success'}"`}`)
         }
       })
     },
   }
 }
 
-async function streamRun(
-  req: IncomingMessage,
-  res: ServerResponse,
+/**
+ * Minimal surface of `http.IncomingMessage` that `streamRun` actually reads.
+ * Kept separate (rather than requiring a real `IncomingMessage`) so tests can
+ * drive `streamRun` with a lightweight fake instead of standing up a real
+ * request (R3). Real `IncomingMessage` instances satisfy this structurally.
+ */
+export interface StreamRunRequest {
+  on(event: 'close', listener: () => void): void
+}
+
+/**
+ * Minimal surface of `http.ServerResponse` that `streamRun` actually writes
+ * to. Same rationale as `StreamRunRequest`. Real `ServerResponse` instances
+ * satisfy this structurally.
+ */
+export interface StreamRunResponse {
+  statusCode: number
+  writeHead(statusCode: number, headers?: Record<string, string>): void
+  write(chunk: string): void
+  end(chunk?: string): void
+}
+
+export async function streamRun(
+  req: StreamRunRequest,
+  res: StreamRunResponse,
   runId: string,
   runsDir: string,
   isRunInFlight: () => boolean,
@@ -321,8 +380,10 @@ async function streamRun(
       res.write(`data: ${line}\n\n`)
     }
 
-    if (!isRunInFlight() && sentCount === completeLines(raw).length) {
+    if (!isRunInFlight() && result.lines.length === 0) {
       // the process has exited and we've drained every line it wrote
+      // (newLinesSince already re-split/re-trimmed raw into result.lines —
+      // no need to call completeLines(raw) again just to compare a count).
       break
     }
 
@@ -389,6 +450,10 @@ function extFor(contentType: string | undefined): string {
       return 'webp'
     case 'image/gif':
       return 'gif'
+    case 'image/heic':
+      return 'heic'
+    case 'image/heif':
+      return 'heif'
     default:
       return 'bin'
   }

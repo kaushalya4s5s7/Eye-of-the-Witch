@@ -12,7 +12,7 @@
  */
 
 import { useEffect, useReducer, useRef, useState } from 'react'
-import { eventStreamUrl, runFileUrl, type EventSource } from '../lib/events'
+import { eventStreamUrl, runFileUrl, type EventFeed } from '../lib/events'
 import { classifyEvent, validateEvent } from '../lib/schema'
 import {
   formatEventLine,
@@ -53,7 +53,7 @@ function mapAccepted(raw: unknown): Star[] {
     .filter((s) => s.url !== '')
 }
 
-export function useEventStream(source: EventSource): EventStream {
+export function useEventStream(source: EventFeed): EventStream {
   const [scene, dispatch] = useReducer(reduceScene, initialScene)
   const [lines, setLines] = useState<TerminalLine[]>([])
 
@@ -156,6 +156,14 @@ export function useEventStream(source: EventSource): EventStream {
       if (starTimer) clearTimeout(starTimer)
       eventStream.close()
     }
+    // INVARIANT (M12): this effect closes over the full `source` object (via
+    // `eventStreamUrl`/`runFileUrl` calls inside), but the dep array below is
+    // just `[sourceUrl]`. That's safe only because `sourceUrl` is derived
+    // from every field `EventFeed` has that this effect reads — if
+    // `EventFeed`'s shape ever grows a field the effect needs without also
+    // folding it into `sourceUrl`, this array must be revisited (there is no
+    // ESLint react-hooks/exhaustive-deps config in client/ to catch that
+    // drift automatically).
   }, [sourceUrl])
 
   return { scene, lines, sourceUrl }

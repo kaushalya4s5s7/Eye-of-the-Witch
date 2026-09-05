@@ -4,7 +4,7 @@ import { EventTerminal } from './components/EventTerminal'
 import { RitualStage } from './components/RitualStage'
 import { UploadGate } from './components/UploadGate'
 import { useEventStream } from './hooks/useEventStream'
-import type { EventSource, FixtureName } from './lib/events'
+import type { EventFeed, FixtureName } from './lib/events'
 
 const FIXTURES: FixtureName[] = ['success', 'success-noexpand', 'nomatch', 'failed']
 
@@ -19,7 +19,7 @@ function readFixture(): FixtureName | null {
 // session, exactly as before. Run mode is chosen live via the upload gate.
 const FIXED_FIXTURE = readFixture()
 
-type Stage = { kind: 'gate' } | { kind: 'active'; source: EventSource }
+type Stage = { kind: 'gate' } | { kind: 'active'; source: EventFeed }
 
 export default function App() {
   const [stage, setStage] = useState<Stage>(() =>
@@ -62,7 +62,7 @@ export default function App() {
   )
 }
 
-function ActiveRun({ source, onCastAgain }: { source: EventSource; onCastAgain: () => void }) {
+function ActiveRun({ source, onCastAgain }: { source: EventFeed; onCastAgain: () => void }) {
   const { scene, lines } = useEventStream(source)
   const label =
     source.mode === 'fixture'

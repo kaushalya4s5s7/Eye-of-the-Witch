@@ -29,6 +29,7 @@ runs/
 backend/.venv/
 backend/uploads/
 backend/runs
+backend/__pycache__/
 
 # vite cache
 client/.vite/

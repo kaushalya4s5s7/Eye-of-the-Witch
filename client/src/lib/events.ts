@@ -3,12 +3,16 @@
 export type FixtureName = 'success' | 'success-noexpand' | 'nomatch' | 'failed'
 
 /** Where events come from: a canned fixture (dev/QA, pinned by `?fixture=`
- *  in the URL), or a real run kicked off through the upload gate. */
-export type EventSource =
+ *  in the URL), or a real run kicked off through the upload gate.
+ *
+ *  Named `EventFeed` (not `EventSource`) to avoid colliding with the
+ *  browser's native `EventSource` global — see useEventStream.ts, which
+ *  uses both in the same file (M7). */
+export type EventFeed =
   | { mode: 'fixture'; fixture: FixtureName; interval?: number }
   | { mode: 'run'; runId: string }
 
-export function eventStreamUrl(source: EventSource): string {
+export function eventStreamUrl(source: EventFeed): string {
   const params = new URLSearchParams()
   if (source.mode === 'fixture') {
     params.set('fixture', source.fixture)
@@ -24,7 +28,7 @@ export function eventStreamUrl(source: EventSource): string {
  * mode the jsonl-sse plugin serves `fixtures/<name>.<fixture>.json`; in run
  * mode it serves `runs/<run_id>/<name>.json`.
  */
-export function runFileUrl(source: EventSource, name: string): string {
+export function runFileUrl(source: EventFeed, name: string): string {
   const params = new URLSearchParams({ name })
   if (source.mode === 'fixture') {
     params.set('fixture', source.fixture)

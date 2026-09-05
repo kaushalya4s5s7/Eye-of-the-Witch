@@ -74,6 +74,15 @@ export function UploadGate({ onStarted }: { onStarted: (runId: string) => void }
         onDragLeave={() => setDragOver(false)}
         onDrop={onDrop}
         onClick={() => status.kind !== 'busy' && inputRef.current?.click()}
+        onKeyDown={(e) => {
+          // A `div[role="button"]` gets no implicit Enter/Space activation
+          // (M6) — wire it up to the same action as a click.
+          if (status.kind === 'busy') return
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault()
+            inputRef.current?.click()
+          }
+        }}
         role="button"
         tabIndex={0}
       >
