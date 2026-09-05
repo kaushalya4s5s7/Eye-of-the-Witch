@@ -171,6 +171,7 @@ def build_graph(
     out_dir: Path,
     events: list,
     expand_notes: list[dict],
+    anchor: dict | None = None,
 ) -> nx.DiGraph:
     print("\n[S3b] Evidence graph (NetworkX)…")
     G = nx.DiGraph()
@@ -208,6 +209,7 @@ def build_graph(
             face_similarity=a.get("face_similarity"),
             social=a.get("social"),
             content_hash=a.get("content_hash"),
+            near_exact=a.get("near_exact"),
         )
         G.add_edge(seed_id, pid, kind="ACCEPTED_IN", face_similarity=a.get("face_similarity"))
         handle = extract_handle(a["url"])
@@ -216,6 +218,18 @@ def build_graph(
             if hid not in G:
                 G.add_node(hid, kind="Handle", handle=handle)
             G.add_edge(hid, pid, kind="AUTHORED_OR_APPEARS")
+
+    if anchor and anchor.get("url"):
+        aid = f"anchor:{base.sha256_hex(anchor['url'].encode())[:16]}"
+        G.add_node(
+            aid,
+            kind="Anchor",
+            url=anchor["url"],
+            face_similarity=anchor.get("face_similarity"),
+            phash_distance=anchor.get("phash_distance"),
+            near_exact=True,
+        )
+        G.add_edge(seed_id, aid, kind="LOCKED_AS_ANCHOR")
 
     for note in expand_notes:
         eid = f"expand:{base.sha256_hex(note['url'].encode())[:16]}"
@@ -241,16 +255,22 @@ def step_smart_expand(
     out_dir: Path,
     events: list,
     seed_emb: np.ndarray,
+    *,
+    anchor: dict | None,
 ) -> list[dict]:
-    """One gated hop: from best social accept, search name/handle on the open web."""
+    """One gated hop: only after dual-confirm AnchorLocked (near-exact + face vs seed)."""
     print("\n[S3c] Smart expand (gated)…")
-    social = [a for a in accepted if a.get("social") and (a.get("face_similarity") or 0) >= 0.20]
-    if not social:
-        emit(events, out_dir, "ExpandSkipped", reason="no_social_above_floor")
-        print("  skip: no social hit with face_sim >= 0.20")
+    if not anchor:
+        emit(events, out_dir, "ExpandSkipped", reason="no_dual_confirm_anchor")
+        print("  skip: no AnchorLocked (need near-exact + face_sim≥τ vs seed)")
         return []
 
-    best = max(social, key=lambda a: a.get("face_similarity") or 0)
+    best = anchor
+    if (best.get("face_similarity") or 0) < base.TAU_ANCHOR_FACE:
+        emit(events, out_dir, "ExpandSkipped", reason="anchor_face_below_tau")
+        print("  skip: anchor face_sim below tau")
+        return []
+
     handle = extract_handle(best["url"])
     # pull a name-like token from title
     title = best.get("title") or ""
@@ -270,7 +290,15 @@ def step_smart_expand(
     if name:
         q = f'{name} (site:linkedin.com OR site:instagram.com OR site:x.com OR site:twitter.com)'
     print(f"  expand query: {q}")
-    emit(events, out_dir, "ExpandRequested", query=q, from_url=best["url"], handle=handle)
+    emit(
+        events,
+        out_dir,
+        "ExpandRequested",
+        query=q,
+        from_url=best["url"],
+        handle=handle,
+        anchor=True,
+    )
 
     r = requests.get(
         "https://serpapi.com/search.json",
@@ -317,6 +345,56 @@ def step_smart_expand(
     for n in fresh:
         print(f"    - {n['url'][:90]}")
     return fresh
+
+
+def lock_anchor(out_dir: Path, events: list, accepted: list[dict]) -> dict | None:
+    """Lock Anchor only with dual confirm: near_exact AND face_sim ≥ τ vs seed."""
+    print("\n[S3a] Anchor lock (dual confirm)…")
+    ranked_path = out_dir / "candidates_ranked.json"
+    pool = list(accepted)
+    if ranked_path.exists():
+        all_scored = json.loads(ranked_path.read_text()).get("all_scored") or []
+        pool = all_scored or pool
+
+    # Poison guard: near-exact without face match must never lock
+    near_but_weak = [
+        r
+        for r in pool
+        if r.get("near_exact")
+        and (
+            r.get("face_similarity") is None
+            or (r.get("face_similarity") or 0) < base.TAU_ANCHOR_FACE
+        )
+    ]
+    for r in near_but_weak[:3]:
+        print(
+            f"  reject exact-without-face: sim={r.get('face_similarity')} "
+            f"phash_d={r.get('phash_distance')} {str(r.get('url'))[:70]}"
+        )
+
+    anchor = base.pick_anchor(pool)
+    if not anchor:
+        print("  no AnchorLocked — expand will be skipped (Case 3: accept-only)")
+        (out_dir / "anchor.json").write_text(json.dumps({"locked": False}, indent=2))
+        return None
+
+    payload = {
+        "locked": True,
+        "url": anchor["url"],
+        "face_similarity": anchor.get("face_similarity"),
+        "phash_distance": anchor.get("phash_distance"),
+        "near_exact": True,
+        "social": anchor.get("social"),
+        "title": anchor.get("title"),
+        "tau_anchor_face": base.TAU_ANCHOR_FACE,
+    }
+    (out_dir / "anchor.json").write_text(json.dumps(payload, indent=2))
+    emit(events, out_dir, "AnchorLocked", **payload)
+    print(
+        f"  OK AnchorLocked sim={payload['face_similarity']} "
+        f"phash_d={payload['phash_distance']} {payload['url'][:80]}"
+    )
+    return anchor
 
 
 def merge_accept_expand(accepted: list[dict], expand: list[dict], top_k: int = 5) -> list[dict]:
@@ -377,8 +455,35 @@ def main() -> int:
             out_dir,
             seed_emb,
             top_k=5,
-            min_face_sim=0.25,  # slightly softer; product mirrors often score low
+            min_face_sim=0.25,
+            seed_crop_path=Path(face["crop_path"]),
+            require_threshold=True,
         )
+        if not accepted:
+            emit(
+                events,
+                out_dir,
+                "NoMatchFound",
+                reason="no_hit_above_face_threshold",
+                min_face_sim=0.25,
+            )
+            results.append(("S3_face_rank", "no_match"))
+            (out_dir / "smoke_report.json").write_text(
+                json.dumps(
+                    {
+                        "ok": False,
+                        "no_match": True,
+                        "run_id": run_id,
+                        "image": str(sample),
+                        "steps": results,
+                        "events": len(events),
+                    },
+                    indent=2,
+                )
+            )
+            print("\n=== NO MATCH FOUND (no blockchain write) ===")
+            return 2
+
         results.append(("S3_face_rank", accepted[0]["url"][:60]))
         emit(
             events,
@@ -387,12 +492,34 @@ def main() -> int:
             count=len(accepted),
             top_sim=accepted[0].get("face_similarity"),
         )
+        for a in accepted:
+            emit(
+                events,
+                out_dir,
+                "PostAccepted",
+                url=a["url"],
+                title=a.get("title"),
+                thumbnail=a.get("thumbnail"),
+                face_similarity=a.get("face_similarity"),
+                social=a.get("social"),
+                near_exact=a.get("near_exact"),
+            )
 
-        expand = step_smart_expand(accepted, env["SERPAPI_API_KEY"], out_dir, events, seed_emb)
+        anchor = lock_anchor(out_dir, events, accepted)
+        results.append(("S3a_anchor", "locked" if anchor else "none"))
+
+        expand = step_smart_expand(
+            accepted,
+            env["SERPAPI_API_KEY"],
+            out_dir,
+            events,
+            seed_emb,
+            anchor=anchor,
+        )
         final = merge_accept_expand(accepted, expand, top_k=5)
         (out_dir / "accepted_final.json").write_text(json.dumps(final, indent=2))
 
-        build_graph(face, hits, final, out_dir, events, expand)
+        build_graph(face, hits, final, out_dir, events, expand, anchor=anchor)
 
         # merkle over face-ranked accepts primarily (expand may lack content image hash quality)
         merkle_set = [a for a in final if a.get("face_similarity") is not None] or final[:3]
@@ -430,6 +557,9 @@ def main() -> int:
         "steps": results,
         "events": len(events),
         "attest": json.loads((out_dir / "attest.json").read_text()),
+        "anchor": json.loads((out_dir / "anchor.json").read_text())
+        if (out_dir / "anchor.json").exists()
+        else None,
     }
     (out_dir / "smoke_report.json").write_text(json.dumps(report, indent=2))
     print("\n=== FULL SMOKE PASS ===")

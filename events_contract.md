@@ -19,7 +19,8 @@ Ground truth = what `smoke_full.py` actually emits today in `runs/full-*/events.
 | `ImageSearchCompleted` | **once per engine that returns** |
 | `ImageSearchFailed` | per engine that errors (still continue) |
 | `SearchMerged` | after all engines |
-| `PostAccepted` | summary (count + top_sim) — **not one event per post yet** |
+| `PostAccepted` | summary (count + top_sim) **and/or** one event per post (`url`, `face_similarity`, …) |
+| `AnchorLocked` | dual-confirm near-exact + face vs seed (expand gate) |
 | `ExpandSkipped` | when expand gate fails |
 | `ExpandRequested` | when expand starts |
 | `ExpandCompleted` | when expand finishes |
@@ -28,17 +29,17 @@ Ground truth = what `smoke_full.py` actually emits today in `runs/full-*/events.
 | `Attesting` | before chain tx |
 | `Attested` | after tx |
 | `VerifyPassed` | after re-verify OK |
+| `NoMatchFound` | hits present but none clear face threshold (no chain write) |
 | `Failed` | terminal on crash / hard error |
 
-### Types you assumed that pipeline does **not** emit yet
+### Types reserved / optional
 
-`ConsentBound`, `CandidateScored`, `VerifyFailed`, `NoMatchFound`
+`ConsentBound`, `CandidateScored`, `VerifyFailed`
 
 **KC decision for step 2:**
 
 - **Allowlist for terminal = union of “emitted today” + your planned terminals.**  
-- Unknown events → show as `! off-schema` in terminal (keep), but **do not hard-crash** the left panel.  
-- Pipeline will add `NoMatchFound` / `VerifyFailed` / per-post `PostAccepted` / optional `CandidateScored` soon — reserve those names now.
+- Unknown events → show as `! off-schema` in terminal (keep), but **do not hard-crash** the left panel.
 
 **Recommended closed vocabulary (v1 — treat as the contract):**
 
@@ -51,6 +52,7 @@ ImageSearchFailed
 SearchMerged
 CandidateScored          # reserved (optional later; ignore if absent)
 PostAccepted             # may fire once (summary) OR once per post — see §7
+AnchorLocked             # dual-confirm; expand only after this
 ExpandSkipped
 ExpandRequested
 ExpandCompleted
@@ -60,7 +62,7 @@ Attesting
 Attested
 VerifyPassed
 VerifyFailed             # reserved
-NoMatchFound             # reserved
+NoMatchFound             # emitted when no face-threshold match
 Failed
 ConsentBound             # reserved / unused for demo — treat as log-only if ever sent
 ```

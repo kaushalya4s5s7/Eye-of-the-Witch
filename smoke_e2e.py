@@ -335,6 +335,28 @@ def cosine(a: np.ndarray, b: np.ndarray) -> float:
     return float(np.dot(a / na, b / nb))
 
 
+def average_hash64(img_bgr: np.ndarray, hash_size: int = 8) -> int:
+    """Perceptual average-hash (64-bit). Near-exact images → low Hamming distance."""
+    gray = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2GRAY)
+    small = cv2.resize(gray, (hash_size, hash_size), interpolation=cv2.INTER_AREA)
+    avg = float(small.mean())
+    bits = (small >= avg).astype(np.uint8).flatten()
+    value = 0
+    for bit in bits:
+        value = (value << 1) | int(bit)
+    return value
+
+
+def hamming64(a: int, b: int) -> int:
+    return (a ^ b).bit_count()
+
+
+# Near-exact image: allow mild recompress/resize noise (out of 64 bits)
+NEAR_EXACT_HAMMING = 10
+# Dual-confirm floor: seed face must still match before we trust an "exact" DP
+TAU_ANCHOR_FACE = 0.40
+
+
 def _load_insightface():
     from insightface.app import FaceAnalysis
 
@@ -365,10 +387,23 @@ def step_accept(
     top_k: int = 5,
     min_face_sim: float = 0.35,
     dedupe_sim: float = 0.92,
+    seed_crop_path: Path | None = None,
+    require_threshold: bool = False,
 ) -> list[dict[str, Any]]:
-    """Rank all Lens hits by face similarity to seed; collapse near-duplicate images."""
-    print("\n[S3] Intelligent accept (dedupe + face-rank all hits)…")
-    print(f"  scoring {len(hits)} Lens hits against seed face…")
+    """Rank hits by face similarity to seed; near-exact image boost; collapse near-dups.
+
+    Ground truth is always the seed face embedding. Near-exact (pHash) only nominates;
+    dual-confirm with face_sim is applied later for Anchor lock / expand.
+    """
+    print("\n[S3] Intelligent accept (dedupe + face-rank + near-exact)…")
+    print(f"  scoring {len(hits)} hits against seed face…")
+
+    seed_phash: int | None = None
+    if seed_crop_path and Path(seed_crop_path).exists():
+        seed_bgr = cv2.imread(str(seed_crop_path))
+        if seed_bgr is not None:
+            seed_phash = average_hash64(seed_bgr)
+            print(f"  seed aHash ready (near-exact Hamming≤{NEAR_EXACT_HAMMING})")
 
     app = _load_insightface()
     scored: list[dict[str, Any]] = []
@@ -390,6 +425,9 @@ def step_accept(
             "face_similarity": None,
             "det_score": None,
             "content_hash": None,
+            "phash": None,
+            "phash_distance": None,
+            "near_exact": False,
             "duplicate_of": None,
             "skip_reason": None,
         }
@@ -412,9 +450,20 @@ def step_accept(
             scored.append(row)
             continue
 
+        if seed_phash is not None:
+            try:
+                ph = average_hash64(img_bgr)
+                dist = hamming64(seed_phash, ph)
+                row["phash"] = format(ph, "016x")
+                row["phash_distance"] = dist
+                row["near_exact"] = dist <= NEAR_EXACT_HAMMING
+            except Exception:
+                pass
+
         emb, det = _embed_image_bgr(app, img_bgr)
         if emb is None:
             row["skip_reason"] = "no_face_in_thumb"
+            # near-exact without a face in thumb is NOT identity — keep for logs, never accept
             scored.append(row)
             continue
 
@@ -422,7 +471,11 @@ def step_accept(
         row["face_similarity"] = round(sim, 4)
         row["det_score"] = round(det, 4)
         scored.append(row)
-        print(f"  [{i+1}/{len(hits)}] sim={sim:.3f} social={row['social']} {link[:70]}")
+        nx_flag = " EXACT" if row["near_exact"] else ""
+        print(
+            f"  [{i+1}/{len(hits)}] sim={sim:.3f} social={row['social']}"
+            f" phash_d={row.get('phash_distance')}{nx_flag} {link[:60]}"
+        )
 
     # Exact dedupe by content_hash (same image bytes / same thumb)
     by_hash: dict[str, dict[str, Any]] = {}
@@ -434,7 +487,6 @@ def step_accept(
         if prev is None:
             by_hash[ch] = row
         else:
-            # keep higher face score; mark other as duplicate
             if (row["face_similarity"] or 0) > (prev["face_similarity"] or 0):
                 prev["duplicate_of"] = row["url"]
                 prev["skip_reason"] = "duplicate_exact_hash"
@@ -445,22 +497,20 @@ def step_accept(
 
     unique = [r for r in scored if r.get("skip_reason") not in {"duplicate_exact_hash"}]
 
-    # Near-duplicate collapse: same face crop reappearing (high mutual sim to an already kept better hit)
     unique_sorted = sorted(
         [r for r in unique if r.get("face_similarity") is not None],
-        key=lambda r: (r["face_similarity"], r["social"]),
+        key=lambda r: (
+            bool(r.get("near_exact")),
+            bool(r.get("social")),
+            r.get("face_similarity") or 0,
+        ),
         reverse=True,
     )
     kept: list[dict[str, Any]] = []
 
-    # For near-dup: if two candidates both very similar to seed AND same content cluster,
-    # prefer keeping one URL (prefer social). We approximate near-dup by: same rounded sim band
-    # + exact hash already handled. Secondary: if thumb_hash prefixes match closely we already
-    # used exact hash. Extra: if face_similarity within 0.02 and titles share host — keep best.
     for row in unique_sorted:
         is_near_dup = False
         for k in kept:
-            # near-duplicate if both high and nearly equal similarity (same person crop mirrors)
             if abs((row["face_similarity"] or 0) - (k["face_similarity"] or 0)) <= (1.0 - dedupe_sim) and (
                 urlparse(row["url"]).netloc == urlparse(k["url"]).netloc
                 or (row.get("thumb_hash") and row.get("thumb_hash") == k.get("thumb_hash"))
@@ -472,40 +522,64 @@ def step_accept(
         if not is_near_dup:
             kept.append(row)
 
-    # Final pick: face sim >= threshold, social first among those, else best overall
+    # Eligible = face matches seed above threshold (variations OK; junk rejected)
     eligible = [r for r in kept if (r.get("face_similarity") or 0) >= min_face_sim]
+    used_fail_soft = False
     if not eligible:
-        # fail soft: take best scored even if below threshold (still better than blind top-3)
+        if require_threshold:
+            report = {
+                "seed_compare": "insightface_cosine",
+                "min_face_sim": min_face_sim,
+                "near_exact_hamming": NEAR_EXACT_HAMMING,
+                "tau_anchor_face": TAU_ANCHOR_FACE,
+                "top_k": top_k,
+                "hits_in": len(hits),
+                "scored": len(scored),
+                "unique_after_dedupe": len(kept),
+                "accepted": 0,
+                "require_threshold": True,
+                "no_match": True,
+                "all_scored": scored,
+            }
+            (out_dir / "candidates_ranked.json").write_text(json.dumps(report, indent=2))
+            (out_dir / "accepted.json").write_text(json.dumps([], indent=2))
+            print(f"  no hit >= {min_face_sim} (require_threshold) → NoMatch")
+            return []
         eligible = kept[: max(top_k, 1)]
+        used_fail_soft = True
         print(f"  warn: no hit >= {min_face_sim}; falling back to best face-ranked")
 
-    social_first = sorted(
+    # Prefer near-exact social, then social, then face sim
+    ranked = sorted(
         eligible,
-        key=lambda r: (r["social"], r.get("face_similarity") or 0),
+        key=lambda r: (
+            bool(r.get("near_exact")),
+            bool(r.get("social")),
+            r.get("face_similarity") or 0,
+        ),
         reverse=True,
     )
-    chosen = social_first[:top_k]
+    chosen = ranked[:top_k]
     if not chosen:
         raise RuntimeError("No usable URLs after face-rank/dedupe")
 
     observed = utc_now()
     accepted = []
     for c in chosen:
-        accepted.append(
-            {
-                **c,
-                "observed_at": observed,
-            }
-        )
+        accepted.append({**c, "observed_at": observed})
 
     report = {
         "seed_compare": "insightface_cosine",
         "min_face_sim": min_face_sim,
+        "near_exact_hamming": NEAR_EXACT_HAMMING,
+        "tau_anchor_face": TAU_ANCHOR_FACE,
         "top_k": top_k,
         "hits_in": len(hits),
         "scored": len(scored),
         "unique_after_dedupe": len(kept),
         "accepted": len(accepted),
+        "require_threshold": require_threshold,
+        "fail_soft": used_fail_soft,
         "all_scored": scored,
     }
     (out_dir / "candidates_ranked.json").write_text(json.dumps(report, indent=2))
@@ -514,9 +588,36 @@ def step_accept(
     print(f"  OK accepted {len(accepted)} / {len(hits)} (deduped→{len(kept)}, face-ranked)")
     for a in accepted:
         print(
-            f"    - sim={a.get('face_similarity')} social={a['social']} {a['url'][:90]}"
+            f"    - sim={a.get('face_similarity')} social={a['social']} "
+            f"near_exact={a.get('near_exact')} {a['url'][:80]}"
         )
     return accepted
+
+
+def pick_anchor(
+    scored_or_accepted: list[dict[str, Any]],
+    *,
+    tau_face: float = TAU_ANCHOR_FACE,
+) -> dict[str, Any] | None:
+    """Dual-confirm anchor: near-exact image AND face_sim(seed) ≥ tau.
+
+    Exact/near-exact alone never locks — prevents poison-DP cascade.
+    """
+    candidates = [
+        r
+        for r in scored_or_accepted
+        if r.get("near_exact")
+        and r.get("face_similarity") is not None
+        and (r.get("face_similarity") or 0) >= tau_face
+        and not r.get("skip_reason")
+    ]
+    if not candidates:
+        return None
+    # Prefer social profile/post among dual-confirmed
+    return max(
+        candidates,
+        key=lambda r: (bool(r.get("social")), r.get("face_similarity") or 0),
+    )
 
 
 def step_merkle(accepted: list[dict[str, Any]], out_dir: Path) -> str:
@@ -716,7 +817,14 @@ def main() -> int:
         hits = step_lens(hosted, env["SERPAPI_API_KEY"], out_dir)
         results.append(SmokeResult("S2_lens", True, f"{len(hits)} hits"))
 
-        accepted = step_accept(hits, out_dir, seed_emb, top_k=5, min_face_sim=0.35)
+        accepted = step_accept(
+            hits,
+            out_dir,
+            seed_emb,
+            top_k=5,
+            min_face_sim=0.35,
+            seed_crop_path=Path(face["crop_path"]),
+        )
         results.append(SmokeResult("S3_accept", True, accepted[0]["url"][:80]))
 
         root = step_merkle(accepted, out_dir)
