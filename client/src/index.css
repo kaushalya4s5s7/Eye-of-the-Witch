@@ -466,3 +466,10 @@ body {
 .cast-again:hover {
   border-color: #d9b45b;
 }
+/* During the outcome beat, .ritual-chrome fades to opacity:0 but stays
+   mounted; .cast-again's own pointer-events:auto above would otherwise
+   override the chrome's pointer-events:none, leaving an invisible but
+   clickable (and focusable) reset button sitting over the outcome video. */
+.ritual-stage.is-beat .cast-again {
+  pointer-events: none;
+}

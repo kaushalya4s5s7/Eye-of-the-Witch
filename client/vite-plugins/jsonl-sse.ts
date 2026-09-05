@@ -1,9 +1,10 @@
 import { randomUUID } from 'node:crypto'
+import { realpathSync } from 'node:fs'
 import { access, mkdir, readFile, writeFile } from 'node:fs/promises'
 import { spawn } from 'node:child_process'
 import type { IncomingMessage, ServerResponse } from 'node:http'
 import { resolve } from 'node:path'
-import type { Plugin } from 'vite'
+import type { Plugin, ViteDevServer } from 'vite'
 import { completeLines, newLinesSince } from '../src/lib/tailFile'
 
 /**
@@ -50,10 +51,14 @@ const NAME_RE = /^[a-z0-9_-]+$/i
 export function jsonlSse(): Plugin {
   return {
     name: 'eotw:jsonl-sse',
+    apply: 'serve',
     configureServer(server) {
       const runsDir = resolve(server.config.root, '../runs')
       const backendDir = resolve(server.config.root, '../backend')
       const uploadsDir = resolve(backendDir, 'uploads')
+      const backendRunsLink = resolve(backendDir, 'runs')
+
+      warnIfRunsLinkMissing(server, backendRunsLink, runsDir)
 
       // Shared across /dev/run and /dev/events: at most one pipeline
       // process alive at a time (spec §3).
@@ -71,65 +76,77 @@ export function jsonlSse(): Plugin {
           res.end(JSON.stringify({ error: 'run_in_progress' }))
           return
         }
-
-        const chunks: Buffer[] = []
-        for await (const chunk of req) {
-          chunks.push(chunk as Buffer)
-        }
-        const bytes = Buffer.concat(chunks)
-        if (bytes.length === 0) {
-          res.statusCode = 400
-          res.end('empty upload')
-          return
-        }
-
-        const ext = extFor(req.headers['content-type'])
-        await mkdir(uploadsDir, { recursive: true })
-        const uploadPath = resolve(uploadsDir, `${randomUUID()}.${ext}`)
-        await writeFile(uploadPath, bytes)
-
-        const pythonBin = resolve(backendDir, '.venv/bin/python3')
-        const child = spawn(pythonBin, [resolve(backendDir, 'smoke_full.py'), uploadPath], {
-          cwd: backendDir,
-        })
+        // Claim the slot immediately, before any await, so two concurrent
+        // POSTs can't both pass the check above (TOCTOU). Cleared on every
+        // early-return/error path below, not just the happy path.
         runInFlight = true
 
-        let responded = false
-        let stdoutBuf = ''
+        try {
+          const chunks: Buffer[] = []
+          for await (const chunk of req) {
+            chunks.push(chunk as Buffer)
+          }
+          const bytes = Buffer.concat(chunks)
+          if (bytes.length === 0) {
+            runInFlight = false
+            res.statusCode = 400
+            res.end('empty upload')
+            return
+          }
 
-        child.stdout.on('data', (data: Buffer) => {
-          const text = data.toString('utf8')
-          stdoutBuf += text
-          server.config.logger.info(`[live-run] ${text.trimEnd()}`)
-          if (!responded) {
-            const match = stdoutBuf.match(/FULL RUN (\S+)/)
-            if (match) {
-              responded = true
-              res.writeHead(200, { 'Content-Type': 'application/json' })
-              res.end(JSON.stringify({ run_id: `full-${match[1]}` }))
+          const ext = extFor(req.headers['content-type'])
+          await mkdir(uploadsDir, { recursive: true })
+          const uploadPath = resolve(uploadsDir, `${randomUUID()}.${ext}`)
+          await writeFile(uploadPath, bytes)
+
+          const pythonBin = resolve(backendDir, '.venv/bin/python3')
+          const child = spawn(pythonBin, [resolve(backendDir, 'smoke_full.py'), uploadPath], {
+            cwd: backendDir,
+          })
+
+          let responded = false
+          let stdoutBuf = ''
+
+          child.stdout.on('data', (data: Buffer) => {
+            const text = data.toString('utf8')
+            stdoutBuf += text
+            server.config.logger.info(`[live-run] ${text.trimEnd()}`)
+            if (!responded) {
+              const match = stdoutBuf.match(/FULL RUN (\S+)/)
+              if (match) {
+                responded = true
+                res.writeHead(200, { 'Content-Type': 'application/json' })
+                res.end(JSON.stringify({ run_id: `full-${match[1]}` }))
+              }
             }
-          }
-        })
-        child.stderr.on('data', (data: Buffer) => {
-          server.config.logger.warn(`[live-run] ${data.toString('utf8').trimEnd()}`)
-        })
-        child.on('error', (err) => {
+          })
+          child.stderr.on('data', (data: Buffer) => {
+            server.config.logger.warn(`[live-run] ${data.toString('utf8').trimEnd()}`)
+          })
+          child.on('error', (err) => {
+            runInFlight = false
+            if (!responded) {
+              responded = true
+              res.statusCode = 500
+              res.end(`could not start pipeline: ${err.message}`)
+            }
+          })
+          child.on('exit', (code) => {
+            runInFlight = false
+            server.config.logger.info(`[live-run] pipeline exited (${code})`)
+            if (!responded) {
+              responded = true
+              res.statusCode = 500
+              res.end(`pipeline exited before starting (code ${code})`)
+            }
+          })
+        } catch (err) {
           runInFlight = false
-          if (!responded) {
-            responded = true
+          if (!res.headersSent) {
             res.statusCode = 500
-            res.end(`could not start pipeline: ${err.message}`)
+            res.end(`could not start pipeline: ${(err as Error).message}`)
           }
-        })
-        child.on('exit', (code) => {
-          runInFlight = false
-          server.config.logger.info(`[live-run] pipeline exited (${code})`)
-          if (!responded) {
-            responded = true
-            res.statusCode = 500
-            res.end(`pipeline exited before starting (code ${code})`)
-          }
-        })
+        }
       })
 
       server.middlewares.use('/dev/events', async (req, res) => {
@@ -250,9 +267,22 @@ async function streamRun(
 
   const eventsPath = resolve(runsDir, runId, 'events.jsonl')
 
+  // Registered before the wait loop so a client that disconnects while
+  // waiting for the file to appear is observed promptly, not just once the
+  // tailing loop below starts.
+  let closed = false
+  req.on('close', () => {
+    closed = true
+  })
+
   const waitStart = Date.now()
   while (!(await exists(eventsPath))) {
-    if (Date.now() - waitStart > FILE_WAIT_MS) {
+    if (closed) return
+    // The child already exited without ever writing an event: don't wait
+    // out the full FILE_WAIT_MS ceiling to say so. (Additive only — a run
+    // whose file already exists, e.g. tailing a past completed run, never
+    // enters this loop at all.)
+    if (!isRunInFlight() || Date.now() - waitStart > FILE_WAIT_MS) {
       res.statusCode = 404
       res.end(`no such run "${runId}"`)
       return
@@ -267,22 +297,21 @@ async function streamRun(
   })
   res.write('retry: 3000\n\n')
 
-  let closed = false
-  req.on('close', () => {
-    closed = true
-  })
-
   const start = Date.now()
   let sentCount = 0
 
   while (!closed) {
     if (Date.now() - start > HARD_CEILING_MS) break
 
-    let raw = ''
+    let raw: string | null = null
     try {
       raw = await readFile(eventsPath, 'utf8')
     } catch {
       // file briefly missing/mid-write; try again next tick
+    }
+    if (raw === null) {
+      await delay(POLL_MS)
+      continue
     }
 
     const result = newLinesSince(raw, sentCount)
@@ -304,6 +333,41 @@ async function streamRun(
     res.write('event: end\ndata: {}\n\n')
     res.end()
   }
+}
+
+// Fresh-clone reproducibility (review I3b): `smoke_full.py` writes real
+// runs to `backend/runs/<run_id>/`, and that path only reaches the repo-root
+// `runs/` the bridge tails via a machine-local, gitignored symlink
+// (`backend/runs -> ../runs`). Without it, a live run succeeds silently
+// while the bridge polls a directory nothing ever writes to, ending in a
+// false `stream_ended` failure ~90s later. This is diagnostic only — it
+// must never throw or block dev-server startup, since fixture-mode users
+// don't need `backend/runs` at all.
+function warnIfRunsLinkMissing(server: ViteDevServer, backendRunsLink: string, runsDir: string): void {
+  let linkReal: string | null = null
+  try {
+    linkReal = realpathSync(backendRunsLink)
+  } catch {
+    linkReal = null
+  }
+
+  let dirReal: string | null = null
+  try {
+    dirReal = realpathSync(runsDir)
+  } catch {
+    dirReal = null
+  }
+
+  if (linkReal !== null && linkReal === dirReal) return // healthy
+
+  server.config.logger.warn(
+    '[jsonl-sse] backend/runs is missing or does not resolve to the repo-root runs/ ' +
+      'directory that /dev/events tails. Live runs (POST /dev/run) will appear to hang ' +
+      'for up to 90s and then fail with a false "stream_ended" error. ' +
+      'Fix: from backend/, run `ln -s ../runs backend/runs` ' +
+      '(create the repo-root runs/ directory first if it does not exist). ' +
+      'Fixture mode is unaffected.',
+  )
 }
 
 async function exists(path: string): Promise<boolean> {
