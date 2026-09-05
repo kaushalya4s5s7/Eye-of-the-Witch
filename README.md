@@ -24,7 +24,7 @@ So we ask a different question:
 
 > **Can we take a face, search the live public web, let the face model vote on every candidate, and put a fingerprint of that whole check on chain — then prove it still matches?**
 
-That is the pipeline. Everything else (UI ritual, optional expand hop, evidence map) sits around that spine.
+That is the pipeline. Everything else (code ritual, optional expand hop, evidence map) sits around that spine.
 
 ---
 
