@@ -1,0 +1,25 @@
+{
+  "search_metadata": {
+    "id": "6a9aa62b5922f4e57456ea25",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/QLJG2fi3KRnOck4P6ISySDCiMejrZxLhYT6q-NbhubE/6a9aa62b5922f4e57456ea25.json",
+    "markdown_endpoint": "https://serpapi.com/searches/QLJG2fi3KRnOck4P6ISySDCiMejrZxLhYT6q-NbhubE/6a9aa62b5922f4e57456ea25.md",
+    "created_at": "2026-09-04 11:06:19 UTC",
+    "processed_at": "2026-09-04 11:06:19 UTC",
+    "google_reverse_image_url": "https://www.google.com/searchbyimage?image_url=https://i.ibb.co/DD9JB6nD/face-crop.jpg&sbisrc=cr_1_5_2",
+    "raw_html_file": "https://serpapi.com/searches/QLJG2fi3KRnOck4P6ISySDCiMejrZxLhYT6q-NbhubE/6a9aa62b5922f4e57456ea25.html",
+    "total_time_taken": 4.6
+  },
+  "search_parameters": {
+    "engine": "google_reverse_image",
+    "image_url": "https://i.ibb.co/DD9JB6nD/face-crop.jpg",
+    "google_domain": "google.com",
+    "device": "desktop"
+  },
+  "search_information": {
+    "total_results": 0,
+    "time_taken_displayed": 0.61,
+    "organic_results_state": "Fully empty"
+  },
+  "error": "Google Reverse Image hasn't returned any results for this query."
+}

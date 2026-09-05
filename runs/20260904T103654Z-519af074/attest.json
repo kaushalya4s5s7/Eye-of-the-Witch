@@ -1,0 +1,10 @@
+{
+  "tx_hash": "c033ce8ae097a379518ce1c8d71dac9c297196cd0028938fd37e2f009dd9af6e",
+  "uid": "0xd7ae0d48cf51fc9d18bc60f8081b19a1206bad935a6128859cdb7de14df2c331",
+  "merkle_root": "9630cd1232b6ebdd2b1b2c873fd5ca9d23f91403d64eabb74cda54a35a97f91c",
+  "primary_post_url": "https://x.com/VijayKumbhar62/status/2088939716603429064",
+  "attester": "0xFe33CCB40ACD6BcA57a0b811b4245a410ee521c3",
+  "easscan": "https://sepolia.easscan.org/attestation/view/0xd7ae0d48cf51fc9d18bc60f8081b19a1206bad935a6128859cdb7de14df2c331",
+  "tx_url": "https://sepolia.etherscan.io/tx/c033ce8ae097a379518ce1c8d71dac9c297196cd0028938fd37e2f009dd9af6e",
+  "schema": "0xdf4c41ea0f6263c72aa385580124f41f2898d3613e86c50519fc3cfd7ff13ad4"
+}

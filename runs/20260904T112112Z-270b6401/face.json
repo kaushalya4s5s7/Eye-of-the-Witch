@@ -1,0 +1,15 @@
+{
+  "backend": "insightface_buffalo_s",
+  "bbox": [
+    204,
+    163,
+    656,
+    752
+  ],
+  "det_score": 0.8020144701004028,
+  "embedding_dim": 512,
+  "embedding_sha256": "651e7918c40c0db32692f66a0726f53520dc029e381899590eef6c1675f24fe0",
+  "crop_path": "/Users/kaushalchaudhari/Desktop/web3/hhgoa-tasks/runs/20260904T112112Z-270b6401/face_crop.jpg",
+  "embedding_path": "/Users/kaushalchaudhari/Desktop/web3/hhgoa-tasks/runs/20260904T112112Z-270b6401/embedding.npy",
+  "source_image": "/Users/kaushalchaudhari/Desktop/web3/hhgoa-tasks/samples/531714888_10235987016969385_7416969514884457963_n.jpg"
+}

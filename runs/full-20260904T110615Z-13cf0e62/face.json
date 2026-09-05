@@ -1,0 +1,15 @@
+{
+  "backend": "insightface_buffalo_s",
+  "bbox": [
+    438,
+    165,
+    789,
+    625
+  ],
+  "det_score": 0.8127328753471375,
+  "embedding_dim": 512,
+  "embedding_sha256": "f0d3a38fed2fcd8dd9f8317c108e43b5c864417d8484b2b122a4519a56ec5ffd",
+  "crop_path": "/Users/kaushalchaudhari/Desktop/web3/hhgoa-tasks/runs/full-20260904T110615Z-13cf0e62/face_crop.jpg",
+  "embedding_path": "/Users/kaushalchaudhari/Desktop/web3/hhgoa-tasks/runs/full-20260904T110615Z-13cf0e62/embedding.npy",
+  "source_image": "/Users/kaushalchaudhari/Desktop/web3/hhgoa-tasks/samples/AK-Half-Shirt-1-scaled.webp"
+}

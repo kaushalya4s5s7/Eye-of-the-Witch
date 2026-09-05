@@ -21,6 +21,15 @@ npm-debug.log*
 !.vscode/extensions.json
 .idea/
 
+# python (root-level pipeline scripts, e.g. smoke_e2e.py / smoke_full.py)
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+models/
+*.onnx
+
 # real pipeline run data (never committed; fixtures/ holds the committed stand-ins)
 runs/
 

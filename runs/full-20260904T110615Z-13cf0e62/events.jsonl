@@ -1,0 +1,14 @@
+{"ts": "2026-09-04T11:06:15.859236+00:00", "event": "FaceDetected", "backend": "insightface_buffalo_s", "det_score": 0.8127328753471375, "embedding_sha256": "f0d3a38fed2fcd8dd9f8317c108e43b5c864417d8484b2b122a4519a56ec5ffd"}
+{"ts": "2026-09-04T11:06:18.595017+00:00", "event": "ImageHosted", "url": "https://i.ibb.co/DD9JB6nD/face-crop.jpg"}
+{"ts": "2026-09-04T11:06:18.595866+00:00", "event": "ImageSearchRequested", "engines": ["google_lens", "google_reverse_image", "yandex_images"], "image_url": "https://i.ibb.co/DD9JB6nD/face-crop.jpg"}
+{"ts": "2026-09-04T11:06:19.649687+00:00", "event": "ImageSearchCompleted", "engine": "google_lens", "hits": 59}
+{"ts": "2026-09-04T11:06:21.742061+00:00", "event": "ImageSearchCompleted", "engine": "yandex_images", "hits": 40}
+{"ts": "2026-09-04T11:06:24.234808+00:00", "event": "ImageSearchFailed", "engine": "google_reverse_image", "error": "Google Reverse Image hasn't returned any results for this query."}
+{"ts": "2026-09-04T11:06:24.237858+00:00", "event": "SearchMerged", "unique": 87, "by_engine": {"google_lens": 59, "yandex_images": 40, "google_reverse_image": 0}}
+{"ts": "2026-09-04T11:07:27.294025+00:00", "event": "PostAccepted", "count": 5, "top_sim": 0.8685}
+{"ts": "2026-09-04T11:07:27.294444+00:00", "event": "ExpandSkipped", "reason": "no_name_or_handle"}
+{"ts": "2026-09-04T11:07:27.296546+00:00", "event": "GraphUpserted", "nodes": 95, "edges": 96}
+{"ts": "2026-09-04T11:07:27.296811+00:00", "event": "MerkleBuilt", "root": "f4f1d268ebe9d8271e603ae129c4237cce81b3a92712f75505e529563f680dc9"}
+{"ts": "2026-09-04T11:07:27.296845+00:00", "event": "Attesting", "root": "f4f1d268ebe9d8271e603ae129c4237cce81b3a92712f75505e529563f680dc9"}
+{"ts": "2026-09-04T11:07:36.439876+00:00", "event": "Attested", "tx_hash": "b37592d903c6cabc866352d1d573f12d9f6d07bbc9e0eafa7a4271c9f1d39e3a", "uid": "0x1e201c79afa3901e2640459ba6f51345c0b0d34eec9ef0383b8c88d26a055231", "easscan": "https://sepolia.easscan.org/attestation/view/0x1e201c79afa3901e2640459ba6f51345c0b0d34eec9ef0383b8c88d26a055231"}
+{"ts": "2026-09-04T11:07:37.441266+00:00", "event": "VerifyPassed", "root": "f4f1d268ebe9d8271e603ae129c4237cce81b3a92712f75505e529563f680dc9", "uid": "0x1e201c79afa3901e2640459ba6f51345c0b0d34eec9ef0383b8c88d26a055231"}

@@ -1,0 +1,10 @@
+{
+  "tx_hash": "cc05cc14a0370f21146f67964b2dd3eb84519e4ab327f156bdf6a79b97fbaeb2",
+  "uid": "0x510afa32084ddaaff613dfbf9a09a0304a6ae9e04386f3ef2dca8297bb0dce8c",
+  "merkle_root": "8bcec43e3fc2aa39272b567a733a9f92b8c249eb58e4b6ee5e18ea02a094f82f",
+  "primary_post_url": "https://www.facebook.com/ramabhau/",
+  "attester": "0xFe33CCB40ACD6BcA57a0b811b4245a410ee521c3",
+  "easscan": "https://sepolia.easscan.org/attestation/view/0x510afa32084ddaaff613dfbf9a09a0304a6ae9e04386f3ef2dca8297bb0dce8c",
+  "tx_url": "https://sepolia.etherscan.io/tx/cc05cc14a0370f21146f67964b2dd3eb84519e4ab327f156bdf6a79b97fbaeb2",
+  "schema": "0xdf4c41ea0f6263c72aa385580124f41f2898d3613e86c50519fc3cfd7ff13ad4"
+}

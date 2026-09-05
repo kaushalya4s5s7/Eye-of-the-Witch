@@ -1,0 +1,37 @@
+[
+  {
+    "step": "S0_face",
+    "ok": true,
+    "detail": "insightface_buffalo_s:f0d3a38fed2fcd8d"
+  },
+  {
+    "step": "S1_host",
+    "ok": true,
+    "detail": "https://i.ibb.co/DD9JB6nD/face-crop.jpg"
+  },
+  {
+    "step": "S2_lens",
+    "ok": true,
+    "detail": "59 hits"
+  },
+  {
+    "step": "S3_accept",
+    "ok": true,
+    "detail": "https://x.com/VijayKumbhar62/status/2088939716603429064"
+  },
+  {
+    "step": "S4_merkle",
+    "ok": true,
+    "detail": "9630cd1232b6ebdd2b1b2c87"
+  },
+  {
+    "step": "S5_attest",
+    "ok": true,
+    "detail": "c033ce8ae097a37951"
+  },
+  {
+    "step": "S6_verify",
+    "ok": true,
+    "detail": "pass"
+  }
+]

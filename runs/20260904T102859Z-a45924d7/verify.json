@@ -1,0 +1,9 @@
+{
+  "rebuilt_root": "9e3ecccdd603427d225d3a5dd5b7b986ed68eedef3284dc49924f33926f496a6",
+  "expected_root": "9e3ecccdd603427d225d3a5dd5b7b986ed68eedef3284dc49924f33926f496a6",
+  "onchain_content_hash": "9e3ecccdd603427d225d3a5dd5b7b986ed68eedef3284dc49924f33926f496a6",
+  "local_match": true,
+  "chain_match": true,
+  "tamper_detected": true,
+  "tx_hash": "24a8fc38fa1e185664bf48d85fdab4008ec94aac49cc24c435e397361571526e"
+}

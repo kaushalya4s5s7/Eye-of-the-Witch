@@ -1,0 +1,7 @@
+[
+  {
+    "step": "FAILED",
+    "ok": false,
+    "detail": "InsightFace required but failed: cannot access local variable 'np' where it is not associated with a value"
+  }
+]

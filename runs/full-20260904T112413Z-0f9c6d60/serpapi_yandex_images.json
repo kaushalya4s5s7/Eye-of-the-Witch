@@ -1,0 +1,2625 @@
+{
+  "search_metadata": {
+    "id": "6a9aaa62ee028a84d3816b1c",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/kj9PNhO9T6PWk5vy3EkXXjb7Q67X_FdNphNwse5r6j8/6a9aaa62ee028a84d3816b1c.json",
+    "markdown_endpoint": "https://serpapi.com/searches/kj9PNhO9T6PWk5vy3EkXXjb7Q67X_FdNphNwse5r6j8/6a9aaa62ee028a84d3816b1c.md",
+    "created_at": "2026-09-04 11:24:18 UTC",
+    "processed_at": "2026-09-04 11:24:18 UTC",
+    "yandex_images_url": "https://yandex.com/images/search/?url=https://i.ibb.co/nMjRDT1C/face-crop.jpg&cbir_page=similar&rpt=imageview",
+    "raw_html_file": "https://serpapi.com/searches/kj9PNhO9T6PWk5vy3EkXXjb7Q67X_FdNphNwse5r6j8/6a9aaa62ee028a84d3816b1c.html",
+    "total_time_taken": 3.27
+  },
+  "search_parameters": {
+    "engine": "yandex_images",
+    "url": "https://i.ibb.co/nMjRDT1C/face-crop.jpg",
+    "tab": "similar"
+  },
+  "images_results": [
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=3d006c2cc21308e2e1ec7d1005d881792677caee-5690841-images-thumbs&n=13",
+      "position": 1,
+      "title": "Maharashtra: FIR against Uddhav loyalist Chandrakant Khaire for `objectionable`",
+      "snippet": "Shiv Sena leader Chandrakant Khaire, Aurangabad, Maharashtra, Chief Ministe...",
+      "link": "https://www.mid-day.com/amp/mumbai/mumbai-news/article/maharashtra-fir-against-uddhav-loyalist-chandrakant-khaire-for-objectionable-language-against-cm-shinde-23249586",
+      "source": "mid-day.com",
+      "original": "https://images.mid-day.com/images/images/2022/oct/khaire_d.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimages.mid-day.com%2Fimages%2Fimages%2F2022%2Foct%2Fkhaire_d.jpg",
+      "size": {
+        "height": 720,
+        "width": 1280,
+        "bytes": 106042
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=0a20905e8a4b3f8facc564946f3a62889e163d0d-9065994-images-thumbs&n=13",
+      "position": 2,
+      "title": "Ludhiana bypoll litmus test for AAP in Punjab, says BJP leader Tarun Chugh - ENe",
+      "snippet": "Ludhiana, June 1 (IANS) BJP national General Secretary Tarun Chugh said on ...",
+      "link": "https://enewstime.in/national/ludhiana-bypoll-litmus-test-for-aap-in-punjab-says-bjp-leader-tarun-chugh-68389.html",
+      "source": "enewstime.in",
+      "original": "https://enewstime.in/wp-content/uploads/2025/06/Ludhiana-bypoll-litmus-test-for-AAP-in-Punjab-says-BJP.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fenewstime.in%2Fwp-content%2Fuploads%2F2025%2F06%2FLudhiana-bypoll-litmus-test-for-AAP-in-Punjab-says-BJP.jpg",
+      "size": {
+        "height": 385,
+        "width": 449,
+        "bytes": 288691
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=b433018c18486226d66ebf15ead7ef54ccf30b35-12612889-images-thumbs&n=13",
+      "position": 3,
+      "title": "Celebrate Spirit Of Humanity On World Red Cross Day: Nagaland Gov - The Hills Ti",
+      "snippet": "The Hills Times",
+      "link": "https://thehillstimes.in/northeast/celebrate-spirit-of-humanity-on-world-red-cross-day-nagaland-gov",
+      "source": "thehillstimes.in",
+      "original": "https://thehillstimes.in/wp-content/uploads/2023/05/lead-29.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fthehillstimes.in%2Fwp-content%2Fuploads%2F2023%2F05%2Flead-29.jpg",
+      "size": {
+        "height": 450,
+        "width": 750,
+        "bytes": 37623
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=d08bca541910c533c9410eb7bfb4a2f51474325e-4314086-images-thumbs&n=13",
+      "position": 4,
+      "title": "Aditi Prasad (@AditiPrag) - Twitter Profili Zamantika Mersobahis Locabet",
+      "snippet": "@PiyushGoyal.",
+      "link": "https://zamantika.com/profile/aditiprag",
+      "source": "zamantika.com",
+      "original": "https://pbs.twimg.com/profile_images/1563043966605733888/4YsGt7NL.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F1563043966605733888%2F4YsGt7NL.jpg",
+      "size": {
+        "height": 322,
+        "width": 322,
+        "bytes": 18136
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=064d67060388e47e79f116cc9c327698d7ec7c38-16277941-images-thumbs&n=13",
+      "position": 5,
+      "title": "Significant rise in number of universities in Bengal during TMC tenure: Partha C",
+      "snippet": "Addressing a Teachers\u2019 Day programme over video conference, Chatterjee said...",
+      "link": "https://www.hindustantimes.com/education/significant-rise-in-number-of-universities-in-bengal-during-tmc-tenure-partha-chatterjee/story-hoSsOyNMaSsDu3YUDjijUK.html",
+      "source": "hindustantimes.com",
+      "original": "https://images.hindustantimes.com/rf/image_size_630x354/HT/p2/2020/09/06/Pictures/_c23143a2-f00d-11ea-9fc5-24cdb6226899.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimages.hindustantimes.com%2Frf%2Fimage_size_630x354%2FHT%2Fp2%2F2020%2F09%2F06%2FPictures%2F_c23143a2-f00d-11ea-9fc5-24cdb6226899.jpg",
+      "size": {
+        "height": 354,
+        "width": 630,
+        "bytes": 18061
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=d917163a69fea93170c1bd2b3e6a36ac64d6a36a-3608991-images-thumbs&n=13",
+      "position": 6,
+      "title": "Shri Balaji Devasthan, Mothe Ayachit Mandir - Google Haritalar",
+      "snippet": "Vinay Deshpande.",
+      "link": "https://www.google.com/maps/place/data=!4m2!3m1!1s0x3bd4c7357532a05b:0xea2937ce8e4490d?hl=tr&gl=tr",
+      "source": "google.com",
+      "original": "https://lh3.googleusercontent.com/a-/ALV-UjVe8XpbqFuRr9inngwwJkPXKMiU9c1Y_9Nflt5RasPoE3QHefLS=s48-p-k-no-mo",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Flh3.googleusercontent.com%2Fa-%2FALV-UjVe8XpbqFuRr9inngwwJkPXKMiU9c1Y_9Nflt5RasPoE3QHefLS%3Ds48-p-k-no-mo",
+      "size": {
+        "height": 48,
+        "width": 48,
+        "bytes": 1503
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=d141ebd7d13302b0b7b2c42157a65b6f6810a5f8-5911249-images-thumbs&n=13",
+      "position": 7,
+      "title": "Chandrakant Patil dubs NCP chief Sharad Pawar\u2019s ED 'visit' as political drama -",
+      "snippet": "Chandrakant Patil dubs NCP chief Sharad Pawar\u2019s ED \u2018visit\u2019 as political dra...",
+      "link": "https://thenews21.com/chandrakant-patil-dubs-ncp-chief-sharad-pawars-ed-visit-as-political-drama",
+      "source": "thenews21.com",
+      "original": "https://thenews21.com/wp-content/uploads/2019/09/chandrakant-patil.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fthenews21.com%2Fwp-content%2Fuploads%2F2019%2F09%2Fchandrakant-patil.jpg",
+      "size": {
+        "height": 779,
+        "width": 1200,
+        "bytes": 89324
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=d4e11e44430a556f3f896f642e107cfbf77e36b9-5228318-images-thumbs&n=13",
+      "position": 8,
+      "title": "K Viswanath No More: \u092e\u0939\u093e\u0928 \u0928\u093f\u0930\u094d\u0926\u0947\u0936\u0915 K Viswanath \u0915\u093e 92 \u0935\u0930\u094d\u0937 \u0915\u0940 \u0906\u092f\u0941 \u092e\u0947\u0902 \u0928\u093f\u0927\u0928 \u0939\u094b \u0917\u092f\u093e",
+      "snippet": "\u092e\u0939\u093e\u0928 \u0928\u093f\u0930\u094d\u0926\u0947\u0936\u0915 \u0928\u0947 \u0905\u092a\u0928\u0947 \u0915\u0930\u093f\u092f\u0930 \u0915\u0940 \u0936\u0941\u0930\u0941\u0906\u0924 1951 \u092e\u0947\u0902 \u0924\u0947\u0932\u0941\u0917\u0941-\u0924\u092e\u093f\u0932 \u092b\u093f\u0932\u094d\u092e \u092a\u0924\u094d\u0925\u0932\u093e \u092d\u0948\u0930...",
+      "link": "https://mayapuri.com/hi/bollywood/k-viswanath-no-more-legendary-director-k-viswanath-passed-away-at-the-age-of-92",
+      "source": "mayapuri.com",
+      "original": "https://img-cdn.publive.online/filters:format(webp)/mayapuri/media/post_attachments/89d3022b5d3575c2306d59a2278a411e2d9744e0d258d87d9c58fad768867d71.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimg-cdn.publive.online%2Ffilters%3Aformat%28webp%29%2Fmayapuri%2Fmedia%2Fpost_attachments%2F89d3022b5d3575c2306d59a2278a411e2d9744e0d258d87d9c58fad768867d71.jpg",
+      "size": {
+        "height": 667,
+        "width": 1200,
+        "bytes": 54274
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=701cfc9c966b48aa7e15f16ab4dd8baf4057e56b-8173407-images-thumbs&n=13",
+      "position": 9,
+      "title": "Upender Ambardar's Writings",
+      "snippet": "He specialises in Social history and Culural traditions of Kashmiri Pandits...",
+      "link": "https://www.ikashmir.net/uambardar/index.html",
+      "source": "ikashmir.net",
+      "original": "https://www.ikashmir.net/uambardar/images/upenderambardar.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fwww.ikashmir.net%2Fuambardar%2Fimages%2Fupenderambardar.jpg",
+      "size": {
+        "height": 245,
+        "width": 150,
+        "bytes": 19383
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=a43dcb9d41f0451f9f502fd67a1f5ac3-4933643-images-thumbs&n=13",
+      "position": 10,
+      "title": "Do some data entry -- 2 Excel Freelancer",
+      "snippet": "sharer1954.",
+      "link": "https://www.freelancer.com/projects/excel/some-data-entry-13174068?w=f&ngsw-bypass=",
+      "source": "freelancer.com",
+      "original": "https://cdn2.f-cdn.com/ppic/80741077/logo/23552537/profile_logo_23552537.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fcdn2.f-cdn.com%2Fppic%2F80741077%2Flogo%2F23552537%2Fprofile_logo_23552537.jpg",
+      "size": {
+        "height": 100,
+        "width": 100,
+        "bytes": 2655
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=7cbba2437bf12596823d167c698a321be7258e31-5133450-images-thumbs&n=13",
+      "position": 11,
+      "title": "Perumbavoor G. Raveendranath - MUBI'de Filmler, Listeler ve Bio",
+      "snippet": "Perumbavoor G. Raveendranath - MUBI'de Filmler, Listeler ve Bio",
+      "link": "https://mubi.com/tr/cast/perumbavoor-g-raveendranath",
+      "source": "mubi.com",
+      "original": "https://images.mubicdn.net/images/cast_member/61039/cache-473226-1569485680/image-w856.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimages.mubicdn.net%2Fimages%2Fcast_member%2F61039%2Fcache-473226-1569485680%2Fimage-w856.jpg",
+      "size": {
+        "height": 1519,
+        "width": 1280,
+        "bytes": 161414
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=f7f26a327d5c730c131e62e9c474bb0535fd92a9-16434084-images-thumbs&n=13",
+      "position": 12,
+      "title": "Chhattisgarh Election Results 2023: In Chhattisgarh, BJP ahead of Congress in ea",
+      "snippet": "Election Commission of India, Chhattisgarh Election 2023, ECI Result, Chuna...",
+      "link": "https://indianexpress.com/elections/chhattisgarh-election-results-2023-9052220/lite/",
+      "source": "indianexpress.com",
+      "original": "https://images.indianexpress.com/2023/12/final.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimages.indianexpress.com%2F2023%2F12%2Ffinal.jpg",
+      "size": {
+        "height": 900,
+        "width": 1600,
+        "bytes": 156915
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=297863c83113bef12cbf3a5018b3c159d2f3842d-9041934-images-thumbs&n=13",
+      "position": 13,
+      "title": "Gujarat BJP vice-president Jayanti Bhanushali resigns after rape accusation",
+      "snippet": "BJP MLA Jayanti Bhanushali resigns, Gujarat vice president Jayanti Bhanusha...",
+      "link": "https://www.indiatoday.in/amp/india/story/gujarat-bjp-vp-resigns-after-rape-accusation-claims-innocence-1284958-2018-07-13",
+      "source": "indiatoday.in",
+      "original": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/201807/WhatsApp_Image_2018-07-14_at_08.24.46_3.jpeg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fakm-img-a-in.tosshub.com%2Findiatoday%2Fimages%2Fstory%2F201807%2FWhatsApp_Image_2018-07-14_at_08.24.46_3.jpeg",
+      "size": {
+        "height": 363,
+        "width": 647,
+        "bytes": 25241
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=c0599dd94b0c2d871ff0e3ad2fa61d27e9aaf7f9-5451533-images-thumbs&n=13",
+      "position": 14,
+      "title": "File:Kanhangad sankaran namboodiri.jpg - Wikimedia Commons",
+      "snippet": "File:Kanhangad sankaran namboodiri.jpg.",
+      "link": "https://commons.wikimedia.org/wiki/File:Kanhangad_sankaran_namboodiri.jpg",
+      "source": "commons.wikimedia.org",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Kanhangad_sankaran_namboodiri.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Ff%2Ff5%2FKanhangad_sankaran_namboodiri.jpg",
+      "size": {
+        "height": 4096,
+        "width": 2304,
+        "bytes": 2018282
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=79c9a41c8aae4c53e0d6edcedb5231c03c599c57-5169729-images-thumbs&n=13",
+      "position": 15,
+      "title": "\u0411\u0430\u043b\u0430\u0434\u0436\u0438 \u0428\u0430\u043a\u0442\u0438\u0432\u044d\u043b\u044c - \u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0444\u0438\u043b\u044c\u043c\u044b \u0438 \u0441\u0435\u0440\u0438\u0430\u043b\u044b \u043e\u043d\u043b\u0430\u0439\u043d",
+      "snippet": "\u0411\u0430\u043b\u0430\u0434\u0436\u0438 \u0428\u0430\u043a\u0442\u0438\u0432\u044d\u043b\u044c",
+      "link": "https://rezka.ag/ua/person/361687-baladzhi-shaktivel/",
+      "source": "rezka.ag",
+      "original": "https://statichdrezka.ac/i/2022/12/22/cf16dc36f52c9ua30d78n.jpeg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fstatichdrezka.ac%2Fi%2F2022%2F12%2F22%2Fcf16dc36f52c9ua30d78n.jpeg",
+      "size": {
+        "height": 666,
+        "width": 421,
+        "bytes": 56871
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=9b6d0ff594c6f00d71b0a15e11e81245ff3573b8-5481835-images-thumbs&n=13",
+      "position": 16,
+      "title": "Lalan Singh - Wikipedia",
+      "snippet": "Lalan Singh - Wikipedia",
+      "link": "https://en.wikipedia.org/wiki/Rajiv_Ranjan_Singh",
+      "source": "en.wikipedia.org",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/3/36/Shri_Rajiv_Ranjan_Singh_alias_Lalan_Singh_interacting_with_media_after_taking_charge_as_the_Union_Minister_for_Fisheries%2C_Animal_Husbandry_and_Dairying.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F3%2F36%2FShri_Rajiv_Ranjan_Singh_alias_Lalan_Singh_interacting_with_media_after_taking_charge_as_the_Union_Minister_for_Fisheries%252C_Animal_Husbandry_and_Dairying.jpg",
+      "size": {
+        "height": 325,
+        "width": 260,
+        "bytes": 57818
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=ca50743eb774633237c941a401b936e2a1280eca-10652854-images-thumbs&n=13",
+      "position": 17,
+      "title": "May 4, 2021 coronavirus news CNN",
+      "snippet": "M Vidyasagar, chair of the Covid-19 Modeling Committee",
+      "link": "https://edition.cnn.com/world/live-news/coronavirus-pandemic-vaccine-updates-05-04-21/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+rss%2Fcnn_topstories+%28RSS%3A+CNN+-+Top+Stories%29",
+      "source": "edition.cnn.com",
+      "original": "https://media.cnn.com/api/v1/images/stellar/prod/8879b309-c6b1-47b4-92e5-286e2dd474de.jpg?q=h_427,w_760,x_0,y_0/w_1280",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fmedia.cnn.com%2Fapi%2Fv1%2Fimages%2Fstellar%2Fprod%2F8879b309-c6b1-47b4-92e5-286e2dd474de.jpg%3Fq%3Dh_427%2Cw_760%2Cx_0%2Cy_0%2Fw_1280",
+      "size": {
+        "height": 719,
+        "width": 1280,
+        "bytes": 54610
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=9a5aca4ceb99e3b8decbb0a463a3056dfd4391fc-7042922-images-thumbs&n=13",
+      "position": 18,
+      "title": "Nirmal Hotel & snacks corner :A perfect family restaurant - Google Haritalar",
+      "snippet": "UDAY KANTILAL GANDHI.",
+      "link": "https://www.google.com/maps/place/data=!4m2!3m1!1s0x3bc25d2730897595:0x43233a80554a9ddb?hl=tr&gl=tr",
+      "source": "google.com",
+      "original": "https://lh3.googleusercontent.com/a-/ALV-UjVFQfxZa8htkhba97C_Xmrc58FKSVEgNWjDYYWoqkj9vsAUNVPK=s48-p-k-no-mo",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Flh3.googleusercontent.com%2Fa-%2FALV-UjVFQfxZa8htkhba97C_Xmrc58FKSVEgNWjDYYWoqkj9vsAUNVPK%3Ds48-p-k-no-mo",
+      "size": {
+        "height": 48,
+        "width": 48,
+        "bytes": 1656
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=b2b819a273708c6ed661fcde7308dc2bec35d740-4580593-images-thumbs&n=13",
+      "position": 19,
+      "title": "\u0915\u094b\u0930\u094b\u0928\u093e \u0915\u094b \u092b\u093f\u0930 \u0915\u0948\u0938\u0947 \u0926\u0947\u0902 \u092e\u093e\u0924 Live Bihar",
+      "snippet": "\u0906\u0930.\u0915\u0947.",
+      "link": "https://livebihar.com/how-to-beat-corona-again/",
+      "source": "livebihar.com",
+      "original": "https://livebihar.com/wp-content/uploads/2022/11/R-K-Sinha_New.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Flivebihar.com%2Fwp-content%2Fuploads%2F2022%2F11%2FR-K-Sinha_New.jpg",
+      "size": {
+        "height": 259,
+        "width": 238,
+        "bytes": 11962
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=22b55d1f75e921039c69b3ade9442f917a78160c-13604111-images-thumbs&n=13",
+      "position": 20,
+      "title": "Dr. Himesh Sahu @himeshsahu15 - Twitter Kullan\u0131c\u0131s\u0131 Sotwe",
+      "snippet": "vaibhavsanap713's tweet video.",
+      "link": "https://www.sotwe.com/himeshsahu15?lang=tr",
+      "source": "sotwe.com",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2081811753529454592/img/wdaJH2Y7UTsy-b6h.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fpbs.twimg.com%2Famplify_video_thumb%2F2081811753529454592%2Fimg%2FwdaJH2Y7UTsy-b6h.jpg",
+      "size": {
+        "height": 1080,
+        "width": 1080,
+        "bytes": 69415
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=aa18de3bf1f4dc73db5b7c79afd1f2ea34831b38-5865722-images-thumbs&n=13",
+      "position": 21,
+      "title": "Jai Kishan Kharat - YouTube",
+      "snippet": "\u0432\u0438\u0434\u0435\u043e, \u043f\u043e\u0434\u0435\u043b\u0438\u0442\u044c\u0441\u044f, \u0442\u0435\u043b\u0435\u0444\u043e\u043d \u0441 \u043a\u0430\u043c\u0435\u0440\u043e\u0439, \u0442\u0435\u043b\u0435\u0444\u043e\u043d \u0441 \u0432\u0438\u0434\u0435\u043e, \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e, \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c...",
+      "link": "https://www.youtube.com/channel/UCldMdTTWbEaZsBLs_cdZyKA?app=desktop",
+      "source": "youtube.com",
+      "original": "https://yt3.googleusercontent.com/ytc/AIdro_mNtBhO8rvSslrM-0UtvVrb_CiFuTToGCIT8JDRfab2kg=s900-c-k-c0x00ffffff-no-rj",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fyt3.googleusercontent.com%2Fytc%2FAIdro_mNtBhO8rvSslrM-0UtvVrb_CiFuTToGCIT8JDRfab2kg%3Ds900-c-k-c0x00ffffff-no-rj",
+      "size": {
+        "height": 900,
+        "width": 900,
+        "bytes": 109860
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=7eb41c4fd0f747a90c08a3319468bdf3e0977da6-10254792-images-thumbs&n=13",
+      "position": 22,
+      "title": "\u0c30\u0c3e\u0c33\u0c4d\u0c33\u0c2a\u0c32\u0c4d\u0c32\u0c3f \u0c15\u0c28\u0c4d\u0c28\u0c41\u0c2e\u0c42\u0c24 Rallapalli Narasimha Rao hmtv - YouTube",
+      "snippet": "Senior and Veteran actor Rallapalli has passed away today, leaving the whol...",
+      "link": "https://www.youtube.com/watch?app=desktop&v=Wit1GFtQW70",
+      "source": "youtube.com",
+      "original": "https://i.ytimg.com/vi/Wit1GFtQW70/maxresdefault.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FWit1GFtQW70%2Fmaxresdefault.jpg",
+      "size": {
+        "height": 720,
+        "width": 1280,
+        "bytes": 123080
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=12f29b8fe9ad31071a654b5c86fae0df209575fb-9706270-images-thumbs&n=13",
+      "position": 23,
+      "title": "naanaaga naanillai karaoke-tamilkaraokeworld.com - YouTube",
+      "snippet": "tamilkaraoke",
+      "link": "https://www.youtube.com/watch?app=desktop&v=Mz-jSFsDYFY",
+      "source": "youtube.com",
+      "original": "https://i.ytimg.com/vi/Mz-jSFsDYFY/maxresdefault.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FMz-jSFsDYFY%2Fmaxresdefault.jpg",
+      "size": {
+        "height": 720,
+        "width": 1280,
+        "bytes": 73821
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=0fe3d0c4872530105d992eed5eb16611-5390729-images-thumbs&n=13",
+      "position": 24,
+      "title": "No Ambulance For Hours, AMU Professor On Life Support Dies - YouTube",
+      "snippet": "top news, news in hindi, hindi news, today's news, delhi news, best...",
+      "link": "https://www.youtube.com/watch?v=URbbZXFWYr0&app=desktop",
+      "source": "youtube.com",
+      "original": "https://i.ytimg.com/vi/URbbZXFWYr0/maxresdefault.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FURbbZXFWYr0%2Fmaxresdefault.jpg",
+      "size": {
+        "height": 720,
+        "width": 1280,
+        "bytes": 79783
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=9da7a7b3865bb97472301b70f7980ef45597bee1-10160311-images-thumbs&n=13",
+      "position": 25,
+      "title": "\u0412 \u0448\u0438\u0432\u0430\u0438\u0437\u043c\u0435 \u0435\u0441\u0442\u044c \u0432\u0441\u0451. \u0414\u043e\u0431\u0440\u044b\u0439 \u0432\u0435\u0447\u0435\u0440 \u0432\u0441\u0435\u043c! \u0412\u0430\u043d\u0430\u043a\u043a\u0430\u043c. \u0410\u043d\u0431\u0435 \u0428\u0438\u0432\u0430\u043c\u0430\u0439\u044f\u043c \u0421\u0430\u0442\u044c\u044f\u043c\u0435 \u041f\u0430\u0440\u0430\u0448\u0438\u0432",
+      "snippet": "\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0441\u043f\u0438\u0441\u043e\u043a \u043e\u0446\u0435\u043d\u0438\u0432\u0448\u0438\u0445.",
+      "link": "https://vk.ru/wall221878711_46357",
+      "source": "vk.ru",
+      "original": "https://sun1-83.vkuserphoto.ru/s/v1/ig2/a9RMG5kLoaHOCJNmLFEIrz-INMU189whITtLUGMrfvn3HN5YsJDd4FGdh5dcOFgmDUrU1FSeY_pRFYrcAOhWM8eh.jpg?quality=95&crop=192,91,360,360&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360&ava=1&cs=50x50",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fsun1-83.vkuserphoto.ru%2Fs%2Fv1%2Fig2%2Fa9RMG5kLoaHOCJNmLFEIrz-INMU189whITtLUGMrfvn3HN5YsJDd4FGdh5dcOFgmDUrU1FSeY_pRFYrcAOhWM8eh.jpg%3Fquality%3D95%26crop%3D192%2C91%2C360%2C360%26as%3D32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%26ava%3D1%26cs%3D50x50",
+      "size": {
+        "height": 72,
+        "width": 72,
+        "bytes": 3455
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=5e398c2bebfc3c6ca10b8bfbb624a48ff1e1052f-8232745-images-thumbs&n=13",
+      "position": 26,
+      "title": "\u0d36 \u0d2c \u0d30 \u0d2e \u0d32 \u0d38 \u0d2e \u0d30 \u0d24 \u0d24 \u0d2a \u0d28 \u0d24 \u0d23 \u0d15 \u0d15 \u0d24 \u0d30 \u0d28 \u0d28 \u0d24 \u0d15 \u0d30 \u0d2e \u0d2a \u0d7b \u0d1a \u0d23",
+      "snippet": "\u0d36 \u0d2c \u0d30 \u0d2e \u0d32 \u0d38 \u0d2e \u0d30 \u0d24 \u0d24 \u0d2a \u0d28 \u0d24 \u0d23 \u0d15 \u0d15 \u0d24 \u0d30 \u0d28 \u0d28 \u0d24 \u0d15 \u0d30 \u0d2e \u0d2a \u0d7b \u0d1a \u0d23...",
+      "link": "https://www.pinterest.co.uk/pin/655484920746018582/",
+      "source": "pinterest.co.uk",
+      "original": "https://i.pinimg.com/originals/58/9f/34/589f34fc6e82d99b30b05bac825c0d60.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F58%2F9f%2F34%2F589f34fc6e82d99b30b05bac825c0d60.jpg",
+      "size": {
+        "height": 1047,
+        "width": 1500,
+        "bytes": 143944
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=ae74d6c632bb4d90ed73847bf87af353c529d552-5194765-images-thumbs&n=13",
+      "position": 27,
+      "title": "Chhattisgarh Politics: \u092d\u093e\u091c\u092a\u093e \u092a\u094d\u0930\u0935\u0915\u094d\u0924\u093e \u0938\u091a\u094d\u091a\u093f\u0926\u093e\u0928\u0902\u0926 \u0909\u092a\u093e\u0938\u0928\u0947 \u0928\u0947 \u0910\u0938\u093e \u0915\u0941\u091b \u0915\u0939 \u0926\u093f\u092f\u093e \u0915\u093f \u0906",
+      "snippet": "raipur news, raipur news in hindi, raipur headlines, chhattisgarh news, bjp...",
+      "link": "https://www.naidunia.com/chhattisgarh/raipur-chhattisgarh-politics-bjp-spokesperson-said-something-like-that-political-earthquake-has-come-know-what-is-the-statement-of-bjp-leader-upasana-4712909",
+      "source": "naidunia.com",
+      "original": "https://img.naidunia.com/naidunia/ndnimg/25122019/25_12_2019-s_upasne_cg_bjp_20191225_165251.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimg.naidunia.com%2Fnaidunia%2Fndnimg%2F25122019%2F25_12_2019-s_upasne_cg_bjp_20191225_165251.jpg",
+      "size": {
+        "height": 600,
+        "width": 800,
+        "bytes": 110511
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=e32c312bb8a18845e4c4db5a8d67ff6e6d4dcafb-15426262-images-thumbs&n=13",
+      "position": 28,
+      "title": "\u0921\u093e. \u0936\u093f\u0935\u0915\u0941\u092e\u093e\u0930 \u0936\u0930\u094d\u092e\u093e @shivkumar_vibha - Twitter Profile Sotwe",
+      "snippet": "See tweets, replies, photos and videos from @shivkumar_vibha Twitter profil...",
+      "link": "https://www.sotwe.com/shivkumar_vibha",
+      "source": "sotwe.com",
+      "original": "https://pbs.twimg.com/profile_images/1738452108972822528/tltRdZ3N_400x400.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F1738452108972822528%2FtltRdZ3N_400x400.jpg",
+      "size": {
+        "height": 400,
+        "width": 400,
+        "bytes": 24198
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=c9cc318c2feb169cea9946bc4bd6af58ae54f21e-12423388-images-thumbs&n=13",
+      "position": 29,
+      "title": "Srinivasa Murthy Movies - actor Srinivasa Murthy Movies nowrunning",
+      "snippet": "Srinivasa Murthy Movies actor Srinivasa Murthy Movies",
+      "link": "https://www.nowrunning.com/celebrity/6988/srinivasa-murthy/movies.htm?p=2",
+      "source": "nowrunning.com",
+      "original": "https://img.nowrunning.com/content/Artist/SrinivasaMurthy/banner.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimg.nowrunning.com%2Fcontent%2FArtist%2FSrinivasaMurthy%2Fbanner.jpg",
+      "size": {
+        "height": 283,
+        "width": 215,
+        "bytes": 47786
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=511fd83e6c2d9e62a6465dc170a78d88627fd98c-2480271-images-thumbs&n=13",
+      "position": 30,
+      "title": "MOHAN GOVINDARAJAN - YouTube",
+      "snippet": "\u0432\u0438\u0434\u0435\u043e, \u043f\u043e\u0434\u0435\u043b\u0438\u0442\u044c\u0441\u044f, \u0442\u0435\u043b\u0435\u0444\u043e\u043d \u0441 \u043a\u0430\u043c\u0435\u0440\u043e\u0439, \u0442\u0435\u043b\u0435\u0444\u043e\u043d \u0441 \u0432\u0438\u0434\u0435\u043e, \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e, \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c...",
+      "link": "https://www.youtube.com/channel/UCc18sbaKawg0Jbxv_474Hbw",
+      "source": "youtube.com",
+      "original": "https://yt3.googleusercontent.com/ytc/AIdro_mRAiP4qi4xqW7fMxGSN5alt-lacgDg_0F62amTOMDdnw=s900-c-k-c0x00ffffff-no-rj",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fyt3.googleusercontent.com%2Fytc%2FAIdro_mRAiP4qi4xqW7fMxGSN5alt-lacgDg_0F62amTOMDdnw%3Ds900-c-k-c0x00ffffff-no-rj",
+      "size": {
+        "height": 900,
+        "width": 900,
+        "bytes": 59158
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=b62a189c0571e8ed23013143aa1be1258da20677-8497913-images-thumbs&n=13",
+      "position": 31,
+      "title": "Walking in Futian District - Shenzhen China 4K",
+      "snippet": "Actor Satish Shah passes away",
+      "link": "https://www.msn.com/en-in/news/India/walking-in-futian-district-shenzhen-china-4k/vi-AA1Pc3eb",
+      "source": "msn.com",
+      "original": "https://th.bing.com/th?id=ORMS.d32e15097df22e9b1a2a7195189e9a5b&pid=Wdp",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fth.bing.com%2Fth%3Fid%3DORMS.d32e15097df22e9b1a2a7195189e9a5b%26pid%3DWdp",
+      "size": {
+        "height": 525,
+        "width": 700,
+        "bytes": 39310
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=d00e5d05018d633abf74ea27634f7791a5338e90-10349698-images-thumbs&n=13",
+      "position": 32,
+      "title": "Lalan Singh, Anant Singh, Mokama, Bihar Election: Will Win By Huge Margin: JDU L",
+      "snippet": "Anant Singh, who has 28 criminal cases against him, has won the Mokama Asse...",
+      "link": "https://www.ndtv.com/india-news/lalan-singh-anant-singh-mokama-bihar-election-will-win-by-huge-margin-jdu-leaders-shoutout-to-bahubali-anant-singh-9566831",
+      "source": "ndtv.com",
+      "original": "https://c.ndtvimg.com/2025-11/40d8ub4c_lalan-singh-anant-singh_625x300_03_November_25.jpg?im=FitAndFill,algorithm=dnn,width=1200,height=738",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fc.ndtvimg.com%2F2025-11%2F40d8ub4c_lalan-singh-anant-singh_625x300_03_November_25.jpg%3Fim%3DFitAndFill%2Calgorithm%3Ddnn%2Cwidth%3D1200%2Cheight%3D738",
+      "size": {
+        "height": 738,
+        "width": 1200,
+        "bytes": 53471
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=22d500affb3343a41244cc614eccca4eaaaac369-10705627-images-thumbs&n=13",
+      "position": 33,
+      "title": "\u0917\u0941\u0932\u095b\u093e\u0930 - \u0936\u0947\u0930 Sufi mystic, Couplet",
+      "snippet": "\u0917\u0941\u0932\u095b\u093e\u0930 - \u0936\u0947\u0930 | Sufi mystic, Couplet",
+      "link": "https://in.pinterest.com/pin/487373990933073336/",
+      "source": "in.pinterest.com",
+      "original": "https://i.pinimg.com/736x/4d/c9/28/4dc9284f7256370e0e684e285503f0d3.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fi.pinimg.com%2F736x%2F4d%2Fc9%2F28%2F4dc9284f7256370e0e684e285503f0d3.jpg",
+      "size": {
+        "height": 386,
+        "width": 735,
+        "bytes": 30737
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=318c5e01f8dca3dd8dbd8bad0a8a180626f36262-8497071-images-thumbs&n=13",
+      "position": 34,
+      "title": "R. Gopalakrishnan (politician) - Alchetron, the free social encyclopedia",
+      "snippet": "R Gopalakrishnan (born 5 October 1968) is an Indian politician and Member o...",
+      "link": "https://alchetron.com/R.-Gopalakrishnan-%28politician%29",
+      "source": "alchetron.com",
+      "original": "https://alchetron.com/cdn/r-gopalakrishnan-politician-f2efe908-f3d9-4b88-9d77-cb5c82c41bb-resize-750.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Falchetron.com%2Fcdn%2Fr-gopalakrishnan-politician-f2efe908-f3d9-4b88-9d77-cb5c82c41bb-resize-750.jpg",
+      "size": {
+        "height": 125,
+        "width": 85,
+        "bytes": 3307
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=481cfe033a7214d50d6e48fee403982c6de62e68-5289481-images-thumbs&n=13",
+      "position": 35,
+      "title": "Sanjay Nath Singh@All India Farmers Association (@SanjayNathSing2) Aguea",
+      "snippet": "\u0935\u093f\u0921\u093f\u0913 \u092e\u0947\u0902 82 \u0935\u0930\u094d\u0937 \u0915\u0947...",
+      "link": "https://aguea.net/SanjayNathSing2",
+      "source": "aguea.net",
+      "original": "https://pbs.twimg.com/ext_tw_video_thumb/1841859404204851200/pu/img/RBO8Y0eWwq5-iBVh.jpg?name=small&format=webp",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fpbs.twimg.com%2Fext_tw_video_thumb%2F1841859404204851200%2Fpu%2Fimg%2FRBO8Y0eWwq5-iBVh.jpg%3Fname%3Dsmall%26format%3Dwebp",
+      "size": {
+        "height": 564,
+        "width": 320,
+        "bytes": 11668
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=0e5d740bd1235da4de1d58e7079d9fdee4851f87-4232161-images-thumbs&n=13",
+      "position": 36,
+      "title": "Bihar Elections 2025: RJD Chief Lalu, NDA Leaders Stage Roadshows In Favour Of T",
+      "snippet": "Ritlal Yadav is presently lodged in Bhagalpur Special Central Jail as he wa...",
+      "link": "https://www.freepressjournal.in/india/bihar-elections-2025-rjd-chief-lalu-nda-leaders-stage-roadshows-in-favour-of-their-jailed-candidates-video",
+      "source": "freepressjournal.in",
+      "original": "https://media.assettype.com/freepressjournal/2025-11-03/6wiaxf1j/FotoJet-2025-11-03T180919.737.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fmedia.assettype.com%2Ffreepressjournal%2F2025-11-03%2F6wiaxf1j%2FFotoJet-2025-11-03T180919.737.jpg",
+      "size": {
+        "height": 675,
+        "width": 1200,
+        "bytes": 81589
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=58719a9fbc0c2630e8d7b5e87ed1f48ff1a79fe9-9236689-images-thumbs&n=13",
+      "position": 37,
+      "title": "Old Man Lover @oldmanlover18 - Twitter Profile Sotwe",
+      "snippet": "OldManLover18's tweet photo. https://t.co/CILgNsx1Uc",
+      "link": "https://www.sotwe.com/oldmanlover18?__cf_chl_tk=6OOV9y6lyT.oBScNN6X1As6spJnkwREoQ2kaZyCphFA-1736177295-1.0.1.1-n8qhVWD0pZSvkV8uilL3kqaYYNK47m_HCU2_Y3bsixw",
+      "source": "sotwe.com",
+      "original": "https://pbs.twimg.com/media/EfJ-sfWUEAYx68m.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FEfJ-sfWUEAYx68m.jpg",
+      "size": {
+        "height": 1024,
+        "width": 576,
+        "bytes": 32424
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=bc95d49c736ee5be194aa9c6e1869c1c7d0bd7be-4372954-images-thumbs&n=13",
+      "position": 38,
+      "title": "\u0c28\u0c3e\u0c15\u0c41 \u0c35\u0c3e\u0c33\u0c4d\u0c33 \u0c38\u0c3e\u0c28\u0c41\u0c2d\u0c42\u0c24\u0c3f \u0c05\u0c15\u0c4d\u0c15\u0c30\u0c4d\u0c32\u0c47\u0c26\u0c41 - \u0c2e\u0c41\u0c26\u0c4d\u0c30\u0c17\u0c21 Indian Political League (IPL) With iDre",
+      "snippet": "Mudragada Padmanabham Interview, Mudragada Padmanabham Exclusive Interview,...",
+      "link": "https://www.youtube.com/watch?app=desktop&v=90EMg-7PZAc",
+      "source": "youtube.com",
+      "original": "https://i.ytimg.com/vi/90EMg-7PZAc/maxresdefault.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2F90EMg-7PZAc%2Fmaxresdefault.jpg",
+      "size": {
+        "height": 720,
+        "width": 1280,
+        "bytes": 93336
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=b640858554052220d19dd8c551b610178bc759d7-7544543-images-thumbs&n=13",
+      "position": 39,
+      "title": "India Inc's wishlist for 2013 - BusinessToday",
+      "snippet": "Drug prices, patents in focus for pharma sector.",
+      "link": "https://www.businesstoday.in/latest/corporate/story/wishlist-2013-corporate-india-still-hopeful-policy-reforms-39237-2013-01-09",
+      "source": "businesstoday.in",
+      "original": "https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/January2013/kishore-biyani_80_010913055431.jpg",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fakm-img-a-in.tosshub.com%2Fsites%2Fbtmt%2Fimages%2Fstories%2FJanuary2013%2Fkishore-biyani_80_010913055431.jpg",
+      "size": {
+        "height": 80,
+        "width": 80,
+        "bytes": 3344
+      }
+    },
+    {
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=3d4c3fee3fe4b9b58e3b6f5f2e80125940b85312-12658662-images-thumbs&n=13",
+      "position": 40,
+      "title": "Madhusudhanan is AIADMK\u2019s RK Nagar bye poll candidate, EPS-OPS finally reach con",
+      "snippet": "The AIADMK has announced its candidate for the RK Nagar bye-polls, even as ...",
+      "link": "https://www.thenewsminute.com/article/madhusudhanan-aiadmk-s-rk-nagar-bye-poll-candidate-eps-ops-finally-reach-consensus-72416?amp",
+      "source": "thenewsminute.com",
+      "original": "https://media.assettype.com/tnm%2Fimport%2Fsites%2Fdefault%2Ffiles%2Fmadhusudhanan_AIADMK_G_750x500_fb.jpg?w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fmedia.assettype.com%2Ftnm%252Fimport%252Fsites%252Fdefault%252Ffiles%252Fmadhusudhanan_AIADMK_G_750x500_fb.jpg%3Fw%3D1200%26ar%3D40%253A21%26auto%3Dformat%252Ccompress%26ogImage%3Dtrue%26mode%3Dcrop%26enlarge%3Dtrue%26overlay%3Dfalse%26overlay_position%3Dbottom%26overlay_width%3D100",
+      "size": {
+        "height": 800,
+        "width": 1200,
+        "bytes": 75879
+      }
+    }
+  ],
+  "image_preview": {
+    "image": {
+      "link": "https://avatars.mds.yandex.net/get-images-cbir/1757356/JmihX4iSn85QCXa2kTtP5A1059/orig",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig",
+      "width": 452,
+      "height": 589
+    }
+  },
+  "image_results": [
+    {
+      "title": "Maharashtra: FIR against Uddhav loyalist Chandrakant Khaire for `objectionable` language against CM Shinde",
+      "snippet": "Shiv Sena leader Chandrakant Khaire, Aurangabad, Maharashtra, Chief Minister Eknath Shinde, eknath shinde, eknath shinde latest news ",
+      "link": "https://www.mid-day.com/amp/mumbai/mumbai-news/article/maharashtra-fir-against-uddhav-loyalist-chandrakant-khaire-for-objectionable-language-against-cm-shinde-23249586?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "mid-day.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=3d006c2cc21308e2e1ec7d1005d881792677caee-5690841-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D3d006c2cc21308e2e1ec7d1005d881792677caee-5690841-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://images.mid-day.com/images/images/2022/oct/khaire_d.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimages.mid-day.com%2Fimages%2Fimages%2F2022%2Foct%2Fkhaire_d.jpg",
+        "height": 720,
+        "width": 1280
+      }
+    },
+    {
+      "title": "\u0914\u0930\u0902\u0917\u093e\u092c\u093e\u0926 : 12 \u092c\u0902\u0921\u0916\u094b\u0930 \u0906\u092e\u0926\u093e\u0930 \u0936\u093f\u0935\u0938\u0947\u0928\u0947\u0924 \u092a\u0930\u0924\u0923\u093e\u0930 : \u091a\u0902\u0926\u094d\u0930\u0915\u093e\u0902\u0924 \u0916\u0948\u0930\u0947",
+      "snippet": "\u0914\u0930\u0902\u0917\u093e\u092c\u093e\u0926 : 12 \u092c\u0902\u0921\u0916\u094b\u0930 \u0906\u092e\u0926\u093e\u0930 \u0936\u093f\u0935\u0938\u0947\u0928\u0947\u0924 \u092a\u0930\u0924\u0923\u093e\u0930 : \u091a\u0902\u0926\u094d\u0930\u0915\u093e\u0902\u0924 \u0916\u0948\u0930\u0947 ",
+      "link": "https://pudhari.news/uncategorized/%E0%A4%94%E0%A4%B0%E0%A4%82%E0%A4%97%E0%A4%BE%E0%A4%AC%E0%A4%BE%E0%A4%A6-12-%E0%A4%AC%E0%A4%82%E0%A4%A1%E0%A4%96%E0%A5%8B%E0%A4%B0-%E0%A4%86%E0%A4%AE%E0%A4%A6%E0%A4%BE%E0%A4%B0-%E0%A4%B6%E0%A4%BF%E0%A4%B5%E0%A4%B8%E0%A5%87%E0%A4%A8%E0%A5%87%E0%A4%A4-%E0%A4%AA%E0%A4%B0%E0%A4%A4%E0%A4%A3%E0%A4%BE%E0%A4%B0-%E0%A4%9A%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%95%E0%A4%BE%E0%A4%82%E0%A4%A4-%E0%A4%96%E0%A5%88%E0%A4%B0%E0%A5%87?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "pudhari.news",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=a14547dad00309f6ea299bd7fa7aa04d749b28f1-5141109-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Da14547dad00309f6ea299bd7fa7aa04d749b28f1-5141109-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://media.assettype.com/pudhari%2Fimport%2Fwp-content%2Fuploads%2F2022%2F05%2F8-25.jpg?w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fmedia.assettype.com%2Fpudhari%252Fimport%252Fwp-content%252Fuploads%252F2022%252F05%252F8-25.jpg%3Fw%3D1200%26ar%3D40%253A21%26auto%3Dformat%252Ccompress%26ogImage%3Dtrue%26mode%3Dcrop%26enlarge%3Dtrue%26overlay%3Dfalse%26overlay_position%3Dbottom%26overlay_width%3D100",
+        "height": 680,
+        "width": 1200
+      }
+    },
+    {
+      "title": "\u0928\u093e\u0917\u092a\u0942\u0930 : \u0906\u092e\u091a\u094d\u092f\u093e\u0936\u0940 \u092c\u093e\u0935\u0928\u0915\u0941\u0933\u0947 \u092f\u093e\u0902\u0928\u0940 \u0938\u0902\u092d\u093e\u0933\u0942\u0928 \u092c\u094b\u0932\u093e\u0935\u0947 - \u091a\u0902\u0926\u094d\u0930\u0915\u093e\u0902\u0924 \u0916\u0948\u0930\u0947",
+      "snippet": "\u0928\u093e\u0917\u092a\u0942\u0930, \u092a\u0941\u0922\u093e\u0930\u0940 \u0935\u0943\u0924\u094d\u0924\u0938\u0947\u0935\u093e : \u0909\u0926\u094d\u0927\u0935 \u0920\u093e\u0915\u0930\u0947 \u092f\u093e\u0902\u091a\u094d\u092f\u093e \u0928\u0947\u0924\u0943\u0924\u094d\u0935\u093e\u0924\u0940\u0932 \u0936\u093f\u0935\u0938\u0947\u0928\u093e \u0932\u093e\u091a\u093e\u0930 \u0928\u093e\u0939\u0940, \u0924\u094d\u092f\u093e\u092e\u0941\u0933\u0947 \u0924\u0947 \u0938\u094d\u0935\u0924\u0903 \u0913\u0935\u0947\u0938\u0940\u0902\u0928\u093e \u092d\u0947\u091f\u0923\u094d\u092f\u093e\u091a\u093e \u092a\u094d\u0930\u0936\u094d\u0928\u091a \u092f\u0947\u0924 \u0928\u093e\u0939\u0940. ",
+      "link": "https://pudhari.news/amp/story/maharashtra/vidarbha/nagpur-chandrakant-khaire-criticizes-chandrasekhar-bawankulen?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "pudhari.news",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=a14547dad00309f6ea299bd7fa7aa04d749b28f1-5141109-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Da14547dad00309f6ea299bd7fa7aa04d749b28f1-5141109-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://media.assettype.com/pudhari%2Fimport%2Fwp-content%2Fuploads%2F2022%2F05%2F8-25.jpg?w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fmedia.assettype.com%2Fpudhari%252Fimport%252Fwp-content%252Fuploads%252F2022%252F05%252F8-25.jpg%3Fw%3D1200%26ar%3D40%253A21%26auto%3Dformat%252Ccompress%26ogImage%3Dtrue%26mode%3Dcrop%26enlarge%3Dtrue%26overlay%3Dfalse%26overlay_position%3Dbottom%26overlay_width%3D100",
+        "height": 680,
+        "width": 1200
+      }
+    },
+    {
+      "title": "Ludhiana bypoll litmus test for AAP in Punjab, says BJP leader Tarun Chugh - ENewsTime",
+      "snippet": "Ludhiana, June 1 (IANS) BJP national General Secretary Tarun Chugh said on Sunday that Punjab is facing a debt of over Rs 4 lakh crore, while campaigning for Jeewan Gupta, the BJP candidate for the June 19 Ludhiana (West) bypoll. ",
+      "link": "https://enewstime.in/national/ludhiana-bypoll-litmus-test-for-aap-in-punjab-says-bjp-leader-tarun-chugh-68389.html?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "enewstime.in",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=0a20905e8a4b3f8facc564946f3a62889e163d0d-9065994-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D0a20905e8a4b3f8facc564946f3a62889e163d0d-9065994-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://enewstime.in/wp-content/uploads/2025/06/Ludhiana-bypoll-litmus-test-for-AAP-in-Punjab-says-BJP.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fenewstime.in%2Fwp-content%2Fuploads%2F2025%2F06%2FLudhiana-bypoll-litmus-test-for-AAP-in-Punjab-says-BJP.jpg",
+        "height": 385,
+        "width": 449
+      }
+    },
+    {
+      "title": "Omar Abdullah pitches J&K as safe tourist hub, stresses need for statehood restoration - Yes Punjab News",
+      "snippet": "'Not a single promise fulfilled in 365 days': BJP castigates Omar Abdullah ",
+      "link": "https://yespunjab.com/omar-abdullah-pitches-jk-as-safe-tourist-hub-stresses-need-for-statehood-restoration/?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "yespunjab.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=111823c5f0157de27a55fc29e22d5d92df6f519f-12325301-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D111823c5f0157de27a55fc29e22d5d92df6f519f-12325301-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://yespunjab.com/wp-content/uploads/2025/07/Tarun-Chugh-BJP-Leader-648x470.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fyespunjab.com%2Fwp-content%2Fuploads%2F2025%2F07%2FTarun-Chugh-BJP-Leader-648x470.jpg",
+        "height": 470,
+        "width": 648
+      }
+    },
+    {
+      "title": "TV actor Ashish Kapoor says he is full of 'relief & gratitude' after getting bail in the rape case - Yes Punjab News",
+      "snippet": "Tarun Chugh BJP Leader ",
+      "link": "https://yespunjab.com/tv-actor-ashish-kapoor-says-he-is-full-of-relief-gratitude-after-getting-bail-in-the-rape-case/?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "yespunjab.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=111823c5f0157de27a55fc29e22d5d92df6f519f-12325301-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D111823c5f0157de27a55fc29e22d5d92df6f519f-12325301-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://yespunjab.com/wp-content/uploads/2025/07/Tarun-Chugh-BJP-Leader-648x470.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fyespunjab.com%2Fwp-content%2Fuploads%2F2025%2F07%2FTarun-Chugh-BJP-Leader-648x470.jpg",
+        "height": 470,
+        "width": 648
+      }
+    },
+    {
+      "title": "Celebrate Spirit Of Humanity On World Red Cross Day: Nagaland Gov - The Hills Times",
+      "snippet": "The Hills Times ",
+      "link": "https://thehillstimes.in/northeast/celebrate-spirit-of-humanity-on-world-red-cross-day-nagaland-gov?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "thehillstimes.in",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=b433018c18486226d66ebf15ead7ef54ccf30b35-12612889-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Db433018c18486226d66ebf15ead7ef54ccf30b35-12612889-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://thehillstimes.in/wp-content/uploads/2023/05/lead-29.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fthehillstimes.in%2Fwp-content%2Fuploads%2F2023%2F05%2Flead-29.jpg",
+        "height": 450,
+        "width": 750
+      }
+    },
+    {
+      "title": "Manipur Guv La. Ganesan Given Additional Charge of Bengal as Dhankhar Heads for V-P Race India News - News18",
+      "snippet": "The BJP had on Saturday announced Dhankhar's candidature for the vice president election. bjp, manipur, president kovind, west bengal. ",
+      "link": "https://www.news18.com/news/india/manipur-guv-la-ganesan-given-additional-charge-of-bengal-as-dhankhar-heads-for-v-p-race-5575429.html?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "news18.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=def7f83e1742837c383fc7f6a15bb59900234f38-5453486-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Ddef7f83e1742837c383fc7f6a15bb59900234f38-5453486-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://images.news18.com/ibnlive/uploads/2022/07/untitled-design-2022-07-18t075837.543-165811163516x9.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimages.news18.com%2Fibnlive%2Fuploads%2F2022%2F07%2Funtitled-design-2022-07-18t075837.543-165811163516x9.jpg",
+        "height": 900,
+        "width": 1600
+      }
+    },
+    {
+      "title": "Seven-day state mourning begins in Nagaland over Governor La Ganesan\u2019s death - Northeast News - Northeast India news 24 \u00d7 7",
+      "snippet": "Seven-day state mourning begins in Nagaland over Governor La Ganesan\u2019s death - Northeast News - Northeast India news 24\u00d77 ",
+      "link": "https://nenews.in/nagaland/seven-day-state-mourning-begins-in-nagaland-over-governor-la-ganesans-death/30833/?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "nenews.in",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=6a77e083b10dcb329acbddd1385609c1d2d305e5-9221446-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D6a77e083b10dcb329acbddd1385609c1d2d305e5-9221446-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://nenews.in/wp-content/uploads/2025/08/images.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fnenews.in%2Fwp-content%2Fuploads%2F2025%2F08%2Fimages.jpg",
+        "height": 449,
+        "width": 800
+      }
+    },
+    {
+      "title": "Aditi Prasad (@AditiPrag) - Twitter Profili Zamantika Mersobahis Locabet",
+      "snippet": "@PiyushGoyal. ",
+      "link": "https://zamantika.com/profile/aditiprag?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "zamantika.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=d08bca541910c533c9410eb7bfb4a2f51474325e-4314086-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dd08bca541910c533c9410eb7bfb4a2f51474325e-4314086-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://pbs.twimg.com/profile_images/1563043966605733888/4YsGt7NL.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F1563043966605733888%2F4YsGt7NL.jpg",
+        "height": 322,
+        "width": 322
+      }
+    },
+    {
+      "title": "Lily @lilsqy profile Musk Viewer",
+      "snippet": "@ramgandhi52 ",
+      "link": "https://www.muskviewer.com/lilsqy?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "muskviewer.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=d08bca541910c533c9410eb7bfb4a2f51474325e-4314086-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dd08bca541910c533c9410eb7bfb4a2f51474325e-4314086-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://pbs.twimg.com/profile_images/1563043966605733888/4YsGt7NL.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F1563043966605733888%2F4YsGt7NL.jpg",
+        "height": 322,
+        "width": 322
+      }
+    },
+    {
+      "title": "Significant rise in number of universities in Bengal during TMC tenure: Partha Chatterjee Hindustan Times",
+      "snippet": "Addressing a Teachers\u2019 Day programme over video conference, Chatterjee said during the TMC regime, there has also been a significant rise in the count of higher educational institutions. ",
+      "link": "https://www.hindustantimes.com/education/significant-rise-in-number-of-universities-in-bengal-during-tmc-tenure-partha-chatterjee/story-hoSsOyNMaSsDu3YUDjijUK.html?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "hindustantimes.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=064d67060388e47e79f116cc9c327698d7ec7c38-16277941-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D064d67060388e47e79f116cc9c327698d7ec7c38-16277941-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://images.hindustantimes.com/rf/image_size_630x354/HT/p2/2020/09/06/Pictures/_c23143a2-f00d-11ea-9fc5-24cdb6226899.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimages.hindustantimes.com%2Frf%2Fimage_size_630x354%2FHT%2Fp2%2F2020%2F09%2F06%2FPictures%2F_c23143a2-f00d-11ea-9fc5-24cdb6226899.jpg",
+        "height": 354,
+        "width": 630
+      }
+    },
+    {
+      "title": "Partha Chatterjee summoned by ED in ponzi scam case India News",
+      "snippet": "ponzi scheme,Partha Chatterjee,Enforcement Directorate ",
+      "link": "https://www.hindustantimes.com/india-news/partha-chatterjee-summoned-by-ed-in-ponzi-scam-case-101618380220373.html?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "hindustantimes.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=1cf2b601fc50f521bb6d7218779acb973b2d5571-9066439-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D1cf2b601fc50f521bb6d7218779acb973b2d5571-9066439-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://images.hindustantimes.com/img/2021/04/14/1600x900/_c23143a2-f00d-11ea-9fc5-24cdb6226899_1618380239907.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimages.hindustantimes.com%2Fimg%2F2021%2F04%2F14%2F1600x900%2F_c23143a2-f00d-11ea-9fc5-24cdb6226899_1618380239907.jpg",
+        "height": 900,
+        "width": 1599
+      }
+    },
+    {
+      "title": "Bengal education dept seeks report after Kolkata.",
+      "snippet": "Bengal education minister Partha Chatterjee confirmed that he has sought the detailed report following the controversy at Kamala Girls High School in south Kolkata.(HT File Photo) ",
+      "link": "https://www.inkl.com/news/bengal-education-dept-seeks-report-after-kolkata-school-accuses-10-students-of-being-lesbians?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "inkl.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=a7d619d6ebac12cd8ff6b0e0e01fe97e7353713a-5427554-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Da7d619d6ebac12cd8ff6b0e0e01fe97e7353713a-5427554-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2018/03/15/Pictures/_9f315870-2818-11e8-a8dd-98cd3615fcfa.png",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimages.hindustantimes.com%2Frf%2Fimage_size_960x540%2FHT%2Fp2%2F2018%2F03%2F15%2FPictures%2F_9f315870-2818-11e8-a8dd-98cd3615fcfa.png",
+        "height": 540,
+        "width": 960
+      }
+    },
+    {
+      "title": "Shri Balaji Devasthan, Mothe Ayachit Mandir - Google Haritalar",
+      "snippet": "Vinay Deshpande. ",
+      "link": "https://www.google.com/maps/place/data=!4m2!3m1!1s0x3bd4c7357532a05b:0xea2937ce8e4490d?hl=tr&gl=tr&utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "google.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=d917163a69fea93170c1bd2b3e6a36ac64d6a36a-3608991-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dd917163a69fea93170c1bd2b3e6a36ac64d6a36a-3608991-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://lh3.googleusercontent.com/a-/ALV-UjVe8XpbqFuRr9inngwwJkPXKMiU9c1Y_9Nflt5RasPoE3QHefLS=s48-p-k-no-mo",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Flh3.googleusercontent.com%2Fa-%2FALV-UjVe8XpbqFuRr9inngwwJkPXKMiU9c1Y_9Nflt5RasPoE3QHefLS%3Ds48-p-k-no-mo",
+        "height": 48,
+        "width": 48
+      }
+    },
+    {
+      "title": "Chandrakant Patil dubs NCP chief Sharad Pawar\u2019s ED 'visit' as political drama - TheNews21",
+      "snippet": "Chandrakant Patil dubs NCP chief Sharad Pawar\u2019s ED \u2018visit\u2019 as political drama - TheNews21 ",
+      "link": "https://thenews21.com/chandrakant-patil-dubs-ncp-chief-sharad-pawars-ed-visit-as-political-drama?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "thenews21.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=d141ebd7d13302b0b7b2c42157a65b6f6810a5f8-5911249-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dd141ebd7d13302b0b7b2c42157a65b6f6810a5f8-5911249-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://thenews21.com/wp-content/uploads/2019/09/chandrakant-patil.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fthenews21.com%2Fwp-content%2Fuploads%2F2019%2F09%2Fchandrakant-patil.jpg",
+        "height": 779,
+        "width": 1200
+      }
+    },
+    {
+      "title": "Alliance of Thackeray Brothers Driven by Selfish Motives\" - Chandrakant Patil Confident BJP-Shiv Sena (Shinde) Will Dominate BMC",
+      "snippet": "Mumbai: Maharashtra Minister and BJP leader Chandrakant Patil on Friday expressed doubts over the newly forged alliance between Uddhav Thackeray\u2019s Shiv Sena (UBT) and Raj Thackeray\u2019s Maharashtra Navnirman... ",
+      "link": "https://thenews21.com/alliance-of-thackeray-brothers-driven-by-selfish-motives-chandrakant-patil-confident-bjp-shiv-sena-shinde-will-dominate-bmc?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "thenews21.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=d141ebd7d13302b0b7b2c42157a65b6f6810a5f8-5911249-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dd141ebd7d13302b0b7b2c42157a65b6f6810a5f8-5911249-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://thenews21.com/wp-content/uploads/2019/09/chandrakant-patil.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fthenews21.com%2Fwp-content%2Fuploads%2F2019%2F09%2Fchandrakant-patil.jpg",
+        "height": 779,
+        "width": 1200
+      }
+    },
+    {
+      "title": "K Viswanath No More: \u092e\u0939\u093e\u0928 \u0928\u093f\u0930\u094d\u0926\u0947\u0936\u0915 K Viswanath \u0915\u093e 92 \u0935\u0930\u094d\u0937 \u0915\u0940 \u0906\u092f\u0941 \u092e\u0947\u0902 \u0928\u093f\u0927\u0928 \u0939\u094b \u0917\u092f\u093e",
+      "snippet": "\u092e\u0939\u093e\u0928 \u0928\u093f\u0930\u094d\u0926\u0947\u0936\u0915 \u0928\u0947 \u0905\u092a\u0928\u0947 \u0915\u0930\u093f\u092f\u0930 \u0915\u0940 \u0936\u0941\u0930\u0941\u0906\u0924 1951 \u092e\u0947\u0902 \u0924\u0947\u0932\u0941\u0917\u0941-\u0924\u092e\u093f\u0932 \u092b\u093f\u0932\u094d\u092e \u092a\u0924\u094d\u0925\u0932\u093e \u092d\u0948\u0930\u0935\u0940 \u092e\u0947\u0902 \u0938\u0939\u093e\u092f\u0915 \u0928\u093f\u0930\u094d\u0926\u0947\u0936\u0915 \u0915\u0947 \u0930\u0942\u092a \u092e\u0947\u0902 \u0915\u0940 \u0925\u0940. ",
+      "link": "https://mayapuri.com/hi/bollywood/k-viswanath-no-more-legendary-director-k-viswanath-passed-away-at-the-age-of-92?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "mayapuri.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=d4e11e44430a556f3f896f642e107cfbf77e36b9-5228318-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dd4e11e44430a556f3f896f642e107cfbf77e36b9-5228318-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://img-cdn.publive.online/filters:format(webp)/mayapuri/media/post_attachments/89d3022b5d3575c2306d59a2278a411e2d9744e0d258d87d9c58fad768867d71.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimg-cdn.publive.online%2Ffilters%3Aformat%28webp%29%2Fmayapuri%2Fmedia%2Fpost_attachments%2F89d3022b5d3575c2306d59a2278a411e2d9744e0d258d87d9c58fad768867d71.jpg",
+        "height": 667,
+        "width": 1200
+      }
+    },
+    {
+      "title": "Who Is K Viswanath Son Nagendranath? Death Cause",
+      "snippet": "Who Is K Viswanath Son Nagendranath Viswanath? ",
+      "link": "https://tvshowstars.com/k-viswanath-son-nagendranath-viswanath-family/?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "tvshowstars.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=765fb8df312d778e91403473476d9abb8105f678-5013999-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D765fb8df312d778e91403473476d9abb8105f678-5013999-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://tvshowstars.com/wp-content/uploads/2023/02/K-Vishwanath.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Ftvshowstars.com%2Fwp-content%2Fuploads%2F2023%2F02%2FK-Vishwanath.jpg",
+        "height": 569,
+        "width": 1024
+      }
+    },
+    {
+      "title": "Telugu Director K Viswanath Death Reason And Date, Biography, Age, Date Of Birth, Family, Wife, Son, Movies - The SportsGrail",
+      "snippet": "Well-known film director Kasinadhuni Viswanath has been in the news because he passed away recently at the age of 92, know his death reason. ",
+      "link": "https://thesportsgrail.com/telugu-director-k-viswanath-death-reason-and-date-biography-age-date-of-birth-family-wife-son-movies/?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "thesportsgrail.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=f6bb21786ebda6f859f4f59e352720e3f3db2d3f-9152303-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Df6bb21786ebda6f859f4f59e352720e3f3db2d3f-9152303-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://thesportsgrail.com/wp-content/uploads/2023/02/Kalatapasvi-K-Viswanath-passes-away-at-92.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fthesportsgrail.com%2Fwp-content%2Fuploads%2F2023%2F02%2FKalatapasvi-K-Viswanath-passes-away-at-92.jpg",
+        "height": 720,
+        "width": 1280
+      }
+    },
+    {
+      "title": "Upender Ambardar's Writings",
+      "snippet": "He specialises in Social history and Culural traditions of Kashmiri Pandits. is a well-known Researcher and an. ",
+      "link": "https://www.ikashmir.net/uambardar/index.html?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "ikashmir.net",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=701cfc9c966b48aa7e15f16ab4dd8baf4057e56b-8173407-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D701cfc9c966b48aa7e15f16ab4dd8baf4057e56b-8173407-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://www.ikashmir.net/uambardar/images/upenderambardar.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fwww.ikashmir.net%2Fuambardar%2Fimages%2Fupenderambardar.jpg",
+        "height": 245,
+        "width": 150
+      }
+    },
+    {
+      "title": "Jammu Kashmir Stark Realities: Maha Shivratri - Revisiting Kashmiri Ritual Variants-PART IV By Upender Ambardar",
+      "snippet": "Maha Shivratri - Revisiting Kashmiri Ritual Variants-PART IV. ",
+      "link": "http://jammukashmirrealities.blogspot.com/2010/12/maha-shivratri-revisiting-kashmiri_4789.html?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "jammukashmirrealities.blogspot.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=9a768fc44ffd5296624f29d0517cbda18e371915-4949469-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D9a768fc44ffd5296624f29d0517cbda18e371915-4949469-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "http://1.bp.blogspot.com/_ht6sVcg7VR0/TQz_fb5IxmI/AAAAAAAABMI/Q3EFMXH2Bio/s1600/upenderambardar.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=http%3A%2F%2F1.bp.blogspot.com%2F_ht6sVcg7VR0%2FTQz_fb5IxmI%2FAAAAAAAABMI%2FQ3EFMXH2Bio%2Fs1600%2Fupenderambardar.jpg",
+        "height": 245,
+        "width": 150
+      }
+    },
+    {
+      "title": "Jammu Kashmir Stark Realities: The Hindu : News / National : PDP participates in all-party meet",
+      "snippet": "Maha Shivratri - Revisiting Kashmiri Ritual Variants-PART III By Upender Ambardar. ",
+      "link": "http://jammukashmirrealities.blogspot.com/2010/09/hindu-news-national-pdp-participates-in.html?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "jammukashmirrealities.blogspot.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=ecbb949be772a8bb80a07fd86f2c8bb6-5885436-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Decbb949be772a8bb80a07fd86f2c8bb6-5885436-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "http://2.bp.blogspot.com/_ht6sVcg7VR0/TQz-ummc9iI/AAAAAAAABME/KVHcb3k8FY4/w72-h72-p-k-no-nu/upenderambardar.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=http%3A%2F%2F2.bp.blogspot.com%2F_ht6sVcg7VR0%2FTQz-ummc9iI%2FAAAAAAAABME%2FKVHcb3k8FY4%2Fw72-h72-p-k-no-nu%2Fupenderambardar.jpg",
+        "height": 72,
+        "width": 72
+      }
+    },
+    {
+      "title": "Do some data entry -- 2 Excel Freelancer",
+      "snippet": "sharer1954. ",
+      "link": "https://www.freelancer.com/projects/excel/some-data-entry-13174068?w=f&ngsw-bypass=&utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "freelancer.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=a43dcb9d41f0451f9f502fd67a1f5ac3-4933643-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Da43dcb9d41f0451f9f502fd67a1f5ac3-4933643-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://cdn2.f-cdn.com/ppic/80741077/logo/23552537/profile_logo_23552537.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fcdn2.f-cdn.com%2Fppic%2F80741077%2Flogo%2F23552537%2Fprofile_logo_23552537.jpg",
+        "height": 100,
+        "width": 100
+      }
+    },
+    {
+      "title": "Data Entry Data Entry Freelancer",
+      "snippet": "View sharer1954's Profile. sharer1954's Profile Picture. ",
+      "link": "https://www.freelancer.com/projects/Data-Entry/Data-Entry-13005024/?ngsw-bypass=&w=f&utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "freelancer.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=a43dcb9d41f0451f9f502fd67a1f5ac3-4933643-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Da43dcb9d41f0451f9f502fd67a1f5ac3-4933643-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://cdn2.f-cdn.com/ppic/80741077/logo/23552537/profile_logo_23552537.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fcdn2.f-cdn.com%2Fppic%2F80741077%2Flogo%2F23552537%2Fprofile_logo_23552537.jpg",
+        "height": 100,
+        "width": 100
+      }
+    },
+    {
+      "title": "Data Entry Veri Giri\u015fi Freelancer",
+      "snippet": "sharer1954 adl\u0131 kullan\u0131c\u0131n\u0131n Profil Resmi. sharer1954 adl\u0131 kullan\u0131c\u0131n\u0131n Profilini G\u00f6r\u00fcnt\u00fcleyin. ",
+      "link": "https://www.tr.freelancer.com/projects/data-entry/data-entry-13005024?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "tr.freelancer.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=a43dcb9d41f0451f9f502fd67a1f5ac3-4933643-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Da43dcb9d41f0451f9f502fd67a1f5ac3-4933643-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://cdn2.f-cdn.com/ppic/80741077/logo/23552537/profile_logo_23552537.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fcdn2.f-cdn.com%2Fppic%2F80741077%2Flogo%2F23552537%2Fprofile_logo_23552537.jpg",
+        "height": 100,
+        "width": 100
+      }
+    },
+    {
+      "title": "Perumbavoor G. Raveendranath - MUBI'de Filmler, Listeler ve Bio",
+      "snippet": "Perumbavoor G. Raveendranath - MUBI'de Filmler, Listeler ve Bio ",
+      "link": "https://mubi.com/tr/cast/perumbavoor-g-raveendranath?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "mubi.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=7cbba2437bf12596823d167c698a321be7258e31-5133450-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D7cbba2437bf12596823d167c698a321be7258e31-5133450-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://images.mubicdn.net/images/cast_member/61039/cache-473226-1569485680/image-w856.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimages.mubicdn.net%2Fimages%2Fcast_member%2F61039%2Fcache-473226-1569485680%2Fimage-w856.jpg",
+        "height": 1519,
+        "width": 1280
+      }
+    },
+    {
+      "title": "Perumbavoor G. Raveendranath - Movies, Bio and Lists on MUBI",
+      "snippet": "Perumbavoor G. Raveendranath ",
+      "link": "https://mubi.com/en/cast/perumbavoor-g-raveendranath?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "mubi.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=7cbba2437bf12596823d167c698a321be7258e31-5133450-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D7cbba2437bf12596823d167c698a321be7258e31-5133450-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://images.mubicdn.net/images/cast_member/61039/cache-473226-1569485680/image-w856.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimages.mubicdn.net%2Fimages%2Fcast_member%2F61039%2Fcache-473226-1569485680%2Fimage-w856.jpg",
+        "height": 1519,
+        "width": 1280
+      }
+    },
+    {
+      "title": "Perumbavoor G. Raveendranath - Films, Biographie et Listes sur MUBI",
+      "snippet": "Perumbavoor G. Raveendranath - Films, Biographie et Listes sur MUBI ",
+      "link": "https://mubi.com/fr/cast/perumbavoor-g-raveendranath?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "mubi.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=7cbba2437bf12596823d167c698a321be7258e31-5133450-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D7cbba2437bf12596823d167c698a321be7258e31-5133450-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://images.mubicdn.net/images/cast_member/61039/cache-473226-1569485680/image-w856.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimages.mubicdn.net%2Fimages%2Fcast_member%2F61039%2Fcache-473226-1569485680%2Fimage-w856.jpg",
+        "height": 1519,
+        "width": 1280
+      }
+    },
+    {
+      "title": "Chhattisgarh Election Results 2023: In Chhattisgarh, BJP ahead of Congress in early trends Elections News - The Indian Express",
+      "snippet": "Election Commission of India, Chhattisgarh Election 2023, ECI Result, Chunav Result, Chhattisgarh Chunav Result 2023, results eci gov in, results.eci.gov.in 2023, Chhattisgarh Vote Counting, Chhattisgarh Election Results today Live, Chhattisgarh Election Results 2023, Indian Express ",
+      "link": "https://indianexpress.com/elections/chhattisgarh-election-results-2023-9052220/lite/?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "indianexpress.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=f7f26a327d5c730c131e62e9c474bb0535fd92a9-16434084-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Df7f26a327d5c730c131e62e9c474bb0535fd92a9-16434084-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://images.indianexpress.com/2023/12/final.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimages.indianexpress.com%2F2023%2F12%2Ffinal.jpg",
+        "height": 900,
+        "width": 1600
+      }
+    },
+    {
+      "title": "Gujarat BJP vice-president Jayanti Bhanushali resigns after rape accusation",
+      "snippet": "BJP MLA Jayanti Bhanushali resigns, Gujarat vice president Jayanti Bhanushali resigns, Jayanti Bhanushali resigns ",
+      "link": "https://www.indiatoday.in/amp/india/story/gujarat-bjp-vp-resigns-after-rape-accusation-claims-innocence-1284958-2018-07-13?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "indiatoday.in",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=297863c83113bef12cbf3a5018b3c159d2f3842d-9041934-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D297863c83113bef12cbf3a5018b3c159d2f3842d-9041934-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/201807/WhatsApp_Image_2018-07-14_at_08.24.46_3.jpeg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fakm-img-a-in.tosshub.com%2Findiatoday%2Fimages%2Fstory%2F201807%2FWhatsApp_Image_2018-07-14_at_08.24.46_3.jpeg",
+        "height": 363,
+        "width": 647
+      }
+    },
+    {
+      "title": "\u0d2a \u0d21 \u0d28 \u0d15 \u0d15 \u0d38: \u0d17 \u0d1c \u0d31 \u0d24 \u0d24 \u0d2c \u0d1c \u0d2a \u0d09 \u0d2a \u0d27 \u0d2f \u0d15 \u0d37 \u0d7b \u0d30 \u0d1c \u0d35 \u0d1a \u0d1a India News",
+      "snippet": "\u0d2a \u0d21 \u0d28 \u0d15 \u0d15 \u0d38: \u0d17 \u0d1c \u0d31 \u0d24 \u0d24 \u0d2c \u0d1c \u0d2a \u0d09 \u0d2a \u0d27 \u0d2f \u0d15 \u0d37 \u0d7b \u0d30 \u0d1c \u0d35 \u0d1a \u0d1a ",
+      "link": "https://www.manoramaonline.com/news/india/2018/07/14/09-cpy-rape-bjp-leader-resigned.html?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "manoramaonline.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=74cd4f4bfb7bb50123dc9c544e4e9fbd-4887927-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D74cd4f4bfb7bb50123dc9c544e4e9fbd-4887927-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://img-mm.manoramaonline.com/content/dam/mm/ml/news/sunday/images/2018/Jul/14/jayantibhai-bhanusthali.jpg.image.470.246.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimg-mm.manoramaonline.com%2Fcontent%2Fdam%2Fmm%2Fml%2Fnews%2Fsunday%2Fimages%2F2018%2FJul%2F14%2Fjayantibhai-bhanusthali.jpg.image.470.246.jpg",
+        "height": 246,
+        "width": 470
+      }
+    },
+    {
+      "title": "File:Kanhangad sankaran namboodiri.jpg - Wikimedia Commons",
+      "snippet": "File:Kanhangad sankaran namboodiri.jpg. ",
+      "link": "https://commons.wikimedia.org/wiki/File:Kanhangad_sankaran_namboodiri.jpg?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "commons.wikimedia.org",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=c0599dd94b0c2d871ff0e3ad2fa61d27e9aaf7f9-5451533-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dc0599dd94b0c2d871ff0e3ad2fa61d27e9aaf7f9-5451533-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Kanhangad_sankaran_namboodiri.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Ff%2Ff5%2FKanhangad_sankaran_namboodiri.jpg",
+        "height": 4096,
+        "width": 2304
+      }
+    },
+    {
+      "title": "\u0411\u0430\u043b\u0430\u0434\u0436\u0438 \u0428\u0430\u043a\u0442\u0438\u0432\u044d\u043b\u044c - \u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0444\u0438\u043b\u044c\u043c\u044b \u0438 \u0441\u0435\u0440\u0438\u0430\u043b\u044b \u043e\u043d\u043b\u0430\u0439\u043d",
+      "snippet": "\u0411\u0430\u043b\u0430\u0434\u0436\u0438 \u0428\u0430\u043a\u0442\u0438\u0432\u044d\u043b\u044c ",
+      "link": "https://rezka.ag/ua/person/361687-baladzhi-shaktivel/?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "rezka.ag",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=79c9a41c8aae4c53e0d6edcedb5231c03c599c57-5169729-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D79c9a41c8aae4c53e0d6edcedb5231c03c599c57-5169729-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://statichdrezka.ac/i/2022/12/22/cf16dc36f52c9ua30d78n.jpeg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fstatichdrezka.ac%2Fi%2F2022%2F12%2F22%2Fcf16dc36f52c9ua30d78n.jpeg",
+        "height": 666,
+        "width": 421
+      }
+    },
+    {
+      "title": "Cast - Vazhaku enn 18/9 (2012)",
+      "snippet": "Cast&nbsp;\u2013 Vazhaku enn #&nbsp;18/9 (2012) ",
+      "link": "https://en.kinorium.com/662392/cast/?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "en.kinorium.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=6d51f0592b2a8e3b62b0cb8dcfa02b7af1071ffa-10415072-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D6d51f0592b2a8e3b62b0cb8dcfa02b7af1071ffa-10415072-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://images-s.kinorium.com/persona/150/1015548.jpg?20180310065205",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimages-s.kinorium.com%2Fpersona%2F150%2F1015548.jpg%3F20180310065205",
+        "height": 236,
+        "width": 150
+      }
+    },
+    {
+      "title": "Samurai (movie, 2002)",
+      "snippet": "Director. ",
+      "link": "https://en.kinorium.com/299214/?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "en.kinorium.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=6d51f0592b2a8e3b62b0cb8dcfa02b7af1071ffa-10415072-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D6d51f0592b2a8e3b62b0cb8dcfa02b7af1071ffa-10415072-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://images-s.kinorium.com/persona/150/1015548.jpg?20180310065205",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimages-s.kinorium.com%2Fpersona%2F150%2F1015548.jpg%3F20180310065205",
+        "height": 236,
+        "width": 150
+      }
+    },
+    {
+      "title": "Lalan Singh - Wikipedia",
+      "snippet": "Lalan Singh - Wikipedia ",
+      "link": "https://en.wikipedia.org/wiki/Rajiv_Ranjan_Singh?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "en.wikipedia.org",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=9b6d0ff594c6f00d71b0a15e11e81245ff3573b8-5481835-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D9b6d0ff594c6f00d71b0a15e11e81245ff3573b8-5481835-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://upload.wikimedia.org/wikipedia/commons/3/36/Shri_Rajiv_Ranjan_Singh_alias_Lalan_Singh_interacting_with_media_after_taking_charge_as_the_Union_Minister_for_Fisheries%2C_Animal_Husbandry_and_Dairying.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F3%2F36%2FShri_Rajiv_Ranjan_Singh_alias_Lalan_Singh_interacting_with_media_after_taking_charge_as_the_Union_Minister_for_Fisheries%252C_Animal_Husbandry_and_Dairying.jpg",
+        "height": 325,
+        "width": 260
+      }
+    },
+    {
+      "title": "File:Shri Rajiv Ranjan Singh alias Lalan Singh interacting with media after taking charge as the Union Minister for Fisheries, A",
+      "snippet": "File:Shri Rajiv Ranjan Singh alias Lalan Singh interacting with media after taking charge as the Union Minister for Fisheries, Animal Husbandry and Dairying.jpg - Wikimedia Commons ",
+      "link": "https://commons.wikimedia.org/wiki/File:Shri_Rajiv_Ranjan_Singh_alias_Lalan_Singh_interacting_with_media_after_taking_charge_as_the_Union_Minister_for_Fisheries,_Animal_Husbandry_and_Dairying.jpg?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "commons.wikimedia.org",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=9b6d0ff594c6f00d71b0a15e11e81245ff3573b8-5481835-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D9b6d0ff594c6f00d71b0a15e11e81245ff3573b8-5481835-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://upload.wikimedia.org/wikipedia/commons/3/36/Shri_Rajiv_Ranjan_Singh_alias_Lalan_Singh_interacting_with_media_after_taking_charge_as_the_Union_Minister_for_Fisheries%2C_Animal_Husbandry_and_Dairying.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F3%2F36%2FShri_Rajiv_Ranjan_Singh_alias_Lalan_Singh_interacting_with_media_after_taking_charge_as_the_Union_Minister_for_Fisheries%252C_Animal_Husbandry_and_Dairying.jpg",
+        "height": 325,
+        "width": 260
+      }
+    },
+    {
+      "title": "\u092e\u0941\u0919\u094d\u0917\u0947\u0930 \u0932\u094b\u0915\u0938\u092d\u093e \u0928\u093f\u0930\u094d\u0935\u093e\u091a\u0928 \u0915\u094d\u0937\u0947\u0924\u094d\u0930 - Wp/mag - Wikimedia Incubator",
+      "snippet": "Add topic. ",
+      "link": "https://incubator.wikimedia.org/wiki/Wp/mag/%E0%A4%AE%E0%A5%81%E0%A4%99%E0%A5%8D%E0%A4%97%E0%A5%87%E0%A4%B0_%E0%A4%B2%E0%A5%8B%E0%A4%95%E0%A4%B8%E0%A4%AD%E0%A4%BE_%E0%A4%A8%E0%A4%BF%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%BE%E0%A4%9A%E0%A4%A8_%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A5%87%E0%A4%A4%E0%A5%8D%E0%A4%B0?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "incubator.wikimedia.org",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=9b6d0ff594c6f00d71b0a15e11e81245ff3573b8-5481835-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D9b6d0ff594c6f00d71b0a15e11e81245ff3573b8-5481835-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://upload.wikimedia.org/wikipedia/commons/3/36/Shri_Rajiv_Ranjan_Singh_alias_Lalan_Singh_interacting_with_media_after_taking_charge_as_the_Union_Minister_for_Fisheries%2C_Animal_Husbandry_and_Dairying.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F3%2F36%2FShri_Rajiv_Ranjan_Singh_alias_Lalan_Singh_interacting_with_media_after_taking_charge_as_the_Union_Minister_for_Fisheries%252C_Animal_Husbandry_and_Dairying.jpg",
+        "height": 325,
+        "width": 260
+      }
+    },
+    {
+      "title": "May 4, 2021 coronavirus news CNN",
+      "snippet": "M Vidyasagar, chair of the Covid-19 Modeling Committee ",
+      "link": "https://edition.cnn.com/world/live-news/coronavirus-pandemic-vaccine-updates-05-04-21/?utm_source=yandexsmartcamera&utm_medium=organic&utm_campaign=Feed%3A+rss%2Fcnn_topstories+%28RSS%3A+CNN+-+Top+Stories%29",
+      "source": "edition.cnn.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=ca50743eb774633237c941a401b936e2a1280eca-10652854-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dca50743eb774633237c941a401b936e2a1280eca-10652854-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://media.cnn.com/api/v1/images/stellar/prod/8879b309-c6b1-47b4-92e5-286e2dd474de.jpg?q=h_427,w_760,x_0,y_0/w_1280",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fmedia.cnn.com%2Fapi%2Fv1%2Fimages%2Fstellar%2Fprod%2F8879b309-c6b1-47b4-92e5-286e2dd474de.jpg%3Fq%3Dh_427%2Cw_760%2Cx_0%2Cy_0%2Fw_1280",
+        "height": 719,
+        "width": 1280
+      }
+    },
+    {
+      "title": "\u0631\u0626\u064a\u0633 \u0644\u062c\u0646\u0629 \u062f\u0631\u0627\u0633\u0629 \u062c\u0627\u0626\u062d\u0629 \u0643\u0648\u0631\u0648\u0646\u0627 \u0627\u0644\u0647\u0646\u062f\u064a\u0629: \u0642\u062f \u0646\u062a\u062c\u0627\u0648\u0632 \u0627\u0644\u0630\u0631\u0648\u0629 \u0628\u063a\u0636\u0648\u0646 \u0623\u064a\u0627\u0645 - CNN Arabic",
+      "snippet": "\u062a\u0627\u0628\u0639\u0648\u0646\u0627 \u0639\u0628\u0631 \u064a\u0648\u062a\u064a\u0648\u0628. ",
+      "link": "https://arabic.cnn.com/health/video/2021/05/05/v105547-indias-covid-19-modelling-committee-head-country-could-be-past-peak-within-days?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "arabic.cnn.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=64fc1b9c23afa777c00f8ab01469de04e5b64288-3071260-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D64fc1b9c23afa777c00f8ab01469de04e5b64288-3071260-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://cnn-arabic-images.cnn.io/cloudinary/image/upload/w_780,h_439,c_fill,q_auto:low,g_center/cnnarabic/2021/05/05/images/184188.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fcnn-arabic-images.cnn.io%2Fcloudinary%2Fimage%2Fupload%2Fw_780%2Ch_439%2Cc_fill%2Cq_auto%3Alow%2Cg_center%2Fcnnarabic%2F2021%2F05%2F05%2Fimages%2F184188.jpg",
+        "height": 439,
+        "width": 780
+      }
+    },
+    {
+      "title": "Nirmal Hotel & snacks corner :A perfect family restaurant - Google Haritalar",
+      "snippet": "UDAY KANTILAL GANDHI. ",
+      "link": "https://www.google.com/maps/place/data=!4m2!3m1!1s0x3bc25d2730897595:0x43233a80554a9ddb?hl=tr&gl=tr&utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "google.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=9a5aca4ceb99e3b8decbb0a463a3056dfd4391fc-7042922-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D9a5aca4ceb99e3b8decbb0a463a3056dfd4391fc-7042922-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://lh3.googleusercontent.com/a-/ALV-UjVFQfxZa8htkhba97C_Xmrc58FKSVEgNWjDYYWoqkj9vsAUNVPK=s48-p-k-no-mo",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Flh3.googleusercontent.com%2Fa-%2FALV-UjVFQfxZa8htkhba97C_Xmrc58FKSVEgNWjDYYWoqkj9vsAUNVPK%3Ds48-p-k-no-mo",
+        "height": 48,
+        "width": 48
+      }
+    },
+    {
+      "title": "\u0915\u094b\u0930\u094b\u0928\u093e \u0915\u094b \u092b\u093f\u0930 \u0915\u0948\u0938\u0947 \u0926\u0947\u0902 \u092e\u093e\u0924 Live Bihar",
+      "snippet": "\u0906\u0930.\u0915\u0947. ",
+      "link": "https://livebihar.com/how-to-beat-corona-again/?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "livebihar.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=b2b819a273708c6ed661fcde7308dc2bec35d740-4580593-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Db2b819a273708c6ed661fcde7308dc2bec35d740-4580593-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://livebihar.com/wp-content/uploads/2022/11/R-K-Sinha_New.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Flivebihar.com%2Fwp-content%2Fuploads%2F2022%2F11%2FR-K-Sinha_New.jpg",
+        "height": 259,
+        "width": 238
+      }
+    },
+    {
+      "title": "\u0935\u093f\u091a\u093e\u0930 Live Bihar",
+      "snippet": "\u0907\u091c\u0930\u093e\u092f\u0932 \u092e\u0947\u0902 \u0938\u0924\u094d\u0924\u093e \u092a\u0930\u093f\u0935\u0930\u094d\u0924\u0928. ",
+      "link": "https://livebihar.com/category/idea/page/102/?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "livebihar.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=b2b819a273708c6ed661fcde7308dc2bec35d740-4580593-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Db2b819a273708c6ed661fcde7308dc2bec35d740-4580593-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://livebihar.com/wp-content/uploads/2022/11/R-K-Sinha_New.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Flivebihar.com%2Fwp-content%2Fuploads%2F2022%2F11%2FR-K-Sinha_New.jpg",
+        "height": 259,
+        "width": 238
+      }
+    },
+    {
+      "title": "Dr. Himesh Sahu @himeshsahu15 - Twitter Kullan\u0131c\u0131s\u0131 Sotwe",
+      "snippet": "vaibhavsanap713's tweet video. ",
+      "link": "https://www.sotwe.com/himeshsahu15?lang=tr&utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "sotwe.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=22b55d1f75e921039c69b3ade9442f917a78160c-13604111-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D22b55d1f75e921039c69b3ade9442f917a78160c-13604111-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://pbs.twimg.com/amplify_video_thumb/2081811753529454592/img/wdaJH2Y7UTsy-b6h.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fpbs.twimg.com%2Famplify_video_thumb%2F2081811753529454592%2Fimg%2FwdaJH2Y7UTsy-b6h.jpg",
+        "height": 1080,
+        "width": 1080
+      }
+    },
+    {
+      "title": "God's Favourite Child (@Savi_IFS) - Twitter Profili Zamantika Mersobahis Locabet",
+      "snippet": "Thank you, uncle, for this wisdom.\u0905\u092e\u0940\u0930 \u092c\u0928\u094b. ",
+      "link": "https://zamantika.com/profile/savi_ifs?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "zamantika.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=22b55d1f75e921039c69b3ade9442f917a78160c-13604111-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D22b55d1f75e921039c69b3ade9442f917a78160c-13604111-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://pbs.twimg.com/amplify_video_thumb/2081811753529454592/img/wdaJH2Y7UTsy-b6h.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fpbs.twimg.com%2Famplify_video_thumb%2F2081811753529454592%2Fimg%2FwdaJH2Y7UTsy-b6h.jpg",
+        "height": 1080,
+        "width": 1080
+      }
+    },
+    {
+      "title": "Hafeez Siddiqui (@imhafeez) - \u041f\u0440\u043e\u0444\u0438\u043b\u044c Twitter Zamantika Mersobahis Locabet",
+      "snippet": "Hafeez Siddiqui ",
+      "link": "https://zamantika.com/ru/profile/__imhafeez?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "zamantika.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=22b55d1f75e921039c69b3ade9442f917a78160c-13604111-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D22b55d1f75e921039c69b3ade9442f917a78160c-13604111-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://pbs.twimg.com/amplify_video_thumb/2081811753529454592/img/wdaJH2Y7UTsy-b6h.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fpbs.twimg.com%2Famplify_video_thumb%2F2081811753529454592%2Fimg%2FwdaJH2Y7UTsy-b6h.jpg",
+        "height": 1080,
+        "width": 1080
+      }
+    },
+    {
+      "title": "Jai Kishan Kharat - YouTube",
+      "snippet": "\u0432\u0438\u0434\u0435\u043e, \u043f\u043e\u0434\u0435\u043b\u0438\u0442\u044c\u0441\u044f, \u0442\u0435\u043b\u0435\u0444\u043e\u043d \u0441 \u043a\u0430\u043c\u0435\u0440\u043e\u0439, \u0442\u0435\u043b\u0435\u0444\u043e\u043d \u0441 \u0432\u0438\u0434\u0435\u043e, \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e, \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c ",
+      "link": "https://www.youtube.com/channel/UCldMdTTWbEaZsBLs_cdZyKA?app=desktop&utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "youtube.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=aa18de3bf1f4dc73db5b7c79afd1f2ea34831b38-5865722-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Daa18de3bf1f4dc73db5b7c79afd1f2ea34831b38-5865722-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://yt3.googleusercontent.com/ytc/AIdro_mNtBhO8rvSslrM-0UtvVrb_CiFuTToGCIT8JDRfab2kg=s900-c-k-c0x00ffffff-no-rj",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fyt3.googleusercontent.com%2Fytc%2FAIdro_mNtBhO8rvSslrM-0UtvVrb_CiFuTToGCIT8JDRfab2kg%3Ds900-c-k-c0x00ffffff-no-rj",
+        "height": 900,
+        "width": 900
+      }
+    },
+    {
+      "title": "Jai Kishan Kharat @jkkharat - Twitter Profile Sotwe",
+      "snippet": "Jai Kishan Kharat. @jkkharat. ",
+      "link": "https://www.sotwe.com/jkkharat?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "sotwe.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=5748d16dedce338fc3dca0779c365bda-6965551-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D5748d16dedce338fc3dca0779c365bda-6965551-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://pbs.twimg.com/profile_images/593772944519602176/LSZJdusn_400x400.png",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F593772944519602176%2FLSZJdusn_400x400.png",
+        "height": 400,
+        "width": 400
+      }
+    },
+    {
+      "title": "Ritesh Dhondge @dhondgeritesh - Twitter Profile Sotwe",
+      "snippet": "jkkharat's profile image ",
+      "link": "https://www.sotwe.com/dhondgeritesh?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "sotwe.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=5748d16dedce338fc3dca0779c365bda-6965551-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D5748d16dedce338fc3dca0779c365bda-6965551-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://pbs.twimg.com/profile_images/593772944519602176/LSZJdusn_400x400.png",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F593772944519602176%2FLSZJdusn_400x400.png",
+        "height": 400,
+        "width": 400
+      }
+    },
+    {
+      "title": "\u0c30\u0c3e\u0c33\u0c4d\u0c33\u0c2a\u0c32\u0c4d\u0c32\u0c3f \u0c15\u0c28\u0c4d\u0c28\u0c41\u0c2e\u0c42\u0c24 Rallapalli Narasimha Rao hmtv - YouTube",
+      "snippet": "Senior and Veteran actor Rallapalli has passed away today, leaving the whole Tollywood film industry in extreme sadness. ",
+      "link": "https://www.youtube.com/watch?app=desktop&v=Wit1GFtQW70&utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "youtube.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=7eb41c4fd0f747a90c08a3319468bdf3e0977da6-10254792-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D7eb41c4fd0f747a90c08a3319468bdf3e0977da6-10254792-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://i.ytimg.com/vi/Wit1GFtQW70/maxresdefault.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FWit1GFtQW70%2Fmaxresdefault.jpg",
+        "height": 720,
+        "width": 1280
+      }
+    },
+    {
+      "title": "naanaaga naanillai karaoke-tamilkaraokeworld.com - YouTube",
+      "snippet": "tamilkaraoke ",
+      "link": "https://www.youtube.com/watch?app=desktop&v=Mz-jSFsDYFY&utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "youtube.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=12f29b8fe9ad31071a654b5c86fae0df209575fb-9706270-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D12f29b8fe9ad31071a654b5c86fae0df209575fb-9706270-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://i.ytimg.com/vi/Mz-jSFsDYFY/maxresdefault.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FMz-jSFsDYFY%2Fmaxresdefault.jpg",
+        "height": 720,
+        "width": 1280
+      }
+    },
+    {
+      "title": "old songs spb tamil Cheap Sell - OFF 74",
+      "snippet": "SP Balasubramaniam Tamil mp3 Songs old songs spb tamil It tends to dig in a little by the end of the day as my feet swell some. ",
+      "link": "https://www.dataliz.net/eweb.aspx?cid=59&shop=old+songs+spb+tamil&g=11&utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "dataliz.net",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=35d2aef184bde422efdaa6f394833c5fc1e60272-12523274-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D35d2aef184bde422efdaa6f394833c5fc1e60272-12523274-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://images-na.ssl-images-amazon.com/images/I/912EX5r0sxL.png",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F912EX5r0sxL.png",
+        "height": 512,
+        "width": 512
+      }
+    },
+    {
+      "title": "No Ambulance For Hours, AMU Professor On Life Support Dies - YouTube",
+      "snippet": "top news, news in hindi, hindi news, today&#39;s news, delhi news, best news, aajtak, aajtak news, latest news, latest hindi news, Pepper media, Ambulance, AMU, ... ",
+      "link": "https://www.youtube.com/watch?v=URbbZXFWYr0&app=desktop&utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "youtube.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=0fe3d0c4872530105d992eed5eb16611-5390729-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D0fe3d0c4872530105d992eed5eb16611-5390729-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://i.ytimg.com/vi/URbbZXFWYr0/maxresdefault.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FURbbZXFWYr0%2Fmaxresdefault.jpg",
+        "height": 720,
+        "width": 1280
+      }
+    },
+    {
+      "title": "AMU professor battling cancer dies after waiting for ambulance for six hours News Briefs News - The Indian Express",
+      "snippet": "Reflecting on D Murthy's medical condition, Dr. Mohammad Aslam of the Jawaharlal Nehru Medical College (JNMC) said that the deceased professor had been battling cancer and was on ventilator. ",
+      "link": "https://indianexpress.com/article/news-briefs/amu-professor-battling-cancer-dies-after-waiting-for-ambulance-for-six-hours/lite/?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "indianexpress.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=f9e5e20a6df08cd72f0e9413fb5550e4ff03dcf8-10142557-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Df9e5e20a6df08cd72f0e9413fb5550e4ff03dcf8-10142557-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://images.indianexpress.com/2016/10/amu-professor480.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimages.indianexpress.com%2F2016%2F10%2Famu-professor480.jpg",
+        "height": 267,
+        "width": 480
+      }
+    },
+    {
+      "title": "AMU professor dies after waiting for ambulance for 6 hours - Rediff.com India News",
+      "snippet": "Dr D Murthy, Jawaharlal Nehru Medical College, Aligarh Muslim University, New Delhi, Department of Modern English Language, CMO, Omar Saleem Peerzada, Dr Mohammad Aslam, Tariq Mansoor, Shaikh Mastan ",
+      "link": "https://www.rediff.com/news/report/amu-professor-dies-after-waiting-for-ambulance-for-6-hours/20161026.htm?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "rediff.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=abc72c4fd43e9ec8ade7bad7fbd0d4289c77b037-7553437-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dabc72c4fd43e9ec8ade7bad7fbd0d4289c77b037-7553437-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://im.rediff.com/news/2016/oct/26amu.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fim.rediff.com%2Fnews%2F2016%2Foct%2F26amu.jpg",
+        "height": 267,
+        "width": 295
+      }
+    },
+    {
+      "title": "\u0412 \u0448\u0438\u0432\u0430\u0438\u0437\u043c\u0435 \u0435\u0441\u0442\u044c \u0432\u0441\u0451. \u0414\u043e\u0431\u0440\u044b\u0439 \u0432\u0435\u0447\u0435\u0440 \u0432\u0441\u0435\u043c! \u0412\u0430\u043d\u0430\u043a\u043a\u0430\u043c. \u0410\u043d\u0431\u0435 \u0428\u0438\u0432\u0430\u043c\u0430\u0439\u044f\u043c \u0421\u0430\u0442\u044c\u044f\u043c\u0435 \u041f\u0430\u0440\u0430\u0448\u0438\u0432\u0430\u043c. \u0411\u043e\u0433 \u0428\u0438\u0432\u0430 \u0435\u0441\u0442\u044c \u0418\u043c\u043c\u0430\u043d\u0435\u043d\u0442\u043d\u0430\u044f.. 2026 \u0412\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u0435",
+      "snippet": "\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0441\u043f\u0438\u0441\u043e\u043a \u043e\u0446\u0435\u043d\u0438\u0432\u0448\u0438\u0445. ",
+      "link": "https://vk.ru/wall221878711_46357?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "vk.ru",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=9da7a7b3865bb97472301b70f7980ef45597bee1-10160311-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D9da7a7b3865bb97472301b70f7980ef45597bee1-10160311-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://sun1-83.vkuserphoto.ru/s/v1/ig2/a9RMG5kLoaHOCJNmLFEIrz-INMU189whITtLUGMrfvn3HN5YsJDd4FGdh5dcOFgmDUrU1FSeY_pRFYrcAOhWM8eh.jpg?quality=95&crop=192,91,360,360&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360&ava=1&cs=50x50",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fsun1-83.vkuserphoto.ru%2Fs%2Fv1%2Fig2%2Fa9RMG5kLoaHOCJNmLFEIrz-INMU189whITtLUGMrfvn3HN5YsJDd4FGdh5dcOFgmDUrU1FSeY_pRFYrcAOhWM8eh.jpg%3Fquality%3D95%26crop%3D192%2C91%2C360%2C360%26as%3D32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%26ava%3D1%26cs%3D50x50",
+        "height": 72,
+        "width": 72
+      }
+    },
+    {
+      "title": "\u0418\u0441\u043a\u0440\u0435\u043d\u043d\u0438\u0435 \u043f\u043e\u0436\u0435\u043b\u0430\u043d\u0438\u044f \u0432\u0441\u0435\u043c \u0432\u0430\u043c \u0432 \u0441\u0432\u044f\u0437\u0438 \u0441 \u043f\u0430\u043b\u043e\u043c\u043d\u0438\u0447\u0435\u0441\u0442\u0432\u043e\u043c \u043a \u0414\u0436\u0430\u0433\u0430\u043d\u043d\u0430\u0442\u0445\u0443. (\u0414\u0436\u0430\u0433\u0430\u043d\u043d\u0430\u0442\u0445 - \u0411\u0445\u0430\u0434\u0436\u0430\u043d) \u0422\u044b - \u0413\u043e\u0441\u043f\u043e\u0434\u044c \u0412\u0441\u0435\u043b\u0435\u043d\u043d\u043e\u0439,.. 2026 \u0412\u041a\u043e\u043d\u0442",
+      "snippet": "Shashi-Kant Sharma ",
+      "link": "https://vk.ru/wall1096624549_356?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "vk.ru",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=9da7a7b3865bb97472301b70f7980ef45597bee1-10160311-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D9da7a7b3865bb97472301b70f7980ef45597bee1-10160311-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://sun1-83.vkuserphoto.ru/s/v1/ig2/a9RMG5kLoaHOCJNmLFEIrz-INMU189whITtLUGMrfvn3HN5YsJDd4FGdh5dcOFgmDUrU1FSeY_pRFYrcAOhWM8eh.jpg?quality=95&crop=192,91,360,360&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360&ava=1&cs=50x50",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fsun1-83.vkuserphoto.ru%2Fs%2Fv1%2Fig2%2Fa9RMG5kLoaHOCJNmLFEIrz-INMU189whITtLUGMrfvn3HN5YsJDd4FGdh5dcOFgmDUrU1FSeY_pRFYrcAOhWM8eh.jpg%3Fquality%3D95%26crop%3D192%2C91%2C360%2C360%26as%3D32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%26ava%3D1%26cs%3D50x50",
+        "height": 72,
+        "width": 72
+      }
+    },
+    {
+      "title": "\u041f\u043e\u0441\u0442 \u043e\u0442 31.05.2026 \u0413\u0430\u043b\u0438\u043d\u0430 \u041e\u0431\u0440\u0430\u0437\u0446\u043e\u0432\u0430 \u0412\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u0435",
+      "snippet": "\u041f\u043e\u0441\u0442 \u043e\u0442 31.05.2026 \u0413\u0430\u043b\u0438\u043d\u0430 \u041e\u0431\u0440\u0430\u0437\u0446\u043e\u0432\u0430 \u0412\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u0435 ",
+      "link": "https://vk.ru/wall813980357_8018?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "vk.ru",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=9da7a7b3865bb97472301b70f7980ef45597bee1-10160311-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D9da7a7b3865bb97472301b70f7980ef45597bee1-10160311-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://sun1-83.vkuserphoto.ru/s/v1/ig2/a9RMG5kLoaHOCJNmLFEIrz-INMU189whITtLUGMrfvn3HN5YsJDd4FGdh5dcOFgmDUrU1FSeY_pRFYrcAOhWM8eh.jpg?quality=95&crop=192,91,360,360&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360&ava=1&cs=50x50",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fsun1-83.vkuserphoto.ru%2Fs%2Fv1%2Fig2%2Fa9RMG5kLoaHOCJNmLFEIrz-INMU189whITtLUGMrfvn3HN5YsJDd4FGdh5dcOFgmDUrU1FSeY_pRFYrcAOhWM8eh.jpg%3Fquality%3D95%26crop%3D192%2C91%2C360%2C360%26as%3D32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%26ava%3D1%26cs%3D50x50",
+        "height": 72,
+        "width": 72
+      }
+    },
+    {
+      "title": "\u0d36 \u0d2c \u0d30 \u0d2e \u0d32 \u0d38 \u0d2e \u0d30 \u0d24 \u0d24 \u0d2a \u0d28 \u0d24 \u0d23 \u0d15 \u0d15 \u0d24 \u0d30 \u0d28 \u0d28 \u0d24 \u0d15 \u0d30 \u0d2e \u0d2a \u0d7b \u0d1a \u0d23",
+      "snippet": "\u0d36 \u0d2c \u0d30 \u0d2e \u0d32 \u0d38 \u0d2e \u0d30 \u0d24 \u0d24 \u0d2a \u0d28 \u0d24 \u0d23 \u0d15 \u0d15 \u0d24 \u0d30 \u0d28 \u0d28 \u0d24 \u0d15 \u0d30 \u0d2e \u0d2a \u0d7b \u0d1a \u0d23... ",
+      "link": "https://www.pinterest.co.uk/pin/655484920746018582/?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "pinterest.co.uk",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=5e398c2bebfc3c6ca10b8bfbb624a48ff1e1052f-8232745-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D5e398c2bebfc3c6ca10b8bfbb624a48ff1e1052f-8232745-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://i.pinimg.com/originals/58/9f/34/589f34fc6e82d99b30b05bac825c0d60.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F58%2F9f%2F34%2F589f34fc6e82d99b30b05bac825c0d60.jpg",
+        "height": 1047,
+        "width": 1500
+      }
+    },
+    {
+      "title": "\u0d05 \u0d30 \u0d30 \u0d32 \u0d15 \u0d28 \u0d28 \u0d2f \u0d32 \u0d39 \u0d28 \u0d26 \u0d38 \u0d25 \u0d28 \u0d7c \u0d25 \u0d15 \u0d33 \u0d35 \u0d23 - \u0d35 \u0d33 \u0d33 \u0d2a \u0d2a \u0d33 \u0d33",
+      "snippet": "\u0d05 \u0d30\u0d42 \u0d30\u0d3f \u0d32\u0d41\u0d02 \u0d15\u0d4b \u0d28\u0d4d\u0d28\u0d3f \u0d2f\u0d3f \u0d32\u0d41\u0d02 \u0d39\u0d3f \u0d28\u0d4d\u0d26\u0d41 \u0d38\u0d4d\u0d25\u0d3e \u0d28\u0d3e \u0d7c \u0d25\u0d3f \u0d15 \u0d33\u0d4d\u200d \u0d35\u0d47\u0d23\u0d02 \u2013 \u0d35\u0d46\u0d33\u0d4d\u0d33\u0d3e\u0d2a\u0d4d\u0d2a\u0d33\u0d4d\u0d33\u0d3f | vellappally natesan | Madhyamam ",
+      "link": "https://www.madhyamam.com/kerala/vellappally-natesan/638445?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "madhyamam.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=c21e7c4a2db504ad97cc719e9dbaa08ccc367ee8-9123766-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dc21e7c4a2db504ad97cc719e9dbaa08ccc367ee8-9123766-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://www.madhyamam.com/sites/default/files/Vellappally180737_1569432004.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fwww.madhyamam.com%2Fsites%2Fdefault%2Ffiles%2FVellappally180737_1569432004.jpg",
+        "height": 444,
+        "width": 636
+      }
+    },
+    {
+      "title": "\u0d0e \u0d38.\u0d0e \u0d7b \u0d15 \u0d33 \u0d1c \u0d2b \u0d23 \u0d1f \u0d24 \u0d1f \u0d1f \u0d2a \u0d2a: \u0d35 \u0d33 \u0d33 \u0d2a \u0d2a \u0d33 \u0d33 \u0d2f \u0d15 \u0d30 \u0d2c \u0d30 \u0d1e",
+      "snippet": "\u0d0e\u0d38\u0d4d.\u0d0e\u0d7b \u0d15\u0d4b\u0d33\u0d47\u0d1c\u0d4d \u0d2b\u0d23\u0d4d\u0d1f\u0d4d\u200c \u0d24\u0d1f\u0d4d\u0d1f\u0d3f\u0d2a\u0d4d\u0d2a\u0d4d: \u0d35\u0d46\u0d33\u0d4d\u0d33\u0d3e\u0d2a\u0d4d\u0d2a\u0d33\u0d4d\u0d33\u0d3f\u0d2f\u0d46 \u0d15\u0d4d\u0d30\u0d48\u0d02\u0d2c\u0d4d\u0d30\u0d3e\u0d1e\u0d4d\u0d1a\u0d4d \u0d1a\u0d4b\u0d26\u0d4d\u0d2f\u0d02\u0d1a\u0d46\u0d2f\u0d4d\u0d24\u0d41 | sn college fund-crimebranch-vellappally | Madhyamam ",
+      "link": "https://www.madhyamam.com/kerala/sn-college-fund-crimebranch-vellappally/699604?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "madhyamam.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=c21e7c4a2db504ad97cc719e9dbaa08ccc367ee8-9123766-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dc21e7c4a2db504ad97cc719e9dbaa08ccc367ee8-9123766-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://www.madhyamam.com/sites/default/files/Vellappally180737_1592846776.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fwww.madhyamam.com%2Fsites%2Fdefault%2Ffiles%2FVellappally180737_1592846776.jpg",
+        "height": 444,
+        "width": 636
+      }
+    },
+    {
+      "title": "Chhattisgarh Politics: \u092d\u093e\u091c\u092a\u093e \u092a\u094d\u0930\u0935\u0915\u094d\u0924\u093e \u0938\u091a\u094d\u091a\u093f\u0926\u093e\u0928\u0902\u0926 \u0909\u092a\u093e\u0938\u0928\u0947 \u0928\u0947 \u0910\u0938\u093e \u0915\u0941\u091b \u0915\u0939 \u0926\u093f\u092f\u093e \u0915\u093f \u0906 \u0917\u092f\u093e \u0938\u093f\u092f\u093e\u0938\u0940 \u092d\u0942\u091a\u093e\u0932",
+      "snippet": "raipur news, raipur news in hindi, raipur headlines, chhattisgarh news, bjp leaders upasne, ",
+      "link": "https://www.naidunia.com/chhattisgarh/raipur-chhattisgarh-politics-bjp-spokesperson-said-something-like-that-political-earthquake-has-come-know-what-is-the-statement-of-bjp-leader-upasana-4712909?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "naidunia.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=ae74d6c632bb4d90ed73847bf87af353c529d552-5194765-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dae74d6c632bb4d90ed73847bf87af353c529d552-5194765-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://img.naidunia.com/naidunia/ndnimg/25122019/25_12_2019-s_upasne_cg_bjp_20191225_165251.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimg.naidunia.com%2Fnaidunia%2Fndnimg%2F25122019%2F25_12_2019-s_upasne_cg_bjp_20191225_165251.jpg",
+        "height": 600,
+        "width": 800
+      }
+    },
+    {
+      "title": "\u0921\u093e. \u0936\u093f\u0935\u0915\u0941\u092e\u093e\u0930 \u0936\u0930\u094d\u092e\u093e @shivkumar_vibha - Twitter Profile Sotwe",
+      "snippet": "See tweets, replies, photos and videos from @shivkumar_vibha Twitter profile. ",
+      "link": "https://www.sotwe.com/shivkumar_vibha?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "sotwe.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=e32c312bb8a18845e4c4db5a8d67ff6e6d4dcafb-15426262-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3De32c312bb8a18845e4c4db5a8d67ff6e6d4dcafb-15426262-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://pbs.twimg.com/profile_images/1738452108972822528/tltRdZ3N_400x400.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F1738452108972822528%2FtltRdZ3N_400x400.jpg",
+        "height": 400,
+        "width": 400
+      }
+    },
+    {
+      "title": "Srinivasa Murthy Movies - actor Srinivasa Murthy Movies nowrunning",
+      "snippet": "Srinivasa Murthy Movies actor Srinivasa Murthy Movies ",
+      "link": "https://www.nowrunning.com/celebrity/6988/srinivasa-murthy/movies.htm?p=2&utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "nowrunning.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=c9cc318c2feb169cea9946bc4bd6af58ae54f21e-12423388-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dc9cc318c2feb169cea9946bc4bd6af58ae54f21e-12423388-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://img.nowrunning.com/content/Artist/SrinivasaMurthy/banner.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimg.nowrunning.com%2Fcontent%2FArtist%2FSrinivasaMurthy%2Fbanner.jpg",
+        "height": 283,
+        "width": 215
+      }
+    },
+    {
+      "title": "Srinivasa Murthy - Alchetron, The Free Social Encyclopedia",
+      "snippet": "Jadalathimmanahalli Krishnappa Srinivasa Murthy (born 15 May 1949), known popularly as Srinivasa Murthy, is an Indian actor and television director. ",
+      "link": "https://alchetron.com/Srinivasa-Murthy?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "alchetron.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=dc654cc448f1ca70401a8e1cb00600ab-5869908-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Ddc654cc448f1ca70401a8e1cb00600ab-5869908-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://alchetron.com/cdn/srinivasa-murthy-047f75d8-6649-459a-af05-ce7ca2fc772-resize-750.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Falchetron.com%2Fcdn%2Fsrinivasa-murthy-047f75d8-6649-459a-af05-ce7ca2fc772-resize-750.jpg",
+        "height": 275,
+        "width": 220
+      }
+    },
+    {
+      "title": "Latest and Upcoming Movie Reviews Of Srinivasa Murthy",
+      "snippet": "Telugu Supporting Actor Srinivasa Murthy ",
+      "link": "https://nettv4u.com/celebrity/telugu/supporting-actor/srinivasa-murthy/list-of-movie-review?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "nettv4u.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=a3a14b244f91619eb56ae402202cf202-5424933-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Da3a14b244f91619eb56ae402202cf202-5424933-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://nettv4u.com/imagine/srinivasa-murthy.png",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fnettv4u.com%2Fimagine%2Fsrinivasa-murthy.png",
+        "height": 252,
+        "width": 252
+      }
+    },
+    {
+      "title": "MOHAN GOVINDARAJAN - YouTube",
+      "snippet": "\u0432\u0438\u0434\u0435\u043e, \u043f\u043e\u0434\u0435\u043b\u0438\u0442\u044c\u0441\u044f, \u0442\u0435\u043b\u0435\u0444\u043e\u043d \u0441 \u043a\u0430\u043c\u0435\u0440\u043e\u0439, \u0442\u0435\u043b\u0435\u0444\u043e\u043d \u0441 \u0432\u0438\u0434\u0435\u043e, \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e, \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c ",
+      "link": "https://www.youtube.com/channel/UCc18sbaKawg0Jbxv_474Hbw?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "youtube.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=511fd83e6c2d9e62a6465dc170a78d88627fd98c-2480271-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D511fd83e6c2d9e62a6465dc170a78d88627fd98c-2480271-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://yt3.googleusercontent.com/ytc/AIdro_mRAiP4qi4xqW7fMxGSN5alt-lacgDg_0F62amTOMDdnw=s900-c-k-c0x00ffffff-no-rj",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fyt3.googleusercontent.com%2Fytc%2FAIdro_mRAiP4qi4xqW7fMxGSN5alt-lacgDg_0F62amTOMDdnw%3Ds900-c-k-c0x00ffffff-no-rj",
+        "height": 900,
+        "width": 900
+      }
+    },
+    {
+      "title": "Installing the Web app on your desktop or phone - Music Speed Changer App",
+      "snippet": "Share on Facebook. ",
+      "link": "https://musicspeedchanger.com/forum/discussion/235/installing-the-web-app-on-your-desktop-or-phone?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "musicspeedchanger.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=35b8a7de74924fdd41096a5505634f73d2e92204-5307135-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D35b8a7de74924fdd41096a5505634f73d2e92204-5307135-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://lh3.googleusercontent.com/a-/AOh14GjefRW3_zhAQ_xq_bHiwRMjdSBnzfDzSWPnE5kA=s96-c",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Flh3.googleusercontent.com%2Fa-%2FAOh14GjefRW3_zhAQ_xq_bHiwRMjdSBnzfDzSWPnE5kA%3Ds96-c",
+        "height": 96,
+        "width": 96
+      }
+    },
+    {
+      "title": "MOHAN GOVINDARAJAN - Music Speed Changer App",
+      "snippet": "If you want to get involved, click one of these buttons! ",
+      "link": "https://musicspeedchanger.com/forum/index.php?p=%2Fprofile%2FMOHAN+GOVINDARAJAN&utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "musicspeedchanger.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=35b8a7de74924fdd41096a5505634f73d2e92204-5307135-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D35b8a7de74924fdd41096a5505634f73d2e92204-5307135-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://lh3.googleusercontent.com/a-/AOh14GjefRW3_zhAQ_xq_bHiwRMjdSBnzfDzSWPnE5kA=s96-c",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Flh3.googleusercontent.com%2Fa-%2FAOh14GjefRW3_zhAQ_xq_bHiwRMjdSBnzfDzSWPnE5kA%3Ds96-c",
+        "height": 96,
+        "width": 96
+      }
+    },
+    {
+      "title": "Walking in Futian District - Shenzhen China 4K",
+      "snippet": "Actor Satish Shah passes away ",
+      "link": "https://www.msn.com/en-in/news/India/walking-in-futian-district-shenzhen-china-4k/vi-AA1Pc3eb?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "msn.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=b62a189c0571e8ed23013143aa1be1258da20677-8497913-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Db62a189c0571e8ed23013143aa1be1258da20677-8497913-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://th.bing.com/th?id=ORMS.d32e15097df22e9b1a2a7195189e9a5b&pid=Wdp",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fth.bing.com%2Fth%3Fid%3DORMS.d32e15097df22e9b1a2a7195189e9a5b%26pid%3DWdp",
+        "height": 525,
+        "width": 700
+      }
+    },
+    {
+      "title": "Satish Shah, actor known for 'Jaane Bhi Do Yaaro' and 'Sarabhai vs Sarabhai', passes away - The Economic Times",
+      "snippet": "Satish Shah Death News: Veteran actor Satish Shah, celebrated for his role in 'Sarabhai vs Sarabhai', has passed away on Saturday. ",
+      "link": "https://economictimes.indiatimes.com/news/new-updates/satish-shah-actor-known-for-jaane-bhi-do-yaaro-and-sarabhai-vs-sarabhai-passed-away/articleshow/124804283.cms?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "economictimes.indiatimes.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=b3c4e63cd44c9808fdea020d8a7f19f9a97de101-5228182-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Db3c4e63cd44c9808fdea020d8a7f19f9a97de101-5228182-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://img.etimg.com/thumb/msid-124804280,width-1200,height-630,imgsize-1050144,overlay-economictimes/articleshow.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimg.etimg.com%2Fthumb%2Fmsid-124804280%2Cwidth-1200%2Cheight-630%2Cimgsize-1050144%2Coverlay-economictimes%2Farticleshow.jpg",
+        "height": 630,
+        "width": 1200
+      }
+    },
+    {
+      "title": "Satish Shah UK racism: Actor Satish Shah encounters racism at UK's Heathrow airport, tackles it like a boss - The Economic Times",
+      "snippet": "The actor shared the incident on Twitter. ",
+      "link": "https://economictimes.indiatimes.com/magazines/panache/sarabhai-vs-sarabhai-actor-satish-shah-encounters-racism-at-uks-heathrow-airport-tackles-it-with-a-befitting-reply/articleshow/96726611.cms?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "economictimes.indiatimes.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=c892e803bd3aa6372707a9183b076cb69bbd7455-5344952-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dc892e803bd3aa6372707a9183b076cb69bbd7455-5344952-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://img.etimg.com/thumb/msid-96727842,width-1200,height-630,imgsize-76942,overlay-etpanache/articleshow.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimg.etimg.com%2Fthumb%2Fmsid-96727842%2Cwidth-1200%2Cheight-630%2Cimgsize-76942%2Coverlay-etpanache%2Farticleshow.jpg",
+        "height": 630,
+        "width": 1200
+      }
+    },
+    {
+      "title": "Lalan Singh, Anant Singh, Mokama, Bihar Election: Will Win By Huge Margin: JDU Leader's Shoutout To 'Bahubali' Anant Singh",
+      "snippet": "Anant Singh, who has 28 criminal cases against him, has won the Mokama Assembly seat five times. ",
+      "link": "https://www.ndtv.com/india-news/lalan-singh-anant-singh-mokama-bihar-election-will-win-by-huge-margin-jdu-leaders-shoutout-to-bahubali-anant-singh-9566831?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "ndtv.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=d00e5d05018d633abf74ea27634f7791a5338e90-10349698-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dd00e5d05018d633abf74ea27634f7791a5338e90-10349698-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://c.ndtvimg.com/2025-11/40d8ub4c_lalan-singh-anant-singh_625x300_03_November_25.jpg?im=FitAndFill,algorithm=dnn,width=1200,height=738",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fc.ndtvimg.com%2F2025-11%2F40d8ub4c_lalan-singh-anant-singh_625x300_03_November_25.jpg%3Fim%3DFitAndFill%2Calgorithm%3Ddnn%2Cwidth%3D1200%2Cheight%3D738",
+        "height": 738,
+        "width": 1200
+      }
+    },
+    {
+      "title": "\u0917\u0941\u0932\u095b\u093e\u0930 - \u0936\u0947\u0930 Sufi mystic, Couplet",
+      "snippet": "\u0917\u0941\u0932\u095b\u093e\u0930 - \u0936\u0947\u0930 | Sufi mystic, Couplet ",
+      "link": "https://in.pinterest.com/pin/487373990933073336/?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "in.pinterest.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=22d500affb3343a41244cc614eccca4eaaaac369-10705627-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D22d500affb3343a41244cc614eccca4eaaaac369-10705627-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://i.pinimg.com/736x/4d/c9/28/4dc9284f7256370e0e684e285503f0d3.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fi.pinimg.com%2F736x%2F4d%2Fc9%2F28%2F4dc9284f7256370e0e684e285503f0d3.jpg",
+        "height": 386,
+        "width": 735
+      }
+    },
+    {
+      "title": "kitni lambi KHamoshi se guzra hun - Sher",
+      "snippet": "kitni lambi KHamoshi se guzra hun Complete Sher of Gulzar at Rekhta.org. kitni lambi KHamoshi se guzra hun , un se kitna kuchh kahne ki koshish ki. ",
+      "link": "https://www.rekhta.org/couplets/kitnii-lambii-khaamoshii-se-guzraa-huun-gulzar-couplets?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "rekhta.org",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=31c18ed5c57ed2775f4c2e1391ac69ebdcfb8ae1-5354907-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D31c18ed5c57ed2775f4c2e1391ac69ebdcfb8ae1-5354907-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://www.rekhta.org/Images/Shayar/Large/gulzar.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fwww.rekhta.org%2FImages%2FShayar%2FLarge%2Fgulzar.jpg",
+        "height": 630,
+        "width": 1200
+      }
+    },
+    {
+      "title": "wo ek din ek ajnabi ko - Sher",
+      "snippet": "wo ek din ek ajnabi ko , meri kahani suna raha tha. wo ek din ek ajnabi ko Complete Sher of Gulzar at Rekhta.org. ",
+      "link": "https://www.rekhta.org/couplets/vo-ek-din-ek-ajnabii-ko-gulzar-couplets?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "rekhta.org",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=31c18ed5c57ed2775f4c2e1391ac69ebdcfb8ae1-5354907-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D31c18ed5c57ed2775f4c2e1391ac69ebdcfb8ae1-5354907-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://www.rekhta.org/Images/Shayar/Large/gulzar.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fwww.rekhta.org%2FImages%2FShayar%2FLarge%2Fgulzar.jpg",
+        "height": 630,
+        "width": 1200
+      }
+    },
+    {
+      "title": "R. Gopalakrishnan (politician) - Alchetron, the free social encyclopedia",
+      "snippet": "R Gopalakrishnan (born 5 October 1968) is an Indian politician and Member of Parliament elected from Tamil Nadu. ",
+      "link": "https://alchetron.com/R.-Gopalakrishnan-%28politician%29?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "alchetron.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=318c5e01f8dca3dd8dbd8bad0a8a180626f36262-8497071-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D318c5e01f8dca3dd8dbd8bad0a8a180626f36262-8497071-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://alchetron.com/cdn/r-gopalakrishnan-politician-f2efe908-f3d9-4b88-9d77-cb5c82c41bb-resize-750.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Falchetron.com%2Fcdn%2Fr-gopalakrishnan-politician-f2efe908-f3d9-4b88-9d77-cb5c82c41bb-resize-750.jpg",
+        "height": 125,
+        "width": 85
+      }
+    },
+    {
+      "title": "Sanjay Nath Singh@All India Farmers Association (@SanjayNathSing2) Aguea",
+      "snippet": "\u0935\u093f\u0921\u093f\u0913 \u092e\u0947\u0902 82 \u0935\u0930\u094d\u0937 \u0915\u0947... ",
+      "link": "https://aguea.net/SanjayNathSing2?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "aguea.net",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=481cfe033a7214d50d6e48fee403982c6de62e68-5289481-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D481cfe033a7214d50d6e48fee403982c6de62e68-5289481-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://pbs.twimg.com/ext_tw_video_thumb/1841859404204851200/pu/img/RBO8Y0eWwq5-iBVh.jpg?name=small&format=webp",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fpbs.twimg.com%2Fext_tw_video_thumb%2F1841859404204851200%2Fpu%2Fimg%2FRBO8Y0eWwq5-iBVh.jpg%3Fname%3Dsmall%26format%3Dwebp",
+        "height": 564,
+        "width": 320
+      }
+    },
+    {
+      "title": "#TashkentFiles - Vivek Ranjan Agnihotri painful revelations by driver... 24vids",
+      "snippet": "Ratan Sharda \ud83c\uddee\ud83c\uddf3 \u0930\u0924\u0928 \u0936\u093e\u0930\u0926\u093e posted video about #TashkentFiles - Vivek Ranjan Agnihotri painful revelations by driver of #ShastriJi viewed 67,508 times ",
+      "link": "https://www.24vids.com/video/tashkentfiles-vivek-ranjan-agnihotri-painful-revelations-by-driver-of-shastriji-p-tw-1841761688967590104?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "24vids.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=0fa54a23775d99c2daa8c0387670a67e71ac0238-5888025-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D0fa54a23775d99c2daa8c0387670a67e71ac0238-5888025-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://image.24vids.com/tw-1841761688967590104/ext_tw_video_thumb/1841761468938911746/pu/img/tLGFOD_Hzjtg5VDk.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimage.24vids.com%2Ftw-1841761688967590104%2Fext_tw_video_thumb%2F1841761468938911746%2Fpu%2Fimg%2FtLGFOD_Hzjtg5VDk.jpg",
+        "height": 848,
+        "width": 480
+      }
+    },
+    {
+      "title": "Omkar Kushawaha @iomkar2014 - Twitter Profile Sotwe",
+      "snippet": "ChatterjAsking's tweet video. ",
+      "link": "https://www.sotwe.com/iomkar2014?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "sotwe.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=998d4a104f779b9743644f3a413723f037e2d076-7011884-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D998d4a104f779b9743644f3a413723f037e2d076-7011884-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://pbs.twimg.com/ext_tw_video_thumb/1841859404204851200/pu/img/RBO8Y0eWwq5-iBVh.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fpbs.twimg.com%2Fext_tw_video_thumb%2F1841859404204851200%2Fpu%2Fimg%2FRBO8Y0eWwq5-iBVh.jpg",
+        "height": 564,
+        "width": 320
+      }
+    },
+    {
+      "title": "Bihar Elections 2025: RJD Chief Lalu, NDA Leaders Stage Roadshows In Favour Of Their Jailed Candidates - VIDEO",
+      "snippet": "Ritlal Yadav is presently lodged in Bhagalpur Special Central Jail as he was shifted there from Patna`s Beur Central Jail in May this year in view of security reasons. ",
+      "link": "https://www.freepressjournal.in/india/bihar-elections-2025-rjd-chief-lalu-nda-leaders-stage-roadshows-in-favour-of-their-jailed-candidates-video?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "freepressjournal.in",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=0e5d740bd1235da4de1d58e7079d9fdee4851f87-4232161-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D0e5d740bd1235da4de1d58e7079d9fdee4851f87-4232161-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://media.assettype.com/freepressjournal/2025-11-03/6wiaxf1j/FotoJet-2025-11-03T180919.737.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fmedia.assettype.com%2Ffreepressjournal%2F2025-11-03%2F6wiaxf1j%2FFotoJet-2025-11-03T180919.737.jpg",
+        "height": 675,
+        "width": 1200
+      }
+    },
+    {
+      "title": "Old Man Lover @oldmanlover18 - Twitter Profile Sotwe",
+      "snippet": "OldManLover18's tweet photo. https://t.co/CILgNsx1Uc ",
+      "link": "https://www.sotwe.com/oldmanlover18?__cf_chl_tk=6OOV9y6lyT.oBScNN6X1As6spJnkwREoQ2kaZyCphFA-1736177295-1.0.1.1-n8qhVWD0pZSvkV8uilL3kqaYYNK47m_HCU2_Y3bsixw&utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "sotwe.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=58719a9fbc0c2630e8d7b5e87ed1f48ff1a79fe9-9236689-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D58719a9fbc0c2630e8d7b5e87ed1f48ff1a79fe9-9236689-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://pbs.twimg.com/media/EfJ-sfWUEAYx68m.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FEfJ-sfWUEAYx68m.jpg",
+        "height": 1024,
+        "width": 576
+      }
+    },
+    {
+      "title": "\u0c28\u0c3e\u0c15\u0c41 \u0c35\u0c3e\u0c33\u0c4d\u0c33 \u0c38\u0c3e\u0c28\u0c41\u0c2d\u0c42\u0c24\u0c3f \u0c05\u0c15\u0c4d\u0c15\u0c30\u0c4d\u0c32\u0c47\u0c26\u0c41 - \u0c2e\u0c41\u0c26\u0c4d\u0c30\u0c17\u0c21 Indian Political League (IPL) With iDream - YouTube",
+      "snippet": "Mudragada Padmanabham Interview, Mudragada Padmanabham Exclusive Interview, Kapu leader Mudragada Padmanabham, Ex-MP Mudragada Padmanabham, Kakinada Ex-MP Mudragada Padmanabham, Tuni, Kapu Reservation Agitation, Indian Political League With iDream, Mudragada Padmanabham Press Meet, Mudragada Padmanabham Deeksha, Mudragada Padmanabham News, Swapna, Exclusive Interviews, Interviews, East Godavari district, Andhra Pradesh, Mudragada Padmanabham idream interview, Mudragada Padmanabham ",
+      "link": "https://www.youtube.com/watch?app=desktop&v=90EMg-7PZAc&utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "youtube.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=bc95d49c736ee5be194aa9c6e1869c1c7d0bd7be-4372954-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dbc95d49c736ee5be194aa9c6e1869c1c7d0bd7be-4372954-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://i.ytimg.com/vi/90EMg-7PZAc/maxresdefault.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2F90EMg-7PZAc%2Fmaxresdefault.jpg",
+        "height": 720,
+        "width": 1280
+      }
+    },
+    {
+      "title": "\u0c28\u0c3e\u0c15\u0c41 \u0c35\u0c3e\u0c33\u0c4d\u0c33 \u0c38\u0c3e\u0c28\u0c41\u0c2d\u0c42\u0c24\u0c3f \u0c05\u0c15\u0c4d\u0c15\u0c30\u0c4d\u0c32\u0c47\u0c26\u0c41 - \u0c2e\u0c41\u0c26\u0c4d\u0c30\u0c17\u0c21 Indian Political League (IPL) With iDream - YouTube",
+      "snippet": "Kapu Leader Mudragada Padmanabham said that, he don't need Sympathy from the people who behaved harshly with him at the time of his deeksha.Watch former mini. ",
+      "link": "https://www.youtube.com/watch?v=90EMg-7PZAc&utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "youtube.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=bc95d49c736ee5be194aa9c6e1869c1c7d0bd7be-4372954-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dbc95d49c736ee5be194aa9c6e1869c1c7d0bd7be-4372954-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://i.ytimg.com/vi/90EMg-7PZAc/maxresdefault.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2F90EMg-7PZAc%2Fmaxresdefault.jpg",
+        "height": 720,
+        "width": 1280
+      }
+    },
+    {
+      "title": "India Inc's wishlist for 2013 - BusinessToday",
+      "snippet": "Drug prices, patents in focus for pharma sector. ",
+      "link": "https://www.businesstoday.in/latest/corporate/story/wishlist-2013-corporate-india-still-hopeful-policy-reforms-39237-2013-01-09?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "businesstoday.in",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=b640858554052220d19dd8c551b610178bc759d7-7544543-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Db640858554052220d19dd8c551b610178bc759d7-7544543-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/January2013/kishore-biyani_80_010913055431.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fakm-img-a-in.tosshub.com%2Fsites%2Fbtmt%2Fimages%2Fstories%2FJanuary2013%2Fkishore-biyani_80_010913055431.jpg",
+        "height": 80,
+        "width": 80
+      }
+    },
+    {
+      "title": "Madhusudhanan is AIADMK\u2019s RK Nagar bye poll candidate, EPS-OPS finally reach consensus",
+      "snippet": "The AIADMK has announced its candidate for the RK Nagar bye-polls, even as speculation over infighting in the party grows. ",
+      "link": "https://www.thenewsminute.com/article/madhusudhanan-aiadmk-s-rk-nagar-bye-poll-candidate-eps-ops-finally-reach-consensus-72416?amp=&utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "thenewsminute.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=3d4c3fee3fe4b9b58e3b6f5f2e80125940b85312-12658662-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D3d4c3fee3fe4b9b58e3b6f5f2e80125940b85312-12658662-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://media.assettype.com/tnm%2Fimport%2Fsites%2Fdefault%2Ffiles%2Fmadhusudhanan_AIADMK_G_750x500_fb.jpg?w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fmedia.assettype.com%2Ftnm%252Fimport%252Fsites%252Fdefault%252Ffiles%252Fmadhusudhanan_AIADMK_G_750x500_fb.jpg%3Fw%3D1200%26ar%3D40%253A21%26auto%3Dformat%252Ccompress%26ogImage%3Dtrue%26mode%3Dcrop%26enlarge%3Dtrue%26overlay%3Dfalse%26overlay_position%3Dbottom%26overlay_width%3D100",
+        "height": 800,
+        "width": 1200
+      }
+    },
+    {
+      "title": "E Madhusudhanan to be AIADMK candidate for R K Nagar bypoll India News - The Indian Express",
+      "snippet": "Madhusudhanan is one of the oldest members of AIADMK and served as the Textile Minister under Jayalalithaa from 1991 to 1996. ",
+      "link": "https://indianexpress.com/article/india/aiadmk-candidate-r-k-nagar-bypoll-e-madhusudhanan-4961532/lite/?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "indianexpress.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=99873340554799617c8ffe580b412321f1897b20-5175116-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D99873340554799617c8ffe580b412321f1897b20-5175116-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://indianexpress.com/wp-content/uploads/2017/02/e-madhusudhanan-759.jpg?resize=728",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Findianexpress.com%2Fwp-content%2Fuploads%2F2017%2F02%2Fe-madhusudhanan-759.jpg%3Fresize%3D728",
+        "height": 422,
+        "width": 759
+      }
+    },
+    {
+      "title": "AIADMK sacks Madhusudhanan: All you need to know about party\u2019s second-in-command India News - The Indian Express",
+      "snippet": "E Madhusudhanan, Madhusudhanan sacking, AIADMK split, AIADMK crisis, Tamil Nadu political crisis, Sasikala, O Panneerselvam, Sasikala Panneerselvam fight, Tamil Nadu news, india news, latest news, indian express ",
+      "link": "https://indianexpress.com/article/india/aiadmk-madhusudhanan-o-panneerselvam-sasikala-tamil-nadu-politics-4517648/lite/?utm_medium=organic&utm_source=yandexsmartcamera",
+      "source": "indianexpress.com",
+      "thumbnail": {
+        "link": "https://avatars.mds.yandex.net/i?id=73b05c409d20c9720c49d8128100de9d46024db8-5210205-images-thumbs&n=13&w=296&h=180",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D73b05c409d20c9720c49d8128100de9d46024db8-5210205-images-thumbs%26n%3D13%26w%3D296%26h%3D180",
+        "height": 90,
+        "width": 148
+      },
+      "original_image": {
+        "link": "https://images.indianexpress.com/2017/02/e-madhusudhanan-480.jpg",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fimages.indianexpress.com%2F2017%2F02%2Fe-madhusudhanan-480.jpg",
+        "height": 267,
+        "width": 480
+      }
+    }
+  ],
+  "image_tags": [
+    {
+      "text": "appasaheb dharmadhikari",
+      "link": "https://yandex.com/images/search?text=appasaheb%20dharmadhikari",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&text=appasaheb+dharmadhikari"
+    },
+    {
+      "text": "uddhav thackeray",
+      "link": "https://yandex.com/images/search?text=uddhav%20thackeray",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&text=uddhav+thackeray"
+    },
+    {
+      "text": "chhattisgarh election results 2023",
+      "link": "https://yandex.com/images/search?text=chhattisgarh%20election%20results%202023",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&text=chhattisgarh+election+results+2023"
+    },
+    {
+      "text": "gujarat bjp vice-president jayanti bhanushali",
+      "link": "https://yandex.com/images/search?text=gujarat%20bjp%20vice-president%20jayanti%20bhanushali",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&text=gujarat+bjp+vice-president+jayanti+bhanushali"
+    },
+    {
+      "text": "kasinathuni viswanath",
+      "link": "https://yandex.com/images/search?text=kasinathuni%20viswanath",
+      "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&text=kasinathuni+viswanath"
+    }
+  ],
+  "similar_images": [
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=3d006c2cc21308e2e1ec7d1005d881792677caee-5690841-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D3d006c2cc21308e2e1ec7d1005d881792677caee-5690841-images-thumbs%26n%3D13",
+        "height": 270,
+        "width": 480
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fimages.mid-day.com%2Fimages%2Fimages%2F2022%2Foct%2Fkhaire_d.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=0a20905e8a4b3f8facc564946f3a62889e163d0d-9065994-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D0a20905e8a4b3f8facc564946f3a62889e163d0d-9065994-images-thumbs%26n%3D13",
+        "height": 320,
+        "width": 373
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fyespunjab.com%2Fwp-content%2Fuploads%2F2025%2F07%2FTarun-Chugh-BJP-Leader-648x470.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=b433018c18486226d66ebf15ead7ef54ccf30b35-12612889-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Db433018c18486226d66ebf15ead7ef54ccf30b35-12612889-images-thumbs%26n%3D13",
+        "height": 288,
+        "width": 480
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fimages.news18.com%2Fibnlive%2Fuploads%2F2022%2F07%2Funtitled-design-2022-07-18t075837.543-165811163516x9.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=d08bca541910c533c9410eb7bfb4a2f51474325e-4314086-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dd08bca541910c533c9410eb7bfb4a2f51474325e-4314086-images-thumbs%26n%3D13",
+        "height": 320,
+        "width": 320
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F1563043966605733888%2F4YsGt7NL.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=064d67060388e47e79f116cc9c327698d7ec7c38-16277941-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D064d67060388e47e79f116cc9c327698d7ec7c38-16277941-images-thumbs%26n%3D13",
+        "height": 270,
+        "width": 480
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fimages.hindustantimes.com%2Fimg%2F2021%2F04%2F14%2F1600x900%2F_c23143a2-f00d-11ea-9fc5-24cdb6226899_1618380239907.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=d917163a69fea93170c1bd2b3e6a36ac64d6a36a-3608991-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dd917163a69fea93170c1bd2b3e6a36ac64d6a36a-3608991-images-thumbs%26n%3D13",
+        "height": 48,
+        "width": 48
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Flh3.googleusercontent.com%2Fa-%2FALV-UjVe8XpbqFuRr9inngwwJkPXKMiU9c1Y_9Nflt5RasPoE3QHefLS%3Ds48-p-k-no-mo&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=d141ebd7d13302b0b7b2c42157a65b6f6810a5f8-5911249-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dd141ebd7d13302b0b7b2c42157a65b6f6810a5f8-5911249-images-thumbs%26n%3D13",
+        "height": 312,
+        "width": 480
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fthenews21.com%2Fwp-content%2Fuploads%2F2019%2F09%2Fchandrakant-patil.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=d4e11e44430a556f3f896f642e107cfbf77e36b9-5228318-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dd4e11e44430a556f3f896f642e107cfbf77e36b9-5228318-images-thumbs%26n%3D13",
+        "height": 267,
+        "width": 480
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fthesportsgrail.com%2Fwp-content%2Fuploads%2F2023%2F02%2FKalatapasvi-K-Viswanath-passes-away-at-92.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=701cfc9c966b48aa7e15f16ab4dd8baf4057e56b-8173407-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D701cfc9c966b48aa7e15f16ab4dd8baf4057e56b-8173407-images-thumbs%26n%3D13",
+        "height": 245,
+        "width": 150
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fblogger.googleusercontent.com%2Fimg%2Fb%2FR29vZ2xl%2FAVvXsEjgTxiMvve01-b7Gm2UpTiv8gDbuLHZ01u4rCPYtIzHju-W9fGxEuW23Ru9BrF-M86DQNgvDdX9-7bhyfEX78oBCHAwdLXL7sIb9OPYKhBVlCfsyeNKHrUsZF28wzuhrUF7iGz9ARqp9Lnu%2Fw1200-h630-p-k-no-nu%2Fupenderambardar.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=a43dcb9d41f0451f9f502fd67a1f5ac3-4933643-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Da43dcb9d41f0451f9f502fd67a1f5ac3-4933643-images-thumbs%26n%3D13",
+        "height": 100,
+        "width": 100
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fcdn2.f-cdn.com%2Fppic%2F80741077%2Flogo%2F23552537%2Fprofile_logo_23552537.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=7cbba2437bf12596823d167c698a321be7258e31-5133450-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D7cbba2437bf12596823d167c698a321be7258e31-5133450-images-thumbs%26n%3D13",
+        "height": 320,
+        "width": 270
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fimages.mubicdn.net%2Fimages%2Fcast_member%2F61039%2Fcache-473226-1569485680%2Fimage-w856.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=f7f26a327d5c730c131e62e9c474bb0535fd92a9-16434084-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Df7f26a327d5c730c131e62e9c474bb0535fd92a9-16434084-images-thumbs%26n%3D13",
+        "height": 270,
+        "width": 480
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fimages.indianexpress.com%2F2023%2F12%2Ffinal.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=297863c83113bef12cbf3a5018b3c159d2f3842d-9041934-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D297863c83113bef12cbf3a5018b3c159d2f3842d-9041934-images-thumbs%26n%3D13",
+        "height": 269,
+        "width": 480
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fakm-img-a-in.tosshub.com%2Faajtak%2Fimages%2Fstory%2F201807%2Fjayantibhai560_1531821926_749x421.jpeg%3Fsize%3D948%3A533&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=c0599dd94b0c2d871ff0e3ad2fa61d27e9aaf7f9-5451533-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dc0599dd94b0c2d871ff0e3ad2fa61d27e9aaf7f9-5451533-images-thumbs%26n%3D13",
+        "height": 320,
+        "width": 180
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Ff%2Ff5%2FKanhangad_sankaran_namboodiri.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=79c9a41c8aae4c53e0d6edcedb5231c03c599c57-5169729-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D79c9a41c8aae4c53e0d6edcedb5231c03c599c57-5169729-images-thumbs%26n%3D13",
+        "height": 320,
+        "width": 202
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Ftvfilm.ru%2Fthumbs%2Fw532%2Fsource%2Ffiles%2Factors%2Fbala%2Fbalaji-sakthivel_994203.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=9b6d0ff594c6f00d71b0a15e11e81245ff3573b8-5481835-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D9b6d0ff594c6f00d71b0a15e11e81245ff3573b8-5481835-images-thumbs%26n%3D13",
+        "height": 320,
+        "width": 256
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F3%2F36%2FShri_Rajiv_Ranjan_Singh_alias_Lalan_Singh_interacting_with_media_after_taking_charge_as_the_Union_Minister_for_Fisheries%252C_Animal_Husbandry_and_Dairying.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=ca50743eb774633237c941a401b936e2a1280eca-10652854-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dca50743eb774633237c941a401b936e2a1280eca-10652854-images-thumbs%26n%3D13",
+        "height": 270,
+        "width": 480
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fmedia.cnn.com%2Fapi%2Fv1%2Fimages%2Fstellar%2Fprod%2F8879b309-c6b1-47b4-92e5-286e2dd474de.jpg%3Fq%3Dh_427%2Cw_760%2Cx_0%2Cy_0%2Fw_1280&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=9a5aca4ceb99e3b8decbb0a463a3056dfd4391fc-7042922-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D9a5aca4ceb99e3b8decbb0a463a3056dfd4391fc-7042922-images-thumbs%26n%3D13",
+        "height": 48,
+        "width": 48
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Flh3.googleusercontent.com%2Fa-%2FALV-UjVFQfxZa8htkhba97C_Xmrc58FKSVEgNWjDYYWoqkj9vsAUNVPK%3Ds48-p-k-no-mo&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=b2b819a273708c6ed661fcde7308dc2bec35d740-4580593-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Db2b819a273708c6ed661fcde7308dc2bec35d740-4580593-images-thumbs%26n%3D13",
+        "height": 259,
+        "width": 238
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Flivebihar.com%2Fwp-content%2Fuploads%2F2022%2F11%2FR-K-Sinha_New.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=22b55d1f75e921039c69b3ade9442f917a78160c-13604111-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D22b55d1f75e921039c69b3ade9442f917a78160c-13604111-images-thumbs%26n%3D13",
+        "height": 320,
+        "width": 320
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fpbs.twimg.com%2Famplify_video_thumb%2F2081811753529454592%2Fimg%2FwdaJH2Y7UTsy-b6h.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=aa18de3bf1f4dc73db5b7c79afd1f2ea34831b38-5865722-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Daa18de3bf1f4dc73db5b7c79afd1f2ea34831b38-5865722-images-thumbs%26n%3D13",
+        "height": 320,
+        "width": 320
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fyt3.googleusercontent.com%2Fytc%2FAIdro_mNtBhO8rvSslrM-0UtvVrb_CiFuTToGCIT8JDRfab2kg%3Ds900-c-k-c0x00ffffff-no-rj&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=7eb41c4fd0f747a90c08a3319468bdf3e0977da6-10254792-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D7eb41c4fd0f747a90c08a3319468bdf3e0977da6-10254792-images-thumbs%26n%3D13",
+        "height": 270,
+        "width": 480
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FWit1GFtQW70%2Fmaxresdefault.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=12f29b8fe9ad31071a654b5c86fae0df209575fb-9706270-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D12f29b8fe9ad31071a654b5c86fae0df209575fb-9706270-images-thumbs%26n%3D13",
+        "height": 270,
+        "width": 480
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FMz-jSFsDYFY%2Fmaxresdefault.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=0fe3d0c4872530105d992eed5eb16611-5390729-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D0fe3d0c4872530105d992eed5eb16611-5390729-images-thumbs%26n%3D13",
+        "height": 270,
+        "width": 480
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FURbbZXFWYr0%2Fmaxresdefault.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=9da7a7b3865bb97472301b70f7980ef45597bee1-10160311-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D9da7a7b3865bb97472301b70f7980ef45597bee1-10160311-images-thumbs%26n%3D13",
+        "height": 72,
+        "width": 72
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fsun1-83.vkuserphoto.ru%2Fs%2Fv1%2Fig2%2Fa9RMG5kLoaHOCJNmLFEIrz-INMU189whITtLUGMrfvn3HN5YsJDd4FGdh5dcOFgmDUrU1FSeY_pRFYrcAOhWM8eh.jpg%3Fquality%3D95%26crop%3D192%2C91%2C360%2C360%26as%3D32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%26ava%3D1%26cs%3D50x50&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=5e398c2bebfc3c6ca10b8bfbb624a48ff1e1052f-8232745-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D5e398c2bebfc3c6ca10b8bfbb624a48ff1e1052f-8232745-images-thumbs%26n%3D13",
+        "height": 320,
+        "width": 458
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fth-i.thgim.com%2Fpublic%2Fmigration_catalog%2Farticle16066915.ece%2Falternates%2FFREE_1200%2F28alrrp04-vellaG1RPO7Q5.3.jpg.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=ae74d6c632bb4d90ed73847bf87af353c529d552-5194765-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dae74d6c632bb4d90ed73847bf87af353c529d552-5194765-images-thumbs%26n%3D13",
+        "height": 320,
+        "width": 427
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fimg.naidunia.com%2Fnaidunia%2Fndnimg%2F25122019%2F25_12_2019-s_upasne_cg_bjp_20191225_165251.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=e32c312bb8a18845e4c4db5a8d67ff6e6d4dcafb-15426262-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3De32c312bb8a18845e4c4db5a8d67ff6e6d4dcafb-15426262-images-thumbs%26n%3D13",
+        "height": 320,
+        "width": 320
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F1738452108972822528%2FtltRdZ3N_400x400.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=c9cc318c2feb169cea9946bc4bd6af58ae54f21e-12423388-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dc9cc318c2feb169cea9946bc4bd6af58ae54f21e-12423388-images-thumbs%26n%3D13",
+        "height": 283,
+        "width": 215
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fnettv4u.com%2Fimagine%2Fsrinivasa-murthy.png&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=511fd83e6c2d9e62a6465dc170a78d88627fd98c-2480271-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D511fd83e6c2d9e62a6465dc170a78d88627fd98c-2480271-images-thumbs%26n%3D13",
+        "height": 320,
+        "width": 320
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fyt3.googleusercontent.com%2Fytc%2FAIdro_mRAiP4qi4xqW7fMxGSN5alt-lacgDg_0F62amTOMDdnw%3Ds900-c-k-c0x00ffffff-no-rj&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=b62a189c0571e8ed23013143aa1be1258da20677-8497913-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Db62a189c0571e8ed23013143aa1be1258da20677-8497913-images-thumbs%26n%3D13",
+        "height": 320,
+        "width": 427
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fimg.etimg.com%2Fthumb%2Fmsid-96727842%2Cwidth-1200%2Cheight-630%2Cimgsize-76942%2Coverlay-etpanache%2Farticleshow.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=d00e5d05018d633abf74ea27634f7791a5338e90-10349698-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dd00e5d05018d633abf74ea27634f7791a5338e90-10349698-images-thumbs%26n%3D13",
+        "height": 295,
+        "width": 480
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fc.ndtvimg.com%2F2025-11%2F40d8ub4c_lalan-singh-anant-singh_625x300_03_November_25.jpg%3Fim%3DFitAndFill%2Calgorithm%3Ddnn%2Cwidth%3D1200%2Cheight%3D738&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=22d500affb3343a41244cc614eccca4eaaaac369-10705627-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D22d500affb3343a41244cc614eccca4eaaaac369-10705627-images-thumbs%26n%3D13",
+        "height": 252,
+        "width": 480
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FWlGtG177Vro%2Fmaxresdefault.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=318c5e01f8dca3dd8dbd8bad0a8a180626f36262-8497071-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D318c5e01f8dca3dd8dbd8bad0a8a180626f36262-8497071-images-thumbs%26n%3D13",
+        "height": 125,
+        "width": 85
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Falchetron.com%2Fcdn%2Fr-gopalakrishnan-politician-f2efe908-f3d9-4b88-9d77-cb5c82c41bb-resize-750.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=481cfe033a7214d50d6e48fee403982c6de62e68-5289481-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D481cfe033a7214d50d6e48fee403982c6de62e68-5289481-images-thumbs%26n%3D13",
+        "height": 320,
+        "width": 182
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fimage.24vids.com%2Ftw-1841761688967590104%2Fext_tw_video_thumb%2F1841761468938911746%2Fpu%2Fimg%2FtLGFOD_Hzjtg5VDk.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=0e5d740bd1235da4de1d58e7079d9fdee4851f87-4232161-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D0e5d740bd1235da4de1d58e7079d9fdee4851f87-4232161-images-thumbs%26n%3D13",
+        "height": 270,
+        "width": 480
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fmedia.assettype.com%2Ffreepressjournal%2F2025-11-03%2F6wiaxf1j%2FFotoJet-2025-11-03T180919.737.jpg%3Fwidth%3D1200&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=58719a9fbc0c2630e8d7b5e87ed1f48ff1a79fe9-9236689-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D58719a9fbc0c2630e8d7b5e87ed1f48ff1a79fe9-9236689-images-thumbs%26n%3D13",
+        "height": 320,
+        "width": 180
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FEfJ-sfWUEAYx68m.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=bc95d49c736ee5be194aa9c6e1869c1c7d0bd7be-4372954-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Dbc95d49c736ee5be194aa9c6e1869c1c7d0bd7be-4372954-images-thumbs%26n%3D13",
+        "height": 270,
+        "width": 480
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fi.ytimg.com%2Fvi%2F90EMg-7PZAc%2Fmaxresdefault.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=b640858554052220d19dd8c551b610178bc759d7-7544543-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3Db640858554052220d19dd8c551b610178bc759d7-7544543-images-thumbs%26n%3D13",
+        "height": 80,
+        "width": 80
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fakm-img-a-in.tosshub.com%2Fsites%2Fbtmt%2Fimages%2Fstories%2FJanuary2013%2Fkishore-biyani_80_010913055431.jpg&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    },
+    {
+      "image": {
+        "link": "https://avatars.mds.yandex.net/i?id=3d4c3fee3fe4b9b58e3b6f5f2e80125940b85312-12658662-images-thumbs&n=13",
+        "serpapi_link": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D3d4c3fee3fe4b9b58e3b6f5f2e80125940b85312-12658662-images-thumbs%26n%3D13",
+        "height": 320,
+        "width": 480
+      },
+      "link": "https://yandex.com/images/search?cbir_page=similar&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F1757356%2FJmihX4iSn85QCXa2kTtP5A1059%2Forig&img_url=https%3A%2F%2Fmedia.assettype.com%2Ftnm%252Fimport%252Fsites%252Fdefault%252Ffiles%252Fmadhusudhanan_AIADMK_G_750x500_fb.jpg%3Fw%3D1200%26ar%3D40%253A21%26auto%3Dformat%252Ccompress%26ogImage%3Dtrue%26mode%3Dcrop%26enlarge%3Dtrue%26overlay%3Dfalse%26overlay_position%3Dbottom%26overlay_width%3D100&lr=29644&rpt=imageview&cbir_id=1757356%2FJmihX4iSn85QCXa2kTtP5A1059"
+    }
+  ],
+  "serpapi_pagination": {
+    "next": "https://serpapi.com/search.json?engine=yandex_images&p=1&tab=similar&url=https%3A%2F%2Fi.ibb.co%2FnMjRDT1C%2Fface-crop.jpg",
+    "current": "https://serpapi.com/search.json?engine=yandex_images&tab=similar&url=https%3A%2F%2Fi.ibb.co%2FnMjRDT1C%2Fface-crop.jpg"
+  }
+}

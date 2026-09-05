@@ -1,0 +1,46 @@
+{
+  "ok": true,
+  "run_id": "20260904T110615Z-13cf0e62",
+  "image": "/Users/kaushalchaudhari/Desktop/web3/hhgoa-tasks/samples/AK-Half-Shirt-1-scaled.webp",
+  "steps": [
+    [
+      "S0_face",
+      "insightface_buffalo_s"
+    ],
+    [
+      "S1_host",
+      "https://i.ibb.co/DD9JB6nD/face-crop.jpg"
+    ],
+    [
+      "S2_multi",
+      "87 unique"
+    ],
+    [
+      "S3_face_rank",
+      "https://www.instagram.com/p/CWaTNPJIkbB/"
+    ],
+    [
+      "S4_merkle",
+      "f4f1d268ebe9d8271e603ae1"
+    ],
+    [
+      "S5_attest",
+      "b37592d903c6cabc86"
+    ],
+    [
+      "S6_verify",
+      "pass"
+    ]
+  ],
+  "events": 14,
+  "attest": {
+    "tx_hash": "b37592d903c6cabc866352d1d573f12d9f6d07bbc9e0eafa7a4271c9f1d39e3a",
+    "uid": "0x1e201c79afa3901e2640459ba6f51345c0b0d34eec9ef0383b8c88d26a055231",
+    "merkle_root": "f4f1d268ebe9d8271e603ae129c4237cce81b3a92712f75505e529563f680dc9",
+    "primary_post_url": "https://www.instagram.com/p/CWaTNPJIkbB/",
+    "attester": "0xFe33CCB40ACD6BcA57a0b811b4245a410ee521c3",
+    "easscan": "https://sepolia.easscan.org/attestation/view/0x1e201c79afa3901e2640459ba6f51345c0b0d34eec9ef0383b8c88d26a055231",
+    "tx_url": "https://sepolia.etherscan.io/tx/b37592d903c6cabc866352d1d573f12d9f6d07bbc9e0eafa7a4271c9f1d39e3a",
+    "schema": "0xdf4c41ea0f6263c72aa385580124f41f2898d3613e86c50519fc3cfd7ff13ad4"
+  }
+}

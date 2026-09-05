@@ -1,0 +1,1247 @@
+{
+  "by_engine": {
+    "google_lens": 60,
+    "google_reverse_image": 9,
+    "yandex_images": 40
+  },
+  "merged_unique": 103,
+  "hits": [
+    {
+      "link": "https://www.facebook.com/ramabhau/",
+      "title": "Ramabhau Patil (@ramabhau) \u2022 Facebook",
+      "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT9llyn1qdDbhATa8x8huJh78LVHfvMWtGuFjFSuLBe1cKHO_01",
+      "image": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1641804513",
+      "source": "Facebook",
+      "engine": "google_lens",
+      "position": 1,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.youtube.com/watch?v=jw5C2c6HlRc",
+      "title": "GLOBE IN SUSPICIOUS MODE FR 18AUG26 - YouTube",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQr6x8tyTCDrDQmA0u36qI-vcv_q0MrQn7JdKCslbQpVncz4rn",
+      "image": "https://i.ytimg.com/vi/jw5C2c6HlRc/maxresdefault.jpg",
+      "source": "YouTube",
+      "engine": "google_lens+yandex_images",
+      "position": 2,
+      "engines": [
+        "google_lens",
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://www.facebook.com/AnandmurtiGurumaa/posts/\ud835\udc38\ud835\udc5a\ud835\udc4f\ud835\udc5c\ud835\udc51\ud835\udc66\ud835\udc56\ud835\udc5b\ud835\udc54-\ud835\udc56\ud835\udc5b\ud835\udc53\ud835\udc56\ud835\udc5b\ud835\udc56\ud835\udc61\ud835\udc62\ud835\udc5a-\ud835\udc59\ud835\udc5c\ud835\udc63\ud835\udc52\ud835\udc35\ud835\udc5c\ud835\udc62\ud835\udc5b\ud835\udc51\ud835\udc59\ud835\udc52\ud835\udc60\ud835\udc60-\ud835\udc50\ud835\udc5c\ud835\udc5a\ud835\udc5d\ud835\udc4e\ud835\udc60\ud835\udc60\ud835\udc56\ud835\udc5c\ud835\udc5b\ud835\udc48\ud835\udc5b\ud835\udc5d\ud835\udc4e\ud835\udc5f\ud835\udc4e\ud835\udc59\ud835\udc59\ud835\udc52\ud835\udc59\ud835\udc52\ud835\udc51-\ud835\udc64\ud835\udc56\ud835\udc60\ud835\udc51\ud835\udc5c\ud835\udc5a\ud835\udc34\ud835\udc5b\ud835\udc51-\ud835\udc59\ud835\udc4e\ud835\udc60\ud835\udc61\ud835\udc56\ud835\udc5b\ud835\udc54-\ud835\udc54\ud835\udc5f\ud835\udc4e\ud835\udc50\ud835\udc52/1223998429083073/",
+      "title": "\ud835\udc38\ud835\udc5a\ud835\udc4f\ud835\udc5c\ud835\udc51\ud835\udc66\ud835\udc56\ud835\udc5b\ud835\udc54 \ud835\udc56\ud835\udc5b\ud835\udc53\ud835\udc56\ud835\udc5b\ud835\udc56\ud835\udc61\ud835\udc62\ud835\udc5a \ud835\udc59\ud835\udc5c\ud835\udc63\ud835\udc52 ...",
+      "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQqwxaSKvQcDWCG499fWedF0A2cEtxXDPGK9X2pnER3AY5qqINi",
+      "image": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=183981928883327",
+      "source": "Facebook",
+      "engine": "google_lens",
+      "position": 3,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.linkedin.com/posts/green-gas-limited_leadership-energysector-gail-activity-7433880559057301504-77xy",
+      "title": "leadership #energysector #gail #greengaslimited ...",
+      "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTgS8svWjvUVwrYUqz5MbBSwRCJ2e13yy9Iv8OBMGRguBe_pdsT",
+      "image": "https://media.licdn.com/dms/image/v2/D5603AQFDaSzZBwzfeQ/profile-displayphoto-scale_400_400/B56Zy3w_PVGQAg-/0/1772609600735?e=2147483647&v=beta&t=XSS0ZcyN834ncUOpmsEvEFQpOKc1ouYgtZvLU23kvBE",
+      "source": "LinkedIn",
+      "engine": "google_lens",
+      "position": 5,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://x.com/ramgandhi52/status/2082735516529930484",
+      "title": "Ram Gandhi on X: \"With floods, heat waves and various ...",
+      "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRYhbWgWOp2EM7AK-_U_5YfVGz7NIl7JrEvgdSxp-1BlQM5pIWa",
+      "image": "https://pbs.twimg.com/profile_images/1563043966605733888/4YsGt7NL_200x200.jpg",
+      "source": "x.com",
+      "engine": "google_lens",
+      "position": 6,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://gulfnews.com/going-out/society/sharjah-doctor-dies-after-battling-cancer-1.2080407",
+      "title": "Sharjah doctor dies after battling cancer",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTye-OmDUQnbMr-8bqXhjhTwgHS_Jm36bP-Gb5G5Gw30ARbGC_e",
+      "image": "https://media.assettype.com/gulfnews/import/2017/8/27/1_16a083cb884.2080518_1406418278_16a083cb884_large.jpg?w=1200&h=675&auto=format,compress&fit=max&enlarge=true",
+      "source": "Gulf News",
+      "engine": "google_lens",
+      "position": 7,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://timesofindia.indiatimes.com/blogs/author/p-d-t-achary/",
+      "title": "PDT Achary Voices - Times of India Voices",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9BzN0zgu8HKXqnGu9kdmiZk4FOGfUO7rM8GdF306nmpjGlTln",
+      "image": "https://static.toiimg.com/imagenext/toiblogs/photo/blogs/wp-content/uploads/2022/06/atm_ACHARY_1c.jpg",
+      "source": "The Times of India",
+      "engine": "google_lens",
+      "position": 8,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.news18.com/india/who-is-asish-banerjee-mamatas-confidant-intellectual-trinamool-veteran-found-hanging-in-birbhum-ws-l-10275834.html",
+      "title": "Who Is Asish Banerjee? Mamata's Confidant, Intellectual ...",
+      "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSmhA6DiDLvZZSHleoUc-lNCCIhDxrQdb1Fb_BefiCrCjgzHzA0",
+      "image": "https://images.news18.com/ibnlive/uploads/2026/08/Asish-Banerjee-2026-08-96d8c6a545500f2dfacbc2cb4d0ff02b.jpg",
+      "source": "News18",
+      "engine": "google_lens",
+      "position": 9,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.themoviedb.org/person/1238273-nadodigal-gopal",
+      "title": "Nadodigal Gopal \u2014 The Movie Database (TMDB)",
+      "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTjPdKwB13cwdXJ_ZjpOzNxb_VWoGRpMvGK1tyZlhXbVKKnbcpV",
+      "image": "https://media.themoviedb.org/t/p/w235_and_h235_face/q7yPlFexVBP1RqlA2o0lzfCls9g.jpg",
+      "source": "TMDB",
+      "engine": "google_lens",
+      "position": 10,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.mbifl.com/speaker/p-d-t-achari-MyciMNlbifZ",
+      "title": "P D T ACHARI | MBIFL 2026 Speaker | Literature Festival ...",
+      "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT9Q-SYxu8dp3_WSxGgQ4EeWr3TkJVyBc1rHehCd5dv-1SI3WSb",
+      "image": "https://assets.mbifl.com/2026/speakers/speaker_697472d893ba1.jpg",
+      "source": "MBIFL 2026",
+      "engine": "google_lens",
+      "position": 11,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://x.com/mrajeshagrawal",
+      "title": "Rajesh Agrawal (@mrajeshagrawal) / X",
+      "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQfN-Jpapy7_kOQuRCMi_PGAcIU29A4h0ibO00CDZRNpiyLEISS",
+      "image": "https://pbs.twimg.com/profile_images/1949521601520926720/RPjEsNm0_400x400.jpg",
+      "source": "x.com",
+      "engine": "google_lens",
+      "position": 12,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.newindianexpress.com/entertainment/tamil/2021/Dec/26/playback-singer-actor-manikka-vinayagam-passes-away-2399972.html",
+      "title": "Playback singer & actor Manikka Vinayagam passes away",
+      "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSvgpWyO5Chsm5TTSUyZJXa7SfBwLWctqOrQUfIeSZ2qmc_M3f8",
+      "image": "https://cf-images.assettype.com/TNIE/import/2021/12/26/original/Manikka_Vinayagam.jpg?w=1200&h=675&auto=format,compress&fit=max&enlarge=true",
+      "source": "The New Indian Express",
+      "engine": "google_lens",
+      "position": 13,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://commons.wikimedia.org/wiki/File:Oommen_Chandy,_Chief_Minister_of_Kerala.jpg",
+      "title": "File:Oommen Chandy, Chief Minister of Kerala.jpg - Wikimedia ...",
+      "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQsxBk6tU93iqAd9FOl0eeKphWEe9R0JoXR2vfuCjtKse9FRBC6",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/98/Oommen_Chandy,_Chief_Minister_of_Kerala.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+      "source": "Wikimedia Commons",
+      "engine": "google_lens",
+      "position": 14,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://timesofindia.indiatimes.com/city/bengaluru/karnataka-smart-meter-case-court-orders-registration-of-complaint-against-minister-george-officials/articleshow/122888994.cms",
+      "title": "Karnataka smart meter case: Court orders registration of ...",
+      "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQca71elZ3fT1DJyDEGQO-FM6HqFby7jqVbhpplFuPC3FwHrUgS",
+      "image": "https://static.toiimg.com/thumb/msid-122888990,width-1280,height-720,resizemode-72/122888990.jpg",
+      "source": "The Times of India",
+      "engine": "google_lens",
+      "position": 15,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.researchgate.net/profile/Yogesh-Mathur",
+      "title": "Yogesh MATHUR | Professor (Full) | PhD | Civil Engineering ...",
+      "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTuAaO0taaHOB2mN9avHd9cKsJFyiNBH64Kfs6soX6UVrGWs-vr",
+      "image": "https://i1.rgstatic.net/ii/profile.image/369135855915009-1465020254621_Q512/Yogesh-Mathur.jpg",
+      "source": "ResearchGate",
+      "engine": "google_lens",
+      "position": 16,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://in.bookmyshow.com/person/ranganath/1830/filmography",
+      "title": "Ranganath - Movies, Biography, News, Age & Photos | BookMyShow",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCNcQCN1XCaSRZvldDJ9KKTw3V-ekPfwDnChXQWc0LCEWhvXsl",
+      "image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/ranganath-1830-24-03-2017-15-42-20.jpg",
+      "source": "BookMyShow",
+      "engine": "google_lens",
+      "position": 17,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://en.wikipedia.org/wiki/Kattoor_Narayana_Pillai",
+      "title": "Kattoor Narayana Pillai - Wikipedia",
+      "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTulFxlQ4JRxX3fvrGPV_XGMuxsurgQ8TvfkL5FNYY8p3LNcKiT",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Kattoor_G_Narayana_Pillai_at_Kollam_2011.jpg/250px-Kattoor_G_Narayana_Pillai_at_Kollam_2011.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "source": "Wikipedia",
+      "engine": "google_lens",
+      "position": 18,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.indiatoday.in/movies/regional-cinema/story/popular-singer-manicka-vinayagam-dies-at-78-in-chennai-1892590-2021-12-27",
+      "title": "Popular singer Manicka Vinayagam dies at 78 in Chennai ...",
+      "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSxUmM5S4igHMM-CFhb-_AJYV0FKwtbdds8bk_GEE8c6AneokkN",
+      "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202112/Manicka_Vinayagam_dies_1200x768.jpeg?size=1200:675",
+      "source": "India Today",
+      "engine": "google_lens",
+      "position": 19,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.drmuralismedicalcentre.com/doctors/dr-n-n-murali",
+      "title": "Dr Murali's Medical Centre",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDDpG224ozpw0SVyiTDzy_P0O1spaV7XXh5rAwMOfJ9_HQ6aAM",
+      "image": "https://www.drmuralismedicalcentre.com/_next/image?url=/doctors/Dr N N Murali.jpg&w=3840&q=75",
+      "source": "Dr Murali's Medical Centre",
+      "engine": "google_lens",
+      "position": 20,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.daijiworld.com/chan/obituaryDisplay.aspx?obituaryID=6441",
+      "title": "Joachim Saldanha (80), Borivali, Mumbai./ Urwa, Mangalore ...",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuRMJaGUniHvy9XUzmrx6fi5RTEhYSAgPr5j7pECs30KKCwXYb",
+      "image": "https://daijiworld.ap-south-1.linodeobjects.com/iWeb/tvdaijiworld/images3/joachim_saldanha_072014-1.jpg",
+      "source": "Daijiworld",
+      "engine": "google_lens",
+      "position": 21,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.newindianexpress.com/states/karnataka/2026/Apr/23/father-dies-in-mishap-while-travelling-to-attend-sons-convocation-ceremony-in-karnataka",
+      "title": "Father dies in mishap while travelling to attend son's ...",
+      "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSBsOvCN4hOlxGe3ojkya5ofqbOFQ-xRMfUpqj5Kf3LwIhX3kMm",
+      "image": "https://cf-images.assettype.com/newindianexpress/2026-04-23/cku3j6q0/22eglb1-1084245.jpg?w=1200&h=675&auto=format,compress&fit=max&enlarge=true",
+      "source": "The New Indian Express",
+      "engine": "google_lens",
+      "position": 22,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.instagram.com/ghanshyam_nimbark__shilp_guru/",
+      "title": "Ghanshyam Nimbark (@ghanshyam_nimbark__shilp_guru ...",
+      "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR8TuXBEYbR0TtsEwZPiod7Y9TtvnwZuE206HgV-DqV9wxIcgO8",
+      "image": "https://lookaside.fbsbx.com/lookaside/crawler/instagram/ghanshyam_nimbark__shilp_guru/profile_pic.jpg",
+      "source": "Instagram",
+      "engine": "google_lens",
+      "position": 23,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.lmtonline.com/obituaries/article/JOSE-C-GAMEZ-SR-15228613.php",
+      "title": "JOSE C. GAMEZ, SR.",
+      "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcThQkGF5rYkyBpRC9VI_9SAX7ieYo7d4eXEuBp_XHRZg0nDQ-lf",
+      "image": "https://s.hdnux.com/photos/01/11/62/50/19343911/4/1920x0.jpg",
+      "source": "Laredo Morning Times",
+      "engine": "google_lens",
+      "position": 24,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.deccanherald.com/india/karnataka/g-h-nayak-an-outspoken-critic-with-a-vision-of-social-realities-1222222.html",
+      "title": "G H Nayak: An outspoken critic with a vision of social realities",
+      "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTBiwriiRIgB5XGEFhz1FBjDYD9_U8FPp0lL39HilWUiRx7-bQY",
+      "image": "https://media.assettype.com/deccanherald/import/sites/dh/files/articleimages/2023/05/26/new-project-1-1222134-1685097760-1222222-1685118836.png?w=1200&h=675&auto=format,compress&fit=max&enlarge=true",
+      "source": "Deccan Herald",
+      "engine": "google_lens",
+      "position": 25,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.gladfelterfhinc.com/obits/ashok-v.-shrotriya",
+      "title": "Ashok V. Shrotriya",
+      "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSxTXDowHR1E9w0-nkOY3sWuKcZsHfRI18aX4-t-lXYijbQVwTO",
+      "image": "https://static.wixstatic.com/media/625532_5749690df4a341dba822f1bc5539293b~mv2.jpeg/v1/fill/w_400,h_534,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Holding a Flower.jpeg",
+      "source": "Gladfelter Funeral Home Inc.",
+      "engine": "google_lens",
+      "position": 26,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.oneindia.com/india/tamil-singer-and-actor-manikka-vinayagam-passes-away-3352334.html",
+      "title": "Tamil singer and actor Manikka Vinayagam passes away ...",
+      "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT8jPlnd1t6tTW9S2cK_Ntb2oWz8ENmBL4H0Qwqwafzfb0y7VP6",
+      "image": "https://imagesvs.oneindia.com/img/2021/12/singer-death-1640536865.jpg",
+      "source": "Oneindia",
+      "engine": "google_lens",
+      "position": 27,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.ndtv.com/india-news/farmers-leader-sharad-joshi-dies-at-81-1254108",
+      "title": "Farmers' Leader Sharad Joshi Dies At 81",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnZgoB5R9p2bYHXrtqKDi_f0kyHt27rOjPap58mlG_U2HvzmU7",
+      "image": "https://i.ndtvimg.com/i/2015-12/sharad-joshi_650x400_71449909683.jpg",
+      "source": "NDTV",
+      "engine": "google_lens",
+      "position": 28,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.thequint.com/news/india/mps-suspension-pdt-achary-former-lok-sabha-secretary-general-interview",
+      "title": "Suspension of MPs Must Be the Last Resort': Former LS ...",
+      "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSaiUx19qP2GFEpQL3xhQXhXJ1uxf0Ih8_Jjuxmv12AgdLJZePa",
+      "image": "https://cf-images.assettype.com/thequint/2023-12/37cf822a-7fc2-4d15-9911-bd0756133990/Untitled_design__6_.png?auto=format,compress&fmt=webp&format=webp&w=1200&h=900&dpr=1.0",
+      "source": "The Quint",
+      "engine": "google_lens",
+      "position": 29,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://fpra.in/wps-members/dr-ananga-mohan-dwibedy/",
+      "title": "Dr. Ananga Mohan Dwibedy \u2013 Forum for Prevention of Road ...",
+      "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcREOrrgcXzC4_uPxCSK4Bl70GXzEtWR8H0Gzdp3dize7H4KdD4j",
+      "image": "https://fpra.in/wp-content/uploads/2023/12/Ananga-Mohan-Dwibedy.jpg",
+      "source": "FPRA",
+      "engine": "google_lens",
+      "position": 30,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://gaana.com/playlist/gaana-dj-best-of-manikka-vinayagam",
+      "title": "Best of Manikka Vinayagam Music Playlist: Best Best of ...",
+      "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQWWfQcAmSFUmApV-sMXg0WF0RKu8OlS2n7DaNkP5tmJzouPJ3a",
+      "image": "https://a10.gaanacdn.com/gn_pl_img/playlists/XYybzNrb2g/ybzg1oJ4K2/size_l_1515080480.jpg",
+      "source": "Gaana",
+      "engine": "google_lens",
+      "position": 31,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://sassbharath.org/event/shraddhanjali_manmadhan/",
+      "title": "Shraddhanjali Sabha for Shri VP Manmadhan Nair, Trustee ...",
+      "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRF9qG-Xipvz-L9zfIcjkGhoJX1-iQCQa0AppJoZmd02LLIbDsq",
+      "image": "https://sassbharath.org/wp-content/uploads/ProfilePhotos_BoT/manmadhan.png",
+      "source": "Sabarimala Ayyappa Seva Samajam",
+      "engine": "google_lens",
+      "position": 32,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://en.wikipedia.org/wiki/File:Chawdhary_Zaheeruddin_Khan.png",
+      "title": "File:Chawdhary Zaheeruddin Khan.png - Wikipedia",
+      "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQv52WeIzJxiY2Pb0DXy6WEOE9cH1p-ysOEDIYJutgfkl0w_dCZ",
+      "image": "https://upload.wikimedia.org/wikipedia/en/a/a5/Chawdhary_Zaheeruddin_Khan.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+      "source": "Wikipedia",
+      "engine": "google_lens",
+      "position": 33,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.facebook.com/TimesofIndia/posts/senior-congress-leader-digvijay-singhs-remark-on-the-surgical-strike-has-created/10161011287672139/",
+      "title": "Senior Congress leader Digvijay Singh's remark on the ...",
+      "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRchIyiTVoIVB93_s7jN2Yv2ApK4V6B6Jguc0LKLDU6v2H1U-rI",
+      "image": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=174557805317502",
+      "source": "Facebook",
+      "engine": "google_lens",
+      "position": 34,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.rottentomatoes.com/celebrity/p_sreekumar",
+      "title": "P. Sreekumar Movies List | Rotten Tomatoes | Rotten Tomatoes",
+      "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTuMp2f_rmMMHogxDPHv2ctJr7F_lIVw17I11v9UvHr2ldmCJYc",
+      "image": "https://resizing.flixster.com/Rdz6rMNj8mTaf8667qZ4KulZi1o=/240x135/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/852561_v9_aa.jpg",
+      "source": "Rotten Tomatoes",
+      "engine": "google_lens",
+      "position": 35,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.imdb.com/title/tt0358108/",
+      "title": "Sau Din Saas Ke (1980) - IMDb",
+      "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS_9bH-46JcW_zv3YxZNp1k0V6ewOwizxsQ6OuVsiOJ3KiFn7NN",
+      "image": "https://m.media-amazon.com/images/M/MV5BNGZkODRmNzYtNjFjNC00NGM4LTllMDUtNDg0YTk3YjczMWE2XkEyXkFqcGc@._V1_QL75_UY140_CR35,0,140,140_.jpg",
+      "source": "IMDb",
+      "engine": "google_lens",
+      "position": 37,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://tribune.com.pk/story/422209/anyone-disturbing-hindus-will-be-dealt-with-maula-bux-chandio",
+      "title": "Anyone disturbing Hindus will be dealt with: Maula Bux Chandio",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAebhPARACAzA6Em6rSmnnIAH2hMMsil6BQ1rMpAzbA1NK9Fw8",
+      "image": "https://i.tribune.com.pk/media/images/422209-MaulaBakhshChandio-1344987175/422209-MaulaBakhshChandio-1344987175-436x333.webp",
+      "source": "The Express Tribune",
+      "engine": "google_lens",
+      "position": 38,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://in.linkedin.com/in/prem-kapoor-93708969",
+      "title": "prem kapoor - Masters degree from AGRA University, AGRA ...",
+      "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTH4eZoMsjH5kE_8cV20YcmoL31CZ9_pom3lfBkKXylQg5wB6ug",
+      "image": "https://media.licdn.com/dms/image/v2/C5603AQE1BbXFq-7-fQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517414477877?e=2147483647&v=beta&t=ckJql4nKCE0gvH7ITJ0WJUvNwKrQPvPb-FjTcQyyo-g",
+      "source": "LinkedIn",
+      "engine": "google_lens",
+      "position": 39,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://sadvidya.co.in/about/",
+      "title": "About \u2013 Sadvidya",
+      "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTGJKkO0ZKBS4xGbb4QuJo7ZkjprIPNDGyzcjIaTxtwn-jbdVXn",
+      "image": "https://sadvidya.co.in/wp-content/uploads/2023/08/Untitled-design-33-300x300.png",
+      "source": "Sadvidya",
+      "engine": "google_lens",
+      "position": 40,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.myrepublica.nagariknetwork.com/news/actor-ghanshyam-gautam-passes-away-40-45.html",
+      "title": "Actor Ghanshyam Gautam passes away - myRepublica - The New ...",
+      "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRG4hpVkBnyROdZ5DOLrLAKVzdszT9ULZrVdb8G0XpAzRaIgubV",
+      "image": "https://republicaimg.nagariknewscdn.com/shared/web/uploads/media/j09fB7SmWcoRzF3lsJQwBrzptpI95QXScXEkwFpo.jpg",
+      "source": "myRepublica",
+      "engine": "google_lens",
+      "position": 41,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.thehindu.com/news/national/karnataka/andolana-editor-rajashekar-koti-dead/article20746224.ece",
+      "title": "'Andolana' Editor Rajashekar Koti dead - The Hindu",
+      "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRwLfXNcUYbS066DyJSYUCgFU_hujCVQ_HYAZRzvQcRdbZbt9ly",
+      "image": "https://th-i.thgim.com/public/news/national/karnataka/article20746223.ece/alternates/FREE_1200/23MYSKOTI",
+      "source": "The Hindu",
+      "engine": "google_lens",
+      "position": 42,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.jagran.com/uttar-pradesh/bareilly-city-rajesh-aggarwal-said-in-national-executive-meeting-in-hyderabad-recession-in-the-world-and-india-is-developing-rapidly-22858458.html",
+      "title": "\u0939\u0948\u0926\u0930\u093e\u092c\u093e\u0926 \u092e\u0947\u0902 \u0930\u093e\u0937\u094d\u091f\u094d\u0930\u0940\u092f ...",
+      "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTwbIoqL_z-YwZ_npeGa7yuoAMSZwSUwkVZoRrnY7jg3ZM4pL9K",
+      "image": "https://www.jagranimages.com/images/newimg/03072022/03_07_2022-rajesh_agarwal_22858458_m.webp",
+      "source": "Jagran",
+      "engine": "google_lens",
+      "position": 43,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.sakshi.com/news/andhra-pradesh/dutta-ramachandra-rao-demands-bharat-ratna-ys-rajasekhara-reddy-1089900",
+      "title": "\u0c35\u0c48\u0c0e\u0c38\u0c4d\u0c38\u0c3e\u0c30\u0c4d\u200c\u0c15\u0c41 '\u0c2d\u0c3e\u0c30\u0c24\u0c30\u0c24\u0c4d\u0c28' \u0c2a\u0c4d\u0c30\u0c15\u0c1f\u0c3f\u0c02\u0c1a\u0c3e\u0c32\u0c3f | Dutta Ramachandra Rao ...",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7uxnuwNUHZX6SYUfmzFG97HfGA2IuhWKDiWjeZyu8XsMK1C3C",
+      "image": "https://www.sakshi.com/article_images/2018/06/24/Dutta-Ramachandra-Rao.jpg",
+      "source": "Sakshi",
+      "engine": "google_lens",
+      "position": 44,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.instagram.com/p/DUa48HFEaJP/",
+      "title": "Veteran journalist K.V. Srinivasan passes away K.V. ...",
+      "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT4tIs5svn2ht1t_g9GTzIJqemdpZTtHuQlnm3DBvci6xct_dig",
+      "image": "https://lookaside.instagram.com/seo/google_widget/crawler/?media_id=3826621254779118159",
+      "source": "Instagram",
+      "engine": "google_lens",
+      "position": 45,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.justdial.com/Patna/Acharya-Arun-Dhari-Behind-Harihar-Chamber-Kidwaipuri/0612PX612-X612-230328182232-E1F3_BZDET",
+      "title": "Acharya Arun Dhari in Kidwaipuri,Patna - Best Astrologers ...",
+      "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ3rFzYdiNS1m62xcQkQY5UiMUUsCN7bdOeEpG6QZZei4RojZLT",
+      "image": "https://content.jdmagicbox.com/v2/comp/patna/f3/0612px612.x612.230328182232.e1f3/catalogue/astrology-expert-kidwaipuri-patna-astrologers-zgm3dqzpix-250.jpg",
+      "source": "Justdial",
+      "engine": "google_lens",
+      "position": 46,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.maalaimalar.com/news/district/tamil-news-lorry-accident-sub-inspector-dead-in-kovilpatti-579991",
+      "title": "\u0b95\u0bcb\u0bb5\u0bbf\u0bb2\u0bcd\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bbf\u0bb2\u0bcd \u0bb5\u0bbf\u0baa\u0ba4\u0bcd\u0ba4\u0bc1: \u0bb2\u0bbe\u0bb0\u0bbf ...",
+      "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQa8iACNHcSEaSAIdXejT5P3f0yPeFwSe5EKwyIhJmexgSz0sR5",
+      "image": "https://cf-images.assettype.com/maalaimalar/import/h-upload/2023/03/06/1845359-thoothukudi.webp",
+      "source": "Maalaimalar.com",
+      "engine": "google_lens",
+      "position": 47,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://mubi.com/en/cast/o-madhavan",
+      "title": "O. Madhavan \u2013 Movies, Bio and Lists on MUBI",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn2zwhcVJvL4icc8ZjJWkqExqZ_-2gsWy8LYu4I-R8lGyQbSHc",
+      "image": "https://images.mubicdn.net/images/cast_member/730245/cache-473113-1569461802/image-w856.jpg",
+      "source": "MUBI",
+      "engine": "google_lens",
+      "position": 48,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://nettv4u.com/celebrity/hindi/actor/atul-vishnoi",
+      "title": "Hindi Actor Atul Vishnoi Biography, News, Photos, Videos ...",
+      "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQLnAy-R_tNB1sfOwuRH87FFWsCsZXAKeA8LkJsQAFeUFBEJOzK",
+      "image": "https://nettv4u.com/serialimages/04-09-2025/atul-vishnoi.png",
+      "source": "Nettv4u",
+      "engine": "google_lens",
+      "position": 49,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.themoviedb.org/person/1542146-k-p-kumaran",
+      "title": "K. P. Kumaran \u2014 The Movie Database (TMDB)",
+      "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSV1eghdvQALubVPbRa-UXe7axsfDoCJDAMFREbcU1qX4MaQ3cF",
+      "image": "https://media.themoviedb.org/t/p/w235_and_h235_face/28P0MO6SJxHT6mK8aEnaGpx8nzV.jpg",
+      "source": "TMDB",
+      "engine": "google_lens",
+      "position": 50,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "http://www.sbipaahm.com/office-bearer",
+      "title": "SBIPA-Gandhinagar-Circle",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTjGqT_g8gCUxFIeyZ9AQ52YzqL7obAJ90X9dkxMHvqRIq1tcU",
+      "image": "http://www.sbipaahm.com/images/area-secretaries/1756485946_Bhaskar Ramniklal Rathod-EC Bhavnagar-Botad Zone.jpg",
+      "source": "SBIPA-Gandhinagar-Circle",
+      "engine": "google_lens",
+      "position": 51,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://conference.darshan.ac.in/",
+      "title": "DConference | Darshan University, Rajkot",
+      "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSfKFM1sTQqyjAxsKgpRD4KeuN17FFlZkTbNf2JbPxhtyV0KxNF",
+      "image": "https://conference.darshan.ac.in/U99/Conference/Committee/Speaker/ArpanBhatt.png",
+      "source": "Darshan University",
+      "engine": "google_lens",
+      "position": 52,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.livelaw.in/interviews/nabam-rebia-decision-should-be-reviewed-as-it-has-great-mischief-potential-pdt-achary-202852",
+      "title": "Nabam Rebia Decision Should Be Reviewed As It Has Great ...",
+      "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQsjEkKP4wqIYdIYbUl8zNH6BeaKhKke0A4DPDAYKq_wWNFPiYb",
+      "image": "https://www.livelaw.in/h-upload/2022/07/02/424241-parliament-must-be-responsive-to-members-in-revealing-the-agenda-before-special-session-starts-pdt-achary.jpg",
+      "source": "LiveLaw",
+      "engine": "google_lens",
+      "position": 53,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.ratopati.com/author/1187",
+      "title": "\u092e\u0927\u0941 \u0906\u091a\u093e\u0930\u094d\u092f | Nepal's first 24-hour updated news ...",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDFZAuGeLNWQ86ikfI5vvTL0RoyVBx25zIoi3yZYWlQX3lLBaO",
+      "image": "https://npcdn.ratopati.com/media/news/madhu-acharya_EyIrMZArnk.jpg",
+      "source": "Ratopati",
+      "engine": "google_lens",
+      "position": 54,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.mysuruliteraturefestival.com/lit-fest-2023-3/speakers/chandrashekhar-kambar/kambar/",
+      "title": "Kambar | Mysuru Literature Festival",
+      "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTv6Ho4sub1hD5BX0fqiwqB8-Rx--CW2Og_B6rD5PKhwDpqQ-Op",
+      "image": "https://www.mysuruliteraturefestival.com/wp-content/uploads/2023/06/Kambar.jpg",
+      "source": "Mysuru Literature Festival",
+      "engine": "google_lens",
+      "position": 55,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.bhaskar.com/local/uttar-pradesh/bhadohi/gyanpur/news/international-carpet-fair-was-organized-twice-in-bhadohi-133215225.html",
+      "title": "International carpet fair was organized twice in Bhadohi",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCOL_fF1oFC9gR83WsKde--9UYTM_u8ZaatvgCuESHka2t4NUK",
+      "image": "https://images.bhaskarassets.com/thumb/730x0/web2images/521/2024/06/23/18cf9055-9c66-4f43-a143-4d86b5d27c60_1719140580058.jpg",
+      "source": "\u0926\u0948\u0928\u093f\u0915 \u092d\u093e\u0938\u094d\u0915\u0930",
+      "engine": "google_lens",
+      "position": 56,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.oneindia.com/india/chandy-refutes-ldf-opposition-charge-1299186.html",
+      "title": "Kerala CM Oommen Chandy refutes LDF opposition charge ...",
+      "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQkfrjyv5rsI6EkrY27CDsiZdsC8lnNjgCQ6hfiHmvsBU0-VH6N",
+      "image": "https://imagesvs.oneindia.com/img/2013/09/04-oommen-chandy-601.jpg",
+      "source": "Oneindia",
+      "engine": "google_lens",
+      "position": 57,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.iageonline.com/past-presidents.php",
+      "title": "Welcome to iageonline.com",
+      "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQc_xLD0UJr0Fu0kYm99Rvz79oBmLF5ZaRXG0FNz7iG_vkmbl8P",
+      "image": "https://www.iageonline.com/past-president/Dr-Shyam-Desai.jpg",
+      "source": "Welcome to iageonline.com",
+      "engine": "google_lens",
+      "position": 58,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.toonsmag.com/members/ravindrasinghpatil/badges/",
+      "title": "Badges \u2013 Ravindrasingh Patil \u2013 Toons Mag",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLb5Yszv4QTBlBfow0uB5SVgXcf_Tq5rM2wVo864RJ7vJTxuVa",
+      "image": "https://lh3.googleusercontent.com/a-/AAuE7mALzio03rxlsf60876Iouyl_7mxL-yyoUawTI6Uug",
+      "source": "Toons Mag",
+      "engine": "google_lens",
+      "position": 59,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://en.msidb.org/m.php?6928",
+      "title": "Pranayam - Malayalam Movie Songs Database",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWTd9YsV0gXYXhZzxXjyKIg7jpRovELjuoBfKiKkhl70bycT14",
+      "image": "https://en.msidb.org/_PhotosfrmBlog/6928_2.jpg?v=1336354972",
+      "source": "MalayalaSangeetham.Info",
+      "engine": "google_lens",
+      "position": 60,
+      "engines": [
+        "google_lens"
+      ]
+    },
+    {
+      "link": "https://www.ebay.com/itm/126119240821",
+      "title": "Ray Ban RB 6285 2502 Half Rim Gunmetal Eyeglasses ...",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBMFXITMm2MroWoLz9tJaxEYoZVA47lTABUG1ZRx8nmAk0An74wtCx&usqp=CAE&s",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBMFXITMm2MroWoLz9tJaxEYoZVA47lTABUG1ZRx8nmAk0An74wtCx&usqp=CAE&s",
+      "source": "eBay",
+      "engine": "google_reverse_image",
+      "position": 1,
+      "engines": [
+        "google_reverse_image"
+      ]
+    },
+    {
+      "link": "https://designerframesoutlet.com/haggar-eyeglasses-h304/?c\\u003d432492\\u0026srsltid\\u003dAfmBOopmisxXtZT0Dvy0G3sdMFXDWw9Wmosu4oLyiGl9SYbnj6v7duyz",
+      "title": "Haggar Eyeglasses H304",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLhgEu_B1FK-2JMFX60FZNWodzvKahb_JXUqcZ0Plw1QUCZP3MlzWa&usqp=CAE&s",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLhgEu_B1FK-2JMFX60FZNWodzvKahb_JXUqcZ0Plw1QUCZP3MlzWa&usqp=CAE&s",
+      "source": "Designer Frames Outlet",
+      "engine": "google_reverse_image",
+      "position": 2,
+      "engines": [
+        "google_reverse_image"
+      ]
+    },
+    {
+      "link": "https://www.abbeglasses.com/eyeglasses/semi-rim-glasses-3403.html?srsltid\\u003dAfmBOoq9yEnTPnS8WdBwCyL14gr4_CJl0BaoY0UPdCZjjOIyrfVl1Gek",
+      "title": "Semi-Rim Glasses | Half-Rim Eyeglass Frames",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwuDLI8jnFndaxs9Cqj05xpAAWxup5o5FzVHCPLpAZ0hqONIAu2aNY5PU&s",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwuDLI8jnFndaxs9Cqj05xpAAWxup5o5FzVHCPLpAZ0hqONIAu2aNY5PU&s",
+      "source": "ABBE Glasses",
+      "engine": "google_reverse_image",
+      "position": 3,
+      "engines": [
+        "google_reverse_image"
+      ]
+    },
+    {
+      "link": "https://www.oakley.com/en-ca",
+      "title": "Oakley\u00ae Canada: Sunglasses, Goggles & Apparel | Oakley\u00ae CA",
+      "thumbnail": "",
+      "image": "",
+      "source": "Oakley",
+      "engine": "google_reverse_image",
+      "position": 4,
+      "engines": [
+        "google_reverse_image"
+      ]
+    },
+    {
+      "link": "https://www.amazon.in/OKU-Womens-Half-Rim-Rectangular-Spectacle/dp/B0GR9PN118",
+      "title": "OKU 1 Men's and Women's Half-Rim Rectangular Metal ...",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxUSuhN9D6GysqDbzu5Vg8Rc4ROj7Mwmcw15gltbJTHp_H5WTN1F_B&usqp=CAE&s",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxUSuhN9D6GysqDbzu5Vg8Rc4ROj7Mwmcw15gltbJTHp_H5WTN1F_B&usqp=CAE&s",
+      "source": "Amazon.in",
+      "engine": "google_reverse_image",
+      "position": 5,
+      "engines": [
+        "google_reverse_image"
+      ]
+    },
+    {
+      "link": "https://www.facebook.com/61586174738900/posts/okay-which-one-would-you-pick-illa-crazy-bold-colors-look-into-my-eyes-okay-thes/122136830859205824/",
+      "title": "Northern Maine Eyewear's new glasses styles and ...",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH87A9f2t9dcpPKSjpoWXYfRUYIt90AiAiXq_U6f4psTrT_DCL71ip&usqp=CAE&s",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH87A9f2t9dcpPKSjpoWXYfRUYIt90AiAiXq_U6f4psTrT_DCL71ip&usqp=CAE&s",
+      "source": "Facebook",
+      "engine": "google_reverse_image",
+      "position": 6,
+      "engines": [
+        "google_reverse_image"
+      ]
+    },
+    {
+      "link": "https://www.etsy.com/listing/741900996/jean-louis-scherrer-titanium-half-rim",
+      "title": "Jean Louis Scherrer Titanium Half Rim Glasses ... - Etsy",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJA-QeX7GqOwix5f7gVONgbLeqVofQMgUPb70wlKChgtayjF_0Hx0E&usqp=CAE&s",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJA-QeX7GqOwix5f7gVONgbLeqVofQMgUPb70wlKChgtayjF_0Hx0E&usqp=CAE&s",
+      "source": "Etsy",
+      "engine": "google_reverse_image",
+      "position": 7,
+      "engines": [
+        "google_reverse_image"
+      ]
+    },
+    {
+      "link": "https://www.tomfordfashion.com/?srsltid\\u003dAfmBOorDzp9sDk1vTwMm_zV4Jnh45WhwTAm42zTqDJU8K7--uN7XJ5Fh",
+      "title": "TOM FORD Fashion Online Store",
+      "thumbnail": "",
+      "image": "",
+      "source": "TOM FORD Fashion",
+      "engine": "google_reverse_image",
+      "position": 8,
+      "engines": [
+        "google_reverse_image"
+      ]
+    },
+    {
+      "link": "https://www.overnightglasses.com/eyeglasses/half-rim-glasses/?srsltid\\u003dAfmBOorCoaPx6EfEO6ztfdRhvvE_ze0wCla4X1E4Gf3Fkhvz5UTCiLSo",
+      "title": "Half-Rimmed Prescription Glasses",
+      "thumbnail": "",
+      "image": "",
+      "source": "Overnight Glasses",
+      "engine": "google_reverse_image",
+      "position": 9,
+      "engines": [
+        "google_reverse_image"
+      ]
+    },
+    {
+      "link": "https://www.mid-day.com/amp/mumbai/mumbai-news/article/maharashtra-fir-against-uddhav-loyalist-chandrakant-khaire-for-objectionable-language-against-cm-shinde-23249586",
+      "title": "Maharashtra: FIR against Uddhav loyalist Chandrakant Khaire for `objectionable`",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=3d006c2cc21308e2e1ec7d1005d881792677caee-5690841-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=3d006c2cc21308e2e1ec7d1005d881792677caee-5690841-images-thumbs&n=13",
+      "source": "mid-day.com",
+      "engine": "yandex_images",
+      "position": 1,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://enewstime.in/national/ludhiana-bypoll-litmus-test-for-aap-in-punjab-says-bjp-leader-tarun-chugh-68389.html",
+      "title": "Ludhiana bypoll litmus test for AAP in Punjab, says BJP leader Tarun Chugh - ENe",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=0a20905e8a4b3f8facc564946f3a62889e163d0d-9065994-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=0a20905e8a4b3f8facc564946f3a62889e163d0d-9065994-images-thumbs&n=13",
+      "source": "enewstime.in",
+      "engine": "yandex_images",
+      "position": 2,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://thehillstimes.in/northeast/celebrate-spirit-of-humanity-on-world-red-cross-day-nagaland-gov",
+      "title": "Celebrate Spirit Of Humanity On World Red Cross Day: Nagaland Gov - The Hills Ti",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=b433018c18486226d66ebf15ead7ef54ccf30b35-12612889-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=b433018c18486226d66ebf15ead7ef54ccf30b35-12612889-images-thumbs&n=13",
+      "source": "thehillstimes.in",
+      "engine": "yandex_images",
+      "position": 3,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://zamantika.com/profile/aditiprag",
+      "title": "Aditi Prasad (@AditiPrag) - Twitter Profili Zamantika Mersobahis Locabet",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=d08bca541910c533c9410eb7bfb4a2f51474325e-4314086-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=d08bca541910c533c9410eb7bfb4a2f51474325e-4314086-images-thumbs&n=13",
+      "source": "zamantika.com",
+      "engine": "yandex_images",
+      "position": 4,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://www.hindustantimes.com/education/significant-rise-in-number-of-universities-in-bengal-during-tmc-tenure-partha-chatterjee/story-hoSsOyNMaSsDu3YUDjijUK.html",
+      "title": "Significant rise in number of universities in Bengal during TMC tenure: Partha C",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=064d67060388e47e79f116cc9c327698d7ec7c38-16277941-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=064d67060388e47e79f116cc9c327698d7ec7c38-16277941-images-thumbs&n=13",
+      "source": "hindustantimes.com",
+      "engine": "yandex_images",
+      "position": 5,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://www.google.com/maps/place/data=!4m2!3m1!1s0x3bd4c7357532a05b:0xea2937ce8e4490d?hl=tr&gl=tr",
+      "title": "Shri Balaji Devasthan, Mothe Ayachit Mandir - Google Haritalar",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=d917163a69fea93170c1bd2b3e6a36ac64d6a36a-3608991-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=d917163a69fea93170c1bd2b3e6a36ac64d6a36a-3608991-images-thumbs&n=13",
+      "source": "google.com",
+      "engine": "yandex_images",
+      "position": 6,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://thenews21.com/chandrakant-patil-dubs-ncp-chief-sharad-pawars-ed-visit-as-political-drama",
+      "title": "Chandrakant Patil dubs NCP chief Sharad Pawar\u2019s ED 'visit' as political drama -",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=d141ebd7d13302b0b7b2c42157a65b6f6810a5f8-5911249-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=d141ebd7d13302b0b7b2c42157a65b6f6810a5f8-5911249-images-thumbs&n=13",
+      "source": "thenews21.com",
+      "engine": "yandex_images",
+      "position": 7,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://mayapuri.com/hi/bollywood/k-viswanath-no-more-legendary-director-k-viswanath-passed-away-at-the-age-of-92",
+      "title": "K Viswanath No More: \u092e\u0939\u093e\u0928 \u0928\u093f\u0930\u094d\u0926\u0947\u0936\u0915 K Viswanath \u0915\u093e 92 \u0935\u0930\u094d\u0937 \u0915\u0940 \u0906\u092f\u0941 \u092e\u0947\u0902 \u0928\u093f\u0927\u0928 \u0939\u094b \u0917\u092f\u093e",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=d4e11e44430a556f3f896f642e107cfbf77e36b9-5228318-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=d4e11e44430a556f3f896f642e107cfbf77e36b9-5228318-images-thumbs&n=13",
+      "source": "mayapuri.com",
+      "engine": "yandex_images",
+      "position": 8,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://www.ikashmir.net/uambardar/index.html",
+      "title": "Upender Ambardar's Writings",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=701cfc9c966b48aa7e15f16ab4dd8baf4057e56b-8173407-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=701cfc9c966b48aa7e15f16ab4dd8baf4057e56b-8173407-images-thumbs&n=13",
+      "source": "ikashmir.net",
+      "engine": "yandex_images",
+      "position": 9,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://www.freelancer.com/projects/excel/some-data-entry-13174068?w=f&ngsw-bypass=",
+      "title": "Do some data entry -- 2 Excel Freelancer",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=a43dcb9d41f0451f9f502fd67a1f5ac3-4933643-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=a43dcb9d41f0451f9f502fd67a1f5ac3-4933643-images-thumbs&n=13",
+      "source": "freelancer.com",
+      "engine": "yandex_images",
+      "position": 10,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://mubi.com/tr/cast/perumbavoor-g-raveendranath",
+      "title": "Perumbavoor G. Raveendranath - MUBI'de Filmler, Listeler ve Bio",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=7cbba2437bf12596823d167c698a321be7258e31-5133450-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=7cbba2437bf12596823d167c698a321be7258e31-5133450-images-thumbs&n=13",
+      "source": "mubi.com",
+      "engine": "yandex_images",
+      "position": 11,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://indianexpress.com/elections/chhattisgarh-election-results-2023-9052220/lite/",
+      "title": "Chhattisgarh Election Results 2023: In Chhattisgarh, BJP ahead of Congress in ea",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=f7f26a327d5c730c131e62e9c474bb0535fd92a9-16434084-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=f7f26a327d5c730c131e62e9c474bb0535fd92a9-16434084-images-thumbs&n=13",
+      "source": "indianexpress.com",
+      "engine": "yandex_images",
+      "position": 12,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://www.indiatoday.in/amp/india/story/gujarat-bjp-vp-resigns-after-rape-accusation-claims-innocence-1284958-2018-07-13",
+      "title": "Gujarat BJP vice-president Jayanti Bhanushali resigns after rape accusation",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=297863c83113bef12cbf3a5018b3c159d2f3842d-9041934-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=297863c83113bef12cbf3a5018b3c159d2f3842d-9041934-images-thumbs&n=13",
+      "source": "indiatoday.in",
+      "engine": "yandex_images",
+      "position": 13,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://commons.wikimedia.org/wiki/File:Kanhangad_sankaran_namboodiri.jpg",
+      "title": "File:Kanhangad sankaran namboodiri.jpg - Wikimedia Commons",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=c0599dd94b0c2d871ff0e3ad2fa61d27e9aaf7f9-5451533-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=c0599dd94b0c2d871ff0e3ad2fa61d27e9aaf7f9-5451533-images-thumbs&n=13",
+      "source": "commons.wikimedia.org",
+      "engine": "yandex_images",
+      "position": 14,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://rezka.ag/ua/person/361687-baladzhi-shaktivel/",
+      "title": "\u0411\u0430\u043b\u0430\u0434\u0436\u0438 \u0428\u0430\u043a\u0442\u0438\u0432\u044d\u043b\u044c - \u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0444\u0438\u043b\u044c\u043c\u044b \u0438 \u0441\u0435\u0440\u0438\u0430\u043b\u044b \u043e\u043d\u043b\u0430\u0439\u043d",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=79c9a41c8aae4c53e0d6edcedb5231c03c599c57-5169729-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=79c9a41c8aae4c53e0d6edcedb5231c03c599c57-5169729-images-thumbs&n=13",
+      "source": "rezka.ag",
+      "engine": "yandex_images",
+      "position": 15,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://en.wikipedia.org/wiki/Rajiv_Ranjan_Singh",
+      "title": "Lalan Singh - Wikipedia",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=9b6d0ff594c6f00d71b0a15e11e81245ff3573b8-5481835-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=9b6d0ff594c6f00d71b0a15e11e81245ff3573b8-5481835-images-thumbs&n=13",
+      "source": "en.wikipedia.org",
+      "engine": "yandex_images",
+      "position": 16,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://edition.cnn.com/world/live-news/coronavirus-pandemic-vaccine-updates-05-04-21/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+rss%2Fcnn_topstories+%28RSS%3A+CNN+-+Top+Stories%29",
+      "title": "May 4, 2021 coronavirus news CNN",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=ca50743eb774633237c941a401b936e2a1280eca-10652854-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=ca50743eb774633237c941a401b936e2a1280eca-10652854-images-thumbs&n=13",
+      "source": "edition.cnn.com",
+      "engine": "yandex_images",
+      "position": 17,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://www.google.com/maps/place/data=!4m2!3m1!1s0x3bc25d2730897595:0x43233a80554a9ddb?hl=tr&gl=tr",
+      "title": "Nirmal Hotel & snacks corner :A perfect family restaurant - Google Haritalar",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=9a5aca4ceb99e3b8decbb0a463a3056dfd4391fc-7042922-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=9a5aca4ceb99e3b8decbb0a463a3056dfd4391fc-7042922-images-thumbs&n=13",
+      "source": "google.com",
+      "engine": "yandex_images",
+      "position": 18,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://livebihar.com/how-to-beat-corona-again/",
+      "title": "\u0915\u094b\u0930\u094b\u0928\u093e \u0915\u094b \u092b\u093f\u0930 \u0915\u0948\u0938\u0947 \u0926\u0947\u0902 \u092e\u093e\u0924 Live Bihar",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=b2b819a273708c6ed661fcde7308dc2bec35d740-4580593-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=b2b819a273708c6ed661fcde7308dc2bec35d740-4580593-images-thumbs&n=13",
+      "source": "livebihar.com",
+      "engine": "yandex_images",
+      "position": 19,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://www.sotwe.com/himeshsahu15?lang=tr",
+      "title": "Dr. Himesh Sahu @himeshsahu15 - Twitter Kullan\u0131c\u0131s\u0131 Sotwe",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=22b55d1f75e921039c69b3ade9442f917a78160c-13604111-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=22b55d1f75e921039c69b3ade9442f917a78160c-13604111-images-thumbs&n=13",
+      "source": "sotwe.com",
+      "engine": "yandex_images",
+      "position": 20,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://www.youtube.com/channel/UCldMdTTWbEaZsBLs_cdZyKA?app=desktop",
+      "title": "Jai Kishan Kharat - YouTube",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=aa18de3bf1f4dc73db5b7c79afd1f2ea34831b38-5865722-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=aa18de3bf1f4dc73db5b7c79afd1f2ea34831b38-5865722-images-thumbs&n=13",
+      "source": "youtube.com",
+      "engine": "yandex_images",
+      "position": 21,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://vk.ru/wall221878711_46357",
+      "title": "\u0412 \u0448\u0438\u0432\u0430\u0438\u0437\u043c\u0435 \u0435\u0441\u0442\u044c \u0432\u0441\u0451. \u0414\u043e\u0431\u0440\u044b\u0439 \u0432\u0435\u0447\u0435\u0440 \u0432\u0441\u0435\u043c! \u0412\u0430\u043d\u0430\u043a\u043a\u0430\u043c. \u0410\u043d\u0431\u0435 \u0428\u0438\u0432\u0430\u043c\u0430\u0439\u044f\u043c \u0421\u0430\u0442\u044c\u044f\u043c\u0435 \u041f\u0430\u0440\u0430\u0448\u0438\u0432",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=9da7a7b3865bb97472301b70f7980ef45597bee1-10160311-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=9da7a7b3865bb97472301b70f7980ef45597bee1-10160311-images-thumbs&n=13",
+      "source": "vk.ru",
+      "engine": "yandex_images",
+      "position": 25,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://www.pinterest.co.uk/pin/655484920746018582/",
+      "title": "\u0d36 \u0d2c \u0d30 \u0d2e \u0d32 \u0d38 \u0d2e \u0d30 \u0d24 \u0d24 \u0d2a \u0d28 \u0d24 \u0d23 \u0d15 \u0d15 \u0d24 \u0d30 \u0d28 \u0d28 \u0d24 \u0d15 \u0d30 \u0d2e \u0d2a \u0d7b \u0d1a \u0d23",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=5e398c2bebfc3c6ca10b8bfbb624a48ff1e1052f-8232745-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=5e398c2bebfc3c6ca10b8bfbb624a48ff1e1052f-8232745-images-thumbs&n=13",
+      "source": "pinterest.co.uk",
+      "engine": "yandex_images",
+      "position": 26,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://www.naidunia.com/chhattisgarh/raipur-chhattisgarh-politics-bjp-spokesperson-said-something-like-that-political-earthquake-has-come-know-what-is-the-statement-of-bjp-leader-upasana-4712909",
+      "title": "Chhattisgarh Politics: \u092d\u093e\u091c\u092a\u093e \u092a\u094d\u0930\u0935\u0915\u094d\u0924\u093e \u0938\u091a\u094d\u091a\u093f\u0926\u093e\u0928\u0902\u0926 \u0909\u092a\u093e\u0938\u0928\u0947 \u0928\u0947 \u0910\u0938\u093e \u0915\u0941\u091b \u0915\u0939 \u0926\u093f\u092f\u093e \u0915\u093f \u0906",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=ae74d6c632bb4d90ed73847bf87af353c529d552-5194765-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=ae74d6c632bb4d90ed73847bf87af353c529d552-5194765-images-thumbs&n=13",
+      "source": "naidunia.com",
+      "engine": "yandex_images",
+      "position": 27,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://www.sotwe.com/shivkumar_vibha",
+      "title": "\u0921\u093e. \u0936\u093f\u0935\u0915\u0941\u092e\u093e\u0930 \u0936\u0930\u094d\u092e\u093e @shivkumar_vibha - Twitter Profile Sotwe",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=e32c312bb8a18845e4c4db5a8d67ff6e6d4dcafb-15426262-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=e32c312bb8a18845e4c4db5a8d67ff6e6d4dcafb-15426262-images-thumbs&n=13",
+      "source": "sotwe.com",
+      "engine": "yandex_images",
+      "position": 28,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://www.nowrunning.com/celebrity/6988/srinivasa-murthy/movies.htm?p=2",
+      "title": "Srinivasa Murthy Movies - actor Srinivasa Murthy Movies nowrunning",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=c9cc318c2feb169cea9946bc4bd6af58ae54f21e-12423388-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=c9cc318c2feb169cea9946bc4bd6af58ae54f21e-12423388-images-thumbs&n=13",
+      "source": "nowrunning.com",
+      "engine": "yandex_images",
+      "position": 29,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://www.youtube.com/channel/UCc18sbaKawg0Jbxv_474Hbw",
+      "title": "MOHAN GOVINDARAJAN - YouTube",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=511fd83e6c2d9e62a6465dc170a78d88627fd98c-2480271-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=511fd83e6c2d9e62a6465dc170a78d88627fd98c-2480271-images-thumbs&n=13",
+      "source": "youtube.com",
+      "engine": "yandex_images",
+      "position": 30,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://www.msn.com/en-in/news/India/walking-in-futian-district-shenzhen-china-4k/vi-AA1Pc3eb",
+      "title": "Walking in Futian District - Shenzhen China 4K",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=b62a189c0571e8ed23013143aa1be1258da20677-8497913-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=b62a189c0571e8ed23013143aa1be1258da20677-8497913-images-thumbs&n=13",
+      "source": "msn.com",
+      "engine": "yandex_images",
+      "position": 31,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://www.ndtv.com/india-news/lalan-singh-anant-singh-mokama-bihar-election-will-win-by-huge-margin-jdu-leaders-shoutout-to-bahubali-anant-singh-9566831",
+      "title": "Lalan Singh, Anant Singh, Mokama, Bihar Election: Will Win By Huge Margin: JDU L",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=d00e5d05018d633abf74ea27634f7791a5338e90-10349698-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=d00e5d05018d633abf74ea27634f7791a5338e90-10349698-images-thumbs&n=13",
+      "source": "ndtv.com",
+      "engine": "yandex_images",
+      "position": 32,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://in.pinterest.com/pin/487373990933073336/",
+      "title": "\u0917\u0941\u0932\u095b\u093e\u0930 - \u0936\u0947\u0930 Sufi mystic, Couplet",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=22d500affb3343a41244cc614eccca4eaaaac369-10705627-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=22d500affb3343a41244cc614eccca4eaaaac369-10705627-images-thumbs&n=13",
+      "source": "in.pinterest.com",
+      "engine": "yandex_images",
+      "position": 33,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://alchetron.com/R.-Gopalakrishnan-%28politician%29",
+      "title": "R. Gopalakrishnan (politician) - Alchetron, the free social encyclopedia",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=318c5e01f8dca3dd8dbd8bad0a8a180626f36262-8497071-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=318c5e01f8dca3dd8dbd8bad0a8a180626f36262-8497071-images-thumbs&n=13",
+      "source": "alchetron.com",
+      "engine": "yandex_images",
+      "position": 34,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://aguea.net/SanjayNathSing2",
+      "title": "Sanjay Nath Singh@All India Farmers Association (@SanjayNathSing2) Aguea",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=481cfe033a7214d50d6e48fee403982c6de62e68-5289481-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=481cfe033a7214d50d6e48fee403982c6de62e68-5289481-images-thumbs&n=13",
+      "source": "aguea.net",
+      "engine": "yandex_images",
+      "position": 35,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://www.freepressjournal.in/india/bihar-elections-2025-rjd-chief-lalu-nda-leaders-stage-roadshows-in-favour-of-their-jailed-candidates-video",
+      "title": "Bihar Elections 2025: RJD Chief Lalu, NDA Leaders Stage Roadshows In Favour Of T",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=0e5d740bd1235da4de1d58e7079d9fdee4851f87-4232161-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=0e5d740bd1235da4de1d58e7079d9fdee4851f87-4232161-images-thumbs&n=13",
+      "source": "freepressjournal.in",
+      "engine": "yandex_images",
+      "position": 36,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://www.sotwe.com/oldmanlover18?__cf_chl_tk=6OOV9y6lyT.oBScNN6X1As6spJnkwREoQ2kaZyCphFA-1736177295-1.0.1.1-n8qhVWD0pZSvkV8uilL3kqaYYNK47m_HCU2_Y3bsixw",
+      "title": "Old Man Lover @oldmanlover18 - Twitter Profile Sotwe",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=58719a9fbc0c2630e8d7b5e87ed1f48ff1a79fe9-9236689-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=58719a9fbc0c2630e8d7b5e87ed1f48ff1a79fe9-9236689-images-thumbs&n=13",
+      "source": "sotwe.com",
+      "engine": "yandex_images",
+      "position": 37,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://www.businesstoday.in/latest/corporate/story/wishlist-2013-corporate-india-still-hopeful-policy-reforms-39237-2013-01-09",
+      "title": "India Inc's wishlist for 2013 - BusinessToday",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=b640858554052220d19dd8c551b610178bc759d7-7544543-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=b640858554052220d19dd8c551b610178bc759d7-7544543-images-thumbs&n=13",
+      "source": "businesstoday.in",
+      "engine": "yandex_images",
+      "position": 39,
+      "engines": [
+        "yandex_images"
+      ]
+    },
+    {
+      "link": "https://www.thenewsminute.com/article/madhusudhanan-aiadmk-s-rk-nagar-bye-poll-candidate-eps-ops-finally-reach-consensus-72416?amp",
+      "title": "Madhusudhanan is AIADMK\u2019s RK Nagar bye poll candidate, EPS-OPS finally reach con",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=3d4c3fee3fe4b9b58e3b6f5f2e80125940b85312-12658662-images-thumbs&n=13",
+      "image": "https://avatars.mds.yandex.net/i?id=3d4c3fee3fe4b9b58e3b6f5f2e80125940b85312-12658662-images-thumbs&n=13",
+      "source": "thenewsminute.com",
+      "engine": "yandex_images",
+      "position": 40,
+      "engines": [
+        "yandex_images"
+      ]
+    }
+  ]
+}

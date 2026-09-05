@@ -1,0 +1,9 @@
+{
+  "merkle_root": "9e3ecccdd603427d225d3a5dd5b7b986ed68eedef3284dc49924f33926f496a6",
+  "leaves": [
+    "758509c7c7b46bf18804e69ef4ce09dc02dee723a1777d536fae2983a4a934f2",
+    "97b642adc9fed5762a2e8c58a1cc61dd13211ecb5c8eec26272ed97edeab4029",
+    "8a657a0cd8818ba4725d253d0366cc4d2109bbe15f2bca8d81ce4c804bcd0d56"
+  ],
+  "count": 3
+}

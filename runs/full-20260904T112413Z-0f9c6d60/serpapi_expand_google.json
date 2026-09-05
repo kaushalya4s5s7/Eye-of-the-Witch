@@ -1,0 +1,347 @@
+{
+  "search_metadata": {
+    "id": "6a9aaaa6f6d5ee239bee2091",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/N-DrK1xdPPCV9pDgO03W4fOUac3H7Zgov35ZHI5H2Fw/6a9aaaa6f6d5ee239bee2091.json",
+    "markdown_endpoint": "https://serpapi.com/searches/N-DrK1xdPPCV9pDgO03W4fOUac3H7Zgov35ZHI5H2Fw/6a9aaaa6f6d5ee239bee2091.md",
+    "pixel_position_endpoint": "https://serpapi.com/searches/N-DrK1xdPPCV9pDgO03W4fOUac3H7Zgov35ZHI5H2Fw/6a9aaaa6f6d5ee239bee2091.json_with_pixel_position",
+    "created_at": "2026-09-04 11:25:26 UTC",
+    "processed_at": "2026-09-04 11:25:26 UTC",
+    "google_url": "https://www.google.com/search?q=Ramabhau+Patil+%28site%3Alinkedin.com+OR+site%3Ainstagram.com+OR+site%3Ax.com+OR+site%3Atwitter.com%29&oq=Ramabhau+Patil+%28site%3Alinkedin.com+OR+site%3Ainstagram.com+OR+site%3Ax.com+OR+site%3Atwitter.com%29&sourceid=chrome&ie=UTF-8",
+    "raw_html_file": "https://serpapi.com/searches/N-DrK1xdPPCV9pDgO03W4fOUac3H7Zgov35ZHI5H2Fw/6a9aaaa6f6d5ee239bee2091.html",
+    "total_time_taken": 3.0
+  },
+  "search_parameters": {
+    "engine": "google",
+    "q": "Ramabhau Patil (site:linkedin.com OR site:instagram.com OR site:x.com OR site:twitter.com)",
+    "google_domain": "google.com",
+    "device": "desktop"
+  },
+  "search_information": {
+    "query_displayed": "Ramabhau Patil (site:linkedin.com OR site:instagram.com OR site:x.com OR site:twitter.com)",
+    "total_results": 97200,
+    "time_taken_displayed": 0.24,
+    "organic_results_state": "Results for exact spelling"
+  },
+  "inline_videos": [
+    {
+      "position": 1,
+      "title": "Ramabhau Patil's Post",
+      "link": "https://www.linkedin.com/posts/ramabhau-patil-a287b448_feeling-deeply-proud-as-an-indian-to-witness-activity-7472601737451991040-E-cc",
+      "thumbnail": "https://serpapi.com/searches/6a9aaaa6f6d5ee239bee2091/images/AJN-Mwn0PCavEn5lXgpwYW43VLwuMH8LgbDtywIvdJ0.jpeg",
+      "channel": "Ramabhau Patil",
+      "platform": "LinkedIn",
+      "date": "Jun 16, 2026"
+    },
+    {
+      "position": 2,
+      "title": "Very thoughtful and useful innovation... | Ramabhau Patil",
+      "link": "https://www.linkedin.com/posts/ramabhau-patil-a287b448_very-thoughtful-and-useful-innovation-activity-7456148070624333824-1c5H",
+      "thumbnail": "https://serpapi.com/searches/6a9aaaa6f6d5ee239bee2091/images/6JTdoSmaPhlR9vb3fOInqyJqaq8k1HoKgwQKtZA60SM.jpeg",
+      "channel": "Ramabhau Patil",
+      "platform": "LinkedIn",
+      "date": "May 1, 2026"
+    },
+    {
+      "position": 3,
+      "title": "Ramabhau Patil's Post",
+      "link": "https://www.linkedin.com/posts/ramabhau-patil-a287b448_meet-the-man-behind-swami-vivekananda-swamivivekananda-activity-7492636079213371395-klXw",
+      "thumbnail": "https://serpapi.com/searches/6a9aaaa6f6d5ee239bee2091/images/_CeY81ez-BYnKZo5hJ05fdnAq7agJYomv3VWHOtwzDA.jpeg",
+      "channel": "Udit Gupta",
+      "duration": "2:57",
+      "platform": "LinkedIn",
+      "date": "3 weeks ago",
+      "short_clip": "https://encrypted-vtbn0.gstatic.com/video?q=tbn:ANd9GcQCP9BHaLgFuOVQXBPOcFeBcOIHf2ML7P4GFQ"
+    },
+    {
+      "position": 4,
+      "title": "First Again | Ramabhau Patil",
+      "link": "https://www.linkedin.com/posts/ramabhau-patil-a287b448_first-again-activity-7479949263540678656-7DCN",
+      "thumbnail": "https://serpapi.com/searches/6a9aaaa6f6d5ee239bee2091/images/S7A6M2SkV4HTWNn7dcicHk9YvfpbSeb-xw6UAwX7e_0.jpeg",
+      "channel": "Ramabhau Patil",
+      "platform": "LinkedIn",
+      "date": "Jul 6, 2026"
+    }
+  ],
+  "organic_results": [
+    {
+      "position": 1,
+      "title": "Ramabhau Patil - Former Director, ICAR-Central Institute ...",
+      "link": "https://in.linkedin.com/in/ramabhau-patil-a287b448",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESagHrOzAVQvZzL-gFlRWUGhcQUOz-R7yPHpw2aPW7u7iDFrzN19kx0Sh7CwCJJbd-q4o7ZDiLsBM0rkvY0outCMlND8PBCl6GxR_kq1aQXuhHEOens_ko2C5Gzr1kF4TQLc4miBTw97WWVG0&ved=2ahUKEwjG7sa06NSWAxX5_8kDHaXGLyUQFnoECB0QAQ&uoh=1",
+      "displayed_link": "8K+ followers",
+      "favicon": "https://serpapi.com/images/i/UklGRsAAAABXRUJQVlA4ILQAAABQAwCdASoQABAAAsBMJbACdLoBLf4oANRJj6d2SZLhF7_ohAD-4n1FofdRna1o8FCt-OiJvVc8lzO8Rt17R6yr0CRJL0FBwsd8OIDxQ356R55Xei0KcLjbfh5C05X1nTKIh8X8ekP3RBUogy_jZ3kCUPbBWjzINpJUmDhbtDZS1e3a8_aUBwnkYz0mnTj4n4__aq6btWmAus7Zjw7JLZ_kNfUgtaLPXB6k1U8MVzX5_C1AAAA.webp",
+      "snippet": "Former Director, ICAR-Central Institute of Post Harvest Engineering and Technology and Chairman, Benevole Welfare Society for Post Harvest Tech, and Chief",
+      "snippet_highlighted_words": [
+        "Former Director, ICAR-Central Institute of Post Harvest Engineering and Technology"
+      ],
+      "rich_snippet": {
+        "top": {
+          "extensions": [
+            "Bhopal, Madhya Pradesh, India",
+            "Chairman",
+            "Benevole Welfare Society for Post Harvest Technology"
+          ]
+        }
+      },
+      "about_this_result": {
+        "source": {
+          "description": "Former Director, ICAR-Central Institute of Post Harvest Engineering and Technology and Chairman, Benevole Welfare Society for Post Harvest Tech, and Chief",
+          "source_info_link": "https://in.linkedin.com/in/ramabhau-patil-a287b448",
+          "icon": "https://serpapi.com/images/i/UklGRsAAAABXRUJQVlA4ILQAAABQAwCdASoQABAAAsBMJbACdLoBLf4oANRJj6d2SZLhF7_ohAD-4n1FofdRna1o8FCt-OiJvVc8lzO8Rt17R6yr0CRJL0FBwsd8OIDxQ356R55Xei0KcLjbfh5C05X1nTKIh8X8ekP3RBUogy_jZ3kCUPbBWjzINpJUmDhbtDZS1e3a8_aUBwnkYz0mnTj4n4__aq6btWmAus7Zjw7JLZ_kNfUgtaLPXB6k1U8MVzX5_C1AAAA.webp"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "CA"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search?q=About+https://in.linkedin.com/in/ramabhau-patil-a287b448&tbm=ilp",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&q=About+https%3A%2F%2Fin.linkedin.com%2Fin%2Framabhau-patil-a287b448",
+      "source": "LinkedIn \u00b7 Ramabhau Patil"
+    },
+    {
+      "position": 2,
+      "title": "Siddhant's Vision Transforms India's Food Ecosystem",
+      "link": "https://www.linkedin.com/posts/ramabhau-patil-a287b448_remarkable-vision-and-execution-by-siddhant-activity-7492811244580745216-T1Nj",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESvQEB6zswFYFmeX-jtROnGTxC4VvB5gn52z7DQDtPevxWBd5EYoHgWLXx0smflDx2QO3L5oZXF5qYmpswn6zD20yKGTapYMch6FUTq66SsKOnUPtecsaYsQZgU2nrk1tNUvJ0aJNnEiPeAG5tWpOi5fCfO0bkNXdbsZrD3ZyMjBnN8WqichtYGsl0cwYQpvLCws2ilJzMkpWLN8kPlNWbW4DjqFnXzycPASD7U1NQLVjxGB9aoyta7WqhiAW6PYQ&ved=2ahUKEwjG7sa06NSWAxX5_8kDHaXGLyUQFnoECC0QAQ&uoh=1",
+      "displayed_link": "1 reaction \u00b7 3 weeks ago",
+      "favicon": "https://serpapi.com/images/i/UklGRsAAAABXRUJQVlA4ILQAAABQAwCdASoQABAAAsBMJbACdLoBLf4oANRJj6d2SZLhF7_ohAD-4n1FofdRna1o8FCt-OiJvVc8lzO8Rt17R6yr0CRJL0FBwsd8OIDxQ356R55Xei0KcLjbfh5C05X1nTKIh8X8ekP3RBUogy_jZ3kCUPbBWjzINpJUmDhbtDZS1e3a8_aUBwnkYz0mnTj4n4__aq6btWmAus7Zjw7JLZ_kNfUgtaLPXB6k1U8MVzX5_C1AAAA.webp",
+      "snippet": "Ramabhau Patil Former Director, ICAR-Central Institute of Post Harvest Engineering and Technology and Chairman, Benevole Welfare Society for ...",
+      "snippet_highlighted_words": [
+        "Former Director, ICAR-Central Institute of Post Harvest Engineering and Technology"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "Ramabhau Patil Former Director, ICAR-Central Institute of Post Harvest Engineering and Technology and Chairman, Benevole Welfare Society for ...",
+          "source_info_link": "https://www.linkedin.com/posts/ramabhau-patil-a287b448_remarkable-vision-and-execution-by-siddhant-activity-7492811244580745216-T1Nj",
+          "icon": "https://serpapi.com/images/i/UklGRsAAAABXRUJQVlA4ILQAAABQAwCdASoQABAAAsBMJbACdLoBLf4oANRJj6d2SZLhF7_ohAD-4n1FofdRna1o8FCt-OiJvVc8lzO8Rt17R6yr0CRJL0FBwsd8OIDxQ356R55Xei0KcLjbfh5C05X1nTKIh8X8ekP3RBUogy_jZ3kCUPbBWjzINpJUmDhbtDZS1e3a8_aUBwnkYz0mnTj4n4__aq6btWmAus7Zjw7JLZ_kNfUgtaLPXB6k1U8MVzX5_C1AAAA.webp"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "CA"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search?q=About+https://www.linkedin.com/posts/ramabhau-patil-a287b448_remarkable-vision-and-execution-by-siddhant-activity-7492811244580745216-T1Nj&tbm=ilp",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&q=About+https%3A%2F%2Fwww.linkedin.com%2Fposts%2Framabhau-patil-a287b448_remarkable-vision-and-execution-by-siddhant-activity-7492811244580745216-T1Nj",
+      "source": "LinkedIn \u00b7 Ramabhau Patil"
+    },
+    {
+      "position": 3,
+      "title": "Ramabhau Patil's Post",
+      "link": "https://www.linkedin.com/posts/ramabhau-patil-a287b448_activity-7488171071502778369-MnAO",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESkAEB6zswFY_ez--Sz1MFBCKuVS1Rk67vgHQpxP5UFLHlU4Q8san-JyEN4-VpgK5V9BopodXFE4fFlasGpO9lzezNywAkRuLd0Dk2JciQYrW_w0VTghrKpf26W_CKmlDSLFtglwiMh45Ph3fd_i5BGkQNgHPAAjoGWxonoSm7TXh5Ok5FzhyUqDRRvR7KizZb8sg&ved=2ahUKEwjG7sa06NSWAxX5_8kDHaXGLyUQFnoECCkQAQ&uoh=1",
+      "displayed_link": "1 month ago",
+      "favicon": "https://serpapi.com/images/i/UklGRsAAAABXRUJQVlA4ILQAAABQAwCdASoQABAAAsBMJbACdLoBLf4oANRJj6d2SZLhF7_ohAD-4n1FofdRna1o8FCt-OiJvVc8lzO8Rt17R6yr0CRJL0FBwsd8OIDxQ356R55Xei0KcLjbfh5C05X1nTKIh8X8ekP3RBUogy_jZ3kCUPbBWjzINpJUmDhbtDZS1e3a8_aUBwnkYz0mnTj4n4__aq6btWmAus7Zjw7JLZ_kNfUgtaLPXB6k1U8MVzX5_C1AAAA.webp",
+      "snippet": "Former Director, ICAR-Central Institute of Post Harvest Engineering and Technology and Chairman, Benevole Welfare Society for Post Harvest Tech ...",
+      "snippet_highlighted_words": [
+        "Former Director, ICAR-Central Institute of Post Harvest Engineering and Technology"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "Former Director, ICAR-Central Institute of Post Harvest Engineering and Technology and Chairman, Benevole Welfare Society for Post Harvest Tech ...",
+          "source_info_link": "https://www.linkedin.com/posts/ramabhau-patil-a287b448_activity-7488171071502778369-MnAO",
+          "icon": "https://serpapi.com/images/i/UklGRsAAAABXRUJQVlA4ILQAAABQAwCdASoQABAAAsBMJbACdLoBLf4oANRJj6d2SZLhF7_ohAD-4n1FofdRna1o8FCt-OiJvVc8lzO8Rt17R6yr0CRJL0FBwsd8OIDxQ356R55Xei0KcLjbfh5C05X1nTKIh8X8ekP3RBUogy_jZ3kCUPbBWjzINpJUmDhbtDZS1e3a8_aUBwnkYz0mnTj4n4__aq6btWmAus7Zjw7JLZ_kNfUgtaLPXB6k1U8MVzX5_C1AAAA.webp"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "CA"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search?q=About+https://www.linkedin.com/posts/ramabhau-patil-a287b448_activity-7488171071502778369-MnAO&tbm=ilp",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&q=About+https%3A%2F%2Fwww.linkedin.com%2Fposts%2Framabhau-patil-a287b448_activity-7488171071502778369-MnAO",
+      "source": "LinkedIn \u00b7 Ramabhau Patil"
+    },
+    {
+      "position": 4,
+      "title": "Indian Leaders Shaping Global Industries | Ramabhau ...",
+      "link": "https://www.linkedin.com/posts/ramabhau-patil-a287b448_born-in-india-running-the-world-from-boardrooms-activity-7476494025345396737-gJOK",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESwQEB6zswFfaEoGMgRfVNODjzIYLun5kXK2bg0gvwZchcmmFopykt4F_0P7z_a84ui1guQLGE3uQuA9g3XicxtFPQ0-DfyuixJleEZHslBE_wGMy1qoh1rVH8PwMNoN1FH15_9kdSJykwpPCwCf9XS-1JGooUDsnyhvSBSDuXxgNZ1bNrB0OhZ9C8GIUu9zY5lH40JMTsHMrKYFl3nwgFYM3NOtVlfPGPm4zPlUj55pYCgvGTqS-X37pw9_LRUVvZA9x4&ved=2ahUKEwjG7sa06NSWAxX5_8kDHaXGLyUQFnoECC4QAQ&uoh=1",
+      "displayed_link": "3 reactions \u00b7 2 months ago",
+      "favicon": "https://serpapi.com/images/i/UklGRsAAAABXRUJQVlA4ILQAAABQAwCdASoQABAAAsBMJbACdLoBLf4oANRJj6d2SZLhF7_ohAD-4n1FofdRna1o8FCt-OiJvVc8lzO8Rt17R6yr0CRJL0FBwsd8OIDxQ356R55Xei0KcLjbfh5C05X1nTKIh8X8ekP3RBUogy_jZ3kCUPbBWjzINpJUmDhbtDZS1e3a8_aUBwnkYz0mnTj4n4__aq6btWmAus7Zjw7JLZ_kNfUgtaLPXB6k1U8MVzX5_C1AAAA.webp",
+      "snippet": "Ramabhau Patil Former Director, ICAR-Central Institute of Post Harvest Engineering and Technology and Chairman, Benevole Welfare Society for ...",
+      "snippet_highlighted_words": [
+        "Former Director, ICAR-Central Institute of Post Harvest Engineering and Technology"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "Ramabhau Patil Former Director, ICAR-Central Institute of Post Harvest Engineering and Technology and Chairman, Benevole Welfare Society for ...",
+          "source_info_link": "https://www.linkedin.com/posts/ramabhau-patil-a287b448_born-in-india-running-the-world-from-boardrooms-activity-7476494025345396737-gJOK",
+          "icon": "https://serpapi.com/images/i/UklGRsAAAABXRUJQVlA4ILQAAABQAwCdASoQABAAAsBMJbACdLoBLf4oANRJj6d2SZLhF7_ohAD-4n1FofdRna1o8FCt-OiJvVc8lzO8Rt17R6yr0CRJL0FBwsd8OIDxQ356R55Xei0KcLjbfh5C05X1nTKIh8X8ekP3RBUogy_jZ3kCUPbBWjzINpJUmDhbtDZS1e3a8_aUBwnkYz0mnTj4n4__aq6btWmAus7Zjw7JLZ_kNfUgtaLPXB6k1U8MVzX5_C1AAAA.webp"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "CA"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search?q=About+https://www.linkedin.com/posts/ramabhau-patil-a287b448_born-in-india-running-the-world-from-boardrooms-activity-7476494025345396737-gJOK&tbm=ilp",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&q=About+https%3A%2F%2Fwww.linkedin.com%2Fposts%2Framabhau-patil-a287b448_born-in-india-running-the-world-from-boardrooms-activity-7476494025345396737-gJOK",
+      "source": "LinkedIn \u00b7 Ramabhau Patil"
+    },
+    {
+      "position": 5,
+      "title": "Ramabhau Patil posted this",
+      "link": "https://www.linkedin.com/posts/ramabhau-patil-a287b448_postharvestmanagement-foodsystemsresilience-activity-7499517417631584256-XKWW",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESvQEB6zswFdPTCSFN7i1TCOVuMmdIx0efgR_qQ70v0AEC_J7N8rGioeHo8AbAKRAuovKE2Zxxp5TESlIOSOaaYhfx8lONVqcBkTFsSxs5aFvca4WYhne_fLdsIu57CedAPghs1l-vMqHTerzityLnCBGiWod99hlKGDJToTEC1lVLfDjisGUy7_oYzFUaynF7ie7gNm0MIVecpAtgtONcivOgySW-xzKfEIWkDaVa6qEBVgjXmuRs33vuNStsFjc&ved=2ahUKEwjG7sa06NSWAxX5_8kDHaXGLyUQFnoECDAQAQ&uoh=1",
+      "displayed_link": "2 reactions \u00b7 5 days ago",
+      "favicon": "https://serpapi.com/images/i/UklGRsAAAABXRUJQVlA4ILQAAABQAwCdASoQABAAAsBMJbACdLoBLf4oANRJj6d2SZLhF7_ohAD-4n1FofdRna1o8FCt-OiJvVc8lzO8Rt17R6yr0CRJL0FBwsd8OIDxQ356R55Xei0KcLjbfh5C05X1nTKIh8X8ekP3RBUogy_jZ3kCUPbBWjzINpJUmDhbtDZS1e3a8_aUBwnkYz0mnTj4n4__aq6btWmAus7Zjw7JLZ_kNfUgtaLPXB6k1U8MVzX5_C1AAAA.webp",
+      "snippet": "Ramabhau Patil Former Director, ICAR-Central Institute of Post Harvest Engineering and Technology and Chairman, Benevole Welfare Society for ...",
+      "snippet_highlighted_words": [
+        "Former Director, ICAR-Central Institute of Post Harvest Engineering and Technology"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "Ramabhau Patil Former Director, ICAR-Central Institute of Post Harvest Engineering and Technology and Chairman, Benevole Welfare Society for ...",
+          "source_info_link": "https://www.linkedin.com/posts/ramabhau-patil-a287b448_postharvestmanagement-foodsystemsresilience-activity-7499517417631584256-XKWW",
+          "icon": "https://serpapi.com/images/i/UklGRsAAAABXRUJQVlA4ILQAAABQAwCdASoQABAAAsBMJbACdLoBLf4oANRJj6d2SZLhF7_ohAD-4n1FofdRna1o8FCt-OiJvVc8lzO8Rt17R6yr0CRJL0FBwsd8OIDxQ356R55Xei0KcLjbfh5C05X1nTKIh8X8ekP3RBUogy_jZ3kCUPbBWjzINpJUmDhbtDZS1e3a8_aUBwnkYz0mnTj4n4__aq6btWmAus7Zjw7JLZ_kNfUgtaLPXB6k1U8MVzX5_C1AAAA.webp"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "CA"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search?q=About+https://www.linkedin.com/posts/ramabhau-patil-a287b448_postharvestmanagement-foodsystemsresilience-activity-7499517417631584256-XKWW&tbm=ilp",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&q=About+https%3A%2F%2Fwww.linkedin.com%2Fposts%2Framabhau-patil-a287b448_postharvestmanagement-foodsystemsresilience-activity-7499517417631584256-XKWW",
+      "source": "LinkedIn \u00b7 Ramabhau Patil"
+    },
+    {
+      "position": 6,
+      "title": "Ramabhau Patil's Post",
+      "link": "https://www.linkedin.com/posts/ramabhau-patil-a287b448_hope-in-the-heart-of-a-forest-how-a-school-activity-7465061007242047493-ry_y",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESvAEB6zswFdZtwlCqGWiNyHLnWt6hsLaCnpn-H_D0nAp37aDl7cJxPKBNeSplbHeDdixRRfRkxV1rLI5ZI4X7Gz8kYEVBZ1832zQArHKIcT3KIVWrMOsQZOC5Vh2lzPTN-HQ6yWTGPxXKbYQU3PtO5E6nA5FawzLyVdSO2UyYN2FVlzuo7nZ4QoeMDM8okp7JloqQRr70BRsACI85IDxwY5vw8oKnIVrVDwdnQdYIXR-oV6HmMad0V_zHK8ejLQ&ved=2ahUKEwjG7sa06NSWAxX5_8kDHaXGLyUQFnoECC8QAQ&uoh=1",
+      "displayed_link": "3 reactions \u00b7 3 months ago",
+      "favicon": "https://serpapi.com/images/i/UklGRsAAAABXRUJQVlA4ILQAAABQAwCdASoQABAAAsBMJbACdLoBLf4oANRJj6d2SZLhF7_ohAD-4n1FofdRna1o8FCt-OiJvVc8lzO8Rt17R6yr0CRJL0FBwsd8OIDxQ356R55Xei0KcLjbfh5C05X1nTKIh8X8ekP3RBUogy_jZ3kCUPbBWjzINpJUmDhbtDZS1e3a8_aUBwnkYz0mnTj4n4__aq6btWmAus7Zjw7JLZ_kNfUgtaLPXB6k1U8MVzX5_C1AAAA.webp",
+      "snippet": "Ramabhau Patil Former Director, ICAR-Central Institute of Post Harvest Engineering and Technology and Chairman, Benevole Welfare Society for ...",
+      "snippet_highlighted_words": [
+        "Former Director, ICAR-Central Institute of Post Harvest Engineering and Technology"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "Ramabhau Patil Former Director, ICAR-Central Institute of Post Harvest Engineering and Technology and Chairman, Benevole Welfare Society for ...",
+          "source_info_link": "https://www.linkedin.com/posts/ramabhau-patil-a287b448_hope-in-the-heart-of-a-forest-how-a-school-activity-7465061007242047493-ry_y",
+          "icon": "https://serpapi.com/images/i/UklGRsAAAABXRUJQVlA4ILQAAABQAwCdASoQABAAAsBMJbACdLoBLf4oANRJj6d2SZLhF7_ohAD-4n1FofdRna1o8FCt-OiJvVc8lzO8Rt17R6yr0CRJL0FBwsd8OIDxQ356R55Xei0KcLjbfh5C05X1nTKIh8X8ekP3RBUogy_jZ3kCUPbBWjzINpJUmDhbtDZS1e3a8_aUBwnkYz0mnTj4n4__aq6btWmAus7Zjw7JLZ_kNfUgtaLPXB6k1U8MVzX5_C1AAAA.webp"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "CA"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search?q=About+https://www.linkedin.com/posts/ramabhau-patil-a287b448_hope-in-the-heart-of-a-forest-how-a-school-activity-7465061007242047493-ry_y&tbm=ilp",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&q=About+https%3A%2F%2Fwww.linkedin.com%2Fposts%2Framabhau-patil-a287b448_hope-in-the-heart-of-a-forest-how-a-school-activity-7465061007242047493-ry_y",
+      "source": "LinkedIn \u00b7 Ramabhau Patil"
+    },
+    {
+      "position": 7,
+      "title": "Ramabhau Patil's Post",
+      "link": "https://www.linkedin.com/posts/ramabhau-patil-a287b448_heartfelt-thanks-to-krishi-ujala-news-for-activity-7497338240472064000-EePO",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESuwEB6zswFQFJ43AQpPZNZqox2CVQfVCZjUgkFCZ6QQMrozD2Lu32zvEyV3KlsmyxKVuogmrvTghuYLkLBVxQ4hk5fZ4JFpa3Xku7V8SvYi2269DlpVp5JLRLi1CRKsn3pAvRpO-9RZ9XE5dU6BeZVkGMcpNZZq-Jtomnq_NlcU1-Lt1KBBmKh041D_6CT8YEsUFxKJ61j9W2c0orFZ0OqaCeWKtoBzytkq4dHznu7CVEKxnpSEonAdrh-p2R&ved=2ahUKEwjG7sa06NSWAxX5_8kDHaXGLyUQFnoECDEQAQ&uoh=1",
+      "displayed_link": "8 reactions \u00b7 1 week ago",
+      "favicon": "https://serpapi.com/images/i/UklGRsAAAABXRUJQVlA4ILQAAABQAwCdASoQABAAAsBMJbACdLoBLf4oANRJj6d2SZLhF7_ohAD-4n1FofdRna1o8FCt-OiJvVc8lzO8Rt17R6yr0CRJL0FBwsd8OIDxQ356R55Xei0KcLjbfh5C05X1nTKIh8X8ekP3RBUogy_jZ3kCUPbBWjzINpJUmDhbtDZS1e3a8_aUBwnkYz0mnTj4n4__aq6btWmAus7Zjw7JLZ_kNfUgtaLPXB6k1U8MVzX5_C1AAAA.webp",
+      "snippet": "From agricultural engineering to post-harvest innovation, Dr. Ramabhau Tumadu Patil has made significant contributions toward making ...",
+      "snippet_highlighted_words": [
+        "Dr. Ramabhau Tumadu Patil"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "From agricultural engineering to post-harvest innovation, Dr. Ramabhau Tumadu Patil has made significant contributions toward making ...",
+          "source_info_link": "https://www.linkedin.com/posts/ramabhau-patil-a287b448_heartfelt-thanks-to-krishi-ujala-news-for-activity-7497338240472064000-EePO",
+          "icon": "https://serpapi.com/images/i/UklGRsAAAABXRUJQVlA4ILQAAABQAwCdASoQABAAAsBMJbACdLoBLf4oANRJj6d2SZLhF7_ohAD-4n1FofdRna1o8FCt-OiJvVc8lzO8Rt17R6yr0CRJL0FBwsd8OIDxQ356R55Xei0KcLjbfh5C05X1nTKIh8X8ekP3RBUogy_jZ3kCUPbBWjzINpJUmDhbtDZS1e3a8_aUBwnkYz0mnTj4n4__aq6btWmAus7Zjw7JLZ_kNfUgtaLPXB6k1U8MVzX5_C1AAAA.webp"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "CA"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search?q=About+https://www.linkedin.com/posts/ramabhau-patil-a287b448_heartfelt-thanks-to-krishi-ujala-news-for-activity-7497338240472064000-EePO&tbm=ilp",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&q=About+https%3A%2F%2Fwww.linkedin.com%2Fposts%2Framabhau-patil-a287b448_heartfelt-thanks-to-krishi-ujala-news-for-activity-7497338240472064000-EePO",
+      "source": "LinkedIn \u00b7 Ramabhau Patil"
+    },
+    {
+      "position": 8,
+      "title": "Visit to Kashmir..... | Ramabhau Patil",
+      "link": "https://www.linkedin.com/posts/ramabhau-patil-a287b448_visit-to-kashmir-activity-7190935438981763072-WU_6",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESoQEB6zswFQXUR_CjZPUlLpLPksLmCQe0Iy4FO0cIh83gfeT8mSXMb3BY_WNFNDvIx3_-GNpmc6O5BwJYT3o3MUpsGPqOMw5gYX-nTWNaojz34hyxiUiH19qQgQ6MP4AMEYJNnvR44HhM-oHBck6kE-3O8RfjMv70hGexOUiARioWQWBQ4716YZH6jmNRRs2Umjut4h_xb-0QHOSB76nkA6FN-Q&ved=2ahUKEwjG7sa06NSWAxX5_8kDHaXGLyUQFnoECCoQAQ&uoh=1",
+      "displayed_link": "90+ reactions \u00b7 2 years ago",
+      "favicon": "https://serpapi.com/images/i/UklGRsAAAABXRUJQVlA4ILQAAABQAwCdASoQABAAAsBMJbACdLoBLf4oANRJj6d2SZLhF7_ohAD-4n1FofdRna1o8FCt-OiJvVc8lzO8Rt17R6yr0CRJL0FBwsd8OIDxQ356R55Xei0KcLjbfh5C05X1nTKIh8X8ekP3RBUogy_jZ3kCUPbBWjzINpJUmDhbtDZS1e3a8_aUBwnkYz0mnTj4n4__aq6btWmAus7Zjw7JLZ_kNfUgtaLPXB6k1U8MVzX5_C1AAAA.webp",
+      "snippet": "Professor of Agricultural and Biological Engineering | Mentored several startups interested in expanding in Indian market using professional ...",
+      "snippet_highlighted_words": [
+        "Professor of Agricultural and Biological Engineering"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "Professor of Agricultural and Biological Engineering | Mentored several startups interested in expanding in Indian market using professional ...",
+          "source_info_link": "https://www.linkedin.com/posts/ramabhau-patil-a287b448_visit-to-kashmir-activity-7190935438981763072-WU_6",
+          "icon": "https://serpapi.com/images/i/UklGRsAAAABXRUJQVlA4ILQAAABQAwCdASoQABAAAsBMJbACdLoBLf4oANRJj6d2SZLhF7_ohAD-4n1FofdRna1o8FCt-OiJvVc8lzO8Rt17R6yr0CRJL0FBwsd8OIDxQ356R55Xei0KcLjbfh5C05X1nTKIh8X8ekP3RBUogy_jZ3kCUPbBWjzINpJUmDhbtDZS1e3a8_aUBwnkYz0mnTj4n4__aq6btWmAus7Zjw7JLZ_kNfUgtaLPXB6k1U8MVzX5_C1AAAA.webp"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "CA"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search?q=About+https://www.linkedin.com/posts/ramabhau-patil-a287b448_visit-to-kashmir-activity-7190935438981763072-WU_6&tbm=ilp",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&q=About+https%3A%2F%2Fwww.linkedin.com%2Fposts%2Framabhau-patil-a287b448_visit-to-kashmir-activity-7190935438981763072-WU_6",
+      "source": "LinkedIn \u00b7 Ramabhau Patil",
+      "read_more_link": "https://www.google.com/goto?url=CAESkgIB6zswFaUEmSse7rl-t3VQogB0STymdUWSeOzz0UsbO-kIBs4WCwizatrVhr4ys2C8Llvd1Liid7ql7KBLG3yEDzW5N7BkAhivYa7Iki_uSER9512gnSthCgYITWoILkhIBN4eS7wQFHLots83rnTKj1O8wqg3DiwiYZs4htHNu1YO8l9icG3wOKJxl58W5zF6rdiPWZbOK58DnkAWn-PSVWSnb6UmWCfyXaaMxACD5XlzwWcM7N5xZFIs2qQ3x78hjAh3myFW1TrfjhOP9TZmMWKxTDBlwbPBvjBQlwrIXT3mLE5pZTxxtW1XypECvE0cUHDBPsqXWpLro1mPgVf8Mb8sKXihuDlWCppumCJVVYZs"
+    }
+  ],
+  "dmca_messages": {
+    "title": "Notices about Filtered Results",
+    "messages": [
+      {
+        "content": "Some results may have been delisted consistent with local laws. Learn more",
+        "highlighted_words": [
+          {
+            "link": "https://www.google.com/policies/faq",
+            "text": "Learn more"
+          }
+        ]
+      }
+    ]
+  },
+  "pagination": {
+    "current": 1,
+    "next": "https://www.google.com/search?q=Ramabhau+Patil+(site:linkedin.com+OR+site:instagram.com+OR+site:x.com+OR+site:twitter.com)&sca_esv=3715172283c963bb&ei=qaqaaob2Afn_p84PpY2_qQI&start=10&sa=N&sstk=AS6-VmJ9vQUC1WLxvqfaMHJq5I8hvn3RNAbIxHOuBAoPZpn1woERcqI8jN2UfLwmkck26C74pLXbpyTexvvoCL1st4UWmlxFPCV_Qg&ved=2ahUKEwjG7sa06NSWAxX5_8kDHaXGLyUQ8NMDegQIIBAY",
+    "other_pages": {
+      "2": "https://www.google.com/search?q=Ramabhau+Patil+(site:linkedin.com+OR+site:instagram.com+OR+site:x.com+OR+site:twitter.com)&sca_esv=3715172283c963bb&ei=qaqaaob2Afn_p84PpY2_qQI&start=10&sa=N&sstk=AS6-VmJ9vQUC1WLxvqfaMHJq5I8hvn3RNAbIxHOuBAoPZpn1woERcqI8jN2UfLwmkck26C74pLXbpyTexvvoCL1st4UWmlxFPCV_Qg&ved=2ahUKEwjG7sa06NSWAxX5_8kDHaXGLyUQ8tMDegQIIBAG",
+      "3": "https://www.google.com/search?q=Ramabhau+Patil+(site:linkedin.com+OR+site:instagram.com+OR+site:x.com+OR+site:twitter.com)&sca_esv=3715172283c963bb&ei=qaqaaob2Afn_p84PpY2_qQI&start=20&sa=N&sstk=AS6-VmJ9vQUC1WLxvqfaMHJq5I8hvn3RNAbIxHOuBAoPZpn1woERcqI8jN2UfLwmkck26C74pLXbpyTexvvoCL1st4UWmlxFPCV_Qg&ved=2ahUKEwjG7sa06NSWAxX5_8kDHaXGLyUQ8tMDegQIIBAI",
+      "4": "https://www.google.com/search?q=Ramabhau+Patil+(site:linkedin.com+OR+site:instagram.com+OR+site:x.com+OR+site:twitter.com)&sca_esv=3715172283c963bb&ei=qaqaaob2Afn_p84PpY2_qQI&start=30&sa=N&sstk=AS6-VmJ9vQUC1WLxvqfaMHJq5I8hvn3RNAbIxHOuBAoPZpn1woERcqI8jN2UfLwmkck26C74pLXbpyTexvvoCL1st4UWmlxFPCV_Qg&ved=2ahUKEwjG7sa06NSWAxX5_8kDHaXGLyUQ8tMDegQIIBAK",
+      "5": "https://www.google.com/search?q=Ramabhau+Patil+(site:linkedin.com+OR+site:instagram.com+OR+site:x.com+OR+site:twitter.com)&sca_esv=3715172283c963bb&ei=qaqaaob2Afn_p84PpY2_qQI&start=40&sa=N&sstk=AS6-VmJ9vQUC1WLxvqfaMHJq5I8hvn3RNAbIxHOuBAoPZpn1woERcqI8jN2UfLwmkck26C74pLXbpyTexvvoCL1st4UWmlxFPCV_Qg&ved=2ahUKEwjG7sa06NSWAxX5_8kDHaXGLyUQ8tMDegQIIBAM",
+      "6": "https://www.google.com/search?q=Ramabhau+Patil+(site:linkedin.com+OR+site:instagram.com+OR+site:x.com+OR+site:twitter.com)&sca_esv=3715172283c963bb&ei=qaqaaob2Afn_p84PpY2_qQI&start=50&sa=N&sstk=AS6-VmJ9vQUC1WLxvqfaMHJq5I8hvn3RNAbIxHOuBAoPZpn1woERcqI8jN2UfLwmkck26C74pLXbpyTexvvoCL1st4UWmlxFPCV_Qg&ved=2ahUKEwjG7sa06NSWAxX5_8kDHaXGLyUQ8tMDegQIIBAO",
+      "7": "https://www.google.com/search?q=Ramabhau+Patil+(site:linkedin.com+OR+site:instagram.com+OR+site:x.com+OR+site:twitter.com)&sca_esv=3715172283c963bb&ei=qaqaaob2Afn_p84PpY2_qQI&start=60&sa=N&sstk=AS6-VmJ9vQUC1WLxvqfaMHJq5I8hvn3RNAbIxHOuBAoPZpn1woERcqI8jN2UfLwmkck26C74pLXbpyTexvvoCL1st4UWmlxFPCV_Qg&ved=2ahUKEwjG7sa06NSWAxX5_8kDHaXGLyUQ8tMDegQIIBAQ",
+      "8": "https://www.google.com/search?q=Ramabhau+Patil+(site:linkedin.com+OR+site:instagram.com+OR+site:x.com+OR+site:twitter.com)&sca_esv=3715172283c963bb&ei=qaqaaob2Afn_p84PpY2_qQI&start=70&sa=N&sstk=AS6-VmJ9vQUC1WLxvqfaMHJq5I8hvn3RNAbIxHOuBAoPZpn1woERcqI8jN2UfLwmkck26C74pLXbpyTexvvoCL1st4UWmlxFPCV_Qg&ved=2ahUKEwjG7sa06NSWAxX5_8kDHaXGLyUQ8tMDegQIIBAS",
+      "9": "https://www.google.com/search?q=Ramabhau+Patil+(site:linkedin.com+OR+site:instagram.com+OR+site:x.com+OR+site:twitter.com)&sca_esv=3715172283c963bb&ei=qaqaaob2Afn_p84PpY2_qQI&start=80&sa=N&sstk=AS6-VmJ9vQUC1WLxvqfaMHJq5I8hvn3RNAbIxHOuBAoPZpn1woERcqI8jN2UfLwmkck26C74pLXbpyTexvvoCL1st4UWmlxFPCV_Qg&ved=2ahUKEwjG7sa06NSWAxX5_8kDHaXGLyUQ8tMDegQIIBAU",
+      "10": "https://www.google.com/search?q=Ramabhau+Patil+(site:linkedin.com+OR+site:instagram.com+OR+site:x.com+OR+site:twitter.com)&sca_esv=3715172283c963bb&ei=qaqaaob2Afn_p84PpY2_qQI&start=90&sa=N&sstk=AS6-VmJ9vQUC1WLxvqfaMHJq5I8hvn3RNAbIxHOuBAoPZpn1woERcqI8jN2UfLwmkck26C74pLXbpyTexvvoCL1st4UWmlxFPCV_Qg&ved=2ahUKEwjG7sa06NSWAxX5_8kDHaXGLyUQ8tMDegQIIBAW"
+    }
+  },
+  "serpapi_pagination": {
+    "current": 1,
+    "next_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=Ramabhau+Patil+%28site%3Alinkedin.com+OR+site%3Ainstagram.com+OR+site%3Ax.com+OR+site%3Atwitter.com%29&start=10",
+    "next": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=Ramabhau+Patil+%28site%3Alinkedin.com+OR+site%3Ainstagram.com+OR+site%3Ax.com+OR+site%3Atwitter.com%29&start=10",
+    "other_pages": {
+      "2": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=Ramabhau+Patil+%28site%3Alinkedin.com+OR+site%3Ainstagram.com+OR+site%3Ax.com+OR+site%3Atwitter.com%29&start=10",
+      "3": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=Ramabhau+Patil+%28site%3Alinkedin.com+OR+site%3Ainstagram.com+OR+site%3Ax.com+OR+site%3Atwitter.com%29&start=20",
+      "4": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=Ramabhau+Patil+%28site%3Alinkedin.com+OR+site%3Ainstagram.com+OR+site%3Ax.com+OR+site%3Atwitter.com%29&start=30",
+      "5": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=Ramabhau+Patil+%28site%3Alinkedin.com+OR+site%3Ainstagram.com+OR+site%3Ax.com+OR+site%3Atwitter.com%29&start=40",
+      "6": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=Ramabhau+Patil+%28site%3Alinkedin.com+OR+site%3Ainstagram.com+OR+site%3Ax.com+OR+site%3Atwitter.com%29&start=50",
+      "7": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=Ramabhau+Patil+%28site%3Alinkedin.com+OR+site%3Ainstagram.com+OR+site%3Ax.com+OR+site%3Atwitter.com%29&start=60",
+      "8": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=Ramabhau+Patil+%28site%3Alinkedin.com+OR+site%3Ainstagram.com+OR+site%3Ax.com+OR+site%3Atwitter.com%29&start=70",
+      "9": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=Ramabhau+Patil+%28site%3Alinkedin.com+OR+site%3Ainstagram.com+OR+site%3Ax.com+OR+site%3Atwitter.com%29&start=80",
+      "10": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=Ramabhau+Patil+%28site%3Alinkedin.com+OR+site%3Ainstagram.com+OR+site%3Ax.com+OR+site%3Atwitter.com%29&start=90"
+    }
+  }
+}

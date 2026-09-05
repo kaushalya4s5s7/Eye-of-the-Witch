@@ -1,0 +1,1333 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "kind": "FaceSeed",
+      "embedding_sha256": "f0d3a38fed2fcd8dd9f8317c108e43b5c864417d8484b2b122a4519a56ec5ffd",
+      "backend": "insightface_buffalo_s",
+      "id": "face:seed"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://x.com/VijayKumbhar62/status/2088939716603429064",
+      "title": "Vijay Kumbhar on X: \"Happy Birthday, Arvind Kejriwalji ...",
+      "social": true,
+      "engine": "google_lens",
+      "id": "hit:8a1ea094afb37ce7"
+    },
+    {
+      "kind": "Handle",
+      "handle": "x:VijayKumbhar62",
+      "id": "handle:x:VijayKumbhar62"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://m.soundcloud.com/aam-aadmi/5-saal-kejriwal",
+      "title": "Stream 5 Saal Kejriwal by Aam Aadmi | Listen online for free ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:fca3af4d8138bbeb"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.facebook.com/kappy.singh.334/photos/\u0939\u093f\u092e\u094d\u092e\u0924\u0940-\u0938\u0902\u0918\u0930\u094d\u0937\u0940-\u0908\u092e\u093e\u0928\u0926\u093e\u0930-\u0914\u0930-\u0938\u092e\u093e\u091c-\u0915\u094b-\u0938\u0939\u0940-\u0926\u093f\u0936\u093e-\u0926\u0947\u0928\u0947-\u0935\u093e\u0932\u093e-\u092f\u094b\u0926\u094d\u0927\u093e-\u091c\u0928\u094d\u092e-\u0926\u093f\u0928-\u092e\u0941\u092c\u093e\u0930\u0915-\u0939\u094b-/1753718312337773/",
+      "title": "Kappy - \u0939\u093f\u092e\u094d\u092e\u0924\u0940, \u0938\u0902\u0918\u0930\u094d\u0937\u0940, \u0908\u092e\u093e\u0928\u0926\u093e\u0930 \u0914\u0930 ...",
+      "social": true,
+      "engine": "google_lens",
+      "id": "hit:4ea738c92e69e555"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.thehindu.com/news/national/other-states/congress-is-bjps-b-team-aap/article65628562.ece",
+      "title": "Congress is BJP's B team: AAP - The Hindu",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:efcb7ce9373ccd0c"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://en.wikipedia.org/wiki/Arvind_Kejriwal",
+      "title": "Arvind Kejriwal - Wikipedia",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:43b1ad54dc769e97"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.news18.com/news/politics/kamaal-hi-kar-diya-kejriwal-takes-dig-at-channi-after-raids-says-only-mufflers-were-found-at-his-place-4676387.html",
+      "title": "'Kamaal Hi Kar Diya': Kejriwal Takes Dig at Channi After Raids ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:e3d0e3a9c983dece"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://timesofindia.indiatimes.com/city/delhi/check-oxygen-levels-door-to-door-cm-tells-volunteers/articleshow/77599794.cms",
+      "title": "Arvind Kejriwal: Check oxygen levels door to door, CM tells ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:12b378a4783e49e2"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://m.economictimes.com/news/politics-and-nation/delhi-bjp-hits-out-at-arvind-kejriwal-over-farmer-compensation-issue/articleshow/47216323.cms",
+      "title": "Delhi BJP hits out at Arvind Kejriwal over farmer ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:e59d88ba3743c7c8"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.facebook.com/Timesnow/posts/aaps-national-convenor-arvind-kejriwal-thanks-delhi-voters-for-ensuing-resoundin/10163430688295311/",
+      "title": "AAP's national convenor Arvind Kejriwal thanks Delhi voters ...",
+      "social": true,
+      "engine": "google_lens",
+      "id": "hit:edf6064a00a64891"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-news/kejriwal-accuses-government-of-failing-to-prevent-neet-question-paper-leak/4248305",
+      "title": "\u0ba8\u0bc0\u0b9f\u0bcd \u0bb5\u0bbf\u0ba9\u0bbe\u0ba4\u0bcd\u0ba4\u0bbe\u0bb3\u0bcd \u0b95\u0b9a\u0bbf\u0bb5\u0bc8 \u0ba4\u0b9f\u0bc1\u0b95\u0bcd\u0b95 ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:cc657e689705ac8c"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.instagram.com/p/CWaTNPJIkbB/",
+      "title": "Humility is surest sign of strength.\" Am so happy to share ...",
+      "social": true,
+      "engine": "google_lens",
+      "id": "hit:35f14f736b6d5185"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.indiatoday.in/india-today-insight/story/from-the-india-today-archives-2013-arvind-kejriwal-the-arsonist-2367122-2023-05-01",
+      "title": "From the India Today archives (2013) | Arvind Kejriwal: The ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:6c90fa2e9355fbc0"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://pnglove.com/arvind-kejriwal-chief-minister-delhi-ccf2",
+      "title": "Arvind Kejriwal, Chief Minister of Delhi, Transparent PNG im",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:8c4b116e831f970b"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.india.com/webstories/education/most-famous-iitians-who-are-top-indian-politicians-arvind-kejriwal-jairam-ramesh-6335914/",
+      "title": "Famous IIT Graduates Who Are Politicians In India",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:31dc46a1fcd74a08"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://sarkarnama.esakal.com/ampstories/web-stories/arvind-kejriwal-engineering-to-delhi-cm-how-educated-is-arvind-kejriwal-rm96",
+      "title": "Arvind Kejriwal : \u0907\u0902\u091c\u093f\u0928\u093f\u0905\u0930\u0940\u0902\u0917 \u0924\u0947 ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:f53cb5c24676eb7a"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.ibtimes.co.uk/government-agencies-seek-apples-assistance-unlock-arvind-kejriwals-iphone-1724179",
+      "title": "Government Agencies Seek Apple's Assistance To Unlock ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:6a51e821408066c3"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://jagratilahar.com/punjabi/politics/134390/Pm-Must-Answer-For-Ram-Mandir-Chanda-Chori-Aap",
+      "title": "\u0a38\u0a4d\u0a30\u0a40 \u0a30\u0a3e\u0a2e \u0a2e\u0a70\u0a26\u0a30 \u0a1a\u0a70\u0a26\u0a3e-\u0a1a\u0a4b\u0a30\u0a40 \u0a15\u0a30\u0a28 ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:0416dae845468860"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://indianexpress.com/article/india/india-news-india/back-after-10-days-cm-arvind-kejriwal-catches-up-with-work-poll-agenda-2971994/",
+      "title": "Back after 10 days, CM Arvind Kejriwal catches up with work ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:ea67903fde20003f"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.youtube.com/watch?v=WZbWuAUovgg",
+      "title": "Arvind Kejriwal Addresses AAP Volunteers in Margao, Goa ...",
+      "social": true,
+      "engine": "google_lens+yandex_images",
+      "id": "hit:46457e90ebaccb03"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://timesofindia.indiatimes.com/city/guwahati/cm-will-be-walkover-for-bjp-if-kejriwal-is-pitted-against-pm-in-2024-polls/articleshow/93686226.cms",
+      "title": "Kejriwal: Cm: Will Be Walkover For Bjp If Kejriwal Is Pitted ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:dfd4e4328b1211ce"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.indiatoday.in/cities/delhi/video/drinking-water-supply-to-be-hit-in-parts-of-delhi-says-cm-kejriwal-2405921-2023-07-13",
+      "title": "Drinking water supply to be hit in parts of Delhi, says CM ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:13eb7fa38647092e"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.thehindu.com/news/national/andhra-pradesh/SCS-Kejriwal-to-take-up-cause-of-A.P./article14378139.ece",
+      "title": "SCS: Kejriwal to take up cause of A.P. - The Hindu",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:5175b32cbfbb06a2"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.bhaskar.com/local/chandigarh/news/punjab-local-body-election-results-aap-sweep-congress-akali-bjp-defeated-138059057.html",
+      "title": "Punjab Civic Polls: AAP Storms to Victory | Congress, Akali ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:70e85616a92395de"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.bbc.com/news/world-asia-india-68883249",
+      "title": "Arvind Kejriwal: What you need to know about the Indian ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:c4eed6f2bd288552"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://m.economictimes.com/news/politics-and-nation/state-government-will-give-rs-5000-to-every-construction-worker-arvind-kejriwal/articleshow/74794380.cms",
+      "title": "Arvind Kejriwal: State government will give Rs 5000 to every ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:3c8a90f24ac76c50"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.nepalkhabar.com/global/196416-2024-4-1-14-26-52",
+      "title": "\u0905\u0926\u093e\u0932\u0924\u0932\u0947 \u0915\u0947\u091c\u0930\u0940\u0935\u093e\u0932\u0932\u093e\u0908 \u0967\u096b \u0926\u093f\u0928\u0915\u093e ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:c4a763f7be1d239b"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.britannica.com/biography/Arvind-Kejriwal",
+      "title": "Arvind Kejriwal | Life, Anti-Corruption Activism, Aam Aadmi ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:e9a008f2dba023aa"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://prepollsurvey.com/",
+      "title": "Prepoll Survey",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:26e7e5e11aeb59df"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://simple.wikipedia.org/wiki/Arvind_Kejriwal",
+      "title": "Arvind Kejriwal - Simple English Wikipedia, the free ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:b3688ce88eff1415"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.ndtv.com/webstories/feature/delhi-election-results-key-contenders-32654",
+      "title": "Delhi Election Results: Key Contenders",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:a86befd50349ada4"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.healthcareradius.in/tags/sanjeevani-yojana",
+      "title": "Sanjeevani Yojana - News, Views, Reviews, Photos & Videos on ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:16ae76d7491ef729"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.timesnownews.com/web-stories/education/arvind-kejriwal-education-qualification-biography-more/photostory/107698259.cms",
+      "title": "Arvind Kejriwal Education Qualification, Biography & More ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:ca8a9fbbc86041d3"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.latimes.com/world/asia/la-fg-india-politics-insults-20151215-story.html",
+      "title": "'Coward.' 'Psycopath.' Proper spelling aside, insults fly in ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:e78c975c1f80d1a5"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.instagram.com/reel/Da0JZvIo6ND/",
+      "title": "Harsha de Silva | I am not interested in being a minister ...",
+      "social": true,
+      "engine": "google_lens",
+      "id": "hit:139c357982894fce"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.abplive.com/short-videos/news/top-news-11-delhi-elections-2025-cm-atishi-kejriwal-prayagraj-2861832",
+      "title": "Top News: 11 \u092c\u091c\u0947 \u0915\u0940 \u092c\u0921\u093c\u0940 \u0916\u092c\u0930\u0947\u0902 | Delhi ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:de23d42644429bbd"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.livemint.com/news/india/the-odd-even-scheme-will-be-extended-if-necessary-delhi-cm-arvind-kejriwal-11573635010877.html",
+      "title": "Odd even scheme will be extended, if necessary: Delhi CM ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:db2cc67581528070"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.hindustantimes.com/india-news/kejriwal-to-undergo-treatment-in-bengaluru-for-high-blood-sugar/story-XSsH9lf6pGz13PzZyRyMZN.html",
+      "title": "Arvind Kejriwal to undergo treatment for high blood sugar in ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:c84e93ff97c4d0ca"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.tribuneindia.com/news/comment/an-officer-a-politician-434331/",
+      "title": "An officer & a politician - The Tribune",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:5b96cbfe55405ff5"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.barandbench.com/news/six-most-lawyer-relevant-changes-aap-has-promised-make",
+      "title": "Six of the most \"lawyer-relevant\" changes the AAP has ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:16632047eeb7fc69"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://x.com/Kannan9900/status/2089765443422822715",
+      "title": "X on X / X",
+      "social": true,
+      "engine": "google_lens",
+      "id": "hit:d7a71400b04d80fd"
+    },
+    {
+      "kind": "Handle",
+      "handle": "x:Kannan9900",
+      "id": "handle:x:Kannan9900"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.independent.co.uk/topic/arvind-kejriwal",
+      "title": "Arvind Kejriwal - latest news, breaking stories and comment ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:4373087a5715ca44"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.gsma.com/solutions-and-impact/technologies/networks/gsma_people/ganesh-shenbagaraman/",
+      "title": "Ganesh Shenbagaraman - Networks",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:f5d9a8d9ab76b25d"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.moneycontrol.com/news/politics/know-your-leader-arvind-kejriwal-journey-of-an-insignificant-man-from-anti-graft-crusader-to-delhi-cm-3954371.html",
+      "title": "Know Your Leader | Arvind Kejriwal: Journey of an ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:4199668a4d06c656"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.scmp.com/news/asia/south-asia/article/3298133/france-advanced-talks-buy-indian-rocket-launcher-system-indian-official-says",
+      "title": "France in 'active talks' to buy Indian rocket launcher ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:c1a785d3099b5f63"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://indianexpress.com/about/arvind-kejriwal/",
+      "title": "Arvind Kejriwal: Latest News, Photos, Videos & Updates | The ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:8004afce3d739838"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://aapkerala.org/our-team-member/",
+      "title": "AAP Kerala Leaders - Aam Aadmi Party Kerala - \u0d06\u0d02 ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:7d3290290dfa3ada"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.linkedin.com/posts/thalappil-pradeep-b22505ba_i-am-deeply-humbled-and-honored-to-share-activity-7490742128663257088-chGN",
+      "title": "I am deeply humbled and honored to share that I have been ...",
+      "social": true,
+      "engine": "google_lens",
+      "id": "hit:665210aaba49d8bc"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.newsgram.com/delhi/2022/10/27/ganesha-and-lakshmi-on-currency-notes-arvind-kejriwals-unique-advice-to-boost-the-indian-economy",
+      "title": "Ganesha and Lakshmi on currency notes: Arvind Kejriwal's ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:f48332e76a2a193a"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.indiatoday.in/india/story/gujarat-assembly-election-aap-gains-ground-bjp-congress-counter-attack-strategy-1984187-2022-08-05",
+      "title": "Gujarat polls: As AAP gains ground, BJP, Congress devise ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:ea839134d35cecfa"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://timesofindia.indiatimes.com/education/web-stories/5-famous-iitians-who-joined-politics/photostory/99077853.cms",
+      "title": "5 Famous IITians Who Joined Politics | Times of India",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:27074e771211d377"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.thenewsminute.com/news/orop-suicide-police-not-letting-me-go-meet-veterans-family-says-kejriwal-52295",
+      "title": "OROP Suicide: Police not letting me go to meet veteran's ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:2848803f8121ce56"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.business-standard.com/about/who-is-arvind-kejriwal",
+      "title": "Who is Arvind Kejriwal: Latest News on Arvind Kejriwal, Top ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:0c7846f8da5f41bd"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.thehindu.com/news/cities/Delhi/it-was-a-wellplanned-strategy/article5917745.ece",
+      "title": "'It was a well-planned strategy' - The Hindu",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:48544871eb83ac5b"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://orbitbeyond.com/team",
+      "title": "Team \u2014 ORBITBeyond",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:fc2f90f2a436e1bb"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.abplive.com/news/india/free-rides-for-women-in-dtc-cluster-buses-from-october-29-delhi-cm-announce-1184538",
+      "title": "Free rides for women in DTC, cluster buses from October 29 ...",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:950a3b508073af9f"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.asianage.com/tags/satyender-jain",
+      "title": "Read all Latest Updates on and about Satyender Jain",
+      "social": false,
+      "engine": "google_lens",
+      "id": "hit:3a3bda855e201dc9"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.linkedin.com/posts/dr-gv-rao-34a22113_vikramsharma-globalindian-gisurgeon-activity-7124714030363004928-mlAV",
+      "title": "vikramsharma #globalindian #gisurgeon | Dr GV Rao | 24 comments",
+      "social": true,
+      "engine": "google_lens",
+      "id": "hit:935ea88d440a4a9b"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.navodayatimes.in/news/delhi/why-delhi-chief-minister-kejriwal-is-silent-on-bihar/49543/",
+      "title": "\u092c\u093f\u0939\u093e\u0930 \u0915\u0947 \u0930\u093e\u091c\u0928\u0940\u0924\u093f\u0915 \u0918\u091f\u0928\u093e\u0915\u094d\u0930\u092e \u092a\u0930 \u0926\u093f\u0932\u094d\u0932\u0940 \u0915\u0947 \u092e\u0941\u0916\u094d\u092f\u092e\u0902\u0924\u094d\u0930\u0940 \u0915\u0947\u091c\u0930\u0940\u0935\u093e\u0932 \u091a\u0941\u092a \u0915\u094d\u092f\u094b\u0902?",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:3fa23117d91b7151"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.bbc.com/gujarati/topics/c2dwqj93qjdt",
+      "title": "\u0a86\u0aae \u0a86\u0aa6\u0aae\u0ac0 \u0aaa\u0abe\u0ab0\u0acd\u0a9f\u0ac0 - BBC News \u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4\u0ac0",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:2e0e7a03337fad15"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.healthcareradius.in/clinical/25810-convalescent-plasma-therapy-trials-for-covid-19-to-begin-in-delhi",
+      "title": "Convalescent Plasma Therapy trials for COVID-19 to begin in Delhi - Healthcare R",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:f38fffd9d9203dd6"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.causticnews.com/kejriwal-meet-lg-ramjas-issue/",
+      "title": "Kejriwal to meet LG on Ramjas issue",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:52ef5438b2b31d1d"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://en.wikipedia.org/wiki/Second_Kejriwal_ministry",
+      "title": "Second Kejriwal ministry - Wikipedia",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:e2a71c349ebe6cd3"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.youtube.com/playlist?list=PLR8IdIqpHjijZSMkxqrSwwMW3e_1YLoAm",
+      "title": "Naisotch - YouTube",
+      "social": true,
+      "engine": "yandex_images",
+      "id": "hit:ab57d04b3fdedb42"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.lawnn.com/sc-apponted-lokayukt/",
+      "title": "Lokayukta in Uttar Pradesh",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:6aa783b0f1859999"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://kimskashmir.com/ed-arrests-delhi-cm-arvind-kejriwal-in-liquor-policy-case/",
+      "title": "ED arrests Delhi CM Arvind Kejriwal in liquor policy case Kashmir Independent Me",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:05831965cca819b6"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://m.punjabkesari.in/national/news/kejriwal-will-face-hunger-strike-on-sealing-766896?amp",
+      "title": "\u0938\u0940\u0932\u093f\u0902\u0917 \u092a\u0930 \u092d\u0942\u0916 \u0939\u0921\u093c\u0924\u093e\u0932 \u0915\u0930\u0947\u0902\u0917\u0947 \u0915\u0947\u091c\u0930\u0940\u0935\u093e\u0932, \u0938\u0940\u090f\u0906\u0908\u091f\u0940 \u0928\u0947 \u092c\u0924\u093e\u092f\u093e ''\u0930\u093e\u091c\u0928\u0940\u0924\u093f\u0915 \u0928\u094c\u091f\u0902\u0915\u0940'' -amp",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:4134f7fc8e5abee0"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.youtube.com/user/ayushhere/playlists?disable_polymer=1",
+      "title": "Ayush Nadimpalli - YouTube",
+      "social": true,
+      "engine": "yandex_images",
+      "id": "hit:eff5ea4e2ed470a5"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://theshillongtimes.com/2017/08/08/compensation-for-deceased-sanitation-workers-kin-announced/",
+      "title": "Compensation for deceased sanitation workers' kin announced - The Shillong Times",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:67c288341c00ba10"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://turkcealtyazi.org/prs/10196927/kamran-khimani.html",
+      "title": "Kamran Khimani - Senarist - TurkceAltyazi.org",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:b409328879da8622"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://embed.aajtak.in/share/video/short-videos/41d24041",
+      "title": "Go to image page",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:fe453f6e2cf2764f"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://questionsdeck.in/page/40/",
+      "title": "Questionsdeck",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:cff0e328bef82d23"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.bbc.com/gujarati/articles/ckgwgr20wn7o",
+      "title": "\u0aa6\u0abf\u0ab2\u0acd\u0ab9\u0ac0\u0aa8\u0abe \u0aae\u0ac1\u0a96\u0acd\u0aaf \u0aae\u0a82\u0aa4\u0acd\u0ab0\u0ac0 \u0a85\u0ab0\u0ab5\u0abf\u0a82\u0aa6 \u0a95\u0ac7\u0a9c\u0ab0\u0ac0\u0ab5\u0abe\u0ab2\u0aa8\u0ac7 \u0ab8\u0ac1\u0aaa\u0acd\u0ab0\u0ac0\u0aae \u0a95\u0acb\u0ab0\u0acd\u0a9f\u0ac7 \u0a9c\u0abe\u0aae\u0ac0\u0aa8 \u0a86\u0aaa\u0acd\u0aaf\u0abe- \u0aa8\u0acd\u0aaf\u0ac2\u0a9d \u0a85\u0aaa\u0aa1\u0ac7\u0a9f",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:a4249a56397a3dad"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://timesofindia.indiatimes.com/city/delhi/city-given-stepmotherly-treatment-cm/articleshow/97534435.cms",
+      "title": "Union Budget 2023-24: Delhi given stepmotherly treatment, says CM Arvind Kejriwa",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:846fc5f07abbbe5d"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.youtube.com/post/Ugkxf1Vm-nuNaFblrZHTnkcHQVFnn0uNhXQE",
+      "title": "\u0417\u0430\u043f\u0438\u0441\u044c \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f Star anubhav news official - YouTube",
+      "social": true,
+      "engine": "yandex_images",
+      "id": "hit:8942af3e7813a539"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://embed.aajtak.in/share/video/short-videos/c1f294c1",
+      "title": "Go to image page",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:cac5965ba61cf872"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.indiatoday.in/india/story/harassed-because-of-bjp-s-fear-of-kejriwal-says-aap-amid-raids-at-party-s-gujarat-office-1999722-2022-09-13",
+      "title": "Harassed because of BJP\u2019s fear of Kejriwal, says AAP amid 'raids' at party\u2019s Guj",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:d004102eaea91c47"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.dailymail.com/indiahome/indianews/article-2309529/Kejriwal-contest-Delhi-assembly-elections.html",
+      "title": "Kejriwal to contest Delhi assembly elections Daily Mail Online",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:71d36f343dcc01c2"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.sotwe.com/ashish_r01",
+      "title": "Sudhir Chaudhary @ashish_r01 - Twitter Profile Sotwe",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:c501bef90f3515ec"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.tribuneindia.com/news/archive/nation/calling-pak-jit-bjp%C3%A2%E2%82%AC%E2%84%A2s-blunder-kejriwal-218073",
+      "title": "Calling Pak JIT BJP\u2019s blunder: Kejriwal - The Tribune",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:e9ab20a6ef7db221"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "http://in.infoaboutcompanies.com/Catalog/TS/Secunderabad/Gastroenterologist/Dr-Govind-Verma-(Gastroenterologist-and-Hepatologist)",
+      "title": "Dr Govind Verma (Gastroenterologist and Hepatologist), Pace Hospitals, Begumpet",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:740f9e5c60d9a0fb"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.asianage.com/books/151219/dont-believe-in-death-penalty-even-for-nirbhaya-rapists.html",
+      "title": "Don't believe in death penalty, even for Nirbhaya rapists' Don't believe in deat",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:02c1fa099f58aed7"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.thestatesman.com/india/kejriwal-urges-lg-to-get-water-bill-scheme-approved-delhi-under-constitutional-crisis-says-delhi-cm-1503271084.html",
+      "title": "Kejriwal urges LG to get water bill scheme approved; Delhi under Constitutional",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:05776027b0ef8163"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://english.varthabharati.in/india/prateek-yadav-mulayam-singh-yadavs-younger-son-dies-at-38",
+      "title": "Prateek Yadav, Mulayam Singh Yadav's younger son, dies at 38",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:aa05170fc86995af"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://odishabytes.com/repolling-an-insult-to-peoples-opinion-bhartruhari/",
+      "title": "Repolling An Insult To People\u2019s Opinion: Bhartruhari OdishaBytes",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:956b817bba8ffee3"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://indianexpress.com/article/india/kg-suresh-india-habitat-centre-9966125/lite/",
+      "title": "KG Suresh appointed Director of India Habitat Centre India News - The Indian Exp",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:c5cd4d88b34e2d6f"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://hindi.cnbctv18.com/webstories/news/delhi-chief-minister-arvind-kejriwal-and-punjab-chief-minister-bhagwant-man-visit-ayodhya-for-ram-lala-darshan-905.htm",
+      "title": "\u0930\u093e\u092e \u0915\u0940 \u0936\u0930\u0923 \u092e\u0947\u0902 \u0915\u0947\u091c\u0930\u0940\u0935\u093e\u0932 \u0914\u0930 \u092d\u0917\u0935\u0902\u0924 \u092e\u093e\u0928, \u0915\u0932 \u092a\u0939\u0941\u0902\u091a\u0947\u0902\u0917\u0947 \u0905\u092f\u094b\u0927\u094d\u092f\u093e",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:77fb38d1a6ab627d"
+    },
+    {
+      "kind": "ImageHit",
+      "url": "https://www.behindwoods.com/news-shots-slideshow/list-of-chief-ministers-facing-criminal-cases/arvind-kejriwal-delhi.html",
+      "title": "List of Chief Ministers facing criminal cases",
+      "social": false,
+      "engine": "yandex_images",
+      "id": "hit:55d7e34f41f0a03a"
+    },
+    {
+      "kind": "Post",
+      "url": "https://www.instagram.com/p/CWaTNPJIkbB/",
+      "face_similarity": 0.8685,
+      "social": true,
+      "content_hash": "d3c8cc262514b58f8b8f9a26baa9c5532de1ae0066ef3448be0dede4e558aeb1",
+      "id": "post:35f14f736b6d5185"
+    },
+    {
+      "kind": "Post",
+      "url": "https://x.com/VijayKumbhar62/status/2088939716603429064",
+      "face_similarity": 0.8478,
+      "social": true,
+      "content_hash": "2b814b5467fdf0a8a8f4a128fc399804798f3ff3b2bac111a1632a3e879bdcf4",
+      "id": "post:8a1ea094afb37ce7"
+    },
+    {
+      "kind": "Post",
+      "url": "https://www.facebook.com/kappy.singh.334/photos/\u0939\u093f\u092e\u094d\u092e\u0924\u0940-\u0938\u0902\u0918\u0930\u094d\u0937\u0940-\u0908\u092e\u093e\u0928\u0926\u093e\u0930-\u0914\u0930-\u0938\u092e\u093e\u091c-\u0915\u094b-\u0938\u0939\u0940-\u0926\u093f\u0936\u093e-\u0926\u0947\u0928\u0947-\u0935\u093e\u0932\u093e-\u092f\u094b\u0926\u094d\u0927\u093e-\u091c\u0928\u094d\u092e-\u0926\u093f\u0928-\u092e\u0941\u092c\u093e\u0930\u0915-\u0939\u094b-/1753718312337773/",
+      "face_similarity": 0.8342,
+      "social": true,
+      "content_hash": "57f0169da0406e969d3724633cf81a359f016b57ddfecb4ad05765bf9d7c9c45",
+      "id": "post:4ea738c92e69e555"
+    },
+    {
+      "kind": "Post",
+      "url": "https://www.youtube.com/playlist?list=PLR8IdIqpHjijZSMkxqrSwwMW3e_1YLoAm",
+      "face_similarity": 0.6717,
+      "social": true,
+      "content_hash": "71c91055cc8d6fedd74addd6cd2ae4426d9808f599d97859f29633bb7081c4c7",
+      "id": "post:ab57d04b3fdedb42"
+    },
+    {
+      "kind": "Post",
+      "url": "https://x.com/Kannan9900/status/2089765443422822715",
+      "face_similarity": 0.6486,
+      "social": true,
+      "content_hash": "3db8fa8d693765ca31ca8c2ab500e2e8d19dc9b2431af5652a17b2666a686d44",
+      "id": "post:d7a71400b04d80fd"
+    }
+  ],
+  "links": [
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:8a1ea094afb37ce7"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:fca3af4d8138bbeb"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:4ea738c92e69e555"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:efcb7ce9373ccd0c"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:43b1ad54dc769e97"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:e3d0e3a9c983dece"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:12b378a4783e49e2"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:e59d88ba3743c7c8"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:edf6064a00a64891"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:cc657e689705ac8c"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:35f14f736b6d5185"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:6c90fa2e9355fbc0"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:8c4b116e831f970b"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:31dc46a1fcd74a08"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:f53cb5c24676eb7a"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:6a51e821408066c3"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:0416dae845468860"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:ea67903fde20003f"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens+yandex_images",
+      "source": "face:seed",
+      "target": "hit:46457e90ebaccb03"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:dfd4e4328b1211ce"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:13eb7fa38647092e"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:5175b32cbfbb06a2"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:70e85616a92395de"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:c4eed6f2bd288552"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:3c8a90f24ac76c50"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:c4a763f7be1d239b"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:e9a008f2dba023aa"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:26e7e5e11aeb59df"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:b3688ce88eff1415"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:a86befd50349ada4"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:16ae76d7491ef729"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:ca8a9fbbc86041d3"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:e78c975c1f80d1a5"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:139c357982894fce"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:de23d42644429bbd"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:db2cc67581528070"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:c84e93ff97c4d0ca"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:5b96cbfe55405ff5"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:16632047eeb7fc69"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:d7a71400b04d80fd"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:4373087a5715ca44"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:f5d9a8d9ab76b25d"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:4199668a4d06c656"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:c1a785d3099b5f63"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:8004afce3d739838"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:7d3290290dfa3ada"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:665210aaba49d8bc"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:f48332e76a2a193a"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:ea839134d35cecfa"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:27074e771211d377"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:2848803f8121ce56"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:0c7846f8da5f41bd"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:48544871eb83ac5b"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:fc2f90f2a436e1bb"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:950a3b508073af9f"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:3a3bda855e201dc9"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "google_lens",
+      "source": "face:seed",
+      "target": "hit:935ea88d440a4a9b"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:3fa23117d91b7151"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:2e0e7a03337fad15"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:f38fffd9d9203dd6"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:52ef5438b2b31d1d"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:e2a71c349ebe6cd3"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:ab57d04b3fdedb42"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:6aa783b0f1859999"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:05831965cca819b6"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:4134f7fc8e5abee0"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:eff5ea4e2ed470a5"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:67c288341c00ba10"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:b409328879da8622"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:fe453f6e2cf2764f"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:cff0e328bef82d23"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:a4249a56397a3dad"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:846fc5f07abbbe5d"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:8942af3e7813a539"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:cac5965ba61cf872"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:d004102eaea91c47"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:71d36f343dcc01c2"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:c501bef90f3515ec"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:e9ab20a6ef7db221"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:740f9e5c60d9a0fb"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:02c1fa099f58aed7"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:05776027b0ef8163"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:aa05170fc86995af"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:956b817bba8ffee3"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:c5cd4d88b34e2d6f"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:77fb38d1a6ab627d"
+    },
+    {
+      "kind": "FOUND_VIA",
+      "engine": "yandex_images",
+      "source": "face:seed",
+      "target": "hit:55d7e34f41f0a03a"
+    },
+    {
+      "kind": "ACCEPTED_IN",
+      "face_similarity": 0.8685,
+      "source": "face:seed",
+      "target": "post:35f14f736b6d5185"
+    },
+    {
+      "kind": "ACCEPTED_IN",
+      "face_similarity": 0.8478,
+      "source": "face:seed",
+      "target": "post:8a1ea094afb37ce7"
+    },
+    {
+      "kind": "ACCEPTED_IN",
+      "face_similarity": 0.8342,
+      "source": "face:seed",
+      "target": "post:4ea738c92e69e555"
+    },
+    {
+      "kind": "ACCEPTED_IN",
+      "face_similarity": 0.6717,
+      "source": "face:seed",
+      "target": "post:ab57d04b3fdedb42"
+    },
+    {
+      "kind": "ACCEPTED_IN",
+      "face_similarity": 0.6486,
+      "source": "face:seed",
+      "target": "post:d7a71400b04d80fd"
+    },
+    {
+      "kind": "HAS_HANDLE",
+      "source": "hit:8a1ea094afb37ce7",
+      "target": "handle:x:VijayKumbhar62"
+    },
+    {
+      "kind": "AUTHORED_OR_APPEARS",
+      "source": "handle:x:VijayKumbhar62",
+      "target": "post:8a1ea094afb37ce7"
+    },
+    {
+      "kind": "HAS_HANDLE",
+      "source": "hit:d7a71400b04d80fd",
+      "target": "handle:x:Kannan9900"
+    },
+    {
+      "kind": "AUTHORED_OR_APPEARS",
+      "source": "handle:x:Kannan9900",
+      "target": "post:d7a71400b04d80fd"
+    }
+  ]
+}
