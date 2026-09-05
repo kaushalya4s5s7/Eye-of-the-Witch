@@ -1,14 +1,48 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+build/
+
+# logs
+*.log
+npm-debug.log*
+
+# env
 .env
+.env.*
+!.env.example
+
+# editor / OS
+.DS_Store
+*.local
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# python (root-level pipeline scripts, e.g. smoke_e2e.py / smoke_full.py)
 .venv/
 __pycache__/
 *.pyc
 .pytest_cache/
+*.egg-info/
 models/
 *.onnx
-.DS_Store
-node_modules/
-dist/
-*.egg-info/
-.idea/
-.vscode/
+
+# real pipeline run data (never committed; fixtures/ holds the committed stand-ins)
 runs/
+
+# live pipeline bridge — backend runtime state (see
+# docs/superpowers/specs/2026-09-04-live-pipeline-bridge-design.md)
+backend/.venv/
+backend/uploads/
+backend/runs
+backend/__pycache__/
+
+# vite cache
+client/.vite/
+
+# subagent-driven-development process workspace (ledgers, review packages,
+# task briefs/reports) — not a deliverable, never committed
+.superpowers/

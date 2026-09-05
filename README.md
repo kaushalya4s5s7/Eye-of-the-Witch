@@ -1,10 +1,21 @@
-# HH Goa 2026 — Face → Web Search → Blockchain Verify
+# Eye of the Witch — HH Goa 2026
 
-End-to-end pipeline for the shortlisting task:
+**Face scan → live web/social search → matching post(s) → on-chain fingerprint → re-verify**,
+wrapped in a split-screen ritual UI.
 
-**Face scan → live web/social search → matching post(s) → on-chain fingerprint → re-verify**
+- **`backend/`** — the pipeline: `InsightFace` detection → live reverse-image
+  search (SerpAPI: Google Lens, Yandex Images, Google Reverse Image) → Merkle
+  root over accepted posts → attestation on EAS (Sepolia) → re-verify.
+- **`client/`** — the UI. Left: fantasy/video ritual panel. Right: a real
+  terminal (xterm.js) tailing a JSONL event stream from the backend. Its
+  ground-truth spec — event schema, hard rules, UI state machine, build
+  order — is [`client/CLAUDE.md`](client/CLAUDE.md). Read that first if
+  you're working on the UI.
 
-No website. CLI pipeline only.
+> The root-level `smoke_e2e.py` / `smoke_full.py` / `samples/` / `requirements.txt`
+> are the pipeline's original, pre-UI form (kept for history). `backend/`
+> holds the copy the client's dev bridge actually drives; that's the one to
+> run against day to day.
 
 ---
 
@@ -22,15 +33,16 @@ Optional intelligence (still the same pipeline shape):
 
 ---
 
-## Setup
+## Running the pipeline (backend)
 
 ```bash
+cd backend
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Create `.env` in the repo root (never commit it):
+Create `.env` in `backend/` (never commit it):
 
 ```bash
 SERPAPI_API_KEY=...
@@ -38,10 +50,6 @@ IMGBB_API_KEY=...
 SEPOLIA_RPC_URL=https://ethereum-sepolia-rpc.publicnode.com
 PRIVATE_KEY=0x...   # Sepolia-funded wallet; rotate if ever exposed
 ```
-
----
-
-## How to run
 
 **Full pipeline** (multi-engine + graph + anchor gate + EAS):
 
@@ -57,11 +65,11 @@ PRIVATE_KEY=0x...   # Sepolia-funded wallet; rotate if ever exposed
 .venv/bin/python smoke_e2e.py --insightface samples/elon_musk.jpg
 ```
 
-Artifacts land in `runs/<run_id>/`:
+Artifacts land in `backend/runs/<run_id>/`:
 
 | File | Purpose |
 |---|---|
-| `events.jsonl` | Live run events (for UI / demo terminal) |
+| `events.jsonl` | Live run events (drives the client's terminal + ritual panel) |
 | `accepted.json` | Matching posts used for Merkle |
 | `anchor.json` | Dual-confirm anchor (if any) |
 | `merkle.json` | Root + leaves |
@@ -71,6 +79,20 @@ Artifacts land in `runs/<run_id>/`:
 | `smoke_report.json` | Pass / no-match / fail summary |
 
 Exit codes: `0` pass · `2` no match (no chain write) · `1` hard failure.
+
+---
+
+## Running the UI (client)
+
+```bash
+cd client
+npm install
+npm run dev
+```
+
+By default it plays back a committed fixture (`client/fixtures/*.jsonl`) — no
+backend run needed. See [`client/CLAUDE.md`](client/CLAUDE.md) for the event
+contract, fixture list, and how to point it at a live `backend/` run instead.
 
 ---
 
@@ -115,7 +137,7 @@ This is **similarity evidence**, not legal identity proof.
 - Social hotlink / scrape limits: we score **thumbnails** from search results, not full private profiles.
 - Gallery-from-profile enrichment (plan Slice II) is **not** implemented — brief is satisfied without it.
 - Face thresholds are tuned for smoke demos; lookalikes can still score in the mid band.
-- `runs/` and `.env` are gitignored; share demo artifacts separately if needed.
+- `runs/`, `backend/runs/`, and `.env` are gitignored; share demo artifacts separately if needed.
 - If a private key was ever pasted in chat, **rotate** it.
 
 ---
@@ -123,22 +145,31 @@ This is **similarity evidence**, not legal identity proof.
 ## Repo layout
 
 ```text
-smoke_e2e.py              # core steps + lean E2E
-smoke_full.py             # full multi-engine + anchor + graph + events
-requirements.txt
-samples/                  # demo images
-runs/                     # local run artifacts (gitignored)
-events_contract.md        # UI event schema (optional teammate)
+backend/                   canonical pipeline (run this day to day)
+  smoke_e2e.py
+  smoke_full.py
+  requirements.txt
+  samples/
+client/                    the ritual UI
+  CLAUDE.md                ground-truth doc (read every session)
+  fixtures/                hand-authored JSONL event runs for dev
+  media/                   AI-generated video clips
+  src/                     the UI
+docs/                      design specs and implementation plans
+smoke_e2e.py, smoke_full.py, requirements.txt, samples/   original
+  pre-UI pipeline copy, kept for history — see the backend/ note above
+architecture.md            pipeline architecture notes
+events_contract.md         UI event schema
 intelligent_search_plan.md
-architecture.md
+idea.md
+ryuk_handoff.md
 ```
-
----
 
 ## Task checklist
 
-- [x] Face detect + encode  
-- [x] Genuine live web/social search → ≥1 matching post  
-- [x] Hash / fingerprint on chain + re-verify  
-- [x] No website required  
-- [x] GitHub-ready source + this README  
+- [x] Face detect + encode
+- [x] Genuine live web/social search → ≥1 matching post
+- [x] Hash / fingerprint on chain + re-verify
+- [x] No website required (pipeline runs standalone via `backend/`)
+- [x] Split-screen ritual UI wired to live pipeline events
+- [x] GitHub-ready source + this README
