@@ -1,79 +1,191 @@
 /**
- * The event schema, verbatim from client/CLAUDE.md.
+ * Event vocabulary + runtime validator. Mirrors "Event contract (v1)" in
+ * client/CLAUDE.md. If that section changes, change this too — schema.test.ts
+ * fails until the fixtures agree.
  *
- * This file is the single source of truth in code. If CLAUDE.md changes,
- * change this too — and `schema.test.ts` will fail until the fixtures agree.
+ * Three tiers:
+ *   closed    emitted today, exact payload enforced (fields required, no extras)
+ *   open      emitted today, payload not yet locked — name must be valid, fields pass
+ *   reserved  name locked, pipeline to follow — validated as open
  *
- * Hard rule (CLAUDE.md): do not add or remove fields. `validateEvent` rejects
- * unknown events, missing fields, and unexpected extra fields.
+ * Envelope keys (ts, seq, run_id) are allowed on every event and ignored by
+ * the state machine.
  */
-
-export type EotwEvent =
-  | { event: 'FaceDetected'; face_bbox: number[]; embedding_id: string; confidence: number }
-  | { event: 'ImageHosted'; crop_url: string }
-  | { event: 'ImageSearchCompleted'; engine: string; hit_count: number }
-  | { event: 'CandidateScored'; url: string; face_sim: number; source_trust: number; decision: string }
-  | { event: 'PostAccepted'; url: string; thumbnail: string; face_sim: number }
-  | { event: 'NoMatchFound'; candidates_checked: number; reason: string }
-  | { event: 'ConsentBound'; consent_hash: string }
-  | { event: 'MerkleBuilt'; merkle_root: string; leaf_count: number }
-  | { event: 'Attesting' }
-  | { event: 'Attested'; tx_hash: string; attestation_uid: string; easscan_url: string }
-  | { event: 'VerifyPassed'; matched: true }
-  | { event: 'VerifyFailed'; matched: false; reason: string }
-  | { event: 'Failed'; stage: string; error: string }
-
-export type EotwEventName = EotwEvent['event']
 
 type FieldType = 'string' | 'number' | 'boolean' | 'array' | 'object'
 
-const SCHEMA: Record<EotwEventName, Record<string, FieldType>> = {
-  FaceDetected: { face_bbox: 'array', embedding_id: 'string', confidence: 'number' },
-  ImageHosted: { crop_url: 'string' },
-  ImageSearchCompleted: { engine: 'string', hit_count: 'number' },
-  CandidateScored: { url: 'string', face_sim: 'number', source_trust: 'number', decision: 'string' },
-  PostAccepted: { url: 'string', thumbnail: 'string', face_sim: 'number' },
-  NoMatchFound: { candidates_checked: 'number', reason: 'string' },
-  ConsentBound: { consent_hash: 'string' },
-  MerkleBuilt: { merkle_root: 'string', leaf_count: 'number' },
-  Attesting: {},
-  Attested: { tx_hash: 'string', attestation_uid: 'string', easscan_url: 'string' },
-  VerifyPassed: { matched: 'boolean' },
-  VerifyFailed: { matched: 'boolean', reason: 'string' },
-  Failed: { stage: 'string', error: 'string' },
+/** Key suffixed with "?" is optional. */
+type FieldSpec = Record<string, FieldType>
+
+export type FailedStage =
+  | 'face'
+  | 'host'
+  | 'search'
+  | 'accept'
+  | 'expand'
+  | 'merkle'
+  | 'attest'
+  | 'verify'
+  | 'unknown'
+
+export interface Envelope {
+  ts?: string
+  seq?: number
+  run_id?: string
 }
 
-export const KNOWN_EVENTS = Object.keys(SCHEMA) as EotwEventName[]
+type ClosedEvent =
+  | { event: 'FaceDetected'; backend: string; det_score: number; embedding_sha256: string }
+  | { event: 'ImageHosted'; url: string }
+  | { event: 'ImageSearchCompleted'; engine: string; hits: number }
+  | { event: 'PostAccepted'; count: number; top_sim: number }
+  | { event: 'MerkleBuilt'; root: string }
+  | { event: 'Attesting'; root: string }
+  | { event: 'Attested'; tx_hash: string; uid: string; easscan: string }
+  | { event: 'Failed'; error: string; stage?: FailedStage }
+
+type OpenOrReservedEvent = { event: OpenEventName | ReservedEventName; [key: string]: unknown }
+
+export type EotwEvent = (ClosedEvent | OpenOrReservedEvent) & Envelope
+
+export type EotwEventName = ClosedEventName | OpenEventName | ReservedEventName
+
+const CLOSED_NAMES = [
+  'FaceDetected',
+  'ImageHosted',
+  'ImageSearchCompleted',
+  'PostAccepted',
+  'MerkleBuilt',
+  'Attesting',
+  'Attested',
+  'Failed',
+] as const
+
+const OPEN = [
+  'ImageSearchRequested',
+  'ImageSearchFailed',
+  'SearchMerged',
+  'ExpandRequested',
+  'ExpandCompleted',
+  'ExpandSkipped',
+  'GraphUpserted',
+  'VerifyPassed',
+] as const
+
+const RESERVED = ['CandidateScored', 'VerifyFailed', 'NoMatchFound', 'ConsentBound'] as const
+
+type ClosedEventName = (typeof CLOSED_NAMES)[number]
+type OpenEventName = (typeof OPEN)[number]
+type ReservedEventName = (typeof RESERVED)[number]
+
+const CLOSED: Record<ClosedEventName, FieldSpec> = {
+  FaceDetected: { backend: 'string', det_score: 'number', embedding_sha256: 'string' },
+  ImageHosted: { url: 'string' },
+  ImageSearchCompleted: { engine: 'string', hits: 'number' },
+  PostAccepted: { count: 'number', top_sim: 'number' },
+  MerkleBuilt: { root: 'string' },
+  Attesting: { root: 'string' },
+  Attested: { tx_hash: 'string', uid: 'string', easscan: 'string' },
+  Failed: { error: 'string', 'stage?': 'string' },
+}
+
+const ENVELOPE_KEYS: Record<string, FieldType> = {
+  ts: 'string',
+  seq: 'number',
+  run_id: 'string',
+}
+
+const OPEN_SET = new Set<string>(OPEN)
+const RESERVED_SET = new Set<string>(RESERVED)
+
+export const VOCABULARY: EotwEventName[] = [
+  ...(Object.keys(CLOSED) as ClosedEventName[]),
+  ...OPEN,
+  ...RESERVED,
+]
+
+const VOCAB_SET = new Set<string>(VOCABULARY)
+
+export type EventTier = 'closed' | 'open' | 'reserved' | 'unknown'
+
+export function classifyEvent(name: string): EventTier {
+  if (name in CLOSED) return 'closed'
+  if (OPEN_SET.has(name)) return 'open'
+  if (RESERVED_SET.has(name)) return 'reserved'
+  return 'unknown'
+}
 
 export function isKnownEvent(name: string): name is EotwEventName {
-  return name in SCHEMA
+  return VOCAB_SET.has(name)
+}
+
+function isClosedName(name: string): name is ClosedEventName {
+  return name in CLOSED
 }
 
 function typeOf(value: unknown): FieldType | 'null' | 'undefined' {
   if (value === null) return 'null'
   if (Array.isArray(value)) return 'array'
   const t = typeof value
-  if (t === 'string' || t === 'number' || t === 'boolean' || t === 'object' || t === 'undefined') return t
+  if (t === 'string' || t === 'number' || t === 'boolean' || t === 'undefined') return t
+  if (t === 'object') return 'object'
   return 'object'
 }
 
-/** Returns a list of problems. Empty list == valid. */
+/**
+ * Returns a list of problems. Empty list == valid.
+ *
+ * - non-object / missing `event` -> one problem
+ * - unknown event name -> one problem ("unknown event ...")
+ * - open / reserved events -> envelope type-checked, payload passes
+ * - closed events -> required fields present & typed, no unexpected payload keys
+ */
 export function validateEvent(input: unknown): string[] {
-  if (typeof input !== 'object' || input === null) return ['not a JSON object']
+  if (typeof input !== 'object' || input === null || Array.isArray(input)) {
+    return ['not a JSON object']
+  }
   const obj = input as Record<string, unknown>
 
   const name = obj.event
   if (typeof name !== 'string') return ['missing string field "event"']
   if (!isKnownEvent(name)) return [`unknown event "${name}"`]
 
-  const spec = SCHEMA[name]
   const errors: string[] = []
-  const allowed = new Set(['event', ...Object.keys(spec)])
+
+  // Envelope keys: allowed anywhere, but flag a wrong type if present.
+  for (const [key, expected] of Object.entries(ENVELOPE_KEYS)) {
+    if (key in obj && obj[key] !== undefined) {
+      const actual = typeOf(obj[key])
+      if (actual !== expected) {
+        errors.push(`${name}: envelope "${key}" should be ${expected}, got ${actual}`)
+      }
+    }
+  }
+
+  if (!isClosedName(name)) {
+    // open / reserved: no payload constraints yet.
+    return errors
+  }
+
+  const spec = CLOSED[name]
+  const required: Record<string, FieldType> = {}
+  const optional: Record<string, FieldType> = {}
+  for (const [rawKey, ft] of Object.entries(spec)) {
+    if (rawKey.endsWith('?')) optional[rawKey.slice(0, -1)] = ft
+    else required[rawKey] = ft
+  }
+
+  const allowed = new Set<string>([
+    'event',
+    ...Object.keys(ENVELOPE_KEYS),
+    ...Object.keys(required),
+    ...Object.keys(optional),
+  ])
 
   for (const key of Object.keys(obj)) {
     if (!allowed.has(key)) errors.push(`${name}: unexpected field "${key}"`)
   }
-  for (const [field, expected] of Object.entries(spec)) {
+  for (const [field, expected] of Object.entries(required)) {
     if (!(field in obj)) {
       errors.push(`${name}: missing field "${field}"`)
       continue
@@ -83,20 +195,35 @@ export function validateEvent(input: unknown): string[] {
       errors.push(`${name}: field "${field}" should be ${expected}, got ${actual}`)
     }
   }
+  for (const [field, expected] of Object.entries(optional)) {
+    if (field in obj && obj[field] !== undefined) {
+      const actual = typeOf(obj[field])
+      if (actual !== expected) {
+        errors.push(`${name}: field "${field}" should be ${expected}, got ${actual}`)
+      }
+    }
+  }
   return errors
 }
 
-/** Parse one JSONL line into a validated event, or throw with a useful message. */
-export function parseEventLine(line: string): EotwEvent {
-  let parsed: unknown
-  try {
-    parsed = JSON.parse(line)
-  } catch {
-    throw new Error(`not valid JSON: ${line}`)
-  }
-  const problems = validateEvent(parsed)
-  if (problems.length > 0) {
-    throw new Error(`schema violation: ${problems.join('; ')}`)
-  }
-  return parsed as EotwEvent
+/**
+ * Parse one JSONL line. Never throws on a well-formed unknown event — returns
+ * it with `tier: "unknown"` so the terminal can flag it and the state machine
+ * can no-op it. Throws only on invalid JSON.
+ */
+export function readEventLine(line: string): {
+  raw: unknown
+  event: EotwEvent | null
+  tier: EventTier
+  problems: string[]
+} {
+  const raw: unknown = JSON.parse(line)
+  const problems = validateEvent(raw)
+  const name =
+    typeof raw === 'object' && raw !== null && typeof (raw as Record<string, unknown>).event === 'string'
+      ? ((raw as Record<string, unknown>).event as string)
+      : ''
+  const tier = classifyEvent(name)
+  const event = tier === 'unknown' || name === '' ? null : (raw as EotwEvent)
+  return { raw, event, tier, problems }
 }

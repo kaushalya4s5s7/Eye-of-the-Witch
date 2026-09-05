@@ -1,0 +1,20 @@
+[
+  {
+    "url": "https://press.example.org/arrivals/night-two",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9Gc-eotw-placeholder-01",
+    "face_similarity": 0.91,
+    "title": "Arrivals, Night Two — Press Gallery"
+  },
+  {
+    "url": "https://news.example.net/culture/gala-recap",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9Gc-eotw-placeholder-02",
+    "face_similarity": 0.88,
+    "title": "Culture Desk: Gala Recap"
+  },
+  {
+    "url": "https://society.example.com/2026/spring-benefit",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9Gc-eotw-placeholder-03",
+    "face_similarity": 0.86,
+    "title": "Spring Benefit Portraits"
+  }
+]

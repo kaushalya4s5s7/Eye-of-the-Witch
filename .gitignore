@@ -33,3 +33,7 @@ backend/__pycache__/
 
 # vite cache
 client/.vite/
+
+# subagent-driven-development process workspace (ledgers, review packages,
+# task briefs/reports) — not a deliverable, never committed
+.superpowers/

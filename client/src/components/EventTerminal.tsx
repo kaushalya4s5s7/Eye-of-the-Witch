@@ -2,42 +2,22 @@ import { useEffect, useRef } from 'react'
 import { Terminal } from '@xterm/xterm'
 import { FitAddon } from '@xterm/addon-fit'
 import '@xterm/xterm/css/xterm.css'
-import { eventStreamUrl, type StreamOptions } from '../lib/events'
-import { validateEvent } from '../lib/schema'
-
-const ANSI = {
-  reset: '\x1b[0m',
-  dim: '\x1b[38;5;244m',
-  name: '\x1b[38;5;81m', // cyan-ish
-  key: '\x1b[38;5;108m', // muted green
-  warn: '\x1b[38;5;179m', // amber
-  err: '\x1b[38;5;203m', // red
-}
-
-function stamp(): string {
-  const d = new Date()
-  const p = (n: number, w = 2) => String(n).padStart(w, '0')
-  return `${p(d.getHours())}:${p(d.getMinutes())}:${p(d.getSeconds())}.${p(d.getMilliseconds(), 3)}`
-}
-
-/** Render one already-parsed event object as a single terminal line. */
-function formatLine(obj: Record<string, unknown>): string {
-  const { event, ...rest } = obj
-  const fields = Object.entries(rest)
-    .map(([k, v]) => `${ANSI.key}${k}${ANSI.reset}=${JSON.stringify(v)}`)
-    .join('  ')
-  return `${ANSI.dim}[${stamp()}]${ANSI.reset} ${ANSI.name}${String(event)}${ANSI.reset}${
-    fields ? '  ' + fields : ''
-  }`
-}
+import { ANSI } from '../lib/terminalFormat'
+import type { TerminalLine } from '../hooks/useEventStream'
 
 /**
- * Right pane. Embeds xterm.js and prints each event from the dev feed as one
- * formatted line. It only ever prints events that pass the schema validator —
- * an off-schema line is flagged, not rendered as if it were real.
+ * Right pane. A dumb xterm.js sink: it renders whatever lines the shared
+ * `useEventStream` hook hands it, in order, exactly once each. The hook owns
+ * the EventSource, the parsing, and the schema check — so this panel and the
+ * ritual stage can never disagree about what the backend said.
+ *
+ * Every line the hook produces is printed. Off-schema lines arrive already
+ * flagged and verbatim (see lib/terminalFormat.ts); nothing is filtered here.
  */
-export function EventTerminal({ options }: { options: StreamOptions }) {
+export function EventTerminal({ lines }: { lines: TerminalLine[] }) {
   const hostRef = useRef<HTMLDivElement>(null)
+  const termRef = useRef<Terminal | null>(null)
+  const writtenRef = useRef(0)
 
   useEffect(() => {
     const host = hostRef.current
@@ -59,6 +39,7 @@ export function EventTerminal({ options }: { options: StreamOptions }) {
     const fit = new FitAddon()
     term.loadAddon(fit)
     term.open(host)
+    termRef.current = term
 
     const doFit = () => {
       try {
@@ -71,47 +52,27 @@ export function EventTerminal({ options }: { options: StreamOptions }) {
     const resizeObserver = new ResizeObserver(doFit)
     resizeObserver.observe(host)
 
-    const url = eventStreamUrl(options)
     term.writeln(`${ANSI.dim}eye-of-the-witch // backend event tail${ANSI.reset}`)
-    term.writeln(`${ANSI.dim}source ${url}${ANSI.reset}`)
     term.writeln('')
-
-    const source = new EventSource(url)
-
-    source.onmessage = (message) => {
-      let parsed: unknown
-      try {
-        parsed = JSON.parse(message.data)
-      } catch {
-        term.writeln(`${ANSI.err}! unparseable line${ANSI.reset} ${message.data}`)
-        return
-      }
-      const problems = validateEvent(parsed)
-      if (problems.length > 0) {
-        term.writeln(`${ANSI.err}! off-schema, not rendered${ANSI.reset} ${problems.join('; ')}`)
-        return
-      }
-      term.writeln(formatLine(parsed as Record<string, unknown>))
-    }
-
-    source.addEventListener('end', () => {
-      term.writeln('')
-      term.writeln(`${ANSI.dim}-- stream end --${ANSI.reset}`)
-      source.close()
-    })
-
-    source.onerror = () => {
-      // EventSource auto-reconnects; only note it once per drop.
-      term.writeln(`${ANSI.warn}~ stream interrupted, retrying${ANSI.reset}`)
-    }
 
     return () => {
       cancelAnimationFrame(raf)
       resizeObserver.disconnect()
-      source.close()
       term.dispose()
+      termRef.current = null
+      writtenRef.current = 0
     }
-  }, [options])
+  }, [])
+
+  // Flush any lines we haven't printed yet.
+  useEffect(() => {
+    const term = termRef.current
+    if (!term) return
+    for (let i = writtenRef.current; i < lines.length; i++) {
+      term.writeln(lines[i].text)
+    }
+    writtenRef.current = lines.length
+  }, [lines])
 
   return <div ref={hostRef} className="terminal-host" />
 }
