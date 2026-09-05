@@ -43,12 +43,83 @@ const POLL_MS = 300
 // per-event polling (POLL_MS) and stream ceiling (HARD_CEILING_MS) unaffected.
 const FILE_WAIT_MS = 90000
 const HARD_CEILING_MS = 5 * 60 * 1000
-// Same ceiling UploadGate.tsx already enforces client-side (MAX_BYTES there) —
-// kept here too since the client check is bypassable (M3).
-const MAX_UPLOAD_BYTES = 15 * 1024 * 1024
+// Multi-photo seed gallery: up to 5 faces × 15MB. Total request cap.
+const MAX_FILES = 5
+const MAX_FILE_BYTES = 15 * 1024 * 1024
+const MAX_UPLOAD_BYTES = MAX_FILES * MAX_FILE_BYTES
 
 const RUN_ID_RE = /^[a-zA-Z0-9_-]+$/
 const NAME_RE = /^[a-z0-9_-]+$/i
+
+type UploadedImage = { bytes: Buffer; contentType: string; filename: string }
+
+async function readUploadedImages(req: import('node:http').IncomingMessage): Promise<UploadedImage[]> {
+  const chunks: Buffer[] = []
+  let uploadedBytes = 0
+  for await (const chunk of req) {
+    uploadedBytes += (chunk as Buffer).length
+    if (uploadedBytes > MAX_UPLOAD_BYTES) {
+      const err = new Error(`upload too large — max ${MAX_UPLOAD_BYTES} bytes`)
+      ;(err as Error & { statusCode: number }).statusCode = 413
+      throw err
+    }
+    chunks.push(chunk as Buffer)
+  }
+  const body = Buffer.concat(chunks)
+  if (body.length === 0) {
+    const err = new Error('empty upload')
+    ;(err as Error & { statusCode: number }).statusCode = 400
+    throw err
+  }
+
+  const contentType = String(req.headers['content-type'] || '')
+  if (contentType.includes('multipart/form-data')) {
+    const webReq = new Request('http://localhost/dev/run', {
+      method: 'POST',
+      headers: { 'content-type': contentType },
+      body,
+    })
+    const form = await webReq.formData()
+    const parts = form.getAll('images')
+    const out: UploadedImage[] = []
+    for (const part of parts) {
+      if (typeof part === 'string') continue
+      const file = part as File
+      const bytes = Buffer.from(await file.arrayBuffer())
+      if (bytes.length === 0) continue
+      if (bytes.length > MAX_FILE_BYTES) {
+        const err = new Error(`each likeness must be under ${MAX_FILE_BYTES} bytes`)
+        ;(err as Error & { statusCode: number }).statusCode = 413
+        throw err
+      }
+      out.push({
+        bytes,
+        contentType: file.type || 'application/octet-stream',
+        filename: file.name || 'upload',
+      })
+    }
+    if (out.length === 0) {
+      const err = new Error('empty upload')
+      ;(err as Error & { statusCode: number }).statusCode = 400
+      throw err
+    }
+    if (out.length > MAX_FILES) {
+      const err = new Error(`at most ${MAX_FILES} likenesses`)
+      ;(err as Error & { statusCode: number }).statusCode = 400
+      throw err
+    }
+    return out
+  }
+
+  // Legacy single raw-body upload (pre multi-photo).
+  return [
+    {
+      bytes: body,
+      contentType,
+      filename: 'upload',
+    },
+  ]
+}
 
 export function jsonlSse(): Plugin {
   return {
@@ -91,36 +162,25 @@ export function jsonlSse(): Plugin {
         inFlightRunId = PENDING
 
         try {
-          const chunks: Buffer[] = []
-          let uploadedBytes = 0
-          let tooLarge = false
-          for await (const chunk of req) {
-            uploadedBytes += (chunk as Buffer).length
-            if (uploadedBytes > MAX_UPLOAD_BYTES) {
-              tooLarge = true
-              break
-            }
-            chunks.push(chunk as Buffer)
-          }
-          if (tooLarge) {
+          let images: UploadedImage[]
+          try {
+            images = await readUploadedImages(req)
+          } catch (readErr) {
             inFlightRunId = null
-            req.destroy()
-            res.statusCode = 413
-            res.end(`upload too large — max ${MAX_UPLOAD_BYTES} bytes`)
-            return
-          }
-          const bytes = Buffer.concat(chunks)
-          if (bytes.length === 0) {
-            inFlightRunId = null
-            res.statusCode = 400
-            res.end('empty upload')
+            const status = (readErr as Error & { statusCode?: number }).statusCode ?? 400
+            res.statusCode = status
+            res.end((readErr as Error).message)
             return
           }
 
-          const ext = extFor(req.headers['content-type'])
           await mkdir(uploadsDir, { recursive: true })
-          const uploadPath = resolve(uploadsDir, `${randomUUID()}.${ext}`)
-          await writeFile(uploadPath, bytes)
+          const uploadPaths: string[] = []
+          for (const img of images) {
+            const ext = extFor(img.contentType) || extFromName(img.filename)
+            const uploadPath = resolve(uploadsDir, `${randomUUID()}.${ext}`)
+            await writeFile(uploadPath, img.bytes)
+            uploadPaths.push(uploadPath)
+          }
 
           const pythonBin = resolve(backendDir, '.venv/bin/python3')
           // Strip Cursor/sandbox proxy vars — they point at a local proxy that
@@ -132,37 +192,43 @@ export function jsonlSse(): Plugin {
               delete childEnv[key]
             }
           }
-          const child = spawn(pythonBin, [resolve(backendDir, 'smoke_full.py'), uploadPath], {
-            cwd: backendDir,
-            env: childEnv,
-          })
+          // Assign run_id in Node and return it immediately so the UI can open
+          // SSE *before* the pipeline finishes. Waiting on "FULL RUN" in stdout
+          // used to buffer until process exit (Python fully-buffers when not a
+          // TTY), so the terminal dumped every event at once at the end.
+          const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d+Z$/, 'Z')
+          const runId = `full-${stamp}-${randomUUID().replace(/-/g, '').slice(0, 8)}`
+          childEnv.EOTW_RUN_ID = runId
+          childEnv.PYTHONUNBUFFERED = '1'
 
-          let responded = false
-          let stdoutBuf = ''
+          const child = spawn(
+            pythonBin,
+            ['-u', resolve(backendDir, 'smoke_full.py'), ...uploadPaths],
+            {
+              cwd: backendDir,
+              env: childEnv,
+            },
+          )
 
           const cleanupUpload = async () => {
-            try {
-              await unlink(uploadPath)
-            } catch (err) {
-              server.config.logger.warn(
-                `[live-run] could not remove uploaded file ${uploadPath}: ${(err as Error).message}`,
-              )
+            for (const uploadPath of uploadPaths) {
+              try {
+                await unlink(uploadPath)
+              } catch (err) {
+                server.config.logger.warn(
+                  `[live-run] could not remove uploaded file ${uploadPath}: ${(err as Error).message}`,
+                )
+              }
             }
           }
 
+          // Hand run_id to the client immediately — SSE waits for events.jsonl.
+          inFlightRunId = runId
+          res.writeHead(200, { 'Content-Type': 'application/json' })
+          res.end(JSON.stringify({ run_id: runId, images: uploadPaths.length }))
+
           child.stdout.on('data', (data: Buffer) => {
-            const text = data.toString('utf8')
-            stdoutBuf += text
-            server.config.logger.info(`[live-run] ${text.trimEnd()}`)
-            if (!responded) {
-              const match = stdoutBuf.match(/FULL RUN (\S+)/)
-              if (match) {
-                responded = true
-                inFlightRunId = `full-${match[1]}`
-                res.writeHead(200, { 'Content-Type': 'application/json' })
-                res.end(JSON.stringify({ run_id: inFlightRunId }))
-              }
-            }
+            server.config.logger.info(`[live-run] ${data.toString('utf8').trimEnd()}`)
           })
           child.stderr.on('data', (data: Buffer) => {
             server.config.logger.warn(`[live-run] ${data.toString('utf8').trimEnd()}`)
@@ -170,21 +236,12 @@ export function jsonlSse(): Plugin {
           child.on('error', (err) => {
             inFlightRunId = null
             void cleanupUpload()
-            if (!responded) {
-              responded = true
-              res.statusCode = 500
-              res.end(`could not start pipeline: ${err.message}`)
-            }
+            server.config.logger.error(`[live-run] could not start pipeline: ${err.message}`)
           })
           child.on('exit', (code) => {
             inFlightRunId = null
             server.config.logger.info(`[live-run] pipeline exited (${code})`)
             void cleanupUpload()
-            if (!responded) {
-              responded = true
-              res.statusCode = 500
-              res.end(`pipeline exited before starting (code ${code})`)
-            }
           })
         } catch (err) {
           inFlightRunId = null
@@ -363,7 +420,13 @@ export async function streamRun(
     'Content-Type': 'text/event-stream',
     'Cache-Control': 'no-cache, no-transform',
     Connection: 'keep-alive',
+    'X-Accel-Buffering': 'no',
   })
+  // Tip the socket into immediate flush mode so each event hits the browser
+  // as soon as we write it (otherwise Node may coalesce until the run ends).
+  const sock = (res as StreamRunResponse & { socket?: { setNoDelay?: (v: boolean) => void } }).socket
+  sock?.setNoDelay?.(true)
+  res.write(': connected\n\n')
   res.write('retry: 3000\n\n')
 
   const start = Date.now()
@@ -467,6 +530,11 @@ function extFor(contentType: string | undefined): string {
     default:
       return 'bin'
   }
+}
+
+function extFromName(name: string): string {
+  const m = /\.([a-z0-9]+)$/i.exec(name)
+  return m ? m[1].toLowerCase() : 'bin'
 }
 
 function delay(ms: number): Promise<void> {

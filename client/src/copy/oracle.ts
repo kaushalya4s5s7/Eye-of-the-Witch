@@ -88,11 +88,28 @@ export function oracleFor(input: SceneInput, next: SceneState): OracleLine[] {
         seer('A face surfaces from the dark.'),
         seer(`${band(num(ev.det_score), DET_BAND)} — this is the true light I will hunt.`),
       ]
+    case 'GalleryBuilt': {
+      const n = num(ev.size, next.gallerySize ?? 1)
+      return [
+        seer(
+          n > 1
+            ? `${n} likenesses locked into one seed. The Eye sees her from more than one angle.`
+            : 'One likeness locked as the seed.',
+        ),
+      ]
+    }
     case 'ImageHosted':
       return [seer('Her likeness is cast on the water, ready to be shown to every sky.')]
     case 'ImageSearchRequested': {
       const engines = Array.isArray(ev.engines) ? ev.engines.length : next.engines.length
-      return [seer(`The Eye turns to ${engines || 'many'} skies at once.`)]
+      const probes = Array.isArray(ev.probes) ? ev.probes.length : 0
+      return [
+        seer(
+          probes > 1
+            ? `The Eye turns to ${engines || 'many'} skies with ${probes} casts of her face.`
+            : `The Eye turns to ${engines || 'many'} skies at once.`,
+        ),
+      ]
     }
     case 'ImageSearchCompleted':
       return [seer(`The ${str(ev.engine, 'far')} sky answers — ${num(ev.hits)} points of light.`)]
@@ -109,14 +126,24 @@ export function oracleFor(input: SceneInput, next: SceneState): OracleLine[] {
         seer(`${num(ev.count)} lights hold true.`),
         seer(`The brightest burns at ${band(num(ev.top_sim), SIM_BAND)}.`),
       ]
+    case 'AnchorLocked':
+      return [
+        seer('Identity locks — near-exact image and her true face agree.'),
+        aside(`anchor: ${host(str(ev.url))}`),
+      ]
     case '@StarsResolved':
       return next.stars.map((s, i) => seer(`Fixed. The ${ordinal(i + 1)} true star — ${host(s.url)}.`))
     case 'ExpandRequested':
       return [seer('It follows the threads outward.')]
     case 'ExpandCompleted':
       return [seer('The threads are walked.')]
-    case 'ExpandSkipped':
+    case 'ExpandSkipped': {
+      const reason = str(ev.reason)
+      if (reason === 'no_dual_confirm_anchor' || reason === 'anchor_face_below_tau') {
+        return [seer('No dual-confirm anchor. It holds to the seed alone.')]
+      }
       return [seer('No threads worth walking. It holds.')]
+    }
     case 'GraphUpserted':
       return [seer('The web remembers.')]
     case 'MerkleBuilt':

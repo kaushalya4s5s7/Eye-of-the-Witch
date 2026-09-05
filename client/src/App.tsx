@@ -44,7 +44,7 @@ export default function App() {
           <div className="terminal-frame">
             <header className="terminal-frame__bar">
               <span className="terminal-frame__dot" />
-              backend event stream · waiting for a photo
+              backend event stream · waiting for a likeness
             </header>
             <EventTerminal lines={[]} />
           </div>

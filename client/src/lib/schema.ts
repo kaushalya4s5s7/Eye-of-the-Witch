@@ -35,9 +35,15 @@ export interface Envelope {
 }
 
 type ClosedEvent =
-  | { event: 'FaceDetected'; backend: string; det_score: number; embedding_sha256: string }
-  | { event: 'ImageHosted'; url: string }
-  | { event: 'ImageSearchCompleted'; engine: string; hits: number }
+  | {
+      event: 'FaceDetected'
+      backend: string
+      det_score: number
+      embedding_sha256: string
+      gallery_size?: number
+    }
+  | { event: 'ImageHosted'; url: string; probe?: string; quality?: number }
+  | { event: 'ImageSearchCompleted'; engine: string; hits: number; probe?: string }
   | { event: 'PostAccepted'; count: number; top_sim: number }
   | { event: 'MerkleBuilt'; root: string }
   | { event: 'Attesting'; root: string }
@@ -62,26 +68,34 @@ const CLOSED_NAMES = [
 ] as const
 
 const OPEN = [
+  'GalleryBuilt',
   'ImageSearchRequested',
   'ImageSearchFailed',
   'SearchMerged',
+  'AnchorLocked',
   'ExpandRequested',
   'ExpandCompleted',
   'ExpandSkipped',
   'GraphUpserted',
   'VerifyPassed',
+  'NoMatchFound',
 ] as const
 
-const RESERVED = ['CandidateScored', 'VerifyFailed', 'NoMatchFound', 'ConsentBound'] as const
+const RESERVED = ['CandidateScored', 'VerifyFailed', 'ConsentBound'] as const
 
 type ClosedEventName = (typeof CLOSED_NAMES)[number]
 type OpenEventName = (typeof OPEN)[number]
 type ReservedEventName = (typeof RESERVED)[number]
 
 const CLOSED: Record<ClosedEventName, FieldSpec> = {
-  FaceDetected: { backend: 'string', det_score: 'number', embedding_sha256: 'string' },
-  ImageHosted: { url: 'string' },
-  ImageSearchCompleted: { engine: 'string', hits: 'number' },
+  FaceDetected: {
+    backend: 'string',
+    det_score: 'number',
+    embedding_sha256: 'string',
+    'gallery_size?': 'number',
+  },
+  ImageHosted: { url: 'string', 'probe?': 'string', 'quality?': 'number' },
+  ImageSearchCompleted: { engine: 'string', hits: 'number', 'probe?': 'string' },
   PostAccepted: { count: 'number', top_sim: 'number' },
   MerkleBuilt: { root: 'string' },
   Attesting: { root: 'string' },

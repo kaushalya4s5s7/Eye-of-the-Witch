@@ -24,7 +24,9 @@ describe('classifyEvent', () => {
     expect(classifyEvent('Attested')).toBe('closed')
     expect(classifyEvent('SearchMerged')).toBe('open')
     expect(classifyEvent('VerifyPassed')).toBe('open')
-    expect(classifyEvent('NoMatchFound')).toBe('reserved')
+    expect(classifyEvent('GalleryBuilt')).toBe('open')
+    expect(classifyEvent('AnchorLocked')).toBe('open')
+    expect(classifyEvent('NoMatchFound')).toBe('open')
     expect(classifyEvent('ConsentBound')).toBe('reserved')
     expect(classifyEvent('FaceLocked')).toBe('unknown')
   })
@@ -163,7 +165,7 @@ describe('fixtures/events-success-noexpand.jsonl', () => {
   })
 })
 
-describe('fixtures/events-nomatch.jsonl (STUB — reserved path)', () => {
+describe('fixtures/events-nomatch.jsonl (emitted path)', () => {
   const rows = loadFixture('events-nomatch.jsonl')
 
   it('every line is valid', () => {

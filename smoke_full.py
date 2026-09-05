@@ -6,6 +6,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 import uuid
@@ -27,9 +28,10 @@ ROOT = Path(__file__).resolve().parent
 def emit(events: list[dict], out_dir: Path, kind: str, **payload: Any) -> None:
     ev = {"ts": base.utc_now(), "event": kind, **payload}
     events.append(ev)
-    with (out_dir / "events.jsonl").open("a") as f:
+    with (out_dir / "events.jsonl").open("a", encoding="utf-8") as f:
         f.write(json.dumps(ev) + "\n")
-    print(f"  · event {kind}")
+        f.flush()
+    print(f"  · event {kind}", flush=True)
 
 
 def normalize_hit(raw: dict[str, Any], engine: str, idx: int) -> dict[str, Any] | None:
@@ -484,12 +486,21 @@ def main() -> int:
         "SEPOLIA_RPC_URL",
         "PRIVATE_KEY",
     )
-    run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "-" + uuid.uuid4().hex[:8]
-    out_dir = ROOT / "runs" / f"full-{run_id}"
+    # Prefer run_id from the UI bridge (EOTW_RUN_ID) so SSE can open immediately
+    # instead of waiting on buffered stdout for "FULL RUN …".
+    preset = (os.environ.get("EOTW_RUN_ID") or "").strip()
+    if preset:
+        run_folder = preset if preset.startswith("full-") else f"full-{preset}"
+        run_id = run_folder.removeprefix("full-")
+    else:
+        run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "-" + uuid.uuid4().hex[:8]
+        run_folder = f"full-{run_id}"
+    out_dir = ROOT / "runs" / run_folder
     out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / "events.jsonl").touch()
     events: list[dict] = []
-    print(f"FULL RUN {run_id}")
-    print(f"OUT {out_dir}")
+    print(f"FULL RUN {run_id}", flush=True)
+    print(f"OUT {out_dir}", flush=True)
 
     args_paths = base.parse_image_args()
     if args_paths:

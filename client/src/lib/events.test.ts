@@ -36,7 +36,7 @@ describe('startRun', () => {
     vi.unstubAllGlobals()
   })
 
-  it('resolves with the run id on success', async () => {
+  it('resolves with the runId on success (multipart images)', async () => {
     const fetchMock = vi.fn().mockResolvedValue({
       ok: true,
       status: 200,
@@ -46,7 +46,25 @@ describe('startRun', () => {
     const file = new File([new Uint8Array([1, 2, 3])], 'x.jpg', { type: 'image/jpeg' })
 
     await expect(startRun(file)).resolves.toEqual({ runId: 'full-abc123' })
-    expect(fetchMock).toHaveBeenCalledWith('/dev/run', expect.objectContaining({ method: 'POST' }))
+    expect(fetchMock).toHaveBeenCalledWith(
+      '/dev/run',
+      expect.objectContaining({ method: 'POST', body: expect.any(FormData) }),
+    )
+  })
+
+  it('accepts multiple files', async () => {
+    const fetchMock = vi.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: async () => ({ run_id: 'full-abc123' }),
+    })
+    vi.stubGlobal('fetch', fetchMock)
+    const a = new File([new Uint8Array([1])], 'a.jpg', { type: 'image/jpeg' })
+    const b = new File([new Uint8Array([2])], 'b.jpg', { type: 'image/jpeg' })
+
+    await expect(startRun([a, b])).resolves.toEqual({ runId: 'full-abc123' })
+    const body = fetchMock.mock.calls[0][1].body as FormData
+    expect(body.getAll('images')).toHaveLength(2)
   })
 
   it('throws RunConflictError on 409', async () => {

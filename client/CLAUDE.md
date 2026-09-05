@@ -41,9 +41,9 @@ Events are **flat** JSON objects, one per line. Not nested under `data`.
 ### Emitted today — closed payloads (validator enforces exact fields)
 
 ```
-FaceDetected          { backend, det_score, embedding_sha256 }
-ImageHosted           { url }                       # public imgbb HTTPS
-ImageSearchCompleted  { engine, hits }              # ONE PER ENGINE that returns
+FaceDetected          { backend, det_score, embedding_sha256, gallery_size? }
+ImageHosted           { url, probe?, quality? }     # public imgbb HTTPS; probe on multi-crop
+ImageSearchCompleted  { engine, hits, probe? }       # ONE PER ENGINE that returns
 PostAccepted          { count, top_sim }            # summary; gallery = accepted.json
 MerkleBuilt           { root }                      # no leaf_count today
 Attesting             { root }                      # same value as MerkleBuilt.root
@@ -57,28 +57,28 @@ attest | verify | unknown`.
 ### Emitted today — open payloads (name must be valid; fields not yet locked)
 
 ```
-ImageSearchRequested   { engines, image_url }
-ImageSearchFailed      { engine, error }             # pipeline continues
+GalleryBuilt           { size, inputs, kept, rejected, score_mode?, coreset?, deep_opt? }
+ImageSearchRequested   { engines, image_url? | probes?, multi_probe? }
+ImageSearchFailed      { engine, error, probe? }     # pipeline continues
 SearchMerged           { unique, by_engine }         # by_engine: {engine: count}
+AnchorLocked           { locked, url, face_similarity, phash_distance, near_exact, … }
 ExpandRequested        { query, from_url, handle }   # handle may be null
 ExpandCompleted        { found, query }
-ExpandSkipped          { reason }
+ExpandSkipped          { reason }                    # e.g. no_dual_confirm_anchor
 GraphUpserted          { nodes, edges }
 VerifyPassed           { root, uid }                 # re-verify OK -> badge only
+NoMatchFound           { candidates_checked, reason } # empty-cauldron; no chain write
 ```
 
 These validate as long as `event` is a known name; their payloads pass
-through untouched. Field shapes above are confirmed against the four real
-`runs/full-*/events.jsonl` reconciled 2026-09-04 (see below) — still "open"
-tier by design (not yet contractually locked), but the reducer/oracle read
-these exact real field names now, not placeholders.
+through untouched. Field shapes above track the deep-opt / dual-confirm
+pipeline in `backend/smoke_full.py`.
 
 ### Reserved — names locked, pipeline to follow (validate as open, mostly no UI)
 
 ```
 CandidateScored   { url, face_sim, source_trust, decision }  # terminal log only, NO left-panel UI
 VerifyFailed      { matched: false, reason }                 # distinct fail ritual
-NoMatchFound      { candidates_checked, reason }             # empty-cauldron state, scroll never renders
 ConsentBound      { consent_hash }                           # unused for demo; log-only if ever sent
 ```
 
@@ -125,18 +125,20 @@ Phases: `idle -> scrying -> weighing -> weaving -> naming -> fixed`, with
 
 ```
 FaceDetected            idle -> scrying; photo/likeness lock
+GalleryBuilt            stay scrying; seed gallery size recorded
 ImageHosted             record hosted url
 ImageSearch*            stay scrying (concoction loop)
 SearchMerged            scrying -> weighing
 CandidateScored         terminal only; no left-panel change
 PostAccepted            weighing -> weaving; fetch accepted.json -> stars fix in
+AnchorLocked            stay weaving; dual-confirm identity gate for expand
 Expand* / GraphUpserted stay weaving (subtle)
 MerkleBuilt             constellation lines draw; figure gets its name
 Attesting               weaving -> naming; chant / text-reveal
 Attested                naming -> fixed; success video; scroll unfurls (real tx_hash + easscan)
 VerifyPassed            verified = true; small check under the hash; NO video, NO phase change
 VerifyFailed            distinct fail ritual (reserved)
-NoMatchFound            -> empty; failure video; scroll never renders (reserved)
+NoMatchFound            -> empty; failure video; scroll never renders
 Failed                  -> broken; rendered rupture, visually distinct from empty
 <stream ends, no terminal>  synthesize Failed(stage=unknown) -> broken
 ```
@@ -329,19 +331,20 @@ canvas layer), `layers/NarrationLog.tsx` (superseded by `JRPGTextbox`).
 Requires the one-time "Setup" above. Fixture mode (default, no `run_id` in
 the URL) is completely unaffected by any of this.
 
-- `POST /dev/run` — binary photo upload (see `UploadGate`). Spawns
-  `backend/smoke_full.py` for real: SerpAPI + imgbb + a real Sepolia
-  attestation transaction (costs money and gas — not a simulation).
-  Resolves `{ run_id }` as soon as the child's stdout prints
-  `FULL RUN <id>`. Returns `409 { error: "run_in_progress" }` if a run is
-  already active — the dev host runs at most one pipeline at a time.
+- `POST /dev/run` — multipart photo upload (`images`, 1–5 faces; see
+  `UploadGate`). Spawns `backend/smoke_full.py` for real: SerpAPI + imgbb +
+  a real Sepolia attestation transaction (costs money and gas — not a
+  simulation). Resolves `{ run_id }` immediately so SSE can open while the
+  pipeline still runs. Returns `409 { error: "run_in_progress" }` if a run
+  is already active — the dev host runs at most one pipeline at a time.
 - `GET /dev/events?run_id=<id>` — run mode: tails
   `runs/<run_id>/events.jsonl` as it grows instead of replaying a fixture.
   Waits up to 90s for the file to first appear (cold model load, see
   below), failing fast — before that ceiling — the moment the pipeline
   process exits without ever writing an event, or the client disconnects.
-- `UploadGate` gates entry into live mode: pick/drop a photo client-side
-  (15 MB cap, `image/*` only), then POST it to `/dev/run`.
+- `UploadGate` gates entry into live mode: pick/drop one or more photos
+  (15 MB each, max 5, `image/*` only), with counsel that more angles
+  sharpen the hunt; then POST them to `/dev/run` as a seed gallery.
 - **`cast-again` never appears in fixture mode.** `App` only ever passes a
   real `onCastAgain` handler in live mode; fixture mode passes
   `onCastAgain={undefined}` explicitly, and `CastAgain` no-ops without a

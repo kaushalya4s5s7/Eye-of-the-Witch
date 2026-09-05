@@ -1,7 +1,8 @@
-{"ts":"2026-09-04T12:00:03.418+00:00","seq":1,"run_id":"forced-nomatch-STUB","event":"FaceDetected","backend":"insightface_buffalo_s","det_score":0.7912,"embedding_sha256":"5a2d9f6c3b0e7a4d1f8c2b9e14d70a5c8f3612b4e0d7a9c3f6018e5b2d4a7c0f9"}
-{"ts":"2026-09-04T12:00:05.771+00:00","seq":2,"event":"ImageHosted","url":"https://i.ibb.co/0nZ9xYt/crop-nomatch.jpg"}
-{"ts":"2026-09-04T12:00:05.903+00:00","seq":3,"event":"ImageSearchRequested","engines":["google_lens","yandex_images"],"image_url":"https://i.ibb.co/0nZ9xYt/crop-nomatch.jpg"}
-{"ts":"2026-09-04T12:00:11.240+00:00","seq":4,"event":"ImageSearchCompleted","engine":"google_lens","hits":5}
-{"ts":"2026-09-04T12:00:13.664+00:00","seq":5,"event":"ImageSearchCompleted","engine":"yandex_images","hits":3}
-{"ts":"2026-09-04T12:00:14.102+00:00","seq":6,"event":"SearchMerged","unique":7,"by_engine":{"google_lens":5,"yandex_images":3}}
-{"ts":"2026-09-04T12:01:22.887+00:00","seq":7,"event":"NoMatchFound","candidates_checked":7,"reason":"no candidate cleared face_sim>=0.85 with source_trust>=0.6"}
+{"ts":"2026-09-04T12:00:03.418+00:00","seq":1,"run_id":"forced-nomatch-STUB","event":"FaceDetected","backend":"insightface_buffalo_s","det_score":0.7912,"embedding_sha256":"5a2d9f6c3b0e7a4d1f8c2b9e14d70a5c8f3612b4e0d7a9c3f6018e5b2d4a7c0f9","gallery_size":1}
+{"ts":"2026-09-04T12:00:03.550+00:00","seq":2,"event":"GalleryBuilt","size":1,"inputs":1,"kept":1,"rejected":0,"score_mode":"deep_opt","coreset":1,"deep_opt":true}
+{"ts":"2026-09-04T12:00:05.771+00:00","seq":3,"event":"ImageHosted","url":"https://i.ibb.co/0nZ9xYt/crop-nomatch.jpg","probe":"primary"}
+{"ts":"2026-09-04T12:00:05.903+00:00","seq":4,"event":"ImageSearchRequested","engines":["google_lens","yandex_images"],"probes":["primary"],"multi_probe":true}
+{"ts":"2026-09-04T12:00:11.240+00:00","seq":5,"event":"ImageSearchCompleted","engine":"google_lens","hits":5,"probe":"primary"}
+{"ts":"2026-09-04T12:00:13.664+00:00","seq":6,"event":"ImageSearchCompleted","engine":"yandex_images","hits":3,"probe":"primary"}
+{"ts":"2026-09-04T12:00:14.102+00:00","seq":7,"event":"SearchMerged","unique":7,"by_engine":{"google_lens":5,"yandex_images":3}}
+{"ts":"2026-09-04T12:01:22.887+00:00","seq":8,"event":"NoMatchFound","candidates_checked":7,"reason":"no candidate cleared face_sim threshold"}

@@ -51,7 +51,19 @@ function applyEvent(state: SceneState, input: SceneInput, now: number): SceneSta
       return {
         ...state,
         phase: advance(state.phase, 'scrying'),
-        face: { backend: str(ev.backend), detScore: num(ev.det_score) ?? 0 },
+        face: {
+          backend: str(ev.backend),
+          detScore: num(ev.det_score) ?? 0,
+          gallerySize: num(ev.gallery_size) ?? undefined,
+        },
+        lastEventAt: now,
+      }
+
+    case 'GalleryBuilt':
+      return {
+        ...state,
+        phase: advance(state.phase, 'scrying'),
+        gallerySize: num(ev.size) ?? state.gallerySize,
         lastEventAt: now,
       }
 
@@ -94,6 +106,9 @@ function applyEvent(state: SceneState, input: SceneInput, now: number): SceneSta
         post: { count: num(ev.count) ?? 0, topSim: num(ev.top_sim) ?? 0 },
         lastEventAt: now,
       }
+
+    case 'AnchorLocked':
+      return { ...state, anchorLocked: true, lastEventAt: now }
 
     case '@StarsResolved':
       return { ...state, stars: input.stars, lastEventAt: now }

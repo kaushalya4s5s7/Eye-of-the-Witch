@@ -1,15 +1,17 @@
-{"ts":"2026-09-04T11:24:13.104+00:00","seq":1,"run_id":"full-20260904T112413Z-0f9c6d60","event":"FaceDetected","backend":"insightface_buffalo_s","det_score":0.8127,"embedding_sha256":"9c1f4a7be2d0538a6f13c9042b7e8d1a5c0f36b9e4772a1d8c3b05e6f9a24d7c1"}
-{"ts":"2026-09-04T11:24:15.902+00:00","seq":2,"event":"ImageHosted","url":"https://i.ibb.co/6Wq0Vd7/crop-0f9c6d60.jpg"}
-{"ts":"2026-09-04T11:24:16.031+00:00","seq":3,"event":"ImageSearchRequested","engines":["google_lens","google_reverse_image","yandex_images"],"image_url":"https://i.ibb.co/6Wq0Vd7/crop-0f9c6d60.jpg"}
-{"ts":"2026-09-04T11:24:21.447+00:00","seq":4,"event":"ImageSearchCompleted","engine":"google_lens","hits":12}
-{"ts":"2026-09-04T11:24:23.890+00:00","seq":5,"event":"ImageSearchCompleted","engine":"yandex_images","hits":9}
-{"ts":"2026-09-04T11:24:24.115+00:00","seq":6,"event":"ImageSearchFailed","engine":"google_reverse_image","error":"Google Reverse Image hasn't returned any results for this query."}
-{"ts":"2026-09-04T11:24:24.930+00:00","seq":7,"event":"SearchMerged","unique":18,"by_engine":{"google_lens":12,"yandex_images":9,"google_reverse_image":0}}
-{"ts":"2026-09-04T11:25:41.508+00:00","seq":8,"event":"PostAccepted","count":3,"top_sim":0.91}
-{"ts":"2026-09-04T11:25:41.982+00:00","seq":9,"event":"ExpandRequested","query":"Jane Doe (site:linkedin.com OR site:instagram.com OR site:x.com OR site:twitter.com)","from_url":"https://www.facebook.com/janedoe/","handle":null}
-{"ts":"2026-09-04T11:25:44.760+00:00","seq":10,"event":"ExpandCompleted","found":5,"query":"Jane Doe (site:linkedin.com OR site:instagram.com OR site:x.com OR site:twitter.com)"}
-{"ts":"2026-09-04T11:25:45.221+00:00","seq":11,"event":"GraphUpserted","nodes":8,"edges":11}
-{"ts":"2026-09-04T11:25:46.007+00:00","seq":12,"event":"MerkleBuilt","root":"0x4a7f0c3b6e9d2a5f8c1b4e7a0d3f6c9b2e5a8d1f4c7b0e3a6d9f2c5b8e1a4d7f0"}
-{"ts":"2026-09-04T11:25:46.550+00:00","seq":13,"event":"Attesting","root":"0x4a7f0c3b6e9d2a5f8c1b4e7a0d3f6c9b2e5a8d1f4c7b0e3a6d9f2c5b8e1a4d7f0"}
-{"ts":"2026-09-04T11:25:58.319+00:00","seq":14,"event":"Attested","tx_hash":"0x9f2c4a7b8e1d3f6a0c5b2e9d8a4f7c1b6e3d0a9f2c8b5e1d4a7f0c3b6e9d2a5f8","uid":"0x7b4e9c2a8f1d6b3e0a5c9f2d8b4e7a1c6f3d0b9e2a5c8f1d4b7e0a3c6f9d2b5e8","easscan":"https://sepolia.easscan.org/attestation/view/0x7b4e9c2a8f1d6b3e0a5c9f2d8b4e7a1c6f3d0b9e2a5c8f1d4b7e0a3c6f9d2b5e8"}
-{"ts":"2026-09-04T11:26:03.744+00:00","seq":15,"event":"VerifyPassed","root":"0x4a7f0c3b6e9d2a5f8c1b4e7a0d3f6c9b2e5a8d1f4c7b0e3a6d9f2c5b8e1a4d7f0","uid":"0x7b4e9c2a8f1d6b3e0a5c9f2d8b4e7a1c6f3d0b9e2a5c8f1d4b7e0a3c6f9d2b5e8"}
+{"ts":"2026-09-04T11:24:13.104+00:00","seq":1,"run_id":"full-20260904T112413Z-0f9c6d60","event":"FaceDetected","backend":"insightface_buffalo_s","det_score":0.8127,"embedding_sha256":"9c1f4a7e2d0538a6f13c9045b7e8d1a5c0f36b9e4772a1d8c3b05e6f9a24d7c1","gallery_size":1}
+{"ts":"2026-09-04T11:24:13.220+00:00","seq":2,"event":"GalleryBuilt","size":1,"inputs":1,"kept":1,"rejected":0,"score_mode":"deep_opt","coreset":1,"deep_opt":true}
+{"ts":"2026-09-04T11:24:15.902+00:00","seq":3,"event":"ImageHosted","url":"https://i.ibb.co/6Wq0Vd7/crop-0f9c6d60.jpg","probe":"primary","quality":0.91}
+{"ts":"2026-09-04T11:24:16.031+00:00","seq":4,"event":"ImageSearchRequested","engines":["google_lens","google_reverse_image","yandex_images"],"probes":["primary"],"multi_probe":true}
+{"ts":"2026-09-04T11:24:22.447+00:00","seq":5,"event":"ImageSearchCompleted","engine":"google_lens","hits":12,"probe":"primary"}
+{"ts":"2026-09-04T11:24:23.890+00:00","seq":6,"event":"ImageSearchCompleted","engine":"yandex_images","hits":9,"probe":"primary"}
+{"ts":"2026-09-04T11:24:24.115+00:00","seq":7,"event":"ImageSearchFailed","engine":"google_reverse_image","error":"Google Reverse Image hasn't returned any results for this query.","probe":"primary"}
+{"ts":"2026-09-04T11:24:24.930+00:00","seq":8,"event":"SearchMerged","unique":18,"by_engine":{"google_lens":12,"yandex_images":9,"google_reverse_image":0}}
+{"ts":"2026-09-04T11:25:41.508+00:00","seq":9,"event":"PostAccepted","count":3,"top_sim":0.91}
+{"ts":"2026-09-04T11:25:41.700+00:00","seq":10,"event":"AnchorLocked","locked":true,"url":"https://www.facebook.com/janedoe/","face_similarity":0.91,"phash_distance":2,"near_exact":true,"social":true,"title":"Jane Doe","tau_anchor_face":0.55}
+{"ts":"2026-09-04T11:25:41.982+00:00","seq":11,"event":"ExpandRequested","query":"Jane Doe (site:linkedin.com OR site:instagram.com OR site:x.com OR site:twitter.com)","from_url":"https://www.facebook.com/janedoe/","handle":null}
+{"ts":"2026-09-04T11:25:44.760+00:00","seq":12,"event":"ExpandCompleted","found":5,"query":"Jane Doe (site:linkedin.com OR site:instagram.com OR site:x.com OR site:twitter.com)"}
+{"ts":"2026-09-04T11:25:45.221+00:00","seq":13,"event":"GraphUpserted","nodes":8,"edges":11}
+{"ts":"2026-09-04T11:25:46.007+00:00","seq":14,"event":"MerkleBuilt","root":"0x4a7f0c3b6e9d2a5f8c1b4e7a0d3f6c9b2e5a8d1f4c7b0e3a6d9f2c5b8e1a4d7f0"}
+{"ts":"2026-09-04T11:25:46.550+00:00","seq":15,"event":"Attesting","root":"0x4a7f0c3b6e9d2a5f8c1b4e7a0d3f6c9b2e5a8d1f4c7b0e3a6d9f2c5b8e1a4d7f0"}
+{"ts":"2026-09-04T11:25:58.319+00:00","seq":16,"event":"Attested","tx_hash":"0x9f2c4a7b8e1d3f6a0c5b2e9d8a4f7c1b6e3d0a9f2c8b5e1d4a7f0c3b6e9d2a5f8","uid":"0x7b4e9c2a8f1d6b3e0a5c9f2d8b4e7a1c6f3d0b9e2a5c8f1d4b7e0a3c6f9d2b5e8","easscan":"https://sepolia.easscan.org/attestation/view/0x7b4e9c2a8f1d6b3e0a5c9f2d8b4e7a1c6f3d0b9e2a5c8f1d4b7e0a3c6f9d2b5e8"}
+{"ts":"2026-09-04T11:26:03.744+00:00","seq":17,"event":"VerifyPassed","root":"0x4a7f0c3b6e9d2a5f8c1b4e7a0d3f6c9b2e5a8d1f4c7b0e3a6d9f2c5b8e1a4d7f0","uid":"0x7b4e9c2a8f1d6b3e0a5c9f2d8b4e7a1c6f3d0b9e2a5c8f1d4b7e0a3c6f9d2b5e8"}

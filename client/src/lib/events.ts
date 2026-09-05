@@ -42,15 +42,20 @@ export function runFileUrl(source: EventFeed, name: string): string {
 export class RunConflictError extends Error {}
 
 /**
- * POST an image's raw bytes to /dev/run, kicking off a real pipeline run.
- * Resolves as soon as the backend has printed the run's id — the pipeline
- * keeps running in the background after this returns.
+ * POST one or more face photos to /dev/run as multipart `images`, kicking
+ * off a real pipeline run (seed gallery). Resolves as soon as the bridge
+ * returns a run_id — the pipeline keeps running in the background.
  */
-export async function startRun(file: File): Promise<{ runId: string }> {
+export async function startRun(files: File | File[]): Promise<{ runId: string }> {
+  const list = (Array.isArray(files) ? files : [files]).filter(Boolean)
+  if (list.length === 0) throw new Error('could not start run: no images')
+
+  const form = new FormData()
+  for (const file of list) form.append('images', file, file.name)
+
   const res = await fetch('/dev/run', {
     method: 'POST',
-    headers: { 'Content-Type': file.type || 'application/octet-stream' },
-    body: file,
+    body: form,
   })
   if (res.status === 409) {
     throw new RunConflictError('a ritual is already underway')

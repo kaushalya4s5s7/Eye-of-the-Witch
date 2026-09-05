@@ -48,8 +48,10 @@ export interface NarrationEntry {
 
 export interface SceneState {
   phase: Phase
-  face: { backend: string; detScore: number } | null
+  face: { backend: string; detScore: number; gallerySize?: number } | null
   hostedUrl: string | null
+  gallerySize: number | null
+  anchorLocked: boolean
   engines: EngineResult[]
   mergedCount: number | null
   post: { count: number; topSim: number } | null
@@ -79,6 +81,8 @@ export const initialScene: SceneState = {
   phase: 'idle',
   face: null,
   hostedUrl: null,
+  gallerySize: null,
+  anchorLocked: false,
   engines: [],
   mergedCount: null,
   post: null,

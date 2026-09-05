@@ -6,6 +6,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 import uuid
@@ -27,9 +28,10 @@ ROOT = Path(__file__).resolve().parent
 def emit(events: list[dict], out_dir: Path, kind: str, **payload: Any) -> None:
     ev = {"ts": base.utc_now(), "event": kind, **payload}
     events.append(ev)
-    with (out_dir / "events.jsonl").open("a") as f:
+    with (out_dir / "events.jsonl").open("a", encoding="utf-8") as f:
         f.write(json.dumps(ev) + "\n")
-    print(f"  · event {kind}")
+        f.flush()
+    print(f"  · event {kind}", flush=True)
 
 
 def normalize_hit(raw: dict[str, Any], engine: str, idx: int) -> dict[str, Any] | None:
@@ -97,10 +99,19 @@ def fetch_engine(engine: str, image_url: str, api_key: str) -> tuple[str, dict, 
     return engine, payload, hits
 
 
-def step_multi_search(image_url: str, api_key: str, out_dir: Path, events: list) -> list[dict]:
-    print("\n[S2] Multi-engine reverse search (parallel)…")
+def step_multi_search(
+    image_url: str,
+    api_key: str,
+    out_dir: Path,
+    events: list,
+    *,
+    probe_tag: str = "p0",
+    emit_request: bool = True,
+) -> tuple[list[dict], dict[str, int]]:
+    print(f"\n[S2] Multi-engine reverse search ({probe_tag})…")
     engines = ["google_lens", "google_reverse_image", "yandex_images"]
-    emit(events, out_dir, "ImageSearchRequested", engines=engines, image_url=image_url)
+    if emit_request:
+        emit(events, out_dir, "ImageSearchRequested", engines=engines, image_url=image_url, probe=probe_tag)
 
     merged: list[dict] = []
     by_engine: dict[str, int] = {}
@@ -109,44 +120,100 @@ def step_multi_search(image_url: str, api_key: str, out_dir: Path, events: list)
         futs = {pool.submit(fetch_engine, e, image_url, api_key): e for e in engines}
         for fut in as_completed(futs):
             engine, payload, hits = fut.result()
-            (out_dir / f"serpapi_{engine}.json").write_text(json.dumps(payload, indent=2))
+            (out_dir / f"serpapi_{probe_tag}_{engine}.json").write_text(json.dumps(payload, indent=2))
             if payload.get("error"):
-                print(f"  ! {engine}: {payload['error']}")
-                emit(events, out_dir, "ImageSearchFailed", engine=engine, error=payload["error"])
+                print(f"  ! {probe_tag}/{engine}: {payload['error']}")
+                emit(
+                    events,
+                    out_dir,
+                    "ImageSearchFailed",
+                    engine=engine,
+                    error=payload["error"],
+                    probe=probe_tag,
+                )
                 by_engine[engine] = 0
                 continue
             by_engine[engine] = len(hits)
+            for h in hits:
+                h["probe"] = probe_tag
             merged.extend(hits)
-            emit(events, out_dir, "ImageSearchCompleted", engine=engine, hits=len(hits))
-            print(f"  OK {engine}: {len(hits)} hits")
+            emit(
+                events,
+                out_dir,
+                "ImageSearchCompleted",
+                engine=engine,
+                hits=len(hits),
+                probe=probe_tag,
+            )
+            print(f"  OK {probe_tag}/{engine}: {len(hits)} hits")
 
-    # URL-level merge (keep first, tag engines)
+    return merged, by_engine
+
+
+def merge_hit_lists(all_hits: list[dict], by_engine_total: dict[str, int], out_dir: Path, events: list) -> list[dict]:
     by_url: dict[str, dict] = {}
-    for h in merged:
+    for h in all_hits:
         u = h["link"].split("?")[0].rstrip("/")
         if u not in by_url:
-            by_url[u] = {**h, "engines": [h["engine"]]}
+            by_url[u] = {**h, "engines": [h["engine"]], "probes": [h.get("probe") or "p0"]}
         else:
             if h["engine"] not in by_url[u]["engines"]:
                 by_url[u]["engines"].append(h["engine"])
-            # prefer non-empty thumb
+            pr = h.get("probe") or "p0"
+            if pr not in by_url[u]["probes"]:
+                by_url[u]["probes"].append(pr)
             if not by_url[u].get("thumbnail") and h.get("thumbnail"):
                 by_url[u]["thumbnail"] = h["thumbnail"]
                 by_url[u]["image"] = h.get("image") or h["thumbnail"]
 
     hits = list(by_url.values())
-    # step_accept expects engine as string
     for h in hits:
         h["engine"] = "+".join(h.get("engines") or [h.get("engine") or "unknown"])
+        h["probe"] = "+".join(h.get("probes") or ["p0"])
 
     (out_dir / "search_merged.json").write_text(
-        json.dumps({"by_engine": by_engine, "merged_unique": len(hits), "hits": hits}, indent=2)
+        json.dumps(
+            {
+                "by_engine": by_engine_total,
+                "merged_unique": len(hits),
+                "hits": hits,
+            },
+            indent=2,
+        )
     )
     if not hits:
         raise RuntimeError("All engines returned 0 usable hits")
-    print(f"  OK merged unique URLs: {len(hits)} (from {by_engine})")
-    emit(events, out_dir, "SearchMerged", unique=len(hits), by_engine=by_engine)
+    print(f"  OK merged unique URLs: {len(hits)} (from {by_engine_total})")
+    emit(events, out_dir, "SearchMerged", unique=len(hits), by_engine=by_engine_total)
     return hits
+
+
+def step_multi_probe_search(
+    probe_urls: list[tuple[str, str]],
+    api_key: str,
+    out_dir: Path,
+    events: list,
+) -> list[dict]:
+    """Reverse-search each coreset probe URL and merge (deep-opt discovery)."""
+    print(f"\n[S2] Deep-opt multi-probe search ({len(probe_urls)} probes)…")
+    emit(
+        events,
+        out_dir,
+        "ImageSearchRequested",
+        engines=["google_lens", "google_reverse_image", "yandex_images"],
+        probes=[t for t, _ in probe_urls],
+        multi_probe=True,
+    )
+    all_hits: list[dict] = []
+    by_engine_total: dict[str, int] = {}
+    for tag, url in probe_urls:
+        merged, by_engine = step_multi_search(
+            url, api_key, out_dir, events, probe_tag=tag, emit_request=False
+        )
+        all_hits.extend(merged)
+        for k, v in by_engine.items():
+            by_engine_total[k] = by_engine_total.get(k, 0) + v
+    return merge_hit_lists(all_hits, by_engine_total, out_dir, events)
 
 
 def extract_handle(url: str) -> str | None:
@@ -171,6 +238,7 @@ def build_graph(
     out_dir: Path,
     events: list,
     expand_notes: list[dict],
+    anchor: dict | None = None,
 ) -> nx.DiGraph:
     print("\n[S3b] Evidence graph (NetworkX)…")
     G = nx.DiGraph()
@@ -208,6 +276,7 @@ def build_graph(
             face_similarity=a.get("face_similarity"),
             social=a.get("social"),
             content_hash=a.get("content_hash"),
+            near_exact=a.get("near_exact"),
         )
         G.add_edge(seed_id, pid, kind="ACCEPTED_IN", face_similarity=a.get("face_similarity"))
         handle = extract_handle(a["url"])
@@ -216,6 +285,18 @@ def build_graph(
             if hid not in G:
                 G.add_node(hid, kind="Handle", handle=handle)
             G.add_edge(hid, pid, kind="AUTHORED_OR_APPEARS")
+
+    if anchor and anchor.get("url"):
+        aid = f"anchor:{base.sha256_hex(anchor['url'].encode())[:16]}"
+        G.add_node(
+            aid,
+            kind="Anchor",
+            url=anchor["url"],
+            face_similarity=anchor.get("face_similarity"),
+            phash_distance=anchor.get("phash_distance"),
+            near_exact=True,
+        )
+        G.add_edge(seed_id, aid, kind="LOCKED_AS_ANCHOR")
 
     for note in expand_notes:
         eid = f"expand:{base.sha256_hex(note['url'].encode())[:16]}"
@@ -241,16 +322,22 @@ def step_smart_expand(
     out_dir: Path,
     events: list,
     seed_emb: np.ndarray,
+    *,
+    anchor: dict | None,
 ) -> list[dict]:
-    """One gated hop: from best social accept, search name/handle on the open web."""
+    """One gated hop: only after dual-confirm AnchorLocked (near-exact + face vs seed)."""
     print("\n[S3c] Smart expand (gated)…")
-    social = [a for a in accepted if a.get("social") and (a.get("face_similarity") or 0) >= 0.20]
-    if not social:
-        emit(events, out_dir, "ExpandSkipped", reason="no_social_above_floor")
-        print("  skip: no social hit with face_sim >= 0.20")
+    if not anchor:
+        emit(events, out_dir, "ExpandSkipped", reason="no_dual_confirm_anchor")
+        print("  skip: no AnchorLocked (need near-exact + face_sim≥τ vs seed)")
         return []
 
-    best = max(social, key=lambda a: a.get("face_similarity") or 0)
+    best = anchor
+    if (best.get("face_similarity") or 0) < base.TAU_ANCHOR_FACE:
+        emit(events, out_dir, "ExpandSkipped", reason="anchor_face_below_tau")
+        print("  skip: anchor face_sim below tau")
+        return []
+
     handle = extract_handle(best["url"])
     # pull a name-like token from title
     title = best.get("title") or ""
@@ -270,7 +357,15 @@ def step_smart_expand(
     if name:
         q = f'{name} (site:linkedin.com OR site:instagram.com OR site:x.com OR site:twitter.com)'
     print(f"  expand query: {q}")
-    emit(events, out_dir, "ExpandRequested", query=q, from_url=best["url"], handle=handle)
+    emit(
+        events,
+        out_dir,
+        "ExpandRequested",
+        query=q,
+        from_url=best["url"],
+        handle=handle,
+        anchor=True,
+    )
 
     r = requests.get(
         "https://serpapi.com/search.json",
@@ -319,6 +414,56 @@ def step_smart_expand(
     return fresh
 
 
+def lock_anchor(out_dir: Path, events: list, accepted: list[dict]) -> dict | None:
+    """Lock Anchor only with dual confirm: near_exact AND face_sim ≥ τ vs seed."""
+    print("\n[S3a] Anchor lock (dual confirm)…")
+    ranked_path = out_dir / "candidates_ranked.json"
+    pool = list(accepted)
+    if ranked_path.exists():
+        all_scored = json.loads(ranked_path.read_text()).get("all_scored") or []
+        pool = all_scored or pool
+
+    # Poison guard: near-exact without face match must never lock
+    near_but_weak = [
+        r
+        for r in pool
+        if r.get("near_exact")
+        and (
+            r.get("face_similarity") is None
+            or (r.get("face_similarity") or 0) < base.TAU_ANCHOR_FACE
+        )
+    ]
+    for r in near_but_weak[:3]:
+        print(
+            f"  reject exact-without-face: sim={r.get('face_similarity')} "
+            f"phash_d={r.get('phash_distance')} {str(r.get('url'))[:70]}"
+        )
+
+    anchor = base.pick_anchor(pool)
+    if not anchor:
+        print("  no AnchorLocked — expand will be skipped (Case 3: accept-only)")
+        (out_dir / "anchor.json").write_text(json.dumps({"locked": False}, indent=2))
+        return None
+
+    payload = {
+        "locked": True,
+        "url": anchor["url"],
+        "face_similarity": anchor.get("face_similarity"),
+        "phash_distance": anchor.get("phash_distance"),
+        "near_exact": True,
+        "social": anchor.get("social"),
+        "title": anchor.get("title"),
+        "tau_anchor_face": base.TAU_ANCHOR_FACE,
+    }
+    (out_dir / "anchor.json").write_text(json.dumps(payload, indent=2))
+    emit(events, out_dir, "AnchorLocked", **payload)
+    print(
+        f"  OK AnchorLocked sim={payload['face_similarity']} "
+        f"phash_d={payload['phash_distance']} {payload['url'][:80]}"
+    )
+    return anchor
+
+
 def merge_accept_expand(accepted: list[dict], expand: list[dict], top_k: int = 5) -> list[dict]:
     """Prefer face-scored accepts; fill remaining slots with expand social URLs."""
     out = list(accepted[:top_k])
@@ -341,44 +486,125 @@ def main() -> int:
         "SEPOLIA_RPC_URL",
         "PRIVATE_KEY",
     )
-    run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "-" + uuid.uuid4().hex[:8]
-    out_dir = ROOT / "runs" / f"full-{run_id}"
+    # Prefer run_id from the UI bridge (EOTW_RUN_ID) so SSE can open immediately
+    # instead of waiting on buffered stdout for "FULL RUN …".
+    preset = (os.environ.get("EOTW_RUN_ID") or "").strip()
+    if preset:
+        run_folder = preset if preset.startswith("full-") else f"full-{preset}"
+        run_id = run_folder.removeprefix("full-")
+    else:
+        run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "-" + uuid.uuid4().hex[:8]
+        run_folder = f"full-{run_id}"
+    out_dir = ROOT / "runs" / run_folder
     out_dir.mkdir(parents=True, exist_ok=True)
+    # Touch events.jsonl immediately so the UI SSE can open and wait for lines
+    # instead of sitting on FILE_WAIT until the first FaceDetected (cold model ~45s).
+    (out_dir / "events.jsonl").touch()
     events: list[dict] = []
-    print(f"FULL RUN {run_id}")
-    print(f"OUT {out_dir}")
+    print(f"FULL RUN {run_id}", flush=True)
+    print(f"OUT {out_dir}", flush=True)
 
-    args = [a for a in sys.argv[1:] if not a.startswith("--")]
-    if args:
-        sample = Path(args[0]).expanduser().resolve()
+    args_paths = base.parse_image_args()
+    if args_paths:
+        for p in args_paths:
+            if not p.exists():
+                raise SystemExit(f"Image not found: {p}")
+        paths = args_paths
     else:
         matches = list((ROOT / "samples").glob("Screenshot*.png"))
-        sample = matches[0] if matches else ROOT / "samples" / "elon_musk.jpg"
-    if not sample.exists():
-        raise SystemExit(f"Image not found: {sample}")
-    print(f"IMAGE {sample}")
+        paths = [matches[0]] if matches else [ROOT / "samples" / "elon_musk.jpg"]
+    print(f"IMAGES ({len(paths)}): " + ", ".join(p.name for p in paths))
 
     results = []
     try:
-        face = base.step_face(sample, out_dir, require_insightface=True)
-        results.append(("S0_face", face["backend"]))
-        emit(events, out_dir, "FaceDetected", **{k: face[k] for k in ("backend", "det_score", "embedding_sha256")})
+        gallery = base.step_seed_gallery(paths, out_dir, require_insightface=True)
+        face = gallery["primary"]
+        results.append(("S0_face", f"{face['backend']}:gallery={gallery['size']}"))
+        emit(
+            events,
+            out_dir,
+            "FaceDetected",
+            **{k: face[k] for k in ("backend", "det_score", "embedding_sha256")},
+            gallery_size=gallery["size"],
+        )
+        emit(
+            events,
+            out_dir,
+            "GalleryBuilt",
+            size=gallery["size"],
+            inputs=gallery["inputs"],
+            kept=gallery["kept"],
+            rejected=gallery["rejected"],
+            score_mode=gallery["score_mode"],
+            coreset=len(gallery.get("coreset") or []),
+            deep_opt=True,
+        )
         seed_emb = np.load(face["embedding_path"])
+        gal_emb = np.load(gallery["gallery_path"])
+        gal_q = np.load(gallery["qualities_path"]) if gallery.get("qualities_path") else None
+        crop_paths = [Path(m["crop_path"]) for m in gallery["members"]]
 
-        hosted = base.step_host(Path(face["crop_path"]), env["IMGBB_API_KEY"], out_dir)
-        results.append(("S1_host", hosted))
-        emit(events, out_dir, "ImageHosted", url=hosted)
+        # Deep-opt: host + reverse-search coreset probes (not only primary)
+        coreset = gallery.get("coreset") or [
+            {"crop_path": face["crop_path"], "index": 0, "quality": face.get("det_score")}
+        ]
+        probe_urls: list[tuple[str, str]] = []
+        for i, c in enumerate(coreset):
+            tag = f"p{i}"
+            url = base.step_host(
+                Path(c["crop_path"]),
+                env["IMGBB_API_KEY"],
+                out_dir,
+                tag=tag if i > 0 else "primary",
+            )
+            probe_urls.append((tag, url))
+            emit(events, out_dir, "ImageHosted", url=url, probe=tag, quality=c.get("quality"))
+        results.append(("S1_host", f"{len(probe_urls)} probes"))
 
-        hits = step_multi_search(hosted, env["SERPAPI_API_KEY"], out_dir, events)
-        results.append(("S2_multi", f"{len(hits)} unique"))
+        hits = step_multi_probe_search(
+            probe_urls, env["SERPAPI_API_KEY"], out_dir, events
+        )
+        results.append(("S2_multi", f"{len(hits)} unique / {len(probe_urls)} probes"))
 
         accepted = base.step_accept(
             hits,
             out_dir,
             seed_emb,
             top_k=5,
-            min_face_sim=0.25,  # slightly softer; product mirrors often score low
+            min_face_sim=0.25,
+            seed_crop_paths=crop_paths,
+            gallery_embeddings=gal_emb,
+            gallery_qualities=gal_q,
+            require_threshold=True,
+            deep_opt=True,
         )
+        if not accepted:
+            emit(
+                events,
+                out_dir,
+                "NoMatchFound",
+                reason="no_hit_above_face_threshold",
+                min_face_sim=0.25,
+                gallery_size=gallery["size"],
+            )
+            results.append(("S3_face_rank", "no_match"))
+            (out_dir / "smoke_report.json").write_text(
+                json.dumps(
+                    {
+                        "ok": False,
+                        "no_match": True,
+                        "run_id": run_id,
+                        "images": [str(p) for p in paths],
+                        "gallery_size": gallery["size"],
+                        "steps": results,
+                        "events": len(events),
+                    },
+                    indent=2,
+                )
+            )
+            print("\n=== NO MATCH FOUND (no blockchain write) ===")
+            return 2
+
         results.append(("S3_face_rank", accepted[0]["url"][:60]))
         emit(
             events,
@@ -386,15 +612,38 @@ def main() -> int:
             "PostAccepted",
             count=len(accepted),
             top_sim=accepted[0].get("face_similarity"),
+            gallery_size=gallery["size"],
         )
+        for a in accepted:
+            emit(
+                events,
+                out_dir,
+                "PostAccepted",
+                url=a["url"],
+                title=a.get("title"),
+                thumbnail=a.get("thumbnail"),
+                face_similarity=a.get("face_similarity"),
+                social=a.get("social"),
+                near_exact=a.get("near_exact"),
+                best_gallery_index=a.get("best_gallery_index"),
+            )
 
-        expand = step_smart_expand(accepted, env["SERPAPI_API_KEY"], out_dir, events, seed_emb)
+        anchor = lock_anchor(out_dir, events, accepted)
+        results.append(("S3a_anchor", "locked" if anchor else "none"))
+
+        expand = step_smart_expand(
+            accepted,
+            env["SERPAPI_API_KEY"],
+            out_dir,
+            events,
+            seed_emb,
+            anchor=anchor,
+        )
         final = merge_accept_expand(accepted, expand, top_k=5)
         (out_dir / "accepted_final.json").write_text(json.dumps(final, indent=2))
 
-        build_graph(face, hits, final, out_dir, events, expand)
+        build_graph(face, hits, final, out_dir, events, expand, anchor=anchor)
 
-        # merkle over face-ranked accepts primarily (expand may lack content image hash quality)
         merkle_set = [a for a in final if a.get("face_similarity") is not None] or final[:3]
         (out_dir / "accepted.json").write_text(json.dumps(merkle_set, indent=2))
 
@@ -426,10 +675,16 @@ def main() -> int:
     report = {
         "ok": True,
         "run_id": run_id,
-        "image": str(sample),
+        "images": [str(p) for p in paths],
+        "gallery_size": gallery["size"],
+        "deep_opt": True,
+        "coreset": gallery.get("coreset"),
         "steps": results,
         "events": len(events),
         "attest": json.loads((out_dir / "attest.json").read_text()),
+        "anchor": json.loads((out_dir / "anchor.json").read_text())
+        if (out_dir / "anchor.json").exists()
+        else None,
     }
     (out_dir / "smoke_report.json").write_text(json.dumps(report, indent=2))
     print("\n=== FULL SMOKE PASS ===")
