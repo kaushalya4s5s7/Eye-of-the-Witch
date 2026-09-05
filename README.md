@@ -12,30 +12,32 @@ This project is a pipeline that **checks**, **decides**, and **seals** that whol
 
 ## The problem we are solving
 
-If you only reverse-image-search a face, three things go wrong:
+If you only reverse-image-search a face, more goes wrong than “no match”:
 
 | What goes wrong | Why it hurts |
 |---|---|
+| One photo is a weak clue | Pose, light, blur — ranking against web thumbs wobbles |
 | Search returns junk or lookalikes | A “similar image” is not the same person |
 | Exact photo matches can poison you | Same pixels, different face → wrong identity cascade |
-| A list of URLs is not proof | Anyone can edit a demo; nothing is committed |
+| A flat list of URLs is hard to audit | You cannot see *how* the hunt went, only the winners |
+| Someone edits the record later | Change a URL, a title, a hash, a vote — demo still “looks fine” unless the seal notices |
 
-So we ask a different question:
+So we ask a harder question:
 
-> **Can we take a face, search the live public web, let the face model vote on every candidate, and put a fingerprint of that whole check on chain — then prove it still matches?**
+> **Can we take a face (maybe several angles), search the live public web, let the face model vote on every candidate, keep a readable map of the hunt, and put a fingerprint of that whole check on chain — so if anyone changes the record later, re-verify fails?**
 
-That is the pipeline. Everything else (code ritual, optional expand hop, evidence map) sits around that spine.
+That is the pipeline.
 
 ---
 
 ## How we thought about it (from every side)
 
-We designed the pipeline as four honest jobs, not as a pile of features.
+Not four features. Four jobs — plus the small cares that keep them honest.
 
 ```mermaid
 flowchart LR
-  subgraph Input
-    A[Your photo s]
+  subgraph Remember
+    G[Seed gallery]
   end
   subgraph Propose
     B[Live reverse search]
@@ -43,23 +45,96 @@ flowchart LR
   subgraph Decide
     C[Face encoder votes]
   end
+  subgraph Show
+    M[Evidence graph]
+  end
   subgraph Seal
     D[Evidence fingerprint]
     E[On-chain attest]
     F[Re-verify]
   end
-  A --> B --> C --> D --> E --> F
+  G --> B --> C --> M
+  C --> D --> E --> F
 ```
 
 | Side | What we care about |
 |---|---|
-| **Face** | Detect + encode. Multi-photo gallery if you give angles. The seed is ground truth for ranking. |
-| **Search** | Real engines (Lens / Yandex / Google reverse) — live, not hardcoded URLs. Search only *proposes*. |
-| **Decision** | Cosine similarity bands: accept / abstain / reject. Near-exact image without a strong face match → reject. |
-| **Chain** | Merkle over the **whole check** (probe + every verdict + accepts), attest on EAS Sepolia, rebuild and match. |
+| **Gallery** | Your photos are ground truth. Same person only (`cosine ≥ 0.35` vs primary); weak / wrong-person inputs stay out. |
+| **Search** | Real engines, live — not hardcoded URLs. Search only *proposes*. |
+| **Decision** | Cosine bands change the vote: accept / abstain / reject. Near-exact + weak face → reject. |
+| **Graph** | A map of the hunt you can open later — not only a sealed hash. |
+| **Seal** | SHA-256 leaves → Merkle root on chain. Change a leaf → root moves → re-verify fails. |
 
-**Search proposes → encoder decides → seal the whole check.**  
-That one sentence is the product.
+**Search proposes → encoder decides → remember the path → seal the whole check.**
+
+### Gallery — caring about the seed
+
+One blurry selfie is a weak clue. Front + side + better light is steadier.
+
+When you give several photos we:
+
+- Detect and encode each one (512-D face vector)  
+- Keep only faces with **cosine ≥ 0.35** vs the primary (same person)  
+- Score quality (detection confidence + sharpness)  
+- Pick the best crop(s) as search probes  
+
+So the gallery is not “upload more files for show.” It is how we make ranking fair when the web only returns messy thumbnails. Written to `gallery.json`.
+
+### Graph — caring about the path, not only the winners
+
+The chain seal answers: *did this check change?*  
+The graph answers: *what did we actually look at?*
+
+```mermaid
+flowchart TD
+  FS[FaceSeed · your scan] --> H1[ImageHit]
+  FS --> H2[ImageHit]
+  FS --> H3[ImageHit…]
+  H1 --> P[Post · accepted]
+  H2 --> P
+  P --> HD[Handle · if we can parse one]
+```
+
+After ranking we write `graph.json`: seed → every search hit → accepted posts (and handles when we can read them).  
+Emit `GraphUpserted`. You can open the file and *see* the investigation — the seal alone would not tell that story.
+
+### Seal — caring when the verifiable record changes
+
+We do not put the face on chain. We put a fingerprint of the **evidence bundle**:
+
+| Leaf kind | What it commits to |
+|---|---|
+| **Probe** | Seed embedding fingerprint + gallery size |
+| **Verdict** | URL + content hash + sim + decision |
+| **Accept** | Kept post + content hash + observed time |
+
+Each leaf is **SHA-256**; the tree root is a **Merkle root** (pairwise hash up). That root is what EAS stores.
+
+```mermaid
+flowchart TD
+  Bundle[evidence.json · probe + verdicts + accepts] --> Root[Merkle root]
+  Root --> Chain[EAS attestation on Sepolia]
+  Bundle --> Rebuild[Rebuild root locally]
+  Chain --> Compare{Same hash?}
+  Rebuild --> Compare
+  Compare -->|yes| OK[VerifyPassed]
+  Compare -->|no| Bad[Record was altered]
+```
+
+**If someone later changes the verifiable record** — swap a URL, flip a verdict, tweak a content hash, change observed time — any leaf bytes change → **Merkle root moves** → re-verify against the chain **fails**. That is why we seal the whole check, not only the winners.
+
+CDN thumbnails may expire; we hash what we saw **at accept time** so the seal does not depend on hotlinks staying forever.
+
+### Small cares (easy to skip, hard to regret)
+
+| Care | Why |
+|---|---|
+| Engines can fail individually | One dead engine ≠ whole run dies (`ImageSearchFailed`, continue) |
+| Abstain band (`0.20–0.25`) | Mid cosine scores are not quietly treated as matches |
+| No accepts → no chain write | `NoMatchFound` — we do not attest an empty victory |
+| Seed face beats “engine said so” | Ranking is owned by the encoder |
+| Events are append-only | `events.jsonl` is the live lab notebook the UI tails |
+| One run = one folder | Artifacts stay together; nothing is “true” only in memory |
 
 ---
 
@@ -71,9 +146,9 @@ flowchart TD
   P2 --> P3[3 · Live reverse search]
   P3 --> P4[4 · Merge candidates]
   P4 --> P5[5 · Adjudicate]
-  P5 -->|at least one accept| P6[6 · Build evidence bundle]
+  P5 -->|at least one accept| P6[6 · Evidence graph]
   P5 -->|no accepts| NM[NoMatchFound · stop · no chain write]
-  P6 --> P7[7 · Merkle root]
+  P6 --> P7[7 · Evidence bundle + Merkle]
   P7 --> P8[8 · Attest on EAS Sepolia]
   P8 --> P9[9 · Re-verify]
 
@@ -82,15 +157,17 @@ flowchart TD
   P3 -.- E3["ImageSearchRequested / Completed / Failed"]
   P4 -.- E4["SearchMerged"]
   P5 -.- E5["AdjudicationCompleted · PostAccepted"]
+  P6 -.- E6["GraphUpserted"]
   P7 -.- E7["MerkleBuilt"]
   P8 -.- E8["Attesting · Attested"]
   P9 -.- E9["VerifyPassed"]
 ```
 
-### 1 · Face scan
+### 1 · Face scan + seed gallery
 
 Detect the face, encode it (InsightFace).  
-One photo works. Several angles make ranking steadier — we keep a small **seed gallery** and pick the best crop(s) for search.
+One photo works. Several angles → **seed gallery** (same-person filter, quality, best probes).  
+Events: `FaceDetected`, `GalleryBuilt`. Details in *Gallery* above.
 
 ### 2 · Host the crop
 
@@ -101,29 +178,28 @@ Search engines need a public URL. We upload the crop temporarily (imgbb), then f
 Ask Google Lens, Yandex Images, and Google Reverse Image.  
 Merge and dedupe by URL. Prefer social domains when scores are close — but the **seed face always wins** over “the engine liked this page.”
 
-### 5 · Adjudicate (this is where math changes the outcome)
+### 5 · Adjudicate (math that changes the outcome)
 
-For each candidate thumbnail we compare faces to the seed:
+Score each candidate with **cosine similarity** of face embeddings vs the seed gallery (best match). Then vote:
 
-| Similarity | Decision | Meaning |
+| Cosine sim | Decision | Meaning |
 |---|---|---|
-| ≥ 0.25 | **accept** | Strong enough to keep |
-| 0.20 – 0.25 | **abstain** | Gray band — not sealed as a match |
-| &lt; 0.20 | **reject** | Too weak |
-| Near-exact photo, weak face vs seed | **reject** | Anti-poison |
+| **≥ 0.25** | **accept** | Strong enough to keep |
+| **0.20 – 0.25** | **abstain** | Gray band — not sealed as a match |
+| **&lt; 0.20** | **reject** | Too weak |
+| Near-exact photo **and** face &lt; **0.40** | **reject** | Anti-poison (same pixels ≠ same person) |
 
-Then we emit `AdjudicationCompleted` (counts + thresholds) and `PostAccepted` for the accepts.
+Those thresholds are not decoration — they decide who enters the seal.  
+Emit `AdjudicationCompleted` (counts + τ) and `PostAccepted` for accepts.
 
-### 6–9 · Seal + chain + re-verify
+### 6 · Evidence graph
 
-We do **not** put the face on chain.  
-We fingerprint the **evidence bundle**:
+Write the hunt map (`graph.json`) — seed, hits, accepts — so the path is readable, not only sealed. Event: `GraphUpserted`.
 
-1. **Probe** — what we searched with  
-2. **Verdicts** — how we voted each candidate  
-3. **Accepts** — what we kept  
+### 7–9 · Seal + chain + re-verify
 
-Merkle root → attest on **EAS (Sepolia)** → rebuild locally from `evidence.json` → confirm it matches the on-chain hash.
+**SHA-256** evidence leaves → **Merkle root** → attest on **EAS (Sepolia)** → rebuild from `evidence.json` → match on-chain.  
+Edit a sealed field later → root moves → re-verify fails. See *Seal* above.
 
 ---
 
@@ -167,13 +243,13 @@ Every execution writes `backend/runs/<run_id>/` (also visible as `runs/` when sy
 ```text
 runs/full-20260904T112413Z-0f9c6d60/
 ├── events.jsonl      ← live story (UI terminal)
-├── gallery.json      ← seed photos kept / rejected
+├── gallery.json      ← seed: kept / rejected / quality
 ├── accepted.json     ← posts with decision=accept
-├── evidence.json     ← sealed adjudication bundle
+├── evidence.json     ← sealed bundle (probe + verdicts + accepts)
 ├── merkle.json       ← root + leaf digests
 ├── attest.json       ← tx, uid, EASScan link
-├── verify.json       ← rebuild vs chain
-├── graph.json        ← optional map of the hunt
+├── verify.json       ← rebuild vs chain (fails if record edited)
+├── graph.json        ← map of the hunt (seed → hits → posts)
 └── smoke_report.json ← pass / no-match / fail
 ```
 
@@ -279,4 +355,4 @@ architecture.md
 
 ---
 
-**One line:** scan the face → let the web propose → let the encoder decide → seal the whole check on Sepolia → prove it still matches.
+**One line:** steady the seed → let the web propose → let the encoder decide → map the hunt → seal the whole check → prove edits break the seal.
