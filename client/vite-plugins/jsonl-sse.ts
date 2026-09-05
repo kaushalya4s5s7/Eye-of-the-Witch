@@ -123,8 +123,18 @@ export function jsonlSse(): Plugin {
           await writeFile(uploadPath, bytes)
 
           const pythonBin = resolve(backendDir, '.venv/bin/python3')
+          // Strip Cursor/sandbox proxy vars — they point at a local proxy that
+          // often isn't running, so requests to imgbb/SerpAPI die with
+          // ProxyError / connection refused and the run emits Failed.
+          const childEnv = { ...process.env }
+          for (const key of Object.keys(childEnv)) {
+            if (/^(.*_)?prox(y|ies)$/i.test(key) || /^no_proxy$/i.test(key)) {
+              delete childEnv[key]
+            }
+          }
           const child = spawn(pythonBin, [resolve(backendDir, 'smoke_full.py'), uploadPath], {
             cwd: backendDir,
+            env: childEnv,
           })
 
           let responded = false

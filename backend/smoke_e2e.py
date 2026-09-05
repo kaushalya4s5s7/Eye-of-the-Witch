@@ -25,6 +25,13 @@ from web3 import Web3
 ROOT = Path(__file__).resolve().parent
 load_dotenv(ROOT / ".env")
 
+# Cursor/sandbox injects HTTP(S)_PROXY → 127.0.0.1:<ephemeral>. That proxy is
+# often gone by the time we run, so imgbb/SerpAPI fail with ProxyError.
+# Force direct egress for this process.
+for _k in list(os.environ):
+    if _k.lower().endswith("_proxy") or _k.lower() in ("proxy", "all_proxy", "no_proxy"):
+        os.environ.pop(_k, None)
+
 SOCIAL_HOSTS = {
     "x.com",
     "twitter.com",
