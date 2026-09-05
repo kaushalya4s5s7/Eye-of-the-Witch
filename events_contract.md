@@ -20,22 +20,23 @@ Ground truth = what `smoke_full.py` actually emits today in `runs/full-*/events.
 | `ImageSearchCompleted` | **once per engine that returns** |
 | `ImageSearchFailed` | per engine that errors (still continue) |
 | `SearchMerged` | after all engines |
-| `PostAccepted` | summary (count + top_sim) **and/or** one event per post (`url`, `face_similarity`, …) |
-| `AnchorLocked` | dual-confirm near-exact + face vs seed (expand gate) |
+| `AdjudicationCompleted` | encoder decided: accept/abstain/reject counts + τ |
+| `PostAccepted` | summary (count + top_sim) **and/or** one event per post (`url`, `face_similarity`, `decision`, …) |
+| `AnchorLocked` | dual-confirm near-exact + face vs seed (expand gate only) |
 | `ExpandSkipped` | when expand gate fails |
 | `ExpandRequested` | when expand starts |
 | `ExpandCompleted` | when expand finishes |
 | `GraphUpserted` | after NetworkX write |
-| `MerkleBuilt` | always on success path |
+| `MerkleBuilt` | evidence-bundle root (`mode=adjudication_bundle`, leaf kinds) |
 | `Attesting` | before chain tx |
 | `Attested` | after tx |
-| `VerifyPassed` | after re-verify OK |
-| `NoMatchFound` | hits present but none clear face threshold (no chain write) |
+| `VerifyPassed` | after re-verify OK (rebuild from `evidence.json`) |
+| `NoMatchFound` | no **accept** verdicts (no chain write) |
 | `Failed` | terminal on crash / hard error |
 
 ### Types reserved / optional
 
-`ConsentBound`, `CandidateScored`, `VerifyFailed`
+`ConsentBound`, `CandidateScored` (per-candidate optional; summary is `AdjudicationCompleted`), `VerifyFailed`
 
 **KC decision for step 2:**
 
@@ -52,19 +53,20 @@ ImageSearchRequested
 ImageSearchCompleted
 ImageSearchFailed
 SearchMerged
-CandidateScored          # reserved (optional later; ignore if absent)
+AdjudicationCompleted    # search proposes → encoder decides (counts + τ)
+CandidateScored          # optional per-candidate; usually covered by AdjudicationCompleted
 PostAccepted             # may fire once (summary) OR once per post — see §7
 AnchorLocked             # dual-confirm; expand only after this
 ExpandSkipped
 ExpandRequested
 ExpandCompleted
 GraphUpserted
-MerkleBuilt
+MerkleBuilt              # adjudication evidence bundle root
 Attesting
 Attested
 VerifyPassed
 VerifyFailed             # reserved
-NoMatchFound             # emitted when no face-threshold match
+NoMatchFound             # no accept verdicts
 Failed
 ConsentBound             # reserved / unused for demo — treat as log-only if ever sent
 ```
@@ -111,8 +113,9 @@ Do **not** require a `data` wrapper unless we migrate both sides together.
 | `ImageHosted` | optional: show crop URL / “bound” | yes |
 | `ImageSearchRequested` / `Completed` / `Failed` / `SearchMerged` | stay on **concoction** | yes |
 | `CandidateScored` | **no** per-candidate UI (too noisy) | optional log |
+| `AdjudicationCompleted` | optional “weighed” beat | yes — counts + τ |
 | `GalleryBuilt` | optional: “N seed photos locked” | yes |
-| `PostAccepted` | **yes** — gallery update (see §7) | yes |
+| `PostAccepted` | **yes** — gallery update on **summary** (see §7) | yes |
 | `AnchorLocked` | subtle “identity locked” / stay concoction | yes |
 | `Expand*` / `GraphUpserted` | stay concoction / subtle | yes |
 | `MerkleBuilt` | subtle “seal forming” optional | yes |
@@ -131,7 +134,7 @@ Do **not** require a `data` wrapper unless we migrate both sides together.
 
 | Condition | Event |
 |---|---|
-| Engines return hits but **none** pass face/social accept thresholds | `NoMatchFound` *(to be emitted)* |
+| Engines return hits but **none** get `decision=accept` (reject/abstain only) | `NoMatchFound` |
 | All engines return 0 usable hits / merged unique = 0 | `NoMatchFound` |
 | Exception, bad image, no face, API key hard fail, RPC fail, attest revert | `Failed` with `error` string (today) + later `stage` |
 | Consent refusal (if we add consent) | `Failed` stage=`consent` or skip demo |
@@ -176,8 +179,10 @@ Process kill → **stream can stop with no terminal event.**
 |---|---|---|
 | bbox | **not in events** (only in `face.json` as `[x1,y1,x2,y2]` pixels on source) | If emitted: `[x1,y1,x2,y2]` pixels, source image |
 | confidence / face_sim | `det_score` 0–1; `top_sim` 0–1 on PostAccepted | treat as 0–1 floats |
-| `PostAccepted` | **once**, `{count, top_sim}` — posts live in `accepted.json` | **Short-term:** on `PostAccepted`, UI reads `runs/<id>/accepted.json` for gallery. **Soon:** one `PostAccepted` per post with `url`, `thumbnail`, `face_similarity`, `title` |
-| `MerkleBuilt.leaf_count` | **not emitted** (only `root`) | optional later; leaf count ≈ face-scored merkle set, not expand-only rows |
+| Decision bands | `TAU_REJECT=0.20`, `TAU_ACCEPT=0.25`; poison: near-exact + face &lt; `TAU_ANCHOR_FACE` → **reject** | `accept` / `abstain` / `reject` |
+| `AdjudicationCompleted` | `{scored, accept, abstain, reject, tau_accept, tau_reject, mode}` | after face-rank; before PostAccepted |
+| `PostAccepted` | **summary** `{count, top_sim, gallery_size?}` **and** optional **per-post** `{url, face_similarity, decision, …}` | Left panel: use **summary** only; gallery from `accepted.json` |
+| `MerkleBuilt` | `{root, mode?, evidence_leaves?, leaf_kinds?, accept_count?}` | `mode=adjudication_bundle` seals probe + verdicts + accepts |
 | `Attested` with 0 posts | should not happen on happy path; pipeline should `NoMatchFound` instead | UI: if Attested with empty gallery, show hash anyway but flag odd |
 | multiple `ImageSearchCompleted` | **YES** — one per engine | expected |
 
@@ -215,7 +220,7 @@ UI should not assume CORS; use `<img>` tags (no canvas fetch) or proxy later.
 | Attest + verify | ~5–15s |
 | Full success | **~1–2 minutes** typical |
 
-**Longest gap:** between `SearchMerged` and `PostAccepted` (scoring).  
+**Longest gap:** between `SearchMerged` and `AdjudicationCompleted` / `PostAccepted` (scoring).  
 No heartbeat today. UI: concoction loops until next event; show terminal “scoring candidates…” if idle >5s after `SearchMerged`.
 
 ---

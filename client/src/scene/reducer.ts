@@ -99,13 +99,21 @@ function applyEvent(state: SceneState, input: SceneInput, now: number): SceneSta
         lastEventAt: now,
       }
 
-    case 'PostAccepted':
+    case 'PostAccepted': {
+      // Summary updates gallery counts; per-post events only keep weaving phase.
+      if (ev.count == null && ev.url != null) {
+        return { ...state, phase: advance(state.phase, 'weaving'), lastEventAt: now }
+      }
       return {
         ...state,
         phase: advance(state.phase, 'weaving'),
         post: { count: num(ev.count) ?? 0, topSim: num(ev.top_sim) ?? 0 },
         lastEventAt: now,
       }
+    }
+
+    case 'AdjudicationCompleted':
+      return { ...state, phase: advance(state.phase, 'weaving'), lastEventAt: now }
 
     case 'AnchorLocked':
       return { ...state, anchorLocked: true, lastEventAt: now }

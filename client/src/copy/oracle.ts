@@ -146,8 +146,22 @@ export function oracleFor(input: SceneInput, next: SceneState): OracleLine[] {
     }
     case 'GraphUpserted':
       return [seer('The web remembers.')]
+    case 'AdjudicationCompleted': {
+      const accept = num(ev.accept, 0)
+      const abstain = num(ev.abstain, 0)
+      const reject = num(ev.reject, 0)
+      return [
+        seer(`The Eye weighed them — ${accept} true, ${abstain} unclear, ${reject} false.`),
+      ]
+    }
     case 'MerkleBuilt':
-      return [seer(`The figure has a name now — ${short(str(ev.root))}.`)]
+      return [
+        seer(
+          str(ev.mode) === 'adjudication_bundle'
+            ? `The whole check is named — ${short(str(ev.root))}.`
+            : `The figure has a name now — ${short(str(ev.root))}.`,
+        ),
+      ]
     case 'Attesting':
       return [seer('She speaks the name to the sky.'), seer('The words are going out…')]
     case 'Attested':

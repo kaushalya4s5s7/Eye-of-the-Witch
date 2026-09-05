@@ -44,8 +44,14 @@ type ClosedEvent =
     }
   | { event: 'ImageHosted'; url: string; probe?: string; quality?: number }
   | { event: 'ImageSearchCompleted'; engine: string; hits: number; probe?: string }
-  | { event: 'PostAccepted'; count: number; top_sim: number }
-  | { event: 'MerkleBuilt'; root: string }
+  | {
+      event: 'MerkleBuilt'
+      root: string
+      mode?: string
+      evidence_leaves?: number
+      leaf_kinds?: Record<string, number>
+      accept_count?: number
+    }
   | { event: 'Attesting'; root: string }
   | { event: 'Attested'; tx_hash: string; uid: string; easscan: string }
   | { event: 'Failed'; error: string; stage?: FailedStage }
@@ -60,7 +66,6 @@ const CLOSED_NAMES = [
   'FaceDetected',
   'ImageHosted',
   'ImageSearchCompleted',
-  'PostAccepted',
   'MerkleBuilt',
   'Attesting',
   'Attested',
@@ -72,6 +77,8 @@ const OPEN = [
   'ImageSearchRequested',
   'ImageSearchFailed',
   'SearchMerged',
+  'AdjudicationCompleted',
+  'PostAccepted',
   'AnchorLocked',
   'ExpandRequested',
   'ExpandCompleted',
@@ -96,8 +103,13 @@ const CLOSED: Record<ClosedEventName, FieldSpec> = {
   },
   ImageHosted: { url: 'string', 'probe?': 'string', 'quality?': 'number' },
   ImageSearchCompleted: { engine: 'string', hits: 'number', 'probe?': 'string' },
-  PostAccepted: { count: 'number', top_sim: 'number' },
-  MerkleBuilt: { root: 'string' },
+  MerkleBuilt: {
+    root: 'string',
+    'mode?': 'string',
+    'evidence_leaves?': 'number',
+    'leaf_kinds?': 'object',
+    'accept_count?': 'number',
+  },
   Attesting: { root: 'string' },
   Attested: { tx_hash: 'string', uid: 'string', easscan: 'string' },
   Failed: { error: 'string', 'stage?': 'string' },

@@ -6,12 +6,13 @@
 {"ts":"2026-09-04T11:24:23.890+00:00","seq":6,"event":"ImageSearchCompleted","engine":"yandex_images","hits":9,"probe":"primary"}
 {"ts":"2026-09-04T11:24:24.115+00:00","seq":7,"event":"ImageSearchFailed","engine":"google_reverse_image","error":"Google Reverse Image hasn't returned any results for this query.","probe":"primary"}
 {"ts":"2026-09-04T11:24:24.930+00:00","seq":8,"event":"SearchMerged","unique":18,"by_engine":{"google_lens":12,"yandex_images":9,"google_reverse_image":0}}
-{"ts":"2026-09-04T11:25:41.508+00:00","seq":9,"event":"PostAccepted","count":3,"top_sim":0.91}
-{"ts":"2026-09-04T11:25:41.700+00:00","seq":10,"event":"AnchorLocked","locked":true,"url":"https://www.facebook.com/janedoe/","face_similarity":0.91,"phash_distance":2,"near_exact":true,"social":true,"title":"Jane Doe","tau_anchor_face":0.55}
-{"ts":"2026-09-04T11:25:41.982+00:00","seq":11,"event":"ExpandRequested","query":"Jane Doe (site:linkedin.com OR site:instagram.com OR site:x.com OR site:twitter.com)","from_url":"https://www.facebook.com/janedoe/","handle":null}
-{"ts":"2026-09-04T11:25:44.760+00:00","seq":12,"event":"ExpandCompleted","found":5,"query":"Jane Doe (site:linkedin.com OR site:instagram.com OR site:x.com OR site:twitter.com)"}
-{"ts":"2026-09-04T11:25:45.221+00:00","seq":13,"event":"GraphUpserted","nodes":8,"edges":11}
-{"ts":"2026-09-04T11:25:46.007+00:00","seq":14,"event":"MerkleBuilt","root":"0x4a7f0c3b6e9d2a5f8c1b4e7a0d3f6c9b2e5a8d1f4c7b0e3a6d9f2c5b8e1a4d7f0"}
-{"ts":"2026-09-04T11:25:46.550+00:00","seq":15,"event":"Attesting","root":"0x4a7f0c3b6e9d2a5f8c1b4e7a0d3f6c9b2e5a8d1f4c7b0e3a6d9f2c5b8e1a4d7f0"}
-{"ts":"2026-09-04T11:25:58.319+00:00","seq":16,"event":"Attested","tx_hash":"0x9f2c4a7b8e1d3f6a0c5b2e9d8a4f7c1b6e3d0a9f2c8b5e1d4a7f0c3b6e9d2a5f8","uid":"0x7b4e9c2a8f1d6b3e0a5c9f2d8b4e7a1c6f3d0b9e2a5c8f1d4b7e0a3c6f9d2b5e8","easscan":"https://sepolia.easscan.org/attestation/view/0x7b4e9c2a8f1d6b3e0a5c9f2d8b4e7a1c6f3d0b9e2a5c8f1d4b7e0a3c6f9d2b5e8"}
-{"ts":"2026-09-04T11:26:03.744+00:00","seq":17,"event":"VerifyPassed","root":"0x4a7f0c3b6e9d2a5f8c1b4e7a0d3f6c9b2e5a8d1f4c7b0e3a6d9f2c5b8e1a4d7f0","uid":"0x7b4e9c2a8f1d6b3e0a5c9f2d8b4e7a1c6f3d0b9e2a5c8f1d4b7e0a3c6f9d2b5e8"}
+{"ts":"2026-09-04T11:25:41.200+00:00","seq":9,"event":"AdjudicationCompleted","scored":18,"accept":3,"abstain":2,"reject":13,"tau_accept":0.25,"tau_reject":0.2,"mode":"search_proposes_encoder_decides"}
+{"ts":"2026-09-04T11:25:41.508+00:00","seq":10,"event":"PostAccepted","count":3,"top_sim":0.91}
+{"ts":"2026-09-04T11:25:41.700+00:00","seq":11,"event":"AnchorLocked","locked":true,"url":"https://www.facebook.com/janedoe/","face_similarity":0.91,"phash_distance":2,"near_exact":true,"social":true,"title":"Jane Doe","tau_anchor_face":0.55}
+{"ts":"2026-09-04T11:25:41.982+00:00","seq":12,"event":"ExpandRequested","query":"Jane Doe (site:linkedin.com OR site:instagram.com OR site:x.com OR site:twitter.com)","from_url":"https://www.facebook.com/janedoe/","handle":null}
+{"ts":"2026-09-04T11:25:44.760+00:00","seq":13,"event":"ExpandCompleted","found":5,"query":"Jane Doe (site:linkedin.com OR site:instagram.com OR site:x.com OR site:twitter.com)"}
+{"ts":"2026-09-04T11:25:45.221+00:00","seq":14,"event":"GraphUpserted","nodes":8,"edges":11}
+{"ts":"2026-09-04T11:25:46.007+00:00","seq":15,"event":"MerkleBuilt","root":"0x4a7f0c3b6e9d2a5f8c1b4e7a0d3f6c9b2e5a8d1f4c7b0e3a6d9f2c5b8e1a4d7f0","mode":"adjudication_bundle","evidence_leaves":22,"leaf_kinds":{"probe":1,"verdict":18,"accept":3},"accept_count":3}
+{"ts":"2026-09-04T11:25:46.550+00:00","seq":16,"event":"Attesting","root":"0x4a7f0c3b6e9d2a5f8c1b4e7a0d3f6c9b2e5a8d1f4c7b0e3a6d9f2c5b8e1a4d7f0"}
+{"ts":"2026-09-04T11:25:58.319+00:00","seq":17,"event":"Attested","tx_hash":"0x9f2c4a7b8e1d3f6a0c5b2e9d8a4f7c1b6e3d0a9f2c8b5e1d4a7f0c3b6e9d2a5f8","uid":"0x7b4e9c2a8f1d6b3e0a5c9f2d8b4e7a1c6f3d0b9e2a5c8f1d4b7e0a3c6f9d2b5e8","easscan":"https://sepolia.easscan.org/attestation/view/0x7b4e9c2a8f1d6b3e0a5c9f2d8b4e7a1c6f3d0b9e2a5c8f1d4b7e0a3c6f9d2b5e8"}
+{"ts":"2026-09-04T11:26:03.744+00:00","seq":18,"event":"VerifyPassed","root":"0x4a7f0c3b6e9d2a5f8c1b4e7a0d3f6c9b2e5a8d1f4c7b0e3a6d9f2c5b8e1a4d7f0","uid":"0x7b4e9c2a8f1d6b3e0a5c9f2d8b4e7a1c6f3d0b9e2a5c8f1d4b7e0a3c6f9d2b5e8"}

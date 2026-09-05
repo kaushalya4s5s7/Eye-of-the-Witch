@@ -31,6 +31,7 @@ const STAGE_FOR: Record<string, PipelineStage> = {
   ImageSearchCompleted: 'search',
   ImageSearchFailed: 'search',
   SearchMerged: 'search',
+  AdjudicationCompleted: 'search',
   PostAccepted: 'search',
   AnchorLocked: 'search',
   ExpandRequested: 'search',
@@ -149,11 +150,27 @@ export function describeEvent(obj: Record<string, unknown>): string {
       )
     case 'SearchMerged':
       return step('Candidate URLs merged (deduped)', `unique=${num(obj.unique) ?? 0}`)
-    case 'PostAccepted':
+    case 'AdjudicationCompleted': {
+      const accept = num(obj.accept) ?? 0
+      const abstain = num(obj.abstain) ?? 0
+      const reject = num(obj.reject) ?? 0
+      return step(
+        'Encoder adjudicated candidates',
+        `accept=${accept}  abstain=${abstain}  reject=${reject}  τ_a=${num(obj.tau_accept)?.toFixed(2) ?? '0.25'}  τ_r=${num(obj.tau_reject)?.toFixed(2) ?? '0.20'}`,
+      )
+    }
+    case 'PostAccepted': {
+      if (obj.url != null && obj.count == null) {
+        return step(
+          'Accepted post',
+          `sim=${num(obj.face_similarity)?.toFixed(3) ?? '?'}  ${str(obj.decision, 'accept')}  ${shortUrl(str(obj.url))}`,
+        )
+      }
       return step(
         'Matching posts accepted',
         `count=${num(obj.count) ?? 0}  top_sim=${num(obj.top_sim)?.toFixed(3) ?? '?'}`,
       )
+    }
     case 'AnchorLocked':
       return step(
         'Identity anchor locked (dual-confirm)',
@@ -170,8 +187,23 @@ export function describeEvent(obj: Record<string, unknown>): string {
         'Evidence graph written',
         `nodes=${num(obj.nodes) ?? 0}  edges=${num(obj.edges) ?? 0}`,
       )
-    case 'MerkleBuilt':
-      return step('Merkle root over accepted posts', shortHash(str(obj.root), 18))
+    case 'MerkleBuilt': {
+      const mode = str(obj.mode)
+      const leaves = num(obj.evidence_leaves)
+      const accepts = num(obj.accept_count)
+      const detail = [
+        shortHash(str(obj.root), 18),
+        mode ? `mode=${mode}` : '',
+        leaves != null ? `leaves=${leaves}` : '',
+        accepts != null ? `accepts=${accepts}` : '',
+      ]
+        .filter(Boolean)
+        .join('  ')
+      return step(
+        mode === 'adjudication_bundle' ? 'Evidence-bundle Merkle root sealed' : 'Merkle root over accepted posts',
+        detail,
+      )
+    }
     case 'Attesting':
       return step('Attesting root on EAS (Sepolia)…', shortHash(str(obj.root), 18))
     case 'Attested':
@@ -185,7 +217,7 @@ export function describeEvent(obj: Record<string, unknown>): string {
       return fail('Re-verify failed', str(obj.reason))
     case 'NoMatchFound':
       return fail(
-        'No matching post cleared the face threshold',
+        'No candidate cleared accept (encoder decided)',
         `checked=${num(obj.candidates_checked) ?? '?'}  ${str(obj.reason)}`,
       )
     case 'Failed':

@@ -44,8 +44,7 @@ Events are **flat** JSON objects, one per line. Not nested under `data`.
 FaceDetected          { backend, det_score, embedding_sha256, gallery_size? }
 ImageHosted           { url, probe?, quality? }     # public imgbb HTTPS; probe on multi-crop
 ImageSearchCompleted  { engine, hits, probe? }       # ONE PER ENGINE that returns
-PostAccepted          { count, top_sim }            # summary; gallery = accepted.json
-MerkleBuilt           { root }                      # no leaf_count today
+MerkleBuilt           { root, mode?, evidence_leaves?, leaf_kinds?, accept_count? }
 Attesting             { root }                      # same value as MerkleBuilt.root
 Attested              { tx_hash, uid, easscan }     # Sepolia; use as-is
 Failed                { error, stage? }             # real runs never send stage -> "unknown"
@@ -61,6 +60,8 @@ GalleryBuilt           { size, inputs, kept, rejected, score_mode?, coreset?, de
 ImageSearchRequested   { engines, image_url? | probes?, multi_probe? }
 ImageSearchFailed      { engine, error, probe? }     # pipeline continues
 SearchMerged           { unique, by_engine }         # by_engine: {engine: count}
+AdjudicationCompleted  { scored, accept, abstain, reject, tau_accept, tau_reject, mode }
+PostAccepted           { count, top_sim } OR per-post { url, face_similarity, decision, … }
 AnchorLocked           { locked, url, face_similarity, phash_distance, near_exact, … }
 ExpandRequested        { query, from_url, handle }   # handle may be null
 ExpandCompleted        { found, query }
@@ -71,8 +72,8 @@ NoMatchFound           { candidates_checked, reason } # empty-cauldron; no chain
 ```
 
 These validate as long as `event` is a known name; their payloads pass
-through untouched. Field shapes above track the deep-opt / dual-confirm
-pipeline in `backend/smoke_full.py`.
+through untouched. Field shapes above track the deep-opt / dual-confirm /
+adjudication-bundle pipeline in `backend/smoke_full.py`.
 
 ### Reserved — names locked, pipeline to follow (validate as open, mostly no UI)
 
@@ -85,11 +86,12 @@ ConsentBound      { consent_hash }                           # unused for demo; 
 ### Field formats
 
 - `det_score`, `top_sim`, `face_sim`, `source_trust` — floats 0–1.
+- Decision bands: accept ≥ 0.25, abstain 0.20–0.25, reject < 0.20 (+ poison near-exact rule).
 - bbox is not in events today (only in `face.json` as `[x1,y1,x2,y2]` pixels).
-- `PostAccepted` fires **once** as a summary. On it, read
-  `runs/<run_id>/accepted.json` for the gallery: entries carry
-  `url`, `thumbnail`, `face_similarity`, `title`. Per-post `PostAccepted`
-  events (with those fields inline) come later.
+- `AdjudicationCompleted` fires once after face-rank. `PostAccepted` may fire as a
+  **summary** and optionally **per post**. Left panel uses the summary; gallery from
+  `runs/<run_id>/accepted.json`.
+- Merkle `mode=adjudication_bundle` seals probe + verdicts + accepts (`evidence.json`).
 - Post thumbnails are third-party CDN URLs (Google / Yandex). HTTPS, may
   hotlink-block or expire, **CORS not guaranteed** — render with `<img>` only
   (no canvas fetch / `getImageData`), show placeholder art on error.

@@ -497,8 +497,6 @@ def main() -> int:
         run_folder = f"full-{run_id}"
     out_dir = ROOT / "runs" / run_folder
     out_dir.mkdir(parents=True, exist_ok=True)
-    # Touch events.jsonl immediately so the UI SSE can open and wait for lines
-    # instead of sitting on FILE_WAIT until the first FaceDetected (cold model ~45s).
     (out_dir / "events.jsonl").touch()
     events: list[dict] = []
     print(f"FULL RUN {run_id}", flush=True)
@@ -583,8 +581,10 @@ def main() -> int:
                 events,
                 out_dir,
                 "NoMatchFound",
-                reason="no_hit_above_face_threshold",
+                reason="no_accept_verdict_above_tau",
                 min_face_sim=0.25,
+                tau_accept=0.25,
+                tau_reject=base.TAU_REJECT,
                 gallery_size=gallery["size"],
             )
             results.append(("S3_face_rank", "no_match"))
@@ -604,6 +604,21 @@ def main() -> int:
             )
             print("\n=== NO MATCH FOUND (no blockchain write) ===")
             return 2
+
+        ranked_meta = json.loads((out_dir / "candidates_ranked.json").read_text())
+        vcounts = ranked_meta.get("verdict_counts") or {}
+        emit(
+            events,
+            out_dir,
+            "AdjudicationCompleted",
+            scored=ranked_meta.get("scored") or len(ranked_meta.get("all_scored") or []),
+            accept=vcounts.get("accept") or len(accepted),
+            abstain=vcounts.get("abstain") or 0,
+            reject=vcounts.get("reject") or 0,
+            tau_accept=ranked_meta.get("tau_accept") or 0.25,
+            tau_reject=ranked_meta.get("tau_reject") or base.TAU_REJECT,
+            mode="search_proposes_encoder_decides",
+        )
 
         results.append(("S3_face_rank", accepted[0]["url"][:60]))
         emit(
@@ -625,6 +640,7 @@ def main() -> int:
                 face_similarity=a.get("face_similarity"),
                 social=a.get("social"),
                 near_exact=a.get("near_exact"),
+                decision=a.get("decision") or "accept",
                 best_gallery_index=a.get("best_gallery_index"),
             )
 
@@ -645,11 +661,34 @@ def main() -> int:
         build_graph(face, hits, final, out_dir, events, expand, anchor=anchor)
 
         merkle_set = [a for a in final if a.get("face_similarity") is not None] or final[:3]
+        for a in merkle_set:
+            a.setdefault("observed_at", base.utc_now())
+            a.setdefault("decision", "accept")
         (out_dir / "accepted.json").write_text(json.dumps(merkle_set, indent=2))
 
-        root = base.step_merkle(merkle_set, out_dir)
+        all_scored = ranked_meta.get("all_scored") or []
+        root = base.step_merkle_evidence(
+            out_dir,
+            probe={
+                "embedding_sha256": face.get("embedding_sha256"),
+                "gallery_size": gallery["size"],
+                "backend": face.get("backend"),
+            },
+            all_scored=all_scored,
+            accepted=merkle_set,
+        )
         results.append(("S4_merkle", root[:24]))
-        emit(events, out_dir, "MerkleBuilt", root=root)
+        merkle_meta = json.loads((out_dir / "merkle.json").read_text())
+        emit(
+            events,
+            out_dir,
+            "MerkleBuilt",
+            root=root,
+            mode=merkle_meta.get("mode") or "adjudication_bundle",
+            evidence_leaves=merkle_meta.get("count"),
+            leaf_kinds=merkle_meta.get("leaf_kinds"),
+            accept_count=len(merkle_set),
+        )
 
         emit(events, out_dir, "Attesting", root=root)
         attest = base.step_attest(

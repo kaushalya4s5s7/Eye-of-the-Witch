@@ -160,6 +160,9 @@ export function useEventStream(source: EventFeed): EventStream {
       dispatch(parsed as Parameters<typeof reduceScene>[1])
 
       if (name === 'PostAccepted') {
+        // Summary carries count; per-post events also use this name — only
+        // load the sidecar once from the summary.
+        if (typeof obj.count !== 'number') return
         void fetch(runFileUrl(source, 'accepted'))
           .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
           .then((json) => {

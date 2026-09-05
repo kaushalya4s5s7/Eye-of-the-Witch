@@ -23,6 +23,8 @@ describe('classifyEvent', () => {
     expect(classifyEvent('FaceDetected')).toBe('closed')
     expect(classifyEvent('Attested')).toBe('closed')
     expect(classifyEvent('SearchMerged')).toBe('open')
+    expect(classifyEvent('AdjudicationCompleted')).toBe('open')
+    expect(classifyEvent('PostAccepted')).toBe('open')
     expect(classifyEvent('VerifyPassed')).toBe('open')
     expect(classifyEvent('GalleryBuilt')).toBe('open')
     expect(classifyEvent('AnchorLocked')).toBe('open')
@@ -44,6 +46,19 @@ describe('validateEvent', () => {
     ).toEqual([])
   })
 
+  it('accepts MerkleBuilt evidence-bundle optional fields', () => {
+    expect(
+      validateEvent({
+        event: 'MerkleBuilt',
+        root: '0xaa',
+        mode: 'adjudication_bundle',
+        evidence_leaves: 22,
+        leaf_kinds: { probe: 1, verdict: 18, accept: 3 },
+        accept_count: 3,
+      }),
+    ).toEqual([])
+  })
+
   it('accepts envelope keys (ts, seq, run_id) on any event', () => {
     expect(
       validateEvent({
@@ -58,6 +73,16 @@ describe('validateEvent', () => {
 
   it('accepts an open event with an arbitrary payload', () => {
     expect(validateEvent({ event: 'SearchMerged', unique: 18, note: 'whatever' })).toEqual([])
+    expect(
+      validateEvent({
+        event: 'AdjudicationCompleted',
+        accept: 2,
+        abstain: 1,
+        reject: 4,
+        tau_accept: 0.25,
+        tau_reject: 0.2,
+      }),
+    ).toEqual([])
   })
 
   it('accepts a reserved event name', () => {
@@ -120,6 +145,7 @@ describe('fixtures/events-success.jsonl', () => {
     expect(n[0]).toBe('FaceDetected')
     expect(n.filter((x) => x === 'ImageSearchCompleted').length).toBe(2)
     expect(n).toContain('SearchMerged')
+    expect(n).toContain('AdjudicationCompleted')
     expect(n).toContain('PostAccepted')
     expect(n).toContain('MerkleBuilt')
     expect(n).toContain('Attesting')
@@ -127,11 +153,18 @@ describe('fixtures/events-success.jsonl', () => {
     expect(n.at(-1)).toBe('VerifyPassed')
   })
 
-  it('PostAccepted is a summary (count + top_sim), not per-post', () => {
+  it('PostAccepted summary carries count + top_sim', () => {
     const post = rows.find((r) => r.obj.event === 'PostAccepted')!.obj
     expect(post).toHaveProperty('count')
     expect(post).toHaveProperty('top_sim')
     expect(post).not.toHaveProperty('url')
+  })
+
+  it('MerkleBuilt seals adjudication_bundle metadata', () => {
+    const m = rows.find((r) => r.obj.event === 'MerkleBuilt')!.obj
+    expect(m.mode).toBe('adjudication_bundle')
+    expect(m).toHaveProperty('evidence_leaves')
+    expect(m).toHaveProperty('accept_count')
   })
 
   it('Attested carries tx_hash, uid, easscan and nothing before it does', () => {

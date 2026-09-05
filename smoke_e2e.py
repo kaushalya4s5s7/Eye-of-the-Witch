@@ -358,6 +358,9 @@ def hamming64(a: int, b: int) -> int:
 NEAR_EXACT_HAMMING = 10
 # Dual-confirm floor: seed face must still match before we trust an "exact" DP
 TAU_ANCHOR_FACE = 0.40
+# Decision bands (math that changes accept vs abstain vs reject)
+TAU_REJECT = 0.20   # below → reject
+TAU_ACCEPT = 0.25   # at/above → accept (gray band in between → abstain)
 # Extra seed photos must match the primary face at least this well
 TAU_GALLERY_SAME_PERSON = 0.35
 MAX_SEED_IMAGES = 5
@@ -366,6 +369,53 @@ DEFAULT_PROBE_CORESET = 2
 # Hits used to build lite "owner" vector (cross-profile matching papers)
 OWNER_SEED_SIM = 0.35
 OWNER_BLEND = 0.35  # final = (1-α)*gallery + α*owner
+# Cap verdict leaves in the evidence Merkle (keep seal bounded)
+EVIDENCE_VERDICT_CAP = 64
+
+
+def decide_verdict(
+    sim: float | None,
+    *,
+    near_exact: bool = False,
+    tau_accept: float = TAU_ACCEPT,
+    tau_reject: float = TAU_REJECT,
+    tau_anchor: float = TAU_ANCHOR_FACE,
+) -> str:
+    """Map face similarity (+ poison-DP rule) → accept | abstain | reject.
+
+    - near_exact without strong face vs seed → reject (anti-poison)
+    - sim ≥ τ_accept → accept
+    - τ_reject ≤ sim < τ_accept → abstain (not sealed as a match)
+    - else → reject
+    """
+    if sim is None:
+        return "reject"
+    if near_exact and sim < tau_anchor:
+        return "reject"
+    if sim >= tau_accept:
+        return "accept"
+    if sim >= tau_reject:
+        return "abstain"
+    return "reject"
+
+
+def apply_verdicts(
+    rows: list[dict[str, Any]],
+    *,
+    tau_accept: float = TAU_ACCEPT,
+    tau_reject: float = TAU_REJECT,
+) -> dict[str, int]:
+    counts = {"accept": 0, "abstain": 0, "reject": 0}
+    for r in rows:
+        d = decide_verdict(
+            r.get("face_similarity"),
+            near_exact=bool(r.get("near_exact")),
+            tau_accept=tau_accept,
+            tau_reject=tau_reject,
+        )
+        r["decision"] = d
+        counts[d] = counts.get(d, 0) + 1
+    return counts
 
 
 def gallery_max_sim(gallery: np.ndarray, emb: np.ndarray) -> tuple[float, int]:
@@ -858,6 +908,14 @@ def step_accept(
         n_boost = sum(1 for r in scored if r.get("neighbor_boosted"))
         print(f"  neighbor consistency boosted {n_boost} hits")
 
+    # Math → decision band on every scored candidate (changes who can be accepted)
+    verdict_counts = apply_verdicts(scored, tau_accept=min_face_sim, tau_reject=TAU_REJECT)
+    print(
+        f"  verdicts: accept={verdict_counts['accept']} "
+        f"abstain={verdict_counts['abstain']} reject={verdict_counts['reject']} "
+        f"(τ_accept={min_face_sim} τ_reject={TAU_REJECT})"
+    )
+
     # Exact dedupe by content_hash (same image bytes / same thumb)
     by_hash: dict[str, dict[str, Any]] = {}
     for row in scored:
@@ -903,7 +961,7 @@ def step_accept(
         if not is_near_dup:
             kept.append(row)
 
-    eligible = [r for r in kept if (r.get("face_similarity") or 0) >= min_face_sim]
+    eligible = [r for r in kept if r.get("decision") == "accept"]
     used_fail_soft = False
     if not eligible:
         if require_threshold:
@@ -913,6 +971,9 @@ def step_accept(
                 else "insightface_max_gallery_cosine",
                 "gallery_size": int(gallery.shape[0]),
                 "min_face_sim": min_face_sim,
+                "tau_accept": min_face_sim,
+                "tau_reject": TAU_REJECT,
+                "verdict_counts": verdict_counts,
                 "near_exact_hamming": NEAR_EXACT_HAMMING,
                 "tau_anchor_face": TAU_ANCHOR_FACE,
                 "deep_opt": deep_opt,
@@ -927,11 +988,11 @@ def step_accept(
             }
             (out_dir / "candidates_ranked.json").write_text(json.dumps(report, indent=2))
             (out_dir / "accepted.json").write_text(json.dumps([], indent=2))
-            print(f"  no hit >= {min_face_sim} (require_threshold) → NoMatch")
+            print(f"  no accept verdicts (τ_accept={min_face_sim}) → NoMatch")
             return []
         eligible = kept[: max(top_k, 1)]
         used_fail_soft = True
-        print(f"  warn: no hit >= {min_face_sim}; falling back to best face-ranked")
+        print(f"  warn: no accept verdicts; falling back to best face-ranked")
 
     ranked = sorted(
         eligible,
@@ -947,7 +1008,7 @@ def step_accept(
         raise RuntimeError("No usable URLs after face-rank/dedupe")
 
     observed = utc_now()
-    accepted = [{**c, "observed_at": observed} for c in chosen]
+    accepted = [{**c, "observed_at": observed, "decision": "accept"} for c in chosen]
 
     report = {
         "seed_compare": "deep_opt_quality_owner_neighbor"
@@ -955,6 +1016,9 @@ def step_accept(
         else "insightface_max_gallery_cosine",
         "gallery_size": int(gallery.shape[0]),
         "min_face_sim": min_face_sim,
+        "tau_accept": min_face_sim,
+        "tau_reject": TAU_REJECT,
+        "verdict_counts": verdict_counts,
         "near_exact_hamming": NEAR_EXACT_HAMMING,
         "tau_anchor_face": TAU_ANCHOR_FACE,
         "deep_opt": deep_opt,
@@ -1011,7 +1075,8 @@ def pick_anchor(
 
 
 def step_merkle(accepted: list[dict[str, Any]], out_dir: Path) -> str:
-    print("\n[S4] Merkle root…")
+    """Legacy: Merkle over accepted posts only (kept for smoke_e2e lean path)."""
+    print("\n[S4] Merkle root (accepted-only)…")
     leaves = []
     leaf_hex = []
     for a in accepted:
@@ -1021,14 +1086,129 @@ def step_merkle(accepted: list[dict[str, Any]], out_dir: Path) -> str:
         leaf_hex.append(digest.hex())
     root = merkle_root(leaves)
     root_hex = root.hex()
-    # determinism check
     root2 = merkle_root(leaves)
     if root != root2:
         raise RuntimeError("Merkle not deterministic")
-    payload = {"merkle_root": root_hex, "leaves": leaf_hex, "count": len(leaves)}
+    payload = {
+        "mode": "accepted_only",
+        "merkle_root": root_hex,
+        "leaves": leaf_hex,
+        "count": len(leaves),
+    }
     (out_dir / "merkle.json").write_text(json.dumps(payload, indent=2))
     print(f"  OK root={root_hex[:24]}…")
     return root_hex
+
+
+def _evidence_leaf_specs(
+    *,
+    probe: dict[str, Any],
+    all_scored: list[dict[str, Any]],
+    accepted: list[dict[str, Any]],
+) -> list[tuple[str, str, bytes]]:
+    """Deterministic (kind, label, digest) leaves for the adjudication bundle."""
+    specs: list[tuple[str, str, bytes]] = []
+    probe_raw = (
+        f"probe|{probe.get('embedding_sha256')}|{probe.get('gallery_size')}|{probe.get('backend')}"
+    ).encode()
+    specs.append(("probe", "probe", sha256_bytes(probe_raw)))
+
+    def sim_key(r: dict[str, Any]) -> float:
+        s = r.get("face_similarity")
+        return float(s) if isinstance(s, (int, float)) else -1.0
+
+    ranked = sorted(all_scored, key=lambda r: (-sim_key(r), str(r.get("url") or "")))
+    for r in ranked[:EVIDENCE_VERDICT_CAP]:
+        url = str(r.get("url") or "")
+        if not url:
+            continue
+        sim = r.get("face_similarity")
+        sim_s = f"{float(sim):.4f}" if isinstance(sim, (int, float)) else "n/a"
+        decision = str(r.get("decision") or "reject")
+        ch = str(r.get("content_hash") or "")
+        eng = str(r.get("engine") or "unknown")
+        raw = f"verdict|{url}|{ch}|{sim_s}|{decision}|{eng}".encode()
+        specs.append(("verdict", url[:80], sha256_bytes(raw)))
+
+    for a in sorted(accepted, key=lambda x: str(x.get("url") or "")):
+        raw = (
+            f"accept|{a['url']}|{a['content_hash']}|{a['engine']}|{a['observed_at']}"
+        ).encode()
+        specs.append(("accept", str(a["url"])[:80], sha256_bytes(raw)))
+
+    return specs
+
+
+def step_merkle_evidence(
+    out_dir: Path,
+    *,
+    probe: dict[str, Any],
+    all_scored: list[dict[str, Any]],
+    accepted: list[dict[str, Any]],
+) -> str:
+    """Merkle-seal the whole adjudication check: probe + verdicts + accepts."""
+    print("\n[S4] Merkle root (adjudication evidence bundle)…")
+    specs = _evidence_leaf_specs(probe=probe, all_scored=all_scored, accepted=accepted)
+    if len(specs) < 2:
+        raise RuntimeError("Evidence bundle too small to seal")
+    leaves = [d for _, _, d in specs]
+    root = merkle_root(leaves)
+    root_hex = root.hex()
+    if merkle_root(leaves) != root:
+        raise RuntimeError("Merkle not deterministic")
+
+    by_kind: dict[str, int] = {}
+    for kind, _, _ in specs:
+        by_kind[kind] = by_kind.get(kind, 0) + 1
+
+    evidence = {
+        "mode": "adjudication_bundle",
+        "probe": probe,
+        "tau_accept": TAU_ACCEPT,
+        "tau_reject": TAU_REJECT,
+        "tau_anchor_face": TAU_ANCHOR_FACE,
+        "verdict_cap": EVIDENCE_VERDICT_CAP,
+        "leaf_kinds": by_kind,
+        "leaves": [
+            {"kind": k, "label": lab, "digest": d.hex()} for k, lab, d in specs
+        ],
+        "accepted_urls": [a.get("url") for a in accepted],
+        "scored_count": len(all_scored),
+    }
+    (out_dir / "evidence.json").write_text(json.dumps(evidence, indent=2))
+    payload = {
+        "mode": "adjudication_bundle",
+        "merkle_root": root_hex,
+        "leaves": [d.hex() for d in leaves],
+        "leaf_kinds": by_kind,
+        "count": len(leaves),
+        "evidence_file": "evidence.json",
+    }
+    (out_dir / "merkle.json").write_text(json.dumps(payload, indent=2))
+    print(
+        f"  OK root={root_hex[:24]}… leaves={len(leaves)} "
+        f"(probe={by_kind.get('probe', 0)} verdicts={by_kind.get('verdict', 0)} "
+        f"accepts={by_kind.get('accept', 0)})"
+    )
+    return root_hex
+
+
+def rebuild_evidence_root(out_dir: Path) -> str:
+    """Rebuild Merkle root from evidence.json (preferred) or accepted.json."""
+    evidence_path = out_dir / "evidence.json"
+    if evidence_path.exists():
+        ev = json.loads(evidence_path.read_text())
+        digests = [bytes.fromhex(x["digest"]) for x in ev.get("leaves") or []]
+        if not digests:
+            raise RuntimeError("evidence.json has no leaves")
+        return merkle_root(digests).hex()
+
+    accepted = json.loads((out_dir / "accepted.json").read_text())
+    leaves = []
+    for a in accepted:
+        raw = f"{a['url']}|{a['content_hash']}|{a['engine']}|{a['observed_at']}".encode()
+        leaves.append(sha256_bytes(raw))
+    return merkle_root(leaves).hex()
 
 
 def step_attest(root_hex: str, primary_url: str, rpc: str, pk: str, out_dir: Path) -> dict[str, Any]:
@@ -1126,24 +1306,33 @@ def step_verify(root_hex: str, attest: dict[str, Any], rpc: str, out_dir: Path) 
         except Exception as e:
             print(f"  warn getAttestation(uid) failed: {e}")
 
-    # Always verify merkle rebuild from accepted.json
-    accepted = json.loads((out_dir / "accepted.json").read_text())
-    leaves = []
-    for a in accepted:
-        raw = f"{a['url']}|{a['content_hash']}|{a['engine']}|{a['observed_at']}".encode()
-        leaves.append(sha256_bytes(raw))
-    rebuilt = merkle_root(leaves).hex()
+    # Always verify merkle rebuild from evidence.json (bundle) or accepted.json
+    rebuilt = rebuild_evidence_root(out_dir)
 
     ok_local = rebuilt == root_hex
     ok_chain = True
     if onchain_hash:
         ok_chain = onchain_hash == root_hex
 
-    # tamper test
-    tampered = list(leaves)
-    if tampered:
-        tampered[0] = sha256_bytes(b"tampered")
-    bad_root = merkle_root(tampered).hex()
+    # tamper test — flip first leaf digest in evidence if present
+    evidence_path = out_dir / "evidence.json"
+    if evidence_path.exists():
+        ev = json.loads(evidence_path.read_text())
+        digests = [bytes.fromhex(x["digest"]) for x in ev.get("leaves") or []]
+        tampered = list(digests)
+        if tampered:
+            tampered[0] = sha256_bytes(b"tampered")
+        bad_root = merkle_root(tampered).hex() if tampered else root_hex
+    else:
+        accepted = json.loads((out_dir / "accepted.json").read_text())
+        leaves = []
+        for a in accepted:
+            raw = f"{a['url']}|{a['content_hash']}|{a['engine']}|{a['observed_at']}".encode()
+            leaves.append(sha256_bytes(raw))
+        tampered = list(leaves)
+        if tampered:
+            tampered[0] = sha256_bytes(b"tampered")
+        bad_root = merkle_root(tampered).hex() if tampered else root_hex
     detects_tamper = bad_root != root_hex
 
     report = {
@@ -1154,6 +1343,7 @@ def step_verify(root_hex: str, attest: dict[str, Any], rpc: str, out_dir: Path) 
         "chain_match": ok_chain if onchain_hash else None,
         "tamper_detected": detects_tamper,
         "tx_hash": attest.get("tx_hash"),
+        "mode": "adjudication_bundle" if evidence_path.exists() else "accepted_only",
     }
     (out_dir / "verify.json").write_text(json.dumps(report, indent=2))
 

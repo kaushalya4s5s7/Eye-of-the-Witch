@@ -23,7 +23,7 @@ wrapped in a split-screen ritual UI.
 
 1. **Face identification** — Detect and encode a face from an input image (`InsightFace` buffalo_s).
 2. **Web / social search** — Host the face crop (imgbb), run **live** reverse-image search via SerpAPI (Google Lens, Yandex Images, Google Reverse Image). Rank hits by face similarity to the **seed** face. Prefer social domains. Not hardcoded.
-3. **Blockchain verification** — Build a Merkle root over accepted post leaves, attest `bytes32 contentHash` on **EAS (Ethereum Attestation Service) Sepolia**, then rebuild the root and check it against the on-chain attestation.
+3. **Blockchain verification** — Adjudicate candidates (`accept` / `abstain` / `reject` with τ bands), build a Merkle root over the **evidence bundle** (probe + verdicts + accepts), attest `bytes32 contentHash` on **EAS (Ethereum Attestation Service) Sepolia**, then rebuild from `evidence.json` and check it against the on-chain attestation.
 
 Optional intelligence (still the same pipeline shape):
 
@@ -95,7 +95,8 @@ Artifacts land in `backend/runs/<run_id>/`:
 | `events.jsonl` | Live run events (for UI / demo terminal) |
 | `gallery.json` | Seed gallery (kept/rejected multi-photo inputs) |
 >>>>>>> Stashed changes
-| `accepted.json` | Matching posts used for Merkle |
+| `accepted.json` | Matching posts (`decision=accept`) shown in UI |
+| `evidence.json` | Adjudication bundle sealed by Merkle (probe + verdicts + accepts) |
 | `anchor.json` | Dual-confirm anchor (if any) |
 | `merkle.json` | Root + leaves |
 | `attest.json` | tx hash, attestation UID, EASScan link |
@@ -128,8 +129,8 @@ contract, fixture list, and how to point it at a live `backend/` run instead.
 | Network | **Ethereum Sepolia** (public testnet) |
 | System | **EAS** — `0xC2679fBD37d54388Ce493F1DB75320D236e1815e` |
 | Schema | `bytes32 contentHash` — UID `0xdf4c41ea0f6263c72aa385580124f41f2898d3613e86c50519fc3cfd7ff13ad4` |
-| What is attested | Merkle root over accepted leaves (`url\|content_hash\|engine\|observed_at`) |
-| Re-verify | Rebuild Merkle from `accepted.json`; compare to attestation `contentHash` via `getAttestation` |
+| What is attested | Merkle root over **adjudication bundle** (probe + verdict leaves + accept leaves) |
+| Re-verify | Rebuild Merkle from `evidence.json` (fallback: `accepted.json`); compare to attestation `contentHash` via `getAttestation` |
 
 Explorer links are written to `attest.json` (`easscan`, `tx_url`).
 
@@ -140,10 +141,12 @@ Explorer links are written to `attest.json` (`easscan`, `tx_url`).
 | Signal | Role |
 |---|---|
 | InsightFace cosine vs **seed gallery** | Same person — `max` sim over 1..N user photos (pose/light variations OK) |
+| **Decision bands** | `sim ≥ 0.25` accept · `0.20–0.25` abstain · `< 0.20` reject |
 | Average hash near-exact | Same *photo* nominee vs any seed crop |
 | **Dual confirm** | Near-exact **and** face_sim ≥ τ → `AnchorLocked`; expand only then |
-| Seed gallery always wins | Exact DP without face match to gallery → rejected (no poison cascade) |
+| Seed gallery always wins | Exact DP without face match to gallery → **reject** (no poison cascade) |
 | Multi-photo tip | More public photos of the same person → sharper web ranking |
+
 This is **similarity evidence**, not legal identity proof.
 
 ---
@@ -161,7 +164,7 @@ This is **similarity evidence**, not legal identity proof.
 - Relies on third-party APIs (SerpAPI, imgbb) and free RPC rate limits.
 - Social hotlink / scrape limits: we score **thumbnails** from search results, not full private profiles.
 - Gallery-from-profile enrichment (plan Slice II scrape) is **not** implemented — **user multi-photo seed gallery** is the supported path instead.
-- Face thresholds are tuned for smoke demos; lookalikes can still score in the mid band.
+- Face thresholds are tuned for smoke demos; lookalikes can still land in the **abstain** band.
 - `runs/`, `backend/runs/`, and `.env` are gitignored; share demo artifacts separately if needed.
 - If a private key was ever pasted in chat, **rotate** it.
 
