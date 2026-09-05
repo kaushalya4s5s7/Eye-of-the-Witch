@@ -269,10 +269,14 @@ doc is updated.
 **Layer stack** (`RitualStage.tsx`, bottom to top):
 1. `VideoLayer` — full-bleed background at every phase (working phases loop
    an ambient clip; `fixed`/`empty`/`broken` each play their outcome clip
-   once). **TEMPORARY**: all four clip slots (`ambient`/`success`/`failure`/
-   `rupture`) point at the same file, `client/media/Success.mp4` — see the
-   `CLIP_SRC` map and header comment in `VideoLayer.tsx`. Swap in real
-   per-outcome clips there when available; no other file needs to change.
+   once). Real per-outcome clips (2026-09-05): `ambient` ->
+   `WitchConcocting.mp4`, `success` (`fixed`) -> `WitchSuccess.mp4`,
+   `rupture` (`broken`/`Failed`) -> `WitchDefeated.mp4` (violent framing
+   matches EndCard's "the hero's blade found her first" copy for that
+   phase), `failure` (`empty`/`NoMatchFound`) -> `Failure.mp4` (the
+   original clip, kept so `empty` and `broken` stay visually distinct
+   rather than sharing `rupture`'s clip). See the `CLIP_SRC` map and header
+   comment in `VideoLayer.tsx`.
 2. `.ritual-beat-caption` — one italic line, shown only while an outcome
    clip is having its uninterrupted first playthrough (see "beat vs
    settled" below).

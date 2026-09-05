@@ -7,10 +7,16 @@
  *   empty                  -> failure   plays once, holds final frame
  *   broken                 -> rupture   plays once, holds final frame
  *
- * TEMPORARY: all four slots point at the same file (media/Success.mp4) until
- * the real ambient/failure/rupture clips are generated (see the redesign
- * brainstorm). Swapping them later is a one-line change to CLIP_SRC below —
- * nothing else in this file, or any caller, needs to change.
+ * Real per-outcome clips (2026-09-05): `ambient` is `WitchConcocting.mp4`
+ * (the witch mid-spell, loops through every working phase), `success` is
+ * `WitchSuccess.mp4` (`fixed`, matches EndCard's absence — no EndCard on
+ * this phase). `rupture` is `WitchDefeated.mp4` — chosen for `broken`
+ * (`Failed`) specifically because its violent framing matches EndCard's
+ * "the hero's blade found her first" copy for that phase. `failure` keeps
+ * the older `Failure.mp4` for `empty` (`NoMatchFound`) — this is the pairing
+ * media/README.md documented from the start ("failure.* -> NoMatchFound,
+ * distinct from the Failed error state"), and it keeps `empty` and `broken`
+ * visually distinct rather than sharing `rupture`'s clip.
  *
  * Hard rules (client/CLAUDE.md), unchanged by the redesign:
  *  - only `Attested` -> phase `fixed` -> the success clip.
@@ -24,16 +30,18 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { videoFor, type SceneState } from '../../scene/state'
-import successClip from '../../../media/Success.mp4'
+import ambientClip from '../../../media/WitchConcocting.mp4'
+import successClip from '../../../media/WitchSuccess.mp4'
+import failureClip from '../../../media/Failure.mp4'
+import ruptureClip from '../../../media/WitchDefeated.mp4'
 
 type Clip = 'ambient' | 'success' | 'failure' | 'rupture'
 
-// TODO(redesign): replace with real per-outcome clips; see file header.
 const CLIP_SRC: Record<Clip, string> = {
-  ambient: successClip,
+  ambient: ambientClip,
   success: successClip,
-  failure: successClip,
-  rupture: successClip,
+  failure: failureClip,
+  rupture: ruptureClip,
 }
 
 function clipFor(scene: SceneState): Clip {
